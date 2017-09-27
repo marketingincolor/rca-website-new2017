@@ -1,0 +1,138 @@
+Stylesheet:
+  ☐ Orangize Styles @low 
+  ./style.css/
+
+Home:
+  ✔ Get Forms Working (Mobile/Desktop) @done (17-09-24 12:28)
+  ✔ Get Sliders Working (Mobile/Desktop) @done (17-09-24 12:28)
+
+Contact:  
+  ✔ Form (Mobile/Desktop) @done (17-09-25 14:47)
+
+Indivdiual Staff Page:
+  ✔ Form (Mobile/Desktop) @high @done (17-09-20 15:01)
+  ✔ News Slider (Mobile Desktop) @high @done (17-09-24 12:31)
+
+All Staff Members:
+  ☐ Reduce Padding Around Members 
+  ✔ Organize Members & Team Meeting @started(17-09-13 15:51) @done (17-09-13 17:18) @lasted(1:27)
+  --- ✄ -----------------------
+
+News Feed:
+ ✔ Add Featured Image @done (17-09-06 15:20)
+ ✔ Add Query to loop through posts @done (17-09-13 09:12)
+ ✔ Define how Press Releases/Events are handled in WP. @done (17-09-13 09:14)
+ ✔ Add Styles @done (17-09-13 09:14)
+ ✔ Add pagination @started(17-09-14 13:09) @done (17-09-15 11:18)
+ ✔ Add AJAX to loop through posts @done (17-09-13 09:14)
+ ✔ Default posts to show @done (17-09-13 15:41)
+
+Individual News Post: 
+ ✔ Add Template @done (17-09-15 11:18)
+ ✔ Mobile Page @done (17-09-24 12:28)
+
+ Privacy Policy:
+ ✔ Add Page @done (17-09-15 11:27)
+
+ Terms of Use:
+ ✔ Add Page @done (17-09-15 11:27)
+ ✔ Format @done (17-09-24 12:28)
+
+ Pre Footer Form: 
+ ✔ Programming for changing colors of bottom form. @started(17-09-15 12:52) @done (17-09-15 16:07) @lasted(3:15)
+ ✔ Programming for checkboxes on forms @done (17-09-25 14:47)
+ ✔ Programming for sending data to SS @done (17-09-25 14:47)
+
+About Page:
+ ✔ Add Page @started(17-09-15 12:52)
+
+Medical Device Page:
+
+✔ Add Page @started(17-09-16 16:45) @done (17-09-16 18:17) @lasted(1:32)
+✔ Add Menus @done (17-09-16 18:17)
+
+
+Templates:  
+✔ Related Content @done (17-09-25 14:47)
+
+ Social Links:
+
+✔ Programming for sharing pages. @done (17-09-19 09:55)
+
+ Create Templates:
+
+✔ Program White Paper Template @done (17-09-24 12:28)
+✔ Program Case Study Template @done (17-09-24 12:28)
+✔ Program Webinar Template @done (17-09-24 12:28)
+✔ Program Published Articles Template @done (17-09-24 12:29)
+
+  Success Page:
+ ✔  Add Template @done (17-09-24 12:29)
+
+
+Pagination Problems:
+ ☐ Pagination doesn't show previous button
+ ☐ Pagination doesn't show on "View All"
+ ☐ Pagination doesn't work on "News" page
+ 
+ 
+ Breadcrumb:
+ ☐ Ensure breadcrumbs work and fit on all templates
+
+
+Medical Device:
+ ☐ Menus & Links Working
+
+Pharmacuetical:
+ ☐ Menus & Links Working
+
+Individual Staff Page:
+
+ ☐ Mobile
+ ☐ Desktop
+ ☐ Add Published articles section to bottom.
+
+Staff Category Page:
+
+ ✔ Mobile @done (17-09-26 15:48)
+ ✔ Desktop @done (17-09-26 15:48)
+
+All Staff Page:
+
+
+Contact Page:
+
+ ✔ Mobile @done (17-09-26 15:48)
+ ✔ Desktop @done (17-09-26 15:48)
+
+
+Search Page:
+
+ ☐ Mobile
+ ☐ Desktop
+
+
+Program Directors Staff Page:
+ ☐ Staff Department Template Added
+
+Sales Operations Staff Page:
+ ☐ Staff Department Template Added
+
+
+PAGE TEMPLATES (Mobile & Desktop):
+
+ ✔ Home page @done (17-09-26 11:50)
+ ✔ Terms of Use @done (17-09-26 12:03)
+ ✔ 404 @done (17-09-26 15:46)
+ ☐ Takeover Page
+ ✔ Contact Us Success Page @done (17-09-26 15:46)
+ ✔ Contact Us Page @done (17-09-26 15:46)
+ ✔ Our People @done (17-09-26 15:46)
+ ✔ About @done (17-09-26 15:46)
+ ☐ Testimonials
+ ☐ Opportunities
+ ☐ US Agent Services
+ ☐ Giving Back
+ ✔ Header @done (17-09-26 15:48)
+ ☐ 
+

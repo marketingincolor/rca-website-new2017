@@ -1,0 +1,114 @@
+Aug 07 2017 15:00:50
+{"type":2,"message":"RecursiveDirectoryIterator::__construct(C:\\wamp\\www\\rca-website-2017\/wp-content\\themes\\rca-website-2017\\node_modules\\gulp-uncss\\node_modules\\uncss\\node_modules\\phridge\\node_modules\\phantomjs-prebuilt\\node_modules\\request\\node_modules\\http-signature\\node_modules\\jsprim\\node_modules\\json-schema\\test): failed to open dir: Invalid argument","file":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\iterator\\class-ai1wm-recursive-directory-iterator.php","line":31}
+
+Aug 07 2017 15:01:45
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\escape-string-regexp\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:01:45
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\index.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:01:45
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\license): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:01:45
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:01:45
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\readme.md): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:01:46
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\index.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:01:46
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\license): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:01:46
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:01:46
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-block-scoping\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\readme.md): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:19
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-classes\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\index.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:19
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-classes\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\license): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:19
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-classes\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:19
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-classes\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\readme.md): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:19
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-classes\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\index.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:19
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-classes\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\license): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:19
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-classes\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:19
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-classes\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\readme.md): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\license): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\esutils\\\\lib\\\\ast.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\esutils\\\\lib\\\\code.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\esutils\\\\lib\\\\keyword.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\esutils\\\\lib\\\\utils.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\esutils\\\\LICENSE.BSD): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\esutils\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\js-tokens\\\\CHANGELOG.md): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\js-tokens\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\js-tokens\\\\README.md): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:02:51
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-modules-commonjs\\\\node_modules\\\\babel-template\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\invariant\\\\node_modules\\\\loose-envify\\\\loose-envify.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:03:21
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-parameters\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\index.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:03:21
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-parameters\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\license): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:03:21
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-parameters\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:03:21
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-parameters\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\has-ansi\\\\node_modules\\\\ansi-regex\\\\readme.md): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:03:21
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-parameters\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\index.js): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:03:21
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-parameters\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\license): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:03:21
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-parameters\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\package.json): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 07 2017 15:03:21
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website-2017\\\\wp-content\\\\themes\\\\rca-website-2017\\\\node_modules\\\\babel-plugin-transform-es2015-parameters\\\\node_modules\\\\babel-traverse\\\\node_modules\\\\babel-code-frame\\\\node_modules\\\\chalk\\\\node_modules\\\\strip-ansi\\\\node_modules\\\\ansi-regex\\\\readme.md): failed to open stream: Invalid argument","File":"C:\\wamp\\www\\rca-website-2017\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-compressor.php","Line":69}
+
+Aug 17 2017 21:13:27
+{"Number":2,"Message":"fopen(C:\\\\wamp\\\\www\\\\rca-website\\\\wp-content\\\\.git\\\\objects\\\\62\\\\200328fddc2de0805db758fb758bcb4d65d8e2): failed to open stream: Permission denied","File":"C:\\wamp\\www\\rca-website\\wp-content\\plugins\\all-in-one-wp-migration\\lib\\vendor\\servmask\\archiver\\class-ai1wm-extractor.php","Line":416}
+
