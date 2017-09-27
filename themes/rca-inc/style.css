@@ -27,6 +27,25 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 1.0 Remove Slick Slider Styles
 2.0 Organize Styles
 */
+
+/*=======================================*/
+/*============ SINGLE EVENTS ============*/
+/*=======================================*/
+#all-expertise-content.event-post h1,.event-post .post-date{
+	margin-bottom: 2.75rem;
+}
+.event-post .post-date{
+	color: #9d938b;
+}
+.event-post #related-content-block .random-item{
+	display: flex;
+	align-items: center
+}
+.event-post #related-content-block .random-item i{
+	font-size: 2.5rem;
+	margin-right: 1.25rem;
+	color: #9d938b;
+}
 /*========================================*/
 /*======== CASE STUDY TEMPLATE =========*/
 /*========================================*/
