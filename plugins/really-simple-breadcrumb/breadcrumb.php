@@ -95,4 +95,3 @@ function simple_breadcrumb() {
 	}
 	echo '</div>';
 }
-?>
