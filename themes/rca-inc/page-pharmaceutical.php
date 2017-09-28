@@ -125,10 +125,6 @@ get_header(); ?>
 			</div>
 
 		</div>
-
-	<!-- Related Content -->
-	<?php echo get_template_part('template-parts/content', 'related-content'); ?>
-	<!-- /Related Content -->
 	
 	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>

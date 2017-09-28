@@ -11,6 +11,8 @@
 	$result_text      = get_field('result_text');
 	$featured_quote   = get_field('featured_quote');
 ?>
+<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
+
 <div id="all-expertise-content">
 
 	<!-- Title -->
@@ -33,10 +35,10 @@
 	<div id="expertise-content" class="row case-study-content">
 		<div class="small-10 small-offset-1 columns">
 			<h3><?php echo $background_title; ?></h3>
-			<p><?php echo $background_text; ?></p>
+			<?php the_content(); ?>
 			<h3><?php echo $solution_title; ?></h3>
 			<p><?php echo $solution_text; ?></p>
-			<div class="case-study-quote show-for-medium">
+			<div class="case-study-quote show-for-large">
 				<p><?php echo $featured_quote; ?></p>
 			</div>
 			<h3><?php echo $result_title; ?></h3>
@@ -46,10 +48,14 @@
 	<!-- /Content -->
 
 	<!-- Featured Quote Mobile -->
-	<div class="case-study-quote-mobile">
-			<div class="small-10 small-offset-1 columns">
-				<p><?php echo $featured_quote; ?></p>
+	<div class="row expanded case-study-quote-mobile hide-for-large text-center">
+		<div class="small-12">
+			<div class="row">
+				<div class="small-10 small-offset-1 columns">
+					<p><?php echo $featured_quote; ?></p>
+				</div>
 			</div>
+		</div>
 	</div>
 	<!-- /Featured Quote Mobile -->
 
@@ -63,31 +69,4 @@
 
 </div>
 
-<style>
-	.case-study-content h3{
-		font-size: 22px;
-		font-weight: bold;
-		color: #2b2b2b;
-		display: inline;
-	}
-	.case-study-quote{
-		float: right;
-		width: 41.6667%;
-		padding: 40px;
-		color: #FFF;
-		background-color: #1a365d;
-		display: inline;
-	}
-	.case-study-quote-mobile {
-		padding: 40px;
-		color: #FFF;
-		background-color: #1a365d;
-		display: inline;
-	}
-	.case-study-quote p{
-		font-weight: 700;
-		font-style: italic;
-		font-size: 1.25rem;
-		margin-bottom: 0;
-	}
-</style>
+<?php get_template_part('template-parts/content', 'related-content'); ?>

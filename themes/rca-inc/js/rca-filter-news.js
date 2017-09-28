@@ -132,6 +132,7 @@ function filterNewsPosts(templateURL, category, dropdown_query) {
             },
             complete: function() { $('.spinner').fadeOut(500); }
         });
+
 }
 
 /**

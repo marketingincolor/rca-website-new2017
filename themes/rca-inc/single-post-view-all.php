@@ -21,7 +21,7 @@ get_header(); ?>
 	<div id="featured-img-wrapper" class="row expanded">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
 	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg; ?>'); background-size: cover;">
-				<div class="featured-img-title"><h1>Case Studies</h1></div>
+				<div class="featured-img-title"><h1>View All</h1></div>
 		</div>
 	</div>
 	<!-- / Featured Image -->
@@ -48,18 +48,19 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
+		
 		<?php
+
 		$paged = get_query_var('paged') ? get_query_var('paged') : 1; 
 		$args = array(
-			'post_type' => 'case_studies',
+			'post_type' => array('white_papers', 'webinars'),
 			'posts_per_page' => 8,
 			'paged' => $paged
 		);
 
-		$case_studies = new WP_Query($args);
+		$view_all = new WP_Query($args);
 
-		if ( $case_studies->have_posts() ) : ?>
+		if ( $view_all->have_posts() ) : ?>
 			
 			<div class="row show-for-medium">
 				<div class="small-10 small-offset-1 columns text-center">
@@ -77,7 +78,7 @@ get_header(); ?>
 				
 			<?php
 				/* Start the Loop */
-				while ( $case_studies->have_posts() ) : $case_studies->the_post();
+				while ( $view_all->have_posts() ) : $view_all->the_post();
 
 					/*
 					 * Include the Post-Format-specific template for the content.
@@ -92,9 +93,9 @@ get_header(); ?>
 			?>
 			<div class="row text-center">
 				<div class="small-10 small-offset-1 columns">
-					<?php get_previous_posts_link(); ?>
+					<?php #get_previous_posts_link(); ?>
 					
-					<?php rca_tax_post_pagination(); ?>
+					<?php rca_tax_post_pagination($view_all); ?>
 				</div>
 			</div>
 			<?php

@@ -7,15 +7,8 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/post-type', 'webinars' );
-				
-				$terms      = wp_get_post_terms($post->ID,'expertise');
-				$term_id = $terms[0]->term_id;
-				$gated = get_field('gated',  'expertise_' . $term_id);
-
-				if ($gated) {
-					get_template_part('template-parts/section', 'takeover-modal');
-				  echo '<a href="#" data-open="takeover-modal">Takeover</a>';
-				}
+				get_template_part('template-parts/section', 'takeover-modal');
+				echo '<a href="#" data-open="takeover-modal">Takeover</a>';
 			endwhile;
 			?>
 

@@ -12,6 +12,8 @@ $article_link      = get_field('article_link');
 $article_link_text = get_field('article_link_text'); 
 
 ?>
+<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
+
 <div id="all-expertise-content">
 	<div class="row">
 		<div class="small-10 small-offset-1 columns">

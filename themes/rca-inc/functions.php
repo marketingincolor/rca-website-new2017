@@ -951,10 +951,16 @@ class RCA_TAXONOMY_WALKER extends Walker_Nav_Menu {
 
 function rca_tax_post_pagination() {
  
-    if( is_singular() )
-        return;
- 
+
     global $wp_query;
+
+    // if( is_page('view-all') ):    
+    //   $temp_query = $wp_query;
+    //   $wp_query = NULL;
+    //   $wp_query = $temp_query;
+    //   $wp_query = $view_all;
+    // endif;
+    
  
     /** Stop execution if there's only 1 page */
     if( $wp_query->max_num_pages <= 1 )
@@ -978,7 +984,7 @@ function rca_tax_post_pagination() {
         $links[] = $paged + 1;
     }
  
-    echo '<div class="navigation"><ul>' . "\n";
+    echo '<div class="navigation text-center"><ul>' . "\n";
 
     /** Previous Post Link */
     if(!get_previous_posts_link() ):
@@ -1025,11 +1031,11 @@ function rca_tax_post_pagination() {
  
 }
 
-function rca_get_random_term() {
-  $terms_array = array ('case-studies', 'white-papers', 'webinars', 'published-articles', 'visual-resources');
-  $chosen_term = $terms_array[array_rand($terms_array)];
-  return $chosen_term;
-}
+// function rca_get_random_term() {
+//   $terms_array = array ('case-studies', 'white-papers', 'webinars', 'published-articles', 'visual-resources');
+//   $chosen_term = $terms_array[array_rand($terms_array)];
+//   return $chosen_term;
+// }
 
 /**
  * Author : Doe
@@ -1097,4 +1103,62 @@ function get_team_members_department($role_type) {
   }
   
   else { echo 'No Team Members Found'; }
+}
+
+function get_random_case_study() {
+
+  $r_case_study_args = array(
+    'post_type'   => 'case_studies',
+    'posts_per_page' => 1,
+    'orderby' => 'rand',
+  );
+
+  return $r_case_study_args;
+}
+
+function get_random_webinar() {
+
+  $r_webinar_args = array(
+    'post_type'   => 'webinars',
+    'posts_per_page' => 1,
+    'orderby' => 'rand',
+  );
+
+  return $r_webinar_args;
+}
+
+function get_random_whitepaper() {
+
+  $r_whitepaper_args = array(
+    'post_type'   => 'white_papers',
+    'posts_per_page' => 1,
+    'orderby' => 'rand',
+  );
+  
+  return $r_whitepaper_args;
+}
+
+function get_random_visualresource() {
+  $r_visualresource_args = array(
+    'post_type'   => 'visual_resources',
+    'posts_per_page' => 1,
+    'orderby' => 'rand',
+  );
+  
+  return $r_visualresource_args;
+}
+
+function get_random_publishedarticle() {
+  $r_publishedarticle_args = array(
+    'post_type'   => 'published_articles',
+    'posts_per_page' => 1,
+    'orderby' => 'rand',
+  );
+  
+  return $r_publishedarticle_args;
+}
+
+function get_all_post_types() {
+  $all = array( 'white_papers', 'webinars', 'published_articles', 'case_studies', 'visual_resources' );
+  return $all;
 }

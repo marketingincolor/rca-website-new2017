@@ -7,21 +7,18 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/post-type', 'visual-resources' );
-				
-				$terms      = wp_get_post_terms($post->ID,'expertise');
-				$term_id = $terms[0]->term_id;
-				$gated = get_field('gated',  'expertise_' . $term_id);
-
-				if ($gated) {
-					get_template_part('template-parts/section', 'takeover-modal');
-				  echo '<a href="#" data-open="takeover-modal">Takeover</a>';
-				}
+				get_template_part('template-parts/section', 'takeover-modal');
+				echo '<a href="#" data-open="takeover-modal">Takeover</a>';
 			endwhile;
 			?>
 
 		</main>
 	</div>
 
+	<!-- RELATED CONTENT -->
+	<?php get_template_part('template-parts/content', 'related-content'); ?>
+	<!-- /RELATED CONTENT -->
+	
 	<!-- LEARN MORE -->
 	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	<!-- /LEARN MORE -->

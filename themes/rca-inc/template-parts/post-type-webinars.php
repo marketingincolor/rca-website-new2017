@@ -71,15 +71,17 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 				<h2>Who Will Benefit</h2>
 				<?php
 				$count = 0;
-				foreach ($people as $person) {
-					if($count%3):
-						$addClass='medium-6';
-					endif;
-					echo '<div class="">';
-					echo '<p class="meta">'.$person.'</p>';
-					echo '</div>';
-					$count++;
-				}
+				if ($people):
+					foreach ($people as $person) {
+							if($count%3):
+								$addClass='medium-6';
+							endif;
+							echo '<div class="">';
+							echo '<p class="meta">'.$person.'</p>';
+							echo '</div>';
+							$count++;
+					}
+				endif;
 				?>
 			</div>
 			<!-- /WHO -->
@@ -256,12 +258,24 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 				$user_meta = get_user_meta($user_data->ID);
 				echo '<div id="presenter-block" class="row">';
 				echo '<div class="small-12 medium-2 columns small-text-center">';
-				echo get_wp_user_avatar($user_data->ID);
+				if( get_wp_user_avatar($user_data->ID) != NULL ):
+					echo get_wp_user_avatar($user_data->ID);
+				else:
+					echo '&nbsp;';
+				endif;
+
 				echo '</div>';
 				echo '<div class="small-12 medium-8 columns end">';
 				echo '<h3>' . $user_data->display_name . '</h3>';
-				echo '<p>' . $user_meta["position"][0] . '</p>';
-				echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
+
+				if( isset($user_meta["position"][0]) ):
+					echo '<p>' . $user_meta["position"][0] . '</p>';
+				endif;
+
+				if( isset($user_meta["webinar_biography"][0]) ):
+					echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
+				endif;
+
 				echo '</div>';
 				echo '</div>';
 			}

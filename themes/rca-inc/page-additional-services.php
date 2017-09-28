@@ -49,15 +49,6 @@ get_header(); ?>
 
 	?>
 	
-
-	<!-- Related Content -->
-	<div class="row">
-		<div class="small-12 columns text-center">
-			<h4>Related Content</h4>
-		</div>
-	</div>
-	<!-- /Related Content -->
-	
 	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	</div>

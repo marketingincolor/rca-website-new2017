@@ -194,7 +194,7 @@
 				<!-- CASE STUDIES SECOND LOOP -->
 				<div id="case-study-btn" class="row">
 					<div class="small-10 small-offset-1 columns">
-						<button class="home-cs-orange-btn">View All Case Studies</button>
+						<a href="<?php echo get_permalink( get_page_by_path( 'case-studies')); ?>"><button class="home-cs-orange-btn">View All Case Studies</button></a>
 					</div>
 				</div>
 			</div>

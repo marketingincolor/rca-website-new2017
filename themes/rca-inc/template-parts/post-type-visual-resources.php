@@ -4,6 +4,8 @@
  * 
  */
 ?>
+<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
+
 <div id="all-expertise-content">
 
 	<!-- Title -->

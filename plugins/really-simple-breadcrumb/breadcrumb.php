@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Really Simple Breadcrumb
-Plugin URI: http://www.christophweil.de
-Description: This is a really simple WP Plugin which lets you use Breadcrumbs for Pages!
+Plugin Name:  RCA Breadcrumbs
+Plugin URI: 
+Description: Built From Really Simple Breadcrumbs. 
 Version: 1.0.2
 Author: Christoph Weil, Modified by Doe for RCA.
 Author URI: http://www.christophweil.de
@@ -30,18 +30,32 @@ function simple_breadcrumb() {
 		echo 'Home';
 		echo "</a> ".$separator;
 		if ( is_category() || is_single() || is_tax() ) {
-			the_category(', ');
+
+			if(!$post->post_name == 'view-all'):
+				the_category(', ');
+			endif;
 			if ( is_single() ) {
-					if ( $post->post_type == 'items') {
-						echo 'Our Expertise';
+					if( $post->post_type == 'white_papers' ):
+						echo 'White Papers';
 						echo $separator;
-					}
-					if ( $post->post_type == 'items') {
-						echo $termName;
-					}
-				echo $separator;
+					elseif( $post->post_type == 'case_studies'):
+						echo 'Case Studies';
+						echo $separator;
+					elseif( $post->post_type == 'published_articles'):
+						echo 'Published Articles';
+						echo $separator;
+					elseif( $post->post_type == 'webinars'):
+						echo 'Webinars';
+						echo $separator;
+					elseif( $post->post_type == 'visual_resources'):
+						echo 'Visual Resources';
+						echo $separator;
+					else:
+						echo $separator;							
+					endif;
 				the_title();
 			}
+
 		} elseif ( is_page() && $post->post_parent ) {
 			$home = get_page(get_option('page_on_front'));
 			for ($i = count($post->ancestors)-1; $i >= 0; $i--) {
@@ -54,6 +68,20 @@ function simple_breadcrumb() {
 				}
 			}
 			echo the_title();
+		}
+
+		elseif (is_archive()) {
+			if( $post->post_type == 'case_studies' ):
+				echo 'Case Studies';
+			elseif( $post->post_type == 'published_articles'):
+				echo 'Published Articles';
+			elseif( $post->post_type == 'webinars'):
+				echo 'Webinars';
+			elseif( $post->post_type == 'white_papers' ):
+				echo 'White Papers';
+			elseif( $post->post_type == 'visual_resources' ):
+				echo 'Visual Resources';
+			endif;
 		}
 
 

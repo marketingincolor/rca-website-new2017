@@ -27,6 +27,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 1.0 Remove Slick Slider Styles
 2.0 Organize Styles
 */
+
+
+#news-snippets-wrapper a { color: white; text-decoration: underline; }
 /*========================================*/
 /*======== CASE STUDY TEMPLATE =========*/
 /*========================================*/
@@ -48,7 +51,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 		padding: 40px;
 		color: #FFF;
 		background-color: #1a365d;
-		display: inline;
+		font-weight: 700;
+		font-style: italic;
+		font-size: 1.25rem;
+		margin-bottom: 0;
 	}
 	.case-study-quote p{
 		font-weight: 700;

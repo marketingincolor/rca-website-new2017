@@ -120,7 +120,7 @@
 									$news_query->the_post();
 									echo '<div class="small-12 medium-6 large-4 columns" style="Color: white;">';
 									#the_title();
-									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/>Read More');
+									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/><a href="'. get_permalink() .'">Read More</a>');
 									echo '</div>';
 								}
 							}

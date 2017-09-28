@@ -7,7 +7,7 @@
 		<div id="" class="small-12 columns">
 			<?php wp_nav_menu( array(
 				'menu'=>'taxonomy-menu', 
-				'walker'=> new RCA_TAXONOMY_WALKER
+				'walker'=> new RCA_SECONDARY_WALKER
 			) ); ?>
 		</div>
 	</div>

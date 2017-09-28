@@ -32,7 +32,7 @@ header("HTTP/1.1 200 OK");
     	'date_query' => array(
     		'year' => $dropdown_query
     	),
-    	'offset' => $offset
+    	'offset' => $offset,
 	));
 
 	if($news_query->have_posts()) { while($news_query->have_posts()) { $news_query->the_post(); 
@@ -52,8 +52,8 @@ header("HTTP/1.1 200 OK");
 
 <?php 
 	}
-	next_posts_link();
-	previous_posts_link();
+
+	rca_tax_post_pagination();
 
 	}
 	else{
