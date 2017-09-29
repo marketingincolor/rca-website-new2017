@@ -1162,3 +1162,62 @@ function get_all_post_types() {
   $all = array( 'white_papers', 'webinars', 'published_articles', 'case_studies', 'visual_resources' );
   return $all;
 }
+
+function rca_related_case_studies_mobile($atts, $content = null) {
+    extract(shortcode_atts(array(
+        'category' => 'Uncategorized'
+                    ), $atts));
+
+    $data_attr = "";
+    foreach ($atts as $key => $value) {
+        if ($key != "category") {
+            $data_attr .= ' data-' . $key . '="' . $value . '" ';
+        }
+    }
+
+    $lazyLoad = array_key_exists("lazyload", $atts) && $atts["lazyload"] == true;
+
+    $args = array(
+        'post_type' => 'case_studies',
+        // 'orderby' => get_option('owl_carousel_orderby', 'post_date'),
+        'order' => 'asc',
+        // 'tax_query' => array(
+        //     array(
+        //         'taxonomy' => 'Carousel',
+        //         'field' => 'slug',
+        //         'terms' => $atts['category']
+        //     )
+        // ),
+        'nopaging' => true
+    );
+
+  $result = '<div id="owl-carousel-top-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
+
+    $loop = new WP_Query($args);
+    while ($loop->have_posts()) {
+        $loop->the_post();
+
+        $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
+        $meta_link = get_post_meta(get_the_ID());
+
+          $result .= '<div class="item">';
+          $result .= '<div class="row text-center">';
+            if (!empty($meta_link[0])) {
+                $result .= '<a href="' . $meta_link[0] . '">';
+            }
+            if (!empty($meta_link)) {
+                $result .= '</a>';
+            }
+
+            // Add image overlay with hook
+            $slide_title = get_the_title();
+            echo $slide_title;
+            $result .= '</div></div>';
+    }
+    
+    /* Restore original Post Data */
+    wp_reset_postdata();
+
+    return $result;
+}
+add_shortcode('rca-related-case-studies-mobile', 'rca_related_case_studies_mobile');

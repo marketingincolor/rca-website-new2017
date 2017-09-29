@@ -153,7 +153,7 @@
 			<!-- /CASE STUDIES FIRST LOOP -->
 
 			<!-- CASE STUDIES SECOND LOOP -->
-			<div class="row rca">
+			<div class="row rca" data-equalizer>
 				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns rca">
 					<div class="row">
 					
@@ -173,7 +173,7 @@
 									while($case_studies ->have_posts()) : $case_studies->the_post();
 								?>
 
-										<div class="small-12 medium-6 columns">
+										<div class="small-12 medium-6 columns" data-equalizer-watch>
 								<?php
 										echo '<div class="individual-case-study rca">';
 											echo '<h3 class="text-left"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';

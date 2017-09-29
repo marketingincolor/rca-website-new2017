@@ -27,8 +27,28 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 1.0 Remove Slick Slider Styles
 2.0 Organize Styles
 */
+#related-content-mobile { background-color: #f8f7f5; }
 
+#all-case-study-content {  }
 
+#dl-block p { margin-bottom: 0rem; }
+#share-block-cs p { margin-bottom: 0rem; }
+#dl-block { 
+	background-color: #c4612b; 
+	font-size: 1rem;
+    font-weight: bold;
+    padding: 1.5rem 0rem;
+    color: #fff;
+    margin-bottom: 0rem; 
+}
+#share-block-cs { 
+	background-color: #c4612b;
+	font-size: 1rem;
+    font-weight: bold;
+    padding: 1.5rem 0rem;
+    color: #fff;
+    margin-bottom: 0rem;
+}
 
 #news-snippets-wrapper a { color: white; text-decoration: underline; }
 
@@ -67,6 +87,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 		color: #FFF;
 		background-color: #1a365d;
 		display: inline;
+		margin: 40px;
 	}
 	.case-study-quote-mobile {
 		padding: 40px;
@@ -2278,6 +2299,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
+
+	#all-case-study-content > div:nth-child(1) > div > h1 { margin-bottom: 3rem; }
+	#breadcrumbs { margin: 3rem 0; }
 	.accordian-menu > li {    
 		border-top: .5px solid gray;
 	}

@@ -8,7 +8,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		
-			<div class="row">
+			<div id="the-content" class="row">
 				<div class="small-10 small-offset-1 columns">
 					
 					<?php
@@ -30,9 +30,8 @@ get_header(); ?>
 					// echo $position;
 
 
-        				?>
-        				<div class="row">
-        					<div id="individual-staff-wrapper" class="small-10 small-offset-1 columns">
+        			if( has_post_thumbnail()): ?>
+        					<div id="individual-staff-wrapper" class="">
         					<img src="<?php echo the_post_thumbnail_url(); ?>" align="left"/>
         					<h1 style="display:inline-block;"><?php echo $full_name; ?></h1><br />
         					<h2 style="display:inline-block;"><?php echo $position; ?></h2><br />
@@ -40,7 +39,15 @@ get_header(); ?>
         						
 	        				<?php the_content(); ?>
         					</div>
-        				</div>
+        			<?php else: ?>
+        					<div id="individual-staff-wrapper" class="">
+	        					<h1 style="display:inline-block;"><?php echo $full_name; ?></h1><br />
+	        					<h2 style="display:inline-block;"><?php echo $position; ?></h2><br />
+	        					<div id="individual-email" class="text-left medium-text-center"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $email; ?></div>
+	        						
+		        				<?php the_content(); ?>
+        					</div>
+        			<?php endif; ?>
 						<?php
 						// If comments are open or we have at least one comment, load up the comment template.
 
@@ -55,7 +62,7 @@ get_header(); ?>
 
 		<!-- LEARN MORE -->
 		<div class="row-expanded">
-			<?php get_template_part('template-parts/section', 'learn-more'); ?>
+			<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 		</div>
 		<!-- END LEARN MORE -->
 		

@@ -7,8 +7,8 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/post-type', 'published-articles' );
-				get_template_part('template-parts/section', 'takeover-modal');
-				echo '<a href="#" data-open="takeover-modal">Takeover</a>';
+				#get_template_part('template-parts/section', 'takeover-modal');
+				#echo '<a href="#" data-open="takeover-modal">Takeover</a>';
 			endwhile;
 			?>
 

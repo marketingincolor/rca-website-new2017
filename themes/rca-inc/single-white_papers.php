@@ -1,5 +1,7 @@
 <?php
-get_header(); ?>
+get_header(); 
+
+?>
 	<?php get_template_part('template-parts/section', 'takeover-modal'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -12,8 +14,8 @@ get_header(); ?>
 				// $term_id = $terms[0]->term_id;
 				// $gated = get_field('gated',  'expertise_' . $term_id);
 
-				get_template_part('template-parts/section', 'takeover-modal');
-				echo '<a href="#" data-open="takeover-modal">Takeover</a>';
+				#get_template_part('template-parts/section', 'takeover-modal');
+				#echo '<a href="#" data-open="takeover-modal">Takeover</a>';
 				
 			endwhile;
 			?>

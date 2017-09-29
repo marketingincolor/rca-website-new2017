@@ -9,7 +9,11 @@ To archive ctrl + shift + a (Puts in archive at bottom)
 **ctrl + shift + u opens the repo when cursor is on it**
 URL: www.github.com/marketingincolor/rca-website-new2017
 
+Misc:
+ ☐ Add PDFs to server
+
 Home:
+ ☐ Case study block height
 
 Medical Device, Pharma, Additional:
  ☐ Update menus
@@ -21,8 +25,6 @@ SEARCH PAGE:
  ☐ Update page with updated query
 
 CASE STUDY PAGE MOBILE:
- ☐ Update template so content floats properly
- ☐ Add Download/Share buttons
  ☐ Add related articles slider
 
 WEBINAR TEMPLATE:
@@ -50,14 +52,25 @@ Takeover Form:
   ☐ Add TRUE/FALSE ACF field. if ($gated == TRUE) add takeover form on page load
 
 Individual Staff Pages:
- ☐ Add Department Page Links
- ☐ If user doesn't have avatar change the layout
 
 All Staff Page:
  ☐ Reduce padding around staff members
  ☐ Organize Staff Members (add order in backend)
 
+ Staff Department Pages (DONE):
+
 Archive:
+ ✔ Update template so content floats properly @done (17-09-29 12:38) @project(CASE STUDY PAGE MOBILE)
+ ✔ Add Download/Share buttons @done (17-09-29 12:38) @project(CASE STUDY PAGE MOBILE)
+ ✔ If user doesn't have avatar change the layout @done (17-09-28 16:59) @project(Individual Staff Pages)
+ ✔ Add Department Page Links @done (17-09-28 16:59) @project(Individual Staff Pages)
+ ✔ Director of Finance @done (17-09-28 15:57) @project(All Staff Page)
+ ✔ Director of Directors @done (17-09-28 15:57) @project(All Staff Page)
+ ✔ Director of Sales Operations @done (17-09-28 15:56) @project(All Staff Page)
+ ✔ Director of Operations @done (17-09-28 15:56) @project(All Staff Page)
+ ✔ Finance @done (17-09-28 15:53) @project(All Staff Page)
+ ✔ Executive Leadership @done (17-09-28 15:29) @project(All Staff Page)
+ ✔ Board of Directors @done (17-09-28 15:29) @project(All Staff Page)
  ✔ Update "Medical Devices" & "Pharma" CTAs with links @done (17-09-28 15:11) @project(Home)
  ✔ Department Page Layout @done (17-09-28 14:29) @project(Staff Pages)
  ✔ 404 @done (17-09-28 14:09) @project(Done)

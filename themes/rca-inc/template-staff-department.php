@@ -38,7 +38,7 @@ get_header(); ?>
 				break;
 
 			case("executive-leadership-team"):
-				get_team_members_department('executive_leadership_team');
+				get_team_members_department('executive_leadership');
 				break;
 
 			case("directors"):
@@ -49,8 +49,8 @@ get_header(); ?>
 				get_team_members_department('operations');
 				break;
 
-			case("sales-opearations"):
-				get_team_members_deartment('sales_operations');
+			case("sales-operations"):
+				get_team_members_department('sales_operations');
 				break;
 
 			case("finance"):
