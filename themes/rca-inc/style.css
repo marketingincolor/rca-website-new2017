@@ -51,7 +51,60 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 
 #news-snippets-wrapper a { color: white; text-decoration: underline; }
-
+/*=======================================*/
+/*=========== WEBINAR SUCCESS ===========*/
+/*=======================================*/
+.webinar-success{
+		padding: 0 0 5%;
+	}
+	.webinar-success img{
+		width: 100%;
+	}
+	.webinar-success .share-widget {
+		color: #c9c3ba;
+		font-size: 12px;
+		float: right;
+		text-align: right;
+	}
+	.webinar-success .addtoany_shortcode{
+		margin: 0;
+	}
+	.webinar-success .download-links{
+		float: left;
+	}
+	.webinar-success .share-widget,.webinar-success .download-links {
+		width: 50%;
+		padding: 2rem 0 0;
+	}
+	.webinar-success button{
+		width: auto;
+	}
+	.webinar-success button:first-child{
+		margin-right: 20px;
+	}
+	.webinar-success-top{
+		background-color: #f8f7f5;
+		padding: 2em;
+	}
+	.webinar-success-bottom{
+		padding-top: 2em;
+	}
+	#webinar-video-modal {
+		outline: none;
+		padding: 0;
+		background-color: transparent;
+		border: 0;
+	}
+	#webinar-video-modal iframe{
+		border:none;
+		width:100%;
+		height: 500px;
+	}
+	#webinar-video-modal button{
+		width: auto;
+		top: 0;
+		right: 0;
+	}
 /*=======================================*/
 /*============ SINGLE EVENTS ============*/
 /*=======================================*/
