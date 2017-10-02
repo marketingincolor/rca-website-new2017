@@ -10,13 +10,13 @@
 	$result_title     = get_field('result_title');
 	$result_text      = get_field('result_text');
 	$featured_quote   = get_field('featured_quote');
-	$challenge_title = get_field('challenge_title');
-	$challenge_text = get_field('challenge_text');
-	$approach_title = get_field('approach_title');
-	$approach_text = get_field('approach_text');
-	$challnege_title = get_field('challnege_title');
-	$challnege_text = get_field('challnege_text');
-	$pdf = get_field('case_study_file');
+	$challenge_title  = get_field('challenge_title');
+	$challenge_text   = get_field('challenge_text');
+	$approach_title   = get_field('approach_title');
+	$approach_text    = get_field('approach_text');
+	$challnege_title  = get_field('challnege_title');
+	$challnege_text   = get_field('challnege_text');
+	$pdf              = get_field('case_study_file');
 ?>
 <?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
 
@@ -172,7 +172,7 @@
 	<!-- BUTTON MEDIUM+-->
 	<div class="row show-for-medium">
 		<div class="text-center">
-			<button style="margin: 1rem 0rem 0rem; width: auto;"><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+			<button style="margin: 1rem 0rem 5%; width: auto;"><i class="fa fa-download" aria-hidden="true"></i> Download</button>
 		</div>
 	</div>
 	<!-- /BUTTON MEDIUM+-->
