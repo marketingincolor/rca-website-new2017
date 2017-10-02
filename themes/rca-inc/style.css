@@ -514,7 +514,7 @@ input[type=number]::-webkit-outer-spin-button {
 /* LEARN MORE CTA WITH NO FORM */
 #learn-more-cta{
 	background-color: #1A365D;
-	padding: 5% 0;
+	padding: 5% 0 6%;
 }
 #learn-more-cta h3{
 	font-family: "Lora";
@@ -2380,7 +2380,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 /* Small only */
 @media screen and (max-width: 39.9375em) {
-
+  #learn-more-cta{
+  	padding: 10% 0 12%;
+  }
 	#all-case-study-content > div:nth-child(1) > div > h1 { margin-bottom: 3rem; }
 	#breadcrumbs { margin: 3rem 0; }
 	.accordian-menu > li {    
