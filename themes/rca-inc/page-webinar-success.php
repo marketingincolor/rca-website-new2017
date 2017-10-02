@@ -23,8 +23,8 @@
 				<a href="#!" data-open="webinar-video-modal"><img src="<?php the_field('video_img'); ?>" alt="Watch Video" title="Watch Video"></a>
 				<!-- Download Links -->
 				<div class="download-links">
-					<a href="<?php the_field('webinar_slides_download_link'); ?>"><button class="orange-btn">Download Webinar Slides</button></a>
-					<a href="<?php the_field('faqs_download_link'); ?>"><button class="orange-btn">Download FAQs</button></a>
+					<a href="<?php the_field('webinar_slides_download_link'); ?>"><button class="orange-btn"><?php the_field('webinar_download_text'); ?></button></a>
+					<a href="<?php the_field('faqs_download_link'); ?>"><button class="orange-btn"><?php the_field('faq_download_text'); ?></button></a>
 				</div>
 				<span class="share-widget">Share on Social Media<?php echo do_shortcode('[addtoany]'); ?></span>
 			</div>
