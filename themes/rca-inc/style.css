@@ -2470,7 +2470,17 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 /*case study section button overwrites normal button*/
 #case-study-btn { margin-top:2rem; }
-
+#all-items-block .small-10{
+	height:200px;
+	position:relative;
+}
+#all-items-block button{
+	margin: 0;
+	position: absolute;
+	transform: translateX(-50%);
+	left: 50%;
+	bottom: 50px;
+}
 
 .cat-image { 
     display: inline-block;
