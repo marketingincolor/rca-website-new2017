@@ -510,6 +510,32 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #white-error-message{color:#FFF;font-size: 18px;margin-bottom: 30px;}
 #orange-error-message{color:#c4612b;font-size: 18px;margin-bottom: 30px;}
+
+/* LEARN MORE CTA WITH NO FORM */
+#learn-more-cta{
+	background-color: #1A365D;
+	padding: 5% 0;
+}
+#learn-more-cta h3{
+	font-family: "Lora";
+	font-weight: 700;
+	color: #FFF;
+	font-style: italic;
+	margin: 0 0 30px;
+}
+#learn-more-cta a{
+	color: #FFF;
+	border: 3px solid #FFF;
+	transition: all 0.25s ease-in-out;
+	font-weight: 700;
+	padding: 10px 30px;
+}
+#learn-more-cta a:hover{
+	color: #1A365D;
+	background-color: #FFF;
+}
+/* END LEARN MORE CTA WITH NO FORM */
+
 #learn-more-form-container-blue .large-4,#learn-more-form-container-blue .large-12,#learn-more-form-container-white .large-4,#learn-more-form-container-white .large-12,
 #learn-more-form-container-white .large-6 {
 	position: relative;

@@ -17,7 +17,7 @@ get_header(); ?>
 	<?php get_template_part( 'template-parts/section', 'breadcrumbs-social'); ?>
 
 	<!-- The Content -->
-	<div id="the-content" class="row text-center">
+	<div id="the-content" class="row">
 		<div class="small-12 columns">
 			<?php echo the_content(); ?>
 		</div>
