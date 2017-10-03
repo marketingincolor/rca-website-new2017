@@ -68,7 +68,7 @@
 			<div id="phone-icon" class="row expanded title-bar hide-for-large" data-equalizer>
 
 				<div class="small-6 columns text-center" data-equalizer-watch>
-					<p style="margin-bottom:0rem;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p>		
+					<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p></a>		
 				</div>
 				<div id="menu-section" class="small-6 columns relative" data-equalizer-watch>
 					<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">
@@ -176,7 +176,7 @@
 								<li><a href="<?php echo get_permalink( get_page_by_path( 'About' ) ); ?>">About</a></li>
 								<li><a href="<?php echo home_url('/news/' );?>">News</a>
 								</li>
-								<li class="contact-menu-item" style="float:right;"><a href="tel: <?php echo get_option('rca_theme_options')["rca_phone_number"]; ?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li></a>
+								<li class="contact-menu-item" style="float:right;"><a href="<?php echo home_url('/contact/');?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li></a>
 							</li>
 						</ul>	 	
 					</div>
@@ -217,7 +217,7 @@
 		<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
 
 			<div class="small-6 columns text-center" data-equalizer-watch style="padding: 1rem 0rem;">
-				<a href="tel: <?php echo get_option('rca_theme_options')["rca_phone_number"]; ?>"><p style="margin-bottom:0rem; border-right: 2px solid #fff;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p></a>		
+				<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem; border-right: 2px solid #fff;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p></a>		
 			</div>
 			<div id="menu-section" class="small-6 columns relative" data-equalizer-watch style="">
 				<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">

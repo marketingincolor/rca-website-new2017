@@ -46,7 +46,7 @@
 
 			<!-- DESKTOP FOOTER MENU -->
 			<div class="row">
-				<div class="small-10 small-offset-1 columns show-for-large">
+				<div class="small-10 small-offset-1 columns show-for-large text-center">
 					<?php wp_nav_menu( array( 'theme_location' => 'rca_desktop_footer_menu' ) ); ?>
 					<?php 
 						$options = get_option('rca_theme_options');

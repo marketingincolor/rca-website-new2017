@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<div class="row section-padding-60">
+	<div id="top-contact-us" class="row">
 		<div class="small-10 small-offset-1 medium-8 medium-offset-2 text-center columns">
 			<div class="entry-content">
 				<?php

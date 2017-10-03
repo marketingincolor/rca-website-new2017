@@ -34,8 +34,8 @@ get_header(); ?>
         					<div id="individual-staff-wrapper" class="">
         					<img src="<?php echo the_post_thumbnail_url(); ?>" align="left"/>
         					<h1 style="display:inline-block;"><?php echo $full_name; ?></h1><br />
-        					<h2 style="display:inline-block;"><?php echo $position; ?></h2><br />
-        					<div id="individual-email" class="text-left medium-text-center"><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $email; ?></div>
+        					<h2 style="display:inline;"><?php echo $position; ?></h2><br />
+        					<div id="individual-email" class="text-left medium-text-center"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto: <?php echo $email; ?>"> <?php echo $email; ?></a></div>
         						
 	        				<?php the_content(); ?>
         					</div>
