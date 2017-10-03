@@ -94,7 +94,7 @@
 	</div>
 
 	<!-- CTA -->
-	<div id="sign-up-cta" class="rca"  style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/blue-cta.jpg'; ?>'); background-size: cover; height: auto;">
+	<div id="sign-up-cta" class="rca"  style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/blue-cta-bg.jpg'; ?>') 75%; background-size: cover; height: auto;">
 
 		<!-- mobile cta -->
 		<div class="row text-center hide-for-medium">
