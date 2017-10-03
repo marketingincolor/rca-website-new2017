@@ -87,7 +87,7 @@ get_header(); ?>
 					 */
 
 					echo '<div class="small-10 small-offset-1 medium-offset-0 medium-3 columns archive-row end">';
-					get_template_part( 'template-parts/content', 'archive-blocks' );
+						get_template_part( 'template-parts/content', 'archive-blocks' );
 					echo '</div>';
 
 				endwhile;
