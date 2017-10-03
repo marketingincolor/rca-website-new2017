@@ -13,6 +13,7 @@ Max WP Version:
 
 function simple_breadcrumb() {
     global $post;
+    global $wp;
 	$terms = get_the_terms($post->ID, 'expertise');
 
 	// Returns this term name
@@ -36,24 +37,25 @@ function simple_breadcrumb() {
 			endif;
 			if ( is_single() ) {
 					if( $post->post_type == 'white_papers' ):
-						echo 'White Papers';
+						echo '<a href="'.get_permalink(get_page_by_title('White Papers')).'">White Papers</a>';
 						echo $separator;
 					elseif( $post->post_type == 'case_studies'):
-						echo 'Case Studies';
+						echo '<a href="'.get_permalink(get_page_by_title('Case Studies')).'">Case Studies</a>';
 						echo $separator;
 					elseif( $post->post_type == 'published_articles'):
-						echo 'Published Articles';
+						echo '<a href="'.get_permalink(get_page_by_title('Published Articles')).'">Published Articles</a>';
 						echo $separator;
 					elseif( $post->post_type == 'webinars'):
-						echo 'Webinars';
+						echo '<a href="'.get_permalink(get_page_by_title('Webinars')).'">Webinars</a>';
 						echo $separator;
 					elseif( $post->post_type == 'visual_resources'):
-						echo 'Visual Resources';
+						echo '<a href="'.get_permalink(get_page_by_title('Visual Resources')).'">Visual Resources</a>';
 						echo $separator;
 					else:
 						echo $separator;							
 					endif;
-				the_title();
+                $current_url = home_url(add_query_arg(array(),$wp->request));
+				echo '<a href="'.$current_url.'">'.get_the_title().'<a/>';
 			}
 
 		} elseif ( is_page() && $post->post_parent ) {
@@ -67,26 +69,33 @@ function simple_breadcrumb() {
 					echo "</a>".$separator;
 				}
 			}
-			echo the_title();
+            $current_url = home_url(add_query_arg(array(),$wp->request));
+		    echo '<a href="'.$current_url.'">'.get_the_title().'<a/>';
 		}
 
 		elseif (is_archive()) {
 			if( $post->post_type == 'case_studies' ):
-				echo 'Case Studies';
+                $current_url = home_url(add_query_arg(array(),$wp->request));
+				echo '<a href="'.$current_url.'">Case Studies<a/>';
 			elseif( $post->post_type == 'published_articles'):
-				echo 'Published Articles';
+				echo '<a href="'.$current_url.'">Published Articles<a/>';
+                $current_url = home_url(add_query_arg(array(),$wp->request));
 			elseif( $post->post_type == 'webinars'):
-				echo 'Webinars';
+                $current_url = home_url(add_query_arg(array(),$wp->request));
+				echo '<a href="'.$current_url.'">Webinars<a/>';
 			elseif( $post->post_type == 'white_papers' ):
-				echo 'White Papers';
+                $current_url = home_url(add_query_arg(array(),$wp->request));
+				echo '<a href="'.$current_url.'">White Papers<a/>';
 			elseif( $post->post_type == 'visual_resources' ):
-				echo 'Visual Resources';
+                $current_url = home_url(add_query_arg(array(),$wp->request));
+				echo '<a href="'.$current_url.'">Visual Resources<a/>';
 			endif;
 		}
 
 
 		 elseif (is_page()) {
-			echo the_title();
+			$current_url = home_url(add_query_arg(array(),$wp->request));
+			echo '<a href="'.$current_url.'">'.get_the_title().'<a/>';
 		} elseif (is_404()) {
 			echo "404";
 		}
