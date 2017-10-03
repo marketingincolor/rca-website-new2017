@@ -14,10 +14,6 @@ get_header(); ?>
 	</div>
 	<!-- / Featured Image -->
 
-	<!-- No Breadcrumbs on this page -->
-	<?php #get_template_part( 'template-parts/section', 'breadcrumbs-social'); ?>
-
-
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main contact-page">
 
@@ -29,26 +25,26 @@ get_header(); ?>
 			endwhile; // End of the loop.
 			?>
 
+
+			<div id="share-bar" class="row expanded show-for-medium">
+				<div class="row text-center a2a_kit">
+					<p>Share on Social Media</p>
+					<a class="a2a_button_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+					<a class="a2a_button_twitter" title="RCA Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+					<a class="a2a_button_linkedin" title="RCA LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+					<a class="a2a_button_email" title="RCA eMail"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+					<a class="a2a_dd" title="Share"><i class="fa fa-share" aria-hidden="true"></i></a>
+				</div>
+			</div>
+
+			<div id="share-section" class="row hide-for-medium">
+				<div class="small-10 small-offset-1 columns">
+					<button class="orange-btn">Share <i class="fa fa-share" aria-hidden="true"></i></button>
+				</div>
+			</div>
+	
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-	<div id="share-bar" class="row expanded show-for-medium">
-		<div class="row text-center a2a_kit">
-			<p>Share on Social Media</p>
-			<a class="a2a_button_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a class="a2a_button_twitter" title="RCA Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-			<a class="a2a_button_linkedin" title="RCA LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-			<a class="a2a_button_email" title="RCA eMail"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-			<a class="a2a_dd" title="Share"><i class="fa fa-share" aria-hidden="true"></i></a>
-		</div>
-	</div>
-
-	<div id="share-section" class="row hide-for-medium">
-		<div class="small-10 small-offset-1 columns">
-			<button class="orange-btn">Share <i class="fa fa-share" aria-hidden="true"></i></button>
-		</div>
-	</div>
-	
 	<div id="contact-learn-more-wrapper" class="show-for-medium">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-white'); ?>
 	</div>

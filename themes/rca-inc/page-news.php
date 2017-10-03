@@ -21,128 +21,78 @@ get_header(); ?>
 	<!-- Buttons -->
 	<div id="news-all-buttons" class="row">
 		<div class="small-10 small-offset-1 large-2 large-offset-1 columns">
-			<a href="#News"><button id="filter-news" class="news-filter" onclick="" title="News" news_filter="news">News</button></a>
+			<a href="#News"><button id="filter-news" class="news-filter"  title="News" news_filter="news">News</button></a>
 		</div>
 		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
-			<a href="#Press-Releases"><button id="press" class="news-filter" onclick="" title="Press Releases" news_filter="press-releases">Press Releases</button></a>
+			<a href="#Press-Releases"><button id="press" class="news-filter" title="Press Releases" news_filter="press-releases">Press Releases</button></a>
 		</div>
 		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
-			<a href="#Events"><button id="events" class="news-filter" onclick="" title="Events" news_filter="events">Events</button></a>
+			<a href="#Events"><button id="events" class="news-filter" title="Events" news_filter="events">Events</button></a>
 		</div>
 		<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
-			<a href="#View-All"><button id="all" class="news-filter" onclick="" title="" news_filter="all">View All</button></a>
+			<a href="#View-All"><button id="all" class="news-filter" title="" news_filter="all">View All</button></a>
 		</div>
-		<div class="small-10 small-offset-1 large-2 large-offset-0 columns end" onclick="" news_filter="Year Published">
-			<select name="" id="">Year Published</select>
-	</div>
-<?php
-		  	// Change News Query Based on whats clicked in rca-filter-news.js
-  	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+		<div class="small-10 small-offset-1 large-2 large-offset-0 columns end" news_filter="Year Published">
 
-	$news_query = new WP_Query( array(
-    	'post_type' => 'post',
-    	'category_name' => get_the_category('news'),
-    	'posts_per_page' => 5,
-    	'paged' => $paged,
-    	// 'date_query' => array(
-    	// 	'year' => $dropdown_query
-    	// ),
-    	// 'offset' => $offset,
-	));
-	$temp_query = $wp_query;
-	$wp_query   = NULL;
-	$wp_query   = $news_query;
-
-	if($news_query->have_posts()) { while($news_query->have_posts()) { $news_query->the_post(); ?>
-
-	<a href="#!"><?php the_post_thumbnail(); ?></a>
-
-	<div class="row">
-		<div class="small-10 small-offset-1 columns">
-			<div class="story-container">
-				<h2><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<p class="story-date"><?php echo get_the_date(); ?></p>
-				<?php echo wp_trim_words(get_the_content(), 40, '...<a href="'. get_permalink() . '">Read More</a>'); ?>
-			</div>
-		</div>
-	</div>
-
-	<?php } 
-		//next_posts_link();
-		//previous_posts_link();
-		$pagination_block = '';
-		$pagination_block .= '<div class="row">';
-		$pagination_block .= '<div class="small-10 small-offset-1 columns text-center">';
-		$pagination_block .= rca_tax_post_pagination();
-		$pagination_block .= '</div>';
-		$pagination_block .= '</div>';
-		echo $pagination_block;
-		$wp_query = NULL;
-		$wp_query = $temp_query;
-		}
-
-	?>
 			<!-- Dynamically Set Year in Dropdown -->
-			<!-- <select id="newsFilterSelect" class="" onclick=""> -->
+			<select id="newsFilterSelect" class="">
 			<?php 
-			//	$beginning_year = 2016;
-			//	$current_year = date("Y");
-			//	var_dump($current_year);
-			//	echo '<option value="Year Published">Year Published</option>';
-			//	for ($i = $beginning_year; $i <= $current_year; $i++ ){ ?>
-					<!-- <center><option class="news-filter" value="<?php echo $i;?>" news_filter="<?php echo $i; ?>"><?php echo $i; ?></option></center> -->
-			<?php	// }
+				$beginning_year = 2016;
+				$current_year = date("Y");
+				var_dump($current_year);
+				echo '<option value="Year Published">Year Published</option>';
+				for ($i = $beginning_year; $i <= $current_year; $i++ ){ ?>
+					<center><option class="news-filter" value="<?php echo $i;?>" news_filter="<?php echo $i; ?>"><?php echo $i; ?></option></center>
+			<?php	}
 			?>
-			<!-- </select> -->
+			</select>
 			<!-- /Dynamically Set Year in Dropdown -->
 
 		</div>
 
-
+		<!-- Loading Graphics -->
 		<div class="spinner" style="display:none;">
 			<div class="double-bounce1"></div>
 			<div class="double-bounce2"></div>
 		</div>
+		<!-- /Loading Graphics -->
 
 	</div>
 
 
 
-	<!-- <div id="all-posts" class="post-container"> -->
-<!-- 		<script>
-		$(document).ready(function() {
-			defaultNewsFilter('<?php echo get_stylesheet_directory_uri(); ?>', 'all', ajaxFilterYear());
-		});
-		</script>
+	<div id="all-posts" class="post-container">
 				
-	</div> -->
+	</div>
 
 	<!-- Buttons -->
-<!-- 	<div class="row text-center">
-		<div class="small-12 columns">
-			<div class="pagination">
-				<div class="previous" style="display: inline-block;" onclick="rcaPrevious('<?php #echo get_stylesheet_directory_uri() ?>', getCategory(), ajaxFilterYear())">< PREVIOUS</div>
-
-				<div class="rca-dots" style="display: inline-block;">
-
-				</div>
-
-				<div class="next" style="display: inline-block;" onclick="rcaNext('<?php #echo get_stylesheet_directory_uri()?>', getCategory(), ajaxFilterYear())">
-					NEXT ></div>
+	<div class="row text-center">
+		<div class="small-10 small-offset-1 columns">
+			<div class="load-more">
+				<button class="" style="width: auto;">Load More</button>
 			</div>
 		</div>
-	</div> -->
+	</div>
 	<!-- /Buttons -->
 
-		<!-- Hidden Inputs -->
-<!-- 		<input class="rca_query" type="hidden" value="all">
-		<input class="rca_offset" type="hidden" value="0">
-		<input class="rca_total_posts" type="hidden" value="0"> -->
-		<!-- /Hidden Inputs -->
+	<!-- Hidden Inputs -->
+	<input class="rca_query" type="hidden" value="">
+	<input class="rca_offset" type="hidden" value="5">
+	<input class="year_switch" type="hidden" value="5">
+	<!-- /Hidden Inputs -->
+
+	<script>
+	$(document).ready(function() {
+		category = $('.rca_query').val();
+		if(category == "") {
+			defaultNewsFilter('<?php echo get_stylesheet_directory_uri(); ?>', 'all', ajaxFilterYear());
+		}
+	});
+	</script>
+	
 
 
-<!-- NEWS -->
-<?php get_template_part('template-parts/section', 'news'); ?>
-<!-- /NEWS -->
 <?php
+//get_sidebar();
+get_template_part('template-parts/section', 'news');
 get_footer();

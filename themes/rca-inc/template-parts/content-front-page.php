@@ -153,9 +153,9 @@
 			<!-- /CASE STUDIES FIRST LOOP -->
 
 			<!-- CASE STUDIES SECOND LOOP -->
-			<div class="row rca" data-equalizer>
+			<div class="row rca">
 				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns rca">
-					<div class="row">
+					<div class="row" data-equalizer>
 					
 							<?php
 
@@ -173,9 +173,9 @@
 									while($case_studies ->have_posts()) : $case_studies->the_post();
 								?>
 
-										<div class="small-12 medium-6 columns" data-equalizer-watch>
+										<div class="small-12 medium-6 columns">
 								<?php
-										echo '<div class="individual-case-study rca">';
+										echo '<div class="individual-case-study rca" data-equalizer-watch>';
 											echo '<h3 class="text-left"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
 											echo '<p class="text-left">' . wp_trim_words( get_the_content(), 20, '...</br><a href="' . get_post_permalink() . '" title="Read More" class="read-more">Read More</a>' ) . '</p>';
 										echo '</div>';
@@ -213,9 +213,5 @@
 
 	</div>
 	<!-- /NEWS -->
-
-	<!-- EDIT -->
-	<?php #get_template_part('template-parts/section', 'edit'); ?>
-	<!-- /EDIT -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
