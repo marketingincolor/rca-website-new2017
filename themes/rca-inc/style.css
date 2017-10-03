@@ -2483,7 +2483,14 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 	    padding: 0.5rem 2rem;
 	    width: 100%;
 	}
-
+	#all-items-block button {
+		padding-right: 1rem;
+		padding-left: 1rem;
+		bottom: 0;
+	}
+	#all-items-block .small-10:not(.pagination-col){
+		height: 200px;
+	}
 	button.home-cs-orange-btn {
 		font-weight: bold;
 		width: 100%;
