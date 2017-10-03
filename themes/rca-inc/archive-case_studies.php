@@ -84,12 +84,14 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
+
 					echo '<div class="small-10 small-offset-1 medium-offset-0 medium-3 columns archive-row end" data-equalizer-watch>';
 					get_template_part( 'template-parts/content', 'archive-blocks' );
 					echo '</div>';
 
 				endwhile;
 			?>
+			
 			<div class="row text-center">
 				<div class="small-10 small-offset-1 columns">
 					<?php get_previous_posts_link(); ?>

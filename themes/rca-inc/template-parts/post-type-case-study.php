@@ -16,6 +16,7 @@
 	$approach_text    = get_field('approach_text');
 	$challnege_title  = get_field('challnege_title');
 	$challnege_text   = get_field('challnege_text');
+	$pdf              = get_field('case_study_file');
 	$references_title = get_field('references_title');
 	$references_text  = get_field('references_text');
 ?>
@@ -173,15 +174,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="small-offset-2 small-8 columns">
-				<div class="small-6 columns text-center">
-					<a class="a2a"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>	
-				</div>
-				<div class="small-6 columns text-center">
-					<i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
-				</div>
-			</div>
+
+	</div>
+	<!-- /BUTTONS SMALL -->
+
+	<!-- BUTTON MEDIUM+-->
+	<div class="row show-for-medium">
+		<div class="text-center">
+			<button style="margin: 1rem 0rem 5%; width: auto;"><i class="fa fa-download" aria-hidden="true"></i> Download</button>
+
 		</div>
 	</div>
 </div>

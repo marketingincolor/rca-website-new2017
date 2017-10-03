@@ -19,7 +19,7 @@ get_header(); ?>
 	<!-- The Content -->
 	<div class="row text-center">
 		<div class="small-12 columns">
-			<?php echo the_content(); ?>
+			<article class="article-content"><?php echo the_content(); ?></article>
 		</div>
 	</div>
 	<!-- /The Content -->

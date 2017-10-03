@@ -21,3 +21,11 @@
 		display: none;
 	}
 </style>
+<script>
+	// show modal on page load
+	// Uncomment this function when you want to show the modal
+	
+	// $(document).ready(function(){
+	// 	jQuery('#takeover-modal').foundation('open');
+	// });
+</script>
