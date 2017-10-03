@@ -2566,7 +2566,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 /*case study section button overwrites normal button*/
 #case-study-btn { margin-top:2rem; }
 #all-items-block .small-10{
-	height:200px;
+	height:260px;
 	position:relative;
 }
 #all-items-block button{
