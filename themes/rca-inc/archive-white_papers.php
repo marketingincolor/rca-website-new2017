@@ -25,6 +25,22 @@ get_header(); ?>
 	</div>
 	<!-- / Featured Image -->
 
+	<div id="mob-before-title-block" class="row hide-for-medium" data-equalizer>
+		<div id="mobile-cat-picker" class="small-offset-1 small-8 columns" data-equalizer-watch>
+			<select name="mobile_category" id="" onchange="location.href=this.value">
+				<option value="/white-papers">White Papers</option>
+				<option value="/case-studies">Case Studies</option>
+				<option value="/webinars">Webinars</option></a>
+				<option value="/published-articles">Published Articles</option>
+				<option value="/visual-resources">Visual Resources</option>
+			</select>
+		</div>
+		<div id="mobile-share-btn" class="small-2 end columns text-center" data-equalizer-watch>
+			<i class="fa fa-share" aria-hidden="true"></i>
+			<p>Share</p>
+		</div>
+	</div>
+
 	<!-- SOCIAL BREADCRUMBS -->
 	<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
 	<!-- /SOCIAL BREADCRUMBS -->
@@ -74,7 +90,7 @@ get_header(); ?>
 				endwhile;
 			?>
 			<div class="row text-center">
-				<div class="small-10 small-offset-1 columns">
+				<div class="small-10 small-offset-1 columns pagination-col">
 					<?php get_previous_posts_link(); ?>
 					
 					<?php rca_tax_post_pagination(); ?>
