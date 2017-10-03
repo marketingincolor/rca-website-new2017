@@ -769,8 +769,8 @@ function get_team_members($role_type) {
         echo '<div class="staff-position">' . $position . '</div>';
       }
 
-      echo '<a href="'. $member_url .'"><button class="staff-btn">Bio</button></a>';
       echo '</div>';
+      echo '<a href="'. $member_url .'"><button class="staff-btn">Bio</button></a>';
       echo '</div>';
 
 

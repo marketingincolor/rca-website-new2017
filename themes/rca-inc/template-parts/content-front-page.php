@@ -106,8 +106,8 @@
 		<!-- end mobile cta -->
 
 		<!-- desktop cta -->
-		<div class="row text-center medium-text-left show-for-medium" data-equalizer>
-			<div class="medium-6 medium-offset-2 columns" data-equalizer-watch>
+		<div id="front-page-cta" class="row text-center medium-text-left show-for-medium" data-equalizer>
+			<div class="medium-6 medium-offset-2 columns relative" data-equalizer-watch>
 				<h3>Sign up for our Free Combination Products Webinar</h3><br />
 			</div>
 			<div class="medium-2 columns end relative" data-equalizer-watch>
@@ -120,6 +120,7 @@
 	<!-- END CTA -->
 	
 		<div id="all-case-studies" class="rca">
+
 			<!-- CASE STUDIES FIRST LOOP-->
 			<div id="" class="row rca" style="padding-bottom: 0em;">
 				<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns rca">
