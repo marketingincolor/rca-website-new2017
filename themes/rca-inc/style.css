@@ -1959,18 +1959,28 @@ footer { background-color: #2b2b2b; padding: 2.5rem 0rem; }
 #menu-mobile-footer-right { padding: 0rem; margin-left:0rem; }
 .footer-social-icon {
 	color: #c4612b;
-    border: 2px solid #c4612b;
-    border-radius: 50%;
-    padding: 10px;
-    display: inline-block;
+  border: 2px solid #c4612b;
+  border-radius: 50%;
+  padding: 10px;
+  display: inline-block;
+  transition: all 0.25s ease-in-out;
 }
-
+.footer-social-icon:hover{
+	background-color: #c4612b;
+	color: #FFF;
+}
 .menu-desktop-footer-menu-container { display:inline-block; }
+#menu-desktop-footer-menu a{
+	transition: color 0.25s ease-in-out;
+}
+#menu-desktop-footer-menu a:hover{
+	color: #c4612b;
+}
 
 .footer-social-link { 
     line-height: 1;
     position: relative;
-    padding: 0rem 1rem;
+    padding: 0 0.3rem;
     display: inline-block;
 }
 
