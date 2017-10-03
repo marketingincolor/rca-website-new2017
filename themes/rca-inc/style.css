@@ -340,12 +340,6 @@ h2 {
     width: 100%;
     text-align: center;
 }
-.orange-btn:hover { 
-	background-color: #c4612b; 
-	color: #fff;
-}
-
-
 
 .archive-description p { margin-bottom: 3.5rem; }
 .navigation i { color: #9d938b; }
@@ -1846,10 +1840,15 @@ object {
 button { 
 	border-radius: 0px; 
 	color: #c4612b; 
-	background-color: #f8f7f5; 
-	border: 2px solid #c4612b; 
+	background-color: #FFF; 
+	border: 3px solid #c4612b; 
 	width: 100%;
-	padding: .5rem;
+	padding: .5rem 1.5rem;
+	transition: all 0.25s ease-in-out
+}
+button:hover{
+	background-color: #c4612b;
+	color: #FFF;
 }
 
 button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; }
@@ -2483,7 +2482,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 		border-top: .5px solid gray;
 	}
 	#front-page-services button {
-	    padding: 1rem 2rem;
+	    padding: 0.5rem 2rem;
 	    width: 100%;
 	}
 
@@ -2520,7 +2519,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 		border-bottom: 2px solid #c9c3ba;
 	}
 	#front-page-services button {
-	    padding: 1rem 2rem;
+	    padding: 0.5rem 2rem;
 	    width: auto;
 	}
 	button.home-cs-orange-btn {
