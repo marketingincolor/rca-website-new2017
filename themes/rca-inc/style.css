@@ -2549,7 +2549,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 	#webinar-information-block > div > div:last-child { border-right: none; }
 	#webinar-information-block > div > div { border-right: 2px solid #9d938b; }
-	#featured-img-wrapper #featured-img .featured-img-title h1 { position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); color: #fff; }
+	#featured-img-wrapper #featured-img .featured-img-title h1 { position:absolute; top:50%; left:50%; transform: translate(-50%,-50%); color: #fff; width:100%}
 
 }
 
