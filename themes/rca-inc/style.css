@@ -2098,11 +2098,16 @@ button.hamburger-menu {
 
 #news-all-buttons { padding-bottom: 3.5rem; }
 .story-container h2  a { color: #c4612b; }
-#news-all-buttons button { background-color: transparent; padding: .5rem; }
-#news-all-buttons select { border: 4px solid #c4612b; color: #c4612b; font-weight: bold; width: 100%; text-algin: center; padding: 0rem 1rem; text-align-last: center; }
+#news-all-buttons button { background-color: transparent; padding: .6rem; }
+#news-all-buttons select { transition:all 0.25s ease-in-out;cursor:pointer;border: 4px solid #c4612b; color: #c4612b; font-weight: bold; width: 100%; text-algin: center; padding: 0rem 1rem; text-align-last: center; }
 #news-all-buttons select option { font-size: 1rem; color: #c4612b; font-weight: bold; }
 button.news-filter { border:2px solid #c9c3ba; color: #9d938b; }
 #news-all-buttons select { border: 2px solid #c9c3ba;  color: #9d938b; }
+
+#news-all-buttons button:hover,#news-all-buttons select:hover{
+	border-color: #c4612b;
+	color: #c4612b;
+}
 
 /*Used for changing state of buttons*/
 button.newsClick { color: #c4612b; border-color: #c4612b; }
