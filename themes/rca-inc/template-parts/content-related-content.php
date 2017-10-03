@@ -8,31 +8,31 @@ if($post_type == 'case_studies'):
 	$query1 = new WP_Query(get_random_case_study());
 	$query2 = new WP_Query(get_random_case_study());
 	$query3 = new WP_Query(get_random_case_study());
-	$icon   = get_template_directory_uri() . '/images/icons/orange-case-study-icon';
+	$icon   = get_template_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
 
 elseif($post_type == 'webinars'):
 	$query1 = new WP_Query(get_random_webinar());
 	$query2 = new WP_Query(get_random_webinar());
 	$query3 = new WP_Query(get_random_webinar());
-	$icon   = get_template_directory_uri() . '/images/icons/orange-webinar-icon';
+	$icon   = get_template_directory_uri() . '/images/icons/orange-webinar-icon.jpg';
 
 elseif($post_type == 'white_papers'):
 	$query1 = new WP_Query(get_random_whitepaper());
 	$query2 = new WP_Query(get_random_whitepaper());
 	$query3 = new WP_Query(get_random_whitepaper());
-	$icon   = get_template_directory_uri() . '/images/icons/orange-white-paper-icon';
+	$icon   = get_template_directory_uri() . '/images/icons/orange-white-paper-icon.jpg';
 
 elseif($post_type == 'visual_resources'):
 	$query1 = new WP_Query(get_random_visualresource());
 	$query2 = new WP_Query(get_random_visualresource());
 	$query3 = new WP_Query(get_random_visualresource());
-	$icon   = get_template_directory_uri() . '/images/icons/orange-visual-resources-icon';
+	$icon   = get_template_directory_uri() . '/images/icons/orange-visual-resources-icon.jpg';
 
 elseif($post_type == 'published_articles'):
 	$query1 = new WP_Query(get_random_publishedarticle());
 	$query2 = new WP_Query(get_random_publishedarticle());
 	$query3 = new WP_Query(get_random_publishedarticle());
-	$icon   = get_template_directory_uri() . '/images/icons/orange-published-articles-icon';	
+	$icon   = get_template_directory_uri() . '/images/icons/orange-published-articles-icon.jpg';	
 
 endif;
 

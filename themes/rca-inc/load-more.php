@@ -12,7 +12,6 @@ header("HTTP/1.1 200 OK");
 	// If we have an offset use that.
 	if(isset($_POST['offset'])):
 		$offset = $_POST['offset'];
-		//var_dump($offset);
 	endif;
 
 	// If we don't have an offset go back to the beginning.
@@ -58,10 +57,10 @@ header("HTTP/1.1 200 OK");
 	wp_reset_postdata();
 
 	}
-	else {
+	else{
 		echo '<div class="row">';
 		echo '<div class="small-10 small-offset-1 columns">';
-		echo '<h3 class="">Sorry, we can\'t find any more posts...</p>';
+		echo '<h3 class="">Sorry, we can\'t find any posts that match this search right now...</p>';
 		echo '</div>';
 		echo '</div>';
 	}

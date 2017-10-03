@@ -8,6 +8,8 @@ header("HTTP/1.1 200 OK");
 	// Retrieve Query Vars.
 	$category  = $_POST['category'];
 	$dropdown_query = $_POST['dropdown_query'];
+	// $yearSwitch = $_POST['yearSwitch'];
+	// var_dump($yearSwitch);
 
 	// If we have an offset use that.
 	if(isset($_POST['offset'])):

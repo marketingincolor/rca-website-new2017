@@ -9,26 +9,29 @@
  * @param {string} templateURL page the function is called on.
  * @return {void}          
  */
-function filterPosts(templateURL) {
+$('.news-filter').on('click',function() {
+    // Show Load More Button
+    $('.load-more').show();
+    var templateURL = afp_vars.templateURL;
+    console.log(templateURL);
+    var newsButton = $(this);
 
-    $('.news-filter').on('click',function(){
+    // Start by removing state from news buttons.
+    var allButtons = $('.news-filter');
+    allButtons.removeClass('newsClick');
 
-        var newsButton = $(this);
+    // Add State if we click on a button.
+    $(this).addClass('newsClick');
+    var category = newsButton.attr('news_filter');
+    //var total_posts = $('.rca_total_posts').val();
 
-        // Start by removing state from news buttons.
-        var allButtons = $('.news-filter');
-        allButtons.removeClass('newsClick');
 
-        // Add State if we click on a button.
-        $(this).addClass('newsClick');
-        var category = newsButton.attr('news_filter');
+    filterNewsPosts(templateURL, category, ajaxFilterYear());
 
-        filterNewsPosts(templateURL, category, ajaxFilterYear());
+    // Add to hidden input
+    $('.rca_query').attr('value', category);
+});
 
-        // Add to hidden input
-        $('.rca_query').attr('value', category);
-    });
-}
 
 
 /**
@@ -147,8 +150,19 @@ function filterNewsPosts(templateURL, category, dropdown_query) {
  * @param {array} dropdown_query array of years to query.
  * @return {void} AJAX call to filter-posts.php
 */
-function filterNewsPostsNoSpinner(templateURL, category, dropdown_query) {
+//function filterNewsPostsNoSpinner(templateURL, category, dropdown_query) {
+$('#newsFilterSelect').on('change', function() {
 
+    $('.load-more').show();
+    var category = getCategory();
+    var dropdown_query = ajaxFilterYear();
+    var total_posts = $('.rca_total_posts').attr('value', '0');
+    console.warn('total posts: ' + Number(total_posts.val()));
+    var offsetContainer = $('.rca_offset');
+    var offsetValue = $('.rca_offset').val();
+    
+    offsetContainer.attr("value", Number(offsetValue));
+    offsetValue = offsetContainer.val();
     // If we don't have a category log an error to the console.
     if(category == "") {
         console.warn('RCA Information: No Category Selected. Showing All Posts...');
@@ -165,16 +179,21 @@ function filterNewsPostsNoSpinner(templateURL, category, dropdown_query) {
 
 
         $.ajax({
-            url: templateURL + '/filter-posts.php',
+            url: afp_vars.templateURL + '/filter-posts.php',
             type: 'POST',
-            data: {category : category, dropdown_query : dropdown_query },
+            data: {category : category, dropdown_query : dropdown_query, offset : offsetValue },
             success: function(response) {
                         content.html(response).fadeIn(1000);
+                        total_posts = $('.rca_total_posts').val();
+                        if(total_posts < 5) {
+                            $('.load-more').hide();
+                        }                        
             },
         });
 
+})
 
-}
+
 
 
 /**
@@ -217,24 +236,24 @@ function defaultNewsFilter(templateURL, category, dropdown_query) {
  * @return {void}                [AJAX call]
  */
 function rcaNext(templateURL, category, dropdown_query) {
-    var offset = 5;
-    var counter = $('.rca_offset');
-    var content = $('.post-container');
-    var counterValue = Number(counter.val()) + Number(offset);
-    counter.attr('value', counterValue);
+    // var offset = 5;
+    // var counter = $('.rca_offset');
+    // var content = $('.post-container');
+    // var counterValue = Number(counter.val()) + Number(offset);
+    // counter.attr('value', counterValue);
 
-    $.ajax({
-        url: templateURL + '/filter-posts.php',
-        type: 'POST',
-        beforeSend: function() {
-            $('.spinner').fadeIn(500); 
-        },
-        data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
-        success: function(response) {
-                    content.html(response).fadeIn(1000);
-        },
-        complete: function() { $('.spinner').fadeOut(500); }
-    });
+    // $.ajax({
+    //     url: templateURL + '/filter-posts.php',
+    //     type: 'POST',
+    //     beforeSend: function() {
+    //         $('.spinner').fadeIn(500); 
+    //     },
+    //     data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
+    //     success: function(response) {
+    //                 content.html(response).fadeIn(1000);
+    //     },
+    //     complete: function() { $('.spinner').fadeOut(500); }
+    // });
 }
 
 /**
@@ -246,28 +265,51 @@ function rcaNext(templateURL, category, dropdown_query) {
  * @param  {string} dropdown_query [description]
  * @return {void}                  [description]
  */
-function rcaPrevious(templateURL, category, dropdown_query) {
-    var offset = 5;
-    var counter = $('.rca_offset');
+// function rcaPrevious(templateURL, category, dropdown_query) {
+//     var offset = 5;
+//     var counter = $('.rca_offset');
+//     var content = $('.post-container');
+//     var counterValue = Number(counter.val()) - Number(offset);
+//     counter.attr('value', counterValue);
+//     $.ajax({
+//         url: templateURL + '/filter-posts.php',
+//         type: 'POST',
+//         beforeSend: function() {
+//             $('.spinner').fadeIn(500); 
+//         },
+//         data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
+//         success: function(response) {
+//                     content.html(response).fadeIn(1000);
+//         },
+//         complete: function() { $('.spinner').fadeOut(500); }
+//     });
+// }
+
+$('.load-more').on('click', function() {
+    var total_posts = $('.rca_total_posts').attr('value', '0');
+    var templateURL = afp_vars.templateURL;
     var content = $('.post-container');
-    var counterValue = Number(counter.val()) - Number(offset);
-    counter.attr('value', counterValue);
+    var offsetContainer = $('.rca_offset');
+    var offsetValue = $('.rca_offset').val();
+    offsetContainer.attr("value", Number(offsetValue) + 5);
+    offsetValue = offsetContainer.val();
+
     $.ajax({
-        url: templateURL + '/filter-posts.php',
+        url: templateURL + '/load-more.php',
         type: 'POST',
-        beforeSend: function() {
-            $('.spinner').fadeIn(500); 
-        },
-        data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
+        beforeSend: function() {$('.spinner').fadeIn(500); },
+        data: {category : getCategory(), dropdown_query : ajaxFilterYear(), offset : offsetValue },
         success: function(response) {
-                    content.html(response).fadeIn(1000);
+                    content.append(response).fadeIn(1000);
         },
-        complete: function() { $('.spinner').fadeOut(500); }
-    });
-}
+        complete: function() { 
+            total_posts = $('.rca_total_posts').val();
+            if(total_posts < 5) {
+                $('.load-more').hide();
+            }
+            $('.spinner').fadeOut(500); 
 
-function rca_get_dots(category) {
-
-
-
-}
+        }
+    });  
+});
+ 

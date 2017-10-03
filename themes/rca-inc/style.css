@@ -27,8 +27,72 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 1.0 Remove Slick Slider Styles
 2.0 Organize Styles
 */
-#related-content-mobile { background-color: #f8f7f5; }
+#mega-menu-container li a { padding-right: 0rem; padding-left: 0rem; }
+main { margin-bottom: 3.5rem; }
+.about-us-testimonial { background-color: #1a365d; color: #fff; padding: 40px; margin-bottom: 40px; }
+.about-us-testimonial p { color: #fff; font-family: 'Lora', sans-serif; font-weight: bold; font-size: 1.25rem; }
 
+.item-block { margin: 1rem 0rem; }
+.archived-title { height: 80px; }
+.archive-row { margin-bottom:2rem; }
+
+#owl-carousel-cs-slider a { color: #2b2b2b; }
+/*Add our own next/prev buttons for sliders*/
+.owl-next  {
+	font-family: 'FontAwesome';
+	background: transparent !important;
+	font-size: 2rem !important;
+	color: #2b2b2b !important;
+    top: 0px;
+    position: absolute;
+    color: #FFF;
+    display: inline-block;
+    zoom: 1;
+    margin: 5px;
+    padding: 3px 10px;
+    font-size: 12px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    filter: Alpha(Opacity=50);
+    opacity: 0.5;
+    right: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.owl-prev  {
+	font-family: 'FontAwesome';
+	font-size: 2rem !important;
+    top: 0px;
+    color: #2b2b2b !important;
+    position: absolute;
+    color: #FFF;
+    display: inline-block;
+    zoom: 1;
+    margin: 5px;
+    padding: 3px 10px;
+    font-size: 12px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+    background: transparent !important;
+    filter: Alpha(Opacity=50);
+    opacity: 0.5;
+    left: 0%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#related-content-mobile div div.owl-pagination { padding-top: 0rem; }
+#related-content-mobile { background-color: #f8f7f5;  padding: 2.5rem 0rem; }
+.related-content {
+	font-size: 1.375rem;
+    font-family: 'Roboto';
+    color: #9d938b;
+    font-weight: bold;
+}
+#related-content-mobile h4 { padding-bottom: 2.5rem; }
 #all-case-study-content {  }
 
 #dl-block p { margin-bottom: 0rem; }
@@ -141,7 +205,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 }
 
 
-#share-section { padding: 3.75rem 0rem; }
+#share-section { padding: 3rem 0rem 0rem; }
 .location-address p { color: #2b2b2b; }
 #location-accordian > li > div { padding: 3rem 0rem; }
 .map-btn { width: 80%; text-align: center; margin: 0 auto; display: block; margin-top: 2rem; }
@@ -264,8 +328,8 @@ h2 {
 .pagination a { display: inline-block; }
 .page-numbers { display: inline-block; }
 
-#all-items-block { padding: 3rem 0rem; }
-.item-block button { width: auto; margin: 0 auto; display: block; margin-bottom: 3rem; margin-top: 1.5rem; }
+#all-items-block { padding: 3rem 0rem 0; }
+.item-block button { width: auto; margin: 0 auto; display: block; }
 
 /*--------------------------------------------------------------
 # TAXONOMY MENU
@@ -752,9 +816,10 @@ input[type=number]::-webkit-outer-spin-button {
 	color: #2b2b2b; 
 }
 
+#learn-more-form-container-white { padding-bottom: 3rem; }
 #learn-more-form-container-white textarea { margin-bottom: 1rem; color: #2b2b2b; }
-#learn-more-form-container-white { padding: 2rem 0rem; }
-#learn-more-form-container-white h1 { padding: 2rem 0rem; }
+/* #learn-more-form-container-white { padding: 2rem 0rem; } */
+/* #learn-more-form-container-white h1 { padding: 2rem 0rem; } */
 #learn-more-form-container-white input[type="submit"] {
 	background-color: transparent;
 	border-radius: 0px;
