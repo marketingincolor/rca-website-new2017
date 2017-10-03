@@ -2350,7 +2350,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 #mega-menu-container .is-active a { color: #c4612b; } 
 #mega-menu-container li a:hover { color: #c4612b; }
 #mega-menu-container li:last-child a:hover { color: #fff; }
-#mega-menu-container > li { width: 16.4%; }
+#mega-menu-container > li { width: 16.3%; }
 #mega-menu-container > li > a { 
 	text-align: center;
 	margin: 1.25rem 0rem; 
