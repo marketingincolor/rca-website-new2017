@@ -30,7 +30,7 @@ switch($post_type) {
 	<div class="row text-center">
 		<img src="<?php echo $img; ?>" />
 	</div>
-	<div class="row text-center">
+	<div class="row text-center archived-title">
 		<a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a>
 	</div>
 	<div class="row text-center">

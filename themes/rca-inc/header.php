@@ -23,12 +23,20 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- GOOGLE FONTS -->
 		<link href="https://fonts.googleapis.com/css?family=Lora:400,700,700i|Roboto" rel="stylesheet">
+
+		<!-- FOUNDATION INCLUDE -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+
+		<!-- FONT AWESOME INCLUDE -->
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 			<link rel="profile" href="http://gmpg.org/xfn/11">
+
+		<!-- JQUERY INCLUDE -->
 		<script
 		  src="https://code.jquery.com/jquery-3.2.1.min.js"
 		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -36,10 +44,8 @@
 		  	
 		</script>
 
-			<?php wp_head(); ?>
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
-		<!-- Add the slick-theme.css if you want default styling -->
-		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+		<?php wp_head(); ?>
+
 	</head>
 
 <body <?php body_class(); ?>>
@@ -56,7 +62,7 @@
 					<?php the_custom_logo(); ?>
 				</div>
 			</div>
-			<!--  -->
+			<!-- /LOGO -->
 
 			<!-- PHONE ON MOBILE BUTTON -->
 			<div id="phone-icon" class="row expanded title-bar hide-for-large" data-equalizer>
@@ -120,7 +126,51 @@
 										</li>
 									</ul>
 								</li>
-								<li><a href="<?php echo get_permalink( get_page_by_path( 'Pharmaceutical' ) ); ?>">Pharmaceutical</a></li>
+							<li class="mega-menu">
+								<a href="<?php echo home_url('/medical-devices/'); ?>">Pharmaceutical</a>
+									<ul class="menu">
+										<li>
+											<div class="row">
+												<div class="small-8 columns">
+
+													<div class="medium-6 columns">
+														<h3><a href="<?php echo home_url('services/regulatory-affairs');?>">Regulatory Affairs</a></h3>
+														<?php
+
+														wp_nav_menu( 
+														  array(
+														    'menu' => 'Regulatory Affairs', 
+														    'menu_class' => 'menu',
+														  )
+														); ?>
+													</div>
+
+													<div class="medium-6 columns">
+														<h3>Quality Services</h3>
+													</div>
+
+													<div class="medium-6 columns">
+														<h3>Compliance Assurance</h3>
+														<?php wp_nav_menu( array('menu' => 'Compliance Assurance' )); ?>
+													</div>
+
+													<div class="medium-6 column end">
+														<h3>Remediation Strategy and Support</h3>
+														<?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support' )); ?>
+													</div>
+
+												</div>
+												<div class="small-4 columns">
+													<div class="medium-12 column">
+														<h3>Strategic Consulting</h3>
+														<?php wp_nav_menu( array('menu' => 'Strategic Consulting' )); ?>
+													</div>
+												</div>
+
+											</div>
+										</li>
+									</ul>
+								</li>
 								<li><a href="<?php echo get_permalink( get_page_by_path('Additional Services' ) ); ?>">Additional Services</a></li>
 
 								<li><a href="<?php echo get_permalink( get_page_by_path( 'About' ) ); ?>">About</a></li>

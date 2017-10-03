@@ -103,7 +103,7 @@
 		<!-- Slick Sliders -->
 		
 		<!-- /Slick Sliders -->
-		<script>
+<!-- 		<script>
 
 			$(document).ready(function() {
 				var post_count = $('.post_count');
@@ -114,10 +114,50 @@
 				}
 			});
 		</script>
-
+ -->
 		<!-- Script for testing Orbit Main Slider -->
-		<script>
+<!-- 		<script>
 			$('.orbit').click();
+		</script> -->
+		<script>
+			$(document).ready(function() {
+				console.log('...............starting');
+				var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
+				var close = $('#share-menu .close');
+				logo = Math.abs(logo);
+				console.log( 'logoheight ' + logo);
+				var shareButton = $('#share-block-cs');
+				var shareMenu = $('#share-menu');
+
+				shareButton.on('click', function() {
+
+					// Show the Menu
+					shareMenu.show();
+					shareMenu.toggleClass('share-menu-js');
+					shareMenu.css('top', logo); 
+
+					// Disable scrolling
+					$('html, body').css( { 
+						overflow:'hidden', 
+						height: '100%'
+					});
+				});
+
+				close.on('click', function() {
+
+					//Enable scrolling
+					$('html, body').css({
+					    overflow: 'auto',
+					    height: 'auto'
+					});
+
+					// Hide the Menu
+					shareMenu.toggleClass('share-menu-js');
+					shareMenu.hide();
+				});
+
+
+			})
 		</script>
 
 		<!-- Include Foundation -->
@@ -141,6 +181,14 @@
 			    var scr = document.getElementsByTagName('script')[0];
 			    scr.parentNode.insertBefore(ss, scr);
 			})();
+		</script>
+		<script>
+
+			$(document).ready(function() {
+				var active = $('.navigation ul .active a img');
+					active.attr("src", "<?php echo get_stylesheet_directory_uri();?>/images/RCA_MOBILE_HOMEPAGE_INDICATOR-Selected.jpg");
+			});
+
 		</script>
 
 </html>

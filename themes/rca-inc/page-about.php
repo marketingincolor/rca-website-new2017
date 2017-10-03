@@ -2,6 +2,7 @@
 
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+$testimonial   = get_field('testimonial');
 
 get_header(); ?>
 	
@@ -18,13 +19,22 @@ get_header(); ?>
 
 	<!-- The Content -->
 	<div id="the-content" class="row">
-		<div class="small-12 columns">
+		<div class="small-10 small-offset-1 columns">
 			<?php echo the_content(); ?>
 		</div>
 	</div>
 	<!-- /The Content -->
 
-	
+	<!-- TESTIMONAIAL -->
+	<div class="row">
+		<?php if($testimonial): ?>
+		<div class="about-us-testimonial small-10 small-offset-1 columns">
+			<p><?php echo $testimonial; ?></p>
+		</div>
+		<?php endif; ?>
+	</div>
+	<!-- /TESIMONIAL -->
+
 	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	</div>

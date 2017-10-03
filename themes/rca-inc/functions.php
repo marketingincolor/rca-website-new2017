@@ -125,6 +125,7 @@ function rca_inc_scripts() {
   wp_localize_script( 'afp_script', 'afp_vars', array(
         'afp_nonce' => wp_create_nonce( 'afp_nonce' ), // Create nonce which we later will use to verify AJAX request
         'afp_ajax_url' => admin_url( 'admin-ajax.php' ),
+        'templateURL' => get_stylesheet_directory_uri()
       )
   );
   wp_enqueue_script( 'rca-cat-sorting', get_template_directory_uri() . '/js/selected-category.js');
@@ -136,7 +137,9 @@ function rca_inc_scripts() {
 	wp_enqueue_script( 'rca-inc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 
-
+  $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
+  //after wp_enqueue_script
+  wp_localize_script( 'rca-filter-news', 'object_name', $translation_array );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -1179,21 +1182,16 @@ function rca_related_case_studies_mobile($atts, $content = null) {
 
     $args = array(
         'post_type' => 'case_studies',
-        // 'orderby' => get_option('owl_carousel_orderby', 'post_date'),
+        'orderby' => 'rand',
         'order' => 'asc',
-        // 'tax_query' => array(
-        //     array(
-        //         'taxonomy' => 'Carousel',
-        //         'field' => 'slug',
-        //         'terms' => $atts['category']
-        //     )
-        // ),
-        'nopaging' => true
+        'posts_per_page' => 3,
+        //'nopaging' => true
     );
 
-  $result = '<div id="owl-carousel-top-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
+  $result = '<div id="owl-carousel-cs-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
 
     $loop = new WP_Query($args);
+
     while ($loop->have_posts()) {
         $loop->the_post();
 
@@ -1201,19 +1199,17 @@ function rca_related_case_studies_mobile($atts, $content = null) {
         $meta_link = get_post_meta(get_the_ID());
 
           $result .= '<div class="item">';
-          $result .= '<div class="row text-center">';
-            if (!empty($meta_link[0])) {
-                $result .= '<a href="' . $meta_link[0] . '">';
-            }
-            if (!empty($meta_link)) {
-                $result .= '</a>';
-            }
+          $result .= '<div class="row">';
+          $result .= '<div class="small-10 small-offset-1 columns">';
+          $result .= '<div class="owl-carousel-item-text">';
+          $result .= '<a href="' . get_the_permalink() . '"><img src="' . rca_get_post_type_icon(get_post_type()) . '" style="max-width: 40px; display:block;text-align:center; margin: 0 auto 20px auto;"/>';
+          $result .= '<p>' . get_the_title() . '</p></a>';
+          $result .= '</div>';
 
-            // Add image overlay with hook
-            $slide_title = get_the_title();
-            echo $slide_title;
-            $result .= '</div></div>';
+          $result .= '</div></div></div>';
     }
+
+    $result .= '</div>';
     
     /* Restore original Post Data */
     wp_reset_postdata();
@@ -1221,3 +1217,34 @@ function rca_related_case_studies_mobile($atts, $content = null) {
     return $result;
 }
 add_shortcode('rca-related-case-studies-mobile', 'rca_related_case_studies_mobile');
+
+/**
+ * Description:
+ *
+ * Returns icon type for given post type
+ * 
+ * @return [string] [icon img URL]
+ */
+function rca_get_post_type_icon($post_type) {
+  if($post_type == 'case_studies'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
+
+  elseif($post_type == 'webinars'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-webinar-icon.jpg';
+
+  elseif($post_type == 'white_papers'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-white-paper-icon.jpg';
+
+  elseif($post_type == 'visual_resources'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-visual-resources-icon.jpg';
+
+  elseif($post_type == 'published_articles'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-published-articles-icon.jpg';
+
+  else:
+    $icon = '';  
+  endif;
+
+
+  return $icon;
+}

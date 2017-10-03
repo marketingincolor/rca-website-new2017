@@ -53,13 +53,15 @@ get_header(); ?>
 
 		$paged = get_query_var('paged') ? get_query_var('paged') : 1; 
 		$args = array(
-			'post_type' => array('white_papers', 'webinars'),
+			'post_type' => get_all_post_types(),
 			'posts_per_page' => 8,
 			'paged' => $paged
 		);
 
 		$view_all = new WP_Query($args);
-
+		$temp_query = $wp_query;
+		$wp_query   = NULL;
+		$wp_query   = $view_all;
 		if ( $view_all->have_posts() ) : ?>
 			
 			<div class="row show-for-medium">
