@@ -2479,6 +2479,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 	.accordian-menu > li {    
 		border-top: .5px solid gray;
 	}
+	#menu-mobile-footer-right.menu>li,#menu-mobile-footer-left.menu>li{
+		height: 45px;
+	}
 	#front-page-services button {
 	    padding: 0.5rem 2rem;
 	    width: 100%;
