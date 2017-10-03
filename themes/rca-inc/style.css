@@ -2491,6 +2491,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 	#all-items-block .small-10:not(.pagination-col){
 		height: 200px;
 	}
+	.navigation ul{
+		margin:0;
+	}
 	button.home-cs-orange-btn {
 		font-weight: bold;
 		width: 100%;
