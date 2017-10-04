@@ -830,10 +830,33 @@ class RCA_SECONDARY_WALKER extends Walker_Nav_Menu {
 
 function get_cat_image($title) {
   $title = $title;
-  $term_obj = get_term_by( 'name', $title, 'expertise' );
-  $term_id = $term_obj->term_taxonomy_id;
-  $icon_img = get_field('taxonomy_image',  'expertise_' . $term_id);
-  return $icon_img['url'];
+  //var_dump($title);
+  // $term_obj = get_term_by( 'name', $title, 'expertise' );
+  // $term_id = $term_obj->term_taxonomy_id;
+  // $icon_img = get_field('taxonomy_image',  'expertise_' . $term_id);
+  // 
+  $template = get_stylesheet_directory_uri();
+  switch($title) {
+    case('Case Studies'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/case-studies.png';
+    break;
+    case('White Papers'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/white-papers.png';
+    break;
+    case('Visual Resources'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/visual-resources.png';
+    break;
+    case('Published Articles'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/published-articles.png';
+    break;
+    case('Webinars'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/webinars.png';
+    break;
+    default:
+      $url = '';
+    break;
+  }
+  return $url;
 }
 
 function get_service_image($title) { 
@@ -903,7 +926,7 @@ class RCA_REMOVE_MENU_LINKS extends Walker_Nav_Menu {
     }
 }
 
-remove_filter( 'the_content', 'wpautop' );
+//remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 
 class RCA_TAXONOMY_WALKER extends Walker_Nav_Menu {

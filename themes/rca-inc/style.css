@@ -1387,7 +1387,7 @@ textarea {
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
-
+h1.entry-title { margin-bottom: 30px; }
 h1 { font-family: 'Lora', serif; font-size: 2.25rem !important; color: #c4612b; }
 h2 { font-family: 'Roboto', sans-serif; font-size: 1.375rem !important; color: #2b2b2b; }
 h3 { font-family: 'Roboto', sans-serif; font-size: 1.125rem; color: #9d938b; }
@@ -2477,7 +2477,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 #share p { display: inline-block; }
 
-.archive img { margin-bottom: 10px;  }
+.archive img { cursor: pointer;  }
 .archived-title > a { font-weight: normal; }
 
 
@@ -2608,19 +2608,19 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 .is-dropdown-submenu>li, .is-submenu-item div div ul li { list-style: none; display:block; }
 
-#front-page-main-content { padding: 3.75rem 0rem; }
+#front-page-main-content { padding: 5.3rem 0rem; }
 #front-page-main-content p { margin-bottom: 2.25rem; }
 #front-page-services { padding: 0rem 0rem; }
 #individual-service { padding: 2rem 1rem; }
 #individual-service h2 { 
     color: #2b2b2b;
     font-weight: bold;
-    padding: .75rem 0rem; 
+    padding: 1.375rem 0rem; 
 	font-size: 1.25rem;
 }
 
 #front-page-services h4 { padding: 1.5rem 0rem; }
-#front-page-services p { margin-bottom: 2rem; }
+#front-page-services p { margin-bottom: 1.875rem; }
 /*#front-page-services button { width: auto; font-weight:bold; padding: .5rem 2rem; }*/
 
 .owl-pagination { padding-top: 2rem; }
@@ -2655,13 +2655,17 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
     height: 40px;
     position: relative;
     vertical-align: middle;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
 }
 
 .cat-image img { 
-    position: absolute;
+/*    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);*/
 }
 .secondary-menu-item-wrapper { display: inline-block; width: 16.6%; }
 .secondary-menu-item-wrapper li { 
@@ -2695,7 +2699,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
     top: 50%;
     right: 5%;
     transform: translateY(-50%);
-    border-left: 2px solid #c9c3ba;
+    border-left: 1px solid #c9c3ba;
     padding-left: 16px;
  }
 
