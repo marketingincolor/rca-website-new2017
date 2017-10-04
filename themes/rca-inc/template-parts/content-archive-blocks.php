@@ -31,7 +31,7 @@ switch($post_type) {
 		<img src="<?php echo $img; ?>" />
 	</div>
 	<div class="row text-center archived-title">
-		<div class="small-10 small-offset-1 columns">
+		<div class="small-10 small-offset-1 columns pagination-col">
 			<a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a>
 		</div>
 	</div>
