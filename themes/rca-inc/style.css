@@ -558,6 +558,20 @@ h2 {
 #takeover-modal{
 	padding: 10% 0;
 }
+/*-- Learn more cta --*/
+#learn-more-cta{
+	padding: 5% 0 6%;
+	background-color: #1a365d;
+}
+#learn-more-cta h3{
+	color: #FFF;
+	font-family: 'Lora', serif;
+	font-weight: 700;
+	font-style: italic;
+	font-size: 2.25rem;
+	margin-bottom: 30px;
+}
+/*-- /Learn more cta --*/
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
@@ -2492,7 +2506,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 }
 
 @media screen and (max-width: 39.9375em) {
-
+  #learn-more-cta{
+  	padding: 5% 0 12%;
+  }
 	#all-case-study-content > div:nth-child(1) > div > h1 { margin-bottom: 3rem; }
 	#breadcrumbs { margin: 1rem 0; }
 	#all-items-block{padding-top:0}
