@@ -27,11 +27,13 @@ switch($post_type) {
 ?>
 
 <div class="item-block">
-	<div class="row text-center">
+	<div class="archive-img row text-center">
 		<img src="<?php echo $img; ?>" />
 	</div>
 	<div class="row text-center archived-title">
-		<a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a>
+		<div class="small-10 small-offset-1 columns">
+			<a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a>
+		</div>
 	</div>
 	<div class="row text-center">
 		<a href="<?php the_permalink(); ?>"><button class="orange-btn">Learn More</button></a>

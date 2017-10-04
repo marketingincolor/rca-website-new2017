@@ -118,7 +118,7 @@
 							if ( $news_query->have_posts() ) { 
 								while ( $news_query->have_posts() ) {
 									$news_query->the_post();
-									echo '<div class="small-12 medium-6 large-4 columns" style="Color: white;">';
+									echo '<div class="small-12 medium-6 large-4 columns">';
 									#the_title();
 									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/><a href="'. get_permalink() .'">Read More</a>');
 									echo '</div>';

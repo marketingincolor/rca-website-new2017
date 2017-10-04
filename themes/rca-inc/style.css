@@ -28,12 +28,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+/*Published articles*/
+.date { font-family: 'Lora', serif; font-weight: bold; font-style: italic; color: #9d938b; }
+
 .menu > li > a { font-weight: normal; }
 
 #sign-up-cta h3 {
 	position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    color: #fff;
 }
 
 /*Front Page Slider*/
@@ -74,7 +78,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 #mega-menu-container li a { padding-right: 0rem; padding-left: 0rem; }
 main { margin-bottom: 3.5rem; }
 .about-us-testimonial { background-color: #1a365d; color: #fff; padding: 40px; margin-bottom: 40px; }
-.about-us-testimonial p { color: #fff; font-family: 'Lora', sans-serif; font-weight: bold; font-size: 1.25rem; }
+.about-us-testimonial p { color: #fff; font-family: 'Lora', sans-serif; font-weight: bold; font-size: 1.25rem; font-style: italic; }
 
 .item-block { margin: 1rem 0rem; }
 .archived-title { height: 80px; }
@@ -211,6 +215,7 @@ main { margin-bottom: 3.5rem; }
 		font-style: italic;
 		font-size: 1.25rem;
 		margin-bottom: 0;
+		text-align: center;
 	}
 
 .case-study-quote p { font-family: 'Lora', serif; }
@@ -1385,7 +1390,7 @@ textarea {
 
 h1 { font-family: 'Lora', serif; font-size: 2.25rem !important; color: #c4612b; }
 h2 { font-family: 'Roboto', sans-serif; font-size: 1.375rem !important; color: #2b2b2b; }
-h3 { font-family: 'Roboto', sans-serif; font-size: 1.125rem !important; color: #9d938b; }
+h3 { font-family: 'Roboto', sans-serif; font-size: 1.125rem; color: #9d938b; }
 
 a {
 	color: #c4612b;
@@ -1893,7 +1898,8 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; }
 
 
 /*Front Page - News Section*/
-#news-container div div div h3 { font-family: 'Lora', sans-serif; font-weight: bold; font-style: italic; }
+#news-container div div div h3 { font-family: 'Lora', sans-serif; font-weight: bold; font-style: italic; font-size: 1.9375rem; }
+#news-container h3, #news-container p, #news-container div { color: #fff; }
 #news-section { color: black; position:relative; }
 .news-slider-overlay h1,
 .news-slider-overlay p { color:#ffffff; }
@@ -2326,7 +2332,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 /*Removes border right before contact menu*/
 #mega-menu-container > li:nth-child(5) a { border-right: none; }
 
-#mega-menu-container h3 { font-size: 1.18rem; font-weight: bold; }
+#mega-menu-container h3 { font-size: 1.18rem; font-weight: bold; color: #2b2b2b; }
 #mega-menu-container .is-active a { color: #c4612b; } 
 #mega-menu-container li a:hover { color: #c4612b; }
 #mega-menu-container li:last-child a:hover { color: #fff; }
@@ -2398,7 +2404,11 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
     text-align: center;
     cursor: pointer;
 }
-#share p { color: #c9c3ba; padding-right: 1.2rem; }
+#share p { 
+	padding-right: 1.2rem;
+	font-size: 14px !important;
+    color: #9d938a !important;
+}
 
 #breadcrumbs { margin: 3.5rem 0px; color: #c9c3ba; }
 #breadcrumbs a { color: #c9c3ba; }
@@ -2467,6 +2477,8 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 #share p { display: inline-block; }
 
+.archive img { margin-bottom: 10px;  }
+.archived-title > a { font-weight: normal; }
 
 
 /* Small only */

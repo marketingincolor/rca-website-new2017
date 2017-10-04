@@ -19,6 +19,8 @@ header("HTTP/1.1 200 OK");
 		$offset = 0;
 	endif;
 
+	
+
   
   	// Change News Query Based on whats clicked in rca-filter-news.js
   	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
