@@ -8,7 +8,7 @@ global $post;
 
 // Get External URL of Article
 // Need to add these fields to ACF
-$article_link      = get_field('article_link'); 
+$article_link      = get_field('link_to_article'); 
 $article_link_text = get_field('article_link_text'); 
 
 ?>
@@ -29,7 +29,7 @@ $article_link_text = get_field('article_link_text');
 	<div class="row">
 		<div class="small-10 small-offset-1 columns" >
 			<p><?php echo wp_trim_words(get_the_content(),70,'...'); ?></p>
-			<a href="<?php echo $article_link; ?>" class="orange-btn"><button style="width:auto"><?php echo $article_link_text; ?></button></a>
+			<a href="<?php echo $article_link; ?>" class="orange-btn"><button style="width:auto"><?php echo (!empty($article_link_text)) ? $article_link_text : 'Continue Reading this Article'; ?></button></a>
 		</div>
 	</div>
 	<!-- /Content -->

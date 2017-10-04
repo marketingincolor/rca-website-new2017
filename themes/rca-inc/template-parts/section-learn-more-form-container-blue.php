@@ -1,7 +1,12 @@
+<?php
+wp_reset_postdata();
+$form_title = get_field('learn_more_form_container_blue_title');
+
+?>
 <div id="learn-more-form-container-blue">
 		<div class="row" >
 			<div class="small-10 small-offset-1 columns text-center">
-				<h1>I'm interested in Learning More About RCA</h1>
+				<h1>I'm interested in Learning More About <?php echo (!empty($form_title))? $form_title : 'RCA'; ?></h1>
 				<div id="white-error-message"></div>
 			</div>
 		</div>

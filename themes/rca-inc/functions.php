@@ -751,7 +751,7 @@ function get_team_members($role_type) {
         $end = 'end';
       }
 
-      echo '<div class="small-12 ' . $additionalClass .' large-2 columns ' . $end .'">';
+      echo '<div class="small-12 staff-column ' . $additionalClass .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
 
       $position = get_field('position', $member_info);
       if( !empty($avatar)) : 

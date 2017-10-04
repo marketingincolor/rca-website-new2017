@@ -16,8 +16,8 @@ get_header(); ?>
 	</div>
 
 	<!-- LEARN MORE -->
-	<?php //get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
-	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
+	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
+	<?php //get_template_part('template-parts/section', 'learn-more-cta'); ?>
 	<!-- /LEARN MORE -->
 
 <?php
