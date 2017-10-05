@@ -58,6 +58,8 @@ var callThisOnReturn = function(resp) {
   			jQuery('#takeover-modal').foundation('open');
   		}
   	});
+  }else{
+  	jQuery('#takeover-modal').foundation('open');
   }
 };
 _ss.push(['_setResponseCallback', callThisOnReturn]); 
