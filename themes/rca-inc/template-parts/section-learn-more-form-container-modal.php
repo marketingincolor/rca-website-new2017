@@ -4,7 +4,7 @@
 				<div id="orange-error-message"></div>
 			</div>
 			<div class="small-10 small-offset-1 columns end">
-				<form name="modal-form" action="<?php bloginfo('template_directory'); ?>/template-parts/send-form-data.php" method="post">
+				<form id="gated-content-form" name="modal-form" action="" method="post">
 			    <div class="row">
 			    	<div class="large-6 columns">
 			    		<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
@@ -50,51 +50,51 @@
 							<label for="" class="industry-label text-left"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
 							<div class="checkbox-group required">
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a1" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
+									<input id="a1" type='checkbox' name='industry[]' class="chkrad X fade" value='Technology' />
 									<label class="check-label" for="a1"> Technology</label>
-									<input id="a2" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a2"> Lorem Ipsum</label>
-									<input id="a3" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a3"> Lorem Ipsum</label>
+									<input id="a2" type='checkbox' name='industry[]' class="chkrad X fade" value='Manufacturing' />
+									<label class="check-label" for="a2"> Manufacturing</label>
+									<input id="a3" type='checkbox' name='industry[]' class="chkrad X fade" value='Food' />
+									<label class="check-label" for="a3"> Food</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a4" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a4"> Lorem Ipsum</label>
-									<input id="a5" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a5"> Lorem Ipsum</label>
-									<input id="a6" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a6"> Lorem Ipsum</label>
+									<input id="a4" type='checkbox' name='industry[]' class="chkrad X fade" value='Games' />
+									<label class="check-label" for="a4"> Games</label>
+									<input id="a5" type='checkbox' name='industry[]' class="chkrad X fade" value='Fun' />
+									<label class="check-label" for="a5"> Fun</label>
+									<input id="a6" type='checkbox' name='industry[]' class="chkrad X fade" value='Ranching' />
+									<label class="check-label" for="a6"> Ranching</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a7" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a7"> Lorem Ipsum</label>
-									<input id="a8" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a8"> Lorem Ipsum</label>
-									<input id="a9" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a9"> Lorem Ipsum</label>
+									<input id="a7" type='checkbox' name='industry[]' class="chkrad X fade" value='Agriculture' />
+									<label class="check-label" for="a7"> Agriculture</label>
+									<input id="a8" type='checkbox' name='industry[]' class="chkrad X fade" value='Retail' />
+									<label class="check-label" for="a8"> Retail</label>
+									<input id="a9" type='checkbox' name='industry[]' class="chkrad X fade" value='Marketing' />
+									<label class="check-label" for="a9"> Marketing</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a10" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a10"> Lorem Ipsum</label>
-									<input id="a11" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a11"> Lorem Ipsum</label>
-									<input id="a12" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a12"> Lorem Ipsum</label>
+									<input id="a10" type='checkbox' name='industry[]' class="chkrad X fade" value='Sales' />
+									<label class="check-label" for="a10"> Sales</label>
+									<input id="a11" type='checkbox' name='industry[]' class="chkrad X fade" value='Nate' />
+									<label class="check-label" for="a11"> Nate</label>
+									<input id="a12" type='checkbox' name='industry[]' class="chkrad X fade" value='Meteorology' />
+									<label class="check-label" for="a12"> Meteorology</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a13" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a13"> Lorem Ipsum</label>
-									<input id="a14" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a14"> Lorem Ipsum</label>
-									<input id="a15" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a15"> Lorem Ipsum</label>
+									<input id="a13" type='checkbox' name='industry[]' class="chkrad X fade" value='Security' />
+									<label class="check-label" for="a13"> Security</label>
+									<input id="a14" type='checkbox' name='industry[]' class="chkrad X fade" value='Law Enforcement' />
+									<label class="check-label" for="a14"> Law Enforcement</label>
+									<input id="a15" type='checkbox' name='industry[]' class="chkrad X fade" value='Singing' />
+									<label class="check-label" for="a15"> Singing</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a16" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a16"> Lorem Ipsum</label>
-									<input id="a17" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
-									<label class="check-label" for="a17"> Lorem Ipsum</label>
-									<input id="a18" type='checkbox' name='industry[]' class="chkrad X fade" value='Lorem Ipsum' />
+									<input id="a16" type='checkbox' name='industry[]' class="chkrad X fade" value='Pharmaceuticals' />
+									<label class="check-label" for="a16"> Pharmaceuticals</label>
+									<input id="a17" type='checkbox' name='industry[]' class="chkrad X fade" value='Oil Driling' />
+									<label class="check-label" for="a17"> Oil Driling</label>
+									<input id="a18" type='checkbox' name='industry[]' class="chkrad X fade" value='Other' />
 									<label class="check-label" for="a18"> Other</label>
 								</div>
 							</div>
@@ -102,14 +102,14 @@
 					</div>
 					<div class="row">
 						<div class="large-12 columns">
-							<label for="" class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions*</label>
-							<textarea name="comments" id="form-comments" cols="30" rows="4" required></textarea>
+							<label for="" class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions</label>
+							<textarea name="comments" id="form-comments" cols="30" rows="4"></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-6 columns">
 						  <div class="checkbox-group">
-						    <input id="agree" type="checkbox" name="agree" value="agree" checked="checked">
+						    <input id="agree" type="checkbox" name="agree" value="true" checked="checked">
 						    <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
 						  </div>
 						</div>
@@ -119,6 +119,9 @@
 					</div>
 					<div class="row">
 						<div class="large-12 columns">
+							<?php global $wp;
+							$current_url = home_url(add_query_arg(array(),$wp->request)); ?>
+						  <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
 							<input type="submit" value="Submit" id="form-submit-modal">
 						</div>
 					</div>
@@ -162,6 +165,7 @@
 
 		//Don't send form if it has errors, otherwise send
 		$modalForm.find('#form-submit-modal').on('click',function(e){
+			e.preventDefault();
 		  if($modalForm.find('#form-first-name').val() == ''){
 		  	showError('Please enter your first name');
 		  	$modalForm.find('#form-first-name').addClass("formInvalid");
@@ -204,18 +208,19 @@
 		  	showError('Please enter your company name');
 		  	$modalForm.find('#form-company').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-comments').val() == ''){ 
-		  	showError('Please enter a comment or question');
-		  	$modalForm.find('#form-comments').focus();
-		  	$modalForm.find('#form-comments').addClass("formInvalid");
-		  	return false;
 		  } else if ($modalForm.find('div.checkbox-group.required :checkbox:checked').length == 0){
 			  	showError('Please check at least one industry');
 			  	$modalForm.find('.industry-label').css({'color':'rgba(255,0,42,1)'})
 			  	e.preventDefault();
 			  	return false;
 		  } else {
-		      document.forms["modal-form"].submit();
+		  		jQuery.ajax({
+		  			type: 'POST',
+		  			success: function(data){
+		  				__ss_noform.push(['submit', null, '89bfbeaa-be55-44e6-b904-448e0da31acc']);
+		      		jQuery('#takeover-modal').foundation('close');
+		  			}
+		  		})
 		  }
 	  });
 
