@@ -87,11 +87,11 @@
 			<?php if($result_text): ?>
 			<p><?php echo $result_text; ?></p>
 			<?php endif; ?>
-			<?php if($references_title): ?>
-			<h3><?php echo $references_title; ?></h3>
-			<?php endif; ?>
-			<?php if($references_text): ?>
-			<p><?php echo $references_text; ?></p>
+			<?php if($references_title && $references_text): ?>
+			<div class="references-section">
+				<p><strong><?php echo $references_title; ?></strong></p>
+				<p><?php echo $references_text; ?></p>
+			</div>
 			<?php endif; ?>
 
 		</div>

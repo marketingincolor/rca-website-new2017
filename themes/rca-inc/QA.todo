@@ -1,83 +1,115 @@
 Design QA - Desktop
+
 UNIVERSAL
 
-FOR DESIGN:
- ☐ (for design) Needs background image. team > DIRECTORS
- ☐ (for design + dev) icons in the expertise bar are blurry and need to be updated
- ☐ (for design) Needs bg header image.
- ☐ (for design) We need a background image for ABOUT PAGE
+CSS stuff
+H1: Lora Bold Italic -- 36px -- #c4612b (orange) or white on reverse
+H2: Roboto Bold -- 22px -- #2b2b2b or white on reverse
+(I don't think this has been set) H3: Roboto Bold -- 18px -- #2b2b2b or white on reverse
+Breadcrumbs & "Share on Social Media": Roboto Regular -- 12px -- #9d938b (gray)
+Links: Roboto Bold -- #c4612b (orange) or white on reversed 
+BLOCKQUOTES: please make blockquotes Lora Bold Italic -- 20px -- #236192
 
-ABOUT: 
- ☐ CTA box is missing button and the font should be Lora Bold Italic
 
-MEET OUR TEAM OF EXPERTS:
- ☐ I remember Edd saying there was a way to line up the bio buttons with CSS so they're even, can that be done?
+REFERENCES TO STUFF
+I have not seen this styling implemented
+https://basecamp.com/1769933/projects/12077833/messages/71762319#comment_56…
 
-INDIVIDUAL BIOS:
- ☐ <br> aren't stickin
+HOME PAGE:
+Case Studies
 
-VISUAL RESOURCES:
+Related Content
+ ☐ The spacing between the download button and the "Related Content" needs to be reduced. Right now it's at 190px (about) between --- can you shorten it to 90px between?
+
+Header
+ ☐ Should the “About” in the menu be a dropdown since it will lead to an about page and the staff bio page
+
+
+Other than the general issues, these pages are good:
+ ☐ BIO PAGES NEED TO BE LINKED
+
+
+
+These pages need help:
+Most download buttons aren't linked to PDFs. 
  ☐ Design History File Support Services Handout: is there a way to indent the bullets? When the images are in-line, the bullets look off. https://gyazo.com/7957d08d54ce608a4ed5a3b9f2c9903f
  ☐ Lessons Learned from Combination Products Poster Presentation: bullets - https://gyazo.com/4fdee78ec44e43f118309038c15e96b6
  ☐ Medical Device Regulatory Services Handout: bullets https://gyazo.com/b7979625823eb43253d5c66a9196b214
  ☐ Complete List of Pharmaceutical Services Handout: bullets
 
 
+Other than what generally needs to be fixed, here are page-specific edits:
+ ☐ Outsourced Quality & Regulatory Leadership: the content's code is showing - you can see the tags.
+ ☐ Clearing a Hurdle for CE Mark: The Clinical Evaluation: attribution at the bottom needs to be italicized. "Bruce Marchioni
+ ☐ Senior Vice President of Quality &amp; Regulatory Affairs
+ ☐ Devicor Medical"
+ ☐ Technical File Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ FDA Warning Letter Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ Pre-Acquisition Technical Due Diligence: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ Risk Management in Product Development and Manufacturing: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ FDA Warning Letter Response and Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ Compliance Assurance Engagement Leads to Passed FDA Inspection and Improved Workflow: THAT QUOTE!?!?!! The blue box cannot be moved, correct? If we can even jut move it up so it's a second column next to all the copy would be amazing. If it cannot be moved.... @me so we can discuss. 
+ ☐ Remediation & Resulting Sustainable Compliance within New FDA Regulatory Framework: Same question - can this blue box be moved up?
+ ☐ Compliance Assurance Engagement Leads to Passed FDA Inspection and Improved Workflow: HTML code is showing for RESULTS + the blue box looks so lonely all by itself, would be nice to move it up but let me know if not possible
+ ☐ Creating Operational Discipline to Support Quality Initiatives: very last word in the "results" paragraph is a widow -- talking to accounts to prob just get this re-written.
+
+
+
+Articles that are a-ok in my book (except for the general change that needs to happen):
+
+
+NEWS FEED
+
+NEWS POSTS
+General issues
+ ☐ Missing breadcrumb - https://gyazo.com/0247782d02df0f2139ca26fd1fa69bea?token=af203de78b59f06944…
+
+Links that need to be underlined -- can this be done in CSS? 
+RCA Honored with Ovation Award
+Regulatory Compliance Associates® Inc. Receives ISO 9001 Certification
+RCA Assists 503B Outsourcing Facility Achieve License for Sterile Distribution by Florida State Board of Pharmacy
+
+WHITE PAPERS
+General changes need to be made:
+ ☐ Blockquotes need to be formatted without the extra space overtop if possible and with an orange line about 8px - https://gyazo.com/d5621cb72cbb1c15924b2d693864dd17
+ ☐ Style would be - Lora Bold Italic -- 20px -- #236192
+ ☐ Contact button at the bottom needs to be formatted
+ ☐ Bullets need to be formatted (level 1, level 2, level 3, etc.) https://gyazo.com/656de0ede5086eb2097c76ca861ff252
+
+Page-specific changes:
+
 
 ----------------------------------------------- IN QA PROGRESS ---------------------------------------------
-﻿﻿﻿PUBLISHED ARTICLES﻿﻿
+
+WHITE PAPERS
+General changes need to be made:
+ ☐ Bullets need to be formatted (level 1, level 2, level 3, etc.) https://gyazo.com/656de0ede5086eb2097c76ca861ff252
+
+Page-specific changes:
+
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
- ✔ Sharon Ayd: H3s aren't set + formatting of name/title/bio is off - https://gyazo.com/7ce55f2caf4a972275525d0245fc251f @done (17-10-03 16:57) @project(INDIVIDUAL BIOS)
- ✔ erase mission statement @done (17-10-03 16:28) @project(ABOUT)
- ✔ Lisa Michels: links are blue + H3s aren't set @done (17-10-03 16:09) @project(INDIVIDUAL BIOS)
- ✔ “We have walked the walk.” This should be an H3 @done (17-10-03 16:08) @project(ABOUT)
- ✔ Can we consist-ify the buttons across the website to have this padding: 12px top, 12px bottom, 26px left, 26px right - that way they’re rectangles and we don’t have some taller than others. @done (17-10-03 15:53) @project(Buttons)
- ✔ (for design) Background image needs to be optimized to be clear @done (17-10-03 15:10) @project(Blue CTA Bar)
- ✔ Please give the blue social media bar the same amount of padding between elements - It looks to be about 65px. @done (17-10-03 14:24) @project(CONTACT US)
- ✔ Menu dropdown - can we increase the space between each menu item and increase the space between the menu items that end up on multiple lines - https://gyazo.com/774bc262c45d42615b737e802108e4b7 @done (17-10-03 14:13) @project(Header)
- ✔ Can we increase the spacing between copy that's breaks into two line. https://gyazo.com/c080721ba0824181861e00eb3fe645d2 @done (17-10-03 14:13) @project(CONTACT US)
- ✔ Text should be centered within the box - 62px above and 62px below @done (17-10-03 12:47) @project(Blue CTA Bar)
- ✔ U.S. Agent Services Handout: good @done (17-10-03 12:33) @project(VISUAL RESOURCES)
- ✔ Questions to Consider While Evaluating and Measuring Poster Presentation: good @done (17-10-03 12:33) @project(VISUAL RESOURCES)
- ✔ Pharmaceutical Regulatory Affairs Services Handout: good @done (17-10-03 12:33) @project(VISUAL RESOURCES)
- ✔ Most download buttons aren't linked to PDFs. @done (17-10-03 12:33) @project(VISUAL RESOURCES)
- ✔ Medical Device: Audit, Assessment and Inspection Services Handout: good @done (17-10-03 12:33) @project(VISUAL RESOURCES)
- ✔ I don't think email is needed under "West Coast Regional Office" - https://basecamp.com/1769933/projects/12077833/documents/12543164 @done (17-10-03 12:33) @project(CONTACT US)
- ✔ Correspondence Between ISO 13485:2016 and 21 CFR Part 820 QMS Requirements: good @done (17-10-03 12:33) @project(VISUAL RESOURCES)
- ✔ The button on the contact form reverses out over hover - can we do that for all the buttons on hover? I like that added detail to the buttons and would like it for all the buttons. Let me know if that will eat up too much time. @done (17-10-03 11:43) @project(Buttons)
- ✔ Seyed Khorashahi: formatting of name/title/bio is off - https://gyazo.com/e1c182f4123b058a5169497b2e2908a0 @done (17-10-03 11:39) @project(INDIVIDUAL BIOS)
- ✔ Susan Schniepp: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Steve Schultz: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Mitch Januszewski: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Mike Parkes: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Krista Kurth: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Judith Purdom: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Erika Procelli: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Brian Nelson: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Brian Matye: looks good (other than the spacing) @done (17-10-03 11:34) @project(INDIVIDUAL BIOS)
- ✔ Emails aren't linked @done (17-10-03 11:30) @project(INDIVIDUAL BIOS)
- ✔ ALL WITH HEADSHOTS These spaces should be even - https://gyazo.com/acc66653e1a8f45c453cf8c90a351940 @done (17-10-03 11:20) @project(INDIVIDUAL BIOS)
- ✔ Mission statement copy at the bottom needs to be erased @done (17-10-03 11:13) @project(ABOUT)
- ✔ Roboto Bold and underlined @done (17-10-03 10:56) @project(Links)
- ✔ Can links be Roboto bold #9d938b on hover except for the header - that can stay the same. @done (17-10-03 10:48) @project(Links)
- ✔ When the excerpt text is written and posted for “Remediation & Resulting…” it will look fab @done (17-10-03 10:42) @project(Case Studies)
- ✔ H2s please make #2B2B2B @done (17-10-03 10:42) @project(Case Studies)
- ✔ Footer - Can you center the entire thing so that there is equal space from the edge to “News” and from the edge to the linkedIn icon. @done (17-10-03 10:39) @project(Footer)
- ✔ The titles under directors at the bottom (Operations, Sales Operations, Finance, and Directors) should be Roboto Bold. @done (17-10-03 10:38) @project(MEET OUR TEAM OF EXPERTS)
- ✔ Right now the buttons have a light gray background - can those change to white please. @done (17-10-03 10:38) @project(Buttons)
- ✔ The separator is pretty thicc - can it be slimmed by 2px? @done (17-10-03 10:36) @project(MEET OUR TEAM OF EXPERTS)
- ✔ Should the “About” in the menu be a dropdown since it will lead to an about page and the staff bio page @done (17-10-03 10:33) @project(Header)
- ✔ Expertise bar font size - 12px with about 17px of padding between each set (set being case studies icon & copy) @done (17-10-03 10:32) @project(Header)
- ✔ Is there a way to add more 15px of padding to the left and right of each copy box - https://gyazo.com/fde72cc1d71140251a88e3e4116b166c @done (17-10-03 10:23) @project(Industries Section)
- ✔ H2s please make #2B2B2B @done (17-10-03 10:21) @project(Industries Section)
- ✔ The all-around padding should be 55px (right now it looks like there’s more padding on the right than the left — is this because of the copy within the box? https://gyazo.com/e63c76e180772c55386cfa3baa774455 @done (17-10-03 10:20) @project(Slider)
- ✔ Doesn’t animate - should animate @done (17-10-03 10:20) @project(Slider)
- ✔ Is it possible to change the background of the social media share link that pops up to #c4612b? -- https://gyazo.com/77b8690e9a64026c2a05adfa70706c1a @done (17-10-03 10:16) @project(Breadcrumbs and Social Media)
- ✔ Please make font size 14px and color #9d938a @done (17-10-03 10:14) @project(Breadcrumbs and Social Media)
- ✔ News - The headline typeface should be Lora - bold italic @done (17-10-03 10:10) @project(Footer)
- ✔ Contact form - looks sexy af but can the "*=required" be size 12px like the "I agree to receive emails from RCA" opt in text? @done (17-10-03 10:08) @project(Footer)
- ✔ (more for digi + accounts)  Do we have the correct copy for the contact form? @done (17-10-03 10:08) @project(Footer)
- ✔ Contact button - needs to lead to the contact page @done (17-10-03 10:03) @project(Header)
- ✔ Logo needs to be updated so that it’s not pixelated -- UPDATED PNG/SVG SAVED HERE:: smb://micfile/Public/Clients/Regulatory Compliance Associates/Website/RCA162576-Website/Creative/Website Elements/Logo @done (17-10-03 09:57) @project(Header)
+ ✔ Time, Distance and Technology for a Private Equity Due Diligence @done (17-10-04 15:39) @project(Cast studies with references need the references portion formatted)
+ ✔ Gap Assessment Electronic Records @done (17-10-04 15:39) @project(Cast studies with references need the references portion formatted)
+ ✔ Shelf Stability @done (17-10-04 15:38) @project(Cast studies with references need the references portion formatted)
+ ✔ Regulatory 510(k) Analysis Development Product Cleaning/Disinfection @done (17-10-04 15:38) @project(Cast studies with references need the references portion formatted)
+ ✔ Product Cleaning Endotoxin Control @done (17-10-04 15:37) @project(Cast studies with references need the references portion formatted)
+ ✔ Process Validation Remediation @done (17-10-04 15:37) @project(Cast studies with references need the references portion formatted)
+ ✔ Manufacturing Automation @done (17-10-04 15:36) @project(Cast studies with references need the references portion formatted)
+ ✔ Style would be - Lora Bold Italic -- 20px -- #236192 @done (17-10-04 15:16) @project(General changes need to be made)
+ ✔ Blockquotes need to be formatted without the extra space overtop if possible and with an orange line about 8px - https://gyazo.com/d5621cb72cbb1c15924b2d693864dd17 @done (17-10-04 15:16) @project(General changes need to be made)
+ ✔ The related content content are missing icons and should be centered. https://gyazo.com/3c4d02f944939671c8bd272053fec0c6 @done (17-10-04 14:55) @project(HOME PAGE)
+ ✔ Drop down styling - https://gyazo.com/269ed443d0dee10ebc251cb2a3b91211 (do you need styling for this?) @done (17-10-04 14:55) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ The space between the headline for "Related Content" and the lines should be doubled. @done (17-10-04 14:52) @project(HOME PAGE)
+ ✔ References section needs to be formatted @done (17-10-04 14:45) @project(General changes need to be made)
+ ✔ H3s need to be formatted to be roboto bold @done (17-10-04 14:45) @project(General changes need to be made)
+ ✔ Contact button at the bottom needs to be formatted @done (17-10-04 14:45) @project(General changes need to be made)
+ ✔ H3s need to be formatted to be roboto bold @done (17-10-04 14:24) @project(General changes need to be made)
+ ✔ Where do the excerpts go? https://gyazo.com/dcc4a58ccaf9fb9a6506f28d4be20aa1 @done (17-10-04 14:19) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ References section needs to be formatted @done (17-10-04 14:19) @project(General changes need to be made)
+ ✔ "Read More" links need to be underlined @done (17-10-04 14:19) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ Year published button needs a space between "Year Published" and the icon - https://gyazo.com/1bd12c31aaca77e5ac65fc57e00ed96b @done (17-10-04 13:59) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ I freaking love the load animation @done (17-10-04 13:59) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ Load button needs more padding (60px) between it and the footer. https://gyazo.com/ad7224fbc586c01a47e92cee5d2a9c1e @done (17-10-04 13:54) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ When the excerpt text is written and posted for “Remediation & Resulting…” it will look fab @done (17-10-04 13:05) @project(HOME PAGE)

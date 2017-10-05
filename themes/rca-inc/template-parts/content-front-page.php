@@ -111,7 +111,7 @@
 				<h3>Sign up for our Free Combination Products Webinar</h3><br />
 			</div>
 			<div class="medium-2 columns end relative" data-equalizer-watch>
-				<button id="learn-more-btn">Sign Up Here</button>
+				<button id="learn-more-btn" class="white-btn">Sign Up Here</button>
 			</div>
 		</div>
 		<!-- end desktop cta -->
@@ -139,7 +139,7 @@
 
 								echo '<div class="individual-case-study rca">';
 									echo '<h3 class="text-left"><a href="' . get_the_permalink() .'">' . get_the_title() . '</a></h3>';
-									echo '<p class="text-left">' . wp_trim_words( get_the_content(), 40, '...</br><a href="'. get_post_permalink() .'" title="Read More" class="read-more">Read More</a>' ) . '</p>';
+									echo '<p class="text-left">' . wp_trim_words( get_the_excerpt(), 40, '...</br><a href="'. get_post_permalink() .'" title="Read More" class="read-more">Read More</a>' ) . '</p>';
 								echo '</div>';
 							endwhile;
 
@@ -178,7 +178,7 @@
 								<?php
 										echo '<div class="individual-case-study rca" data-equalizer-watch>';
 											echo '<h3 class="text-left"><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
-											echo '<p class="text-left">' . wp_trim_words( get_the_content(), 20, '...</br><a href="' . get_post_permalink() . '" title="Read More" class="read-more">Read More</a>' ) . '</p>';
+											echo '<p class="text-left">' . wp_trim_words( get_the_excerpt(), 20, '...</br><a href="' . get_post_permalink() . '" title="Read More" class="read-more">Read More</a>' ) . '</p>';
 										echo '</div>';
 										echo '</div>';
 									endwhile;
