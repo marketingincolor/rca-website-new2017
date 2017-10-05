@@ -36,7 +36,9 @@
 var callThisOnReturn = function(resp) {
   if (resp && resp.contact) {
   	var takeover = jQuery('#learn-more-form-container-white');
-  	jQuery('#takeover-modal').foundation('open');
+  	takeover.find('input:not(:checkbox):not(:submit):not(:hidden)').each(function(){
+  		jQuery(this).val("");
+  	});
 
   	takeover.find('#form-first-name').val(resp.contact['First Name']);
   	takeover.find('#form-last-name').val(resp.contact['Last Name']);
@@ -48,7 +50,14 @@ var callThisOnReturn = function(resp) {
   	takeover.find('#form-country').val(resp.contact['Country']);
   	takeover.find('#form-zip').val(resp.contact['Zip']);
   	takeover.find('#form-company').val(resp.contact['Company Name']);
+
   	console.log(resp.contact);
+  	takeover.find('input:not(:checkbox):not(:submit):not(:hidden)').each(function(){
+  		var value = jQuery(this).val();
+  		if (value == "") {
+  			jQuery('#takeover-modal').foundation('open');
+  		}
+  	});
   }
 };
 _ss.push(['_setResponseCallback', callThisOnReturn]); 
