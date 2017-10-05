@@ -357,7 +357,8 @@ function rca_validate_settings($input)
 register_nav_menus( array(
   'rca_mobile_footer_menu_left' => 'Mobile Footer Menu Left',
   'rca_mobile_footer_menu_right' => 'Mobile Footer Menu Right',
-  'rca_desktop_footer_menu' => 'Desktop Footer Menu'
+  'rca_desktop_footer_menu' => 'Desktop Footer Menu',
+  'new_desktop_menu' => 'New Desktop Menu'
 ) );
 
 
@@ -751,7 +752,11 @@ function get_team_members($role_type) {
         $end = 'end';
       }
 
-      echo '<div class="small-12 staff-column ' . $additionalClass .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
+      if(empty($avatar)):
+        $missing_avatar = 'missing-avatar';
+      endif;
+
+      echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
 
       $position = get_field('position', $member_info);
       if( !empty($avatar)) : 
@@ -851,6 +856,9 @@ function get_cat_image($title) {
     break;
     case('Webinars'):
       $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/webinars.png';
+    break;
+    case('View All'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/view-all.png';
     break;
     default:
       $url = '';
@@ -1270,4 +1278,27 @@ function rca_get_post_type_icon($post_type) {
 
 
   return $icon;
+}
+
+/**
+ * Automatically return medical-device/pharma URLs
+ * @param  [type] $postID [description]
+ * @return [type]         [description]
+ */
+function rca_get_featured_img($postID) {
+  $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+  $actual_link = explode("/",$actual_link);
+
+  if( $actual_link[4] == 'medical-device' || $actual_link[4] == 'medical-devices') {
+    $img = get_stylesheet_directory_uri() . '/images/medical-device-header.jpg';
+  }
+
+  elseif ( $actual_link[4] == 'pharmaceutical') {
+    $img = get_stylesheet_directory_uri() . '/images/pharmaceutical.jpg';
+  }
+  else {
+    $img = '';
+  }
+  return $img;
+
 }

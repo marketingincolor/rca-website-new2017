@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying news pages
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
