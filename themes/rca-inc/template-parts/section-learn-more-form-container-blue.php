@@ -12,7 +12,7 @@ $form_title = get_field('learn_more_form_container_blue_title');
 		</div>
 		<div class="row">
 			<div class="small-10 small-offset-1">
-				<form name="blue-form" action="#">
+				<form id="blue-form" name="blue-form" action="" method="post">
 					    <div class="large-4 columns">
 					    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
 					    </div>
@@ -102,7 +102,7 @@ $form_title = get_field('learn_more_form_container_blue_title');
 						</div>
 						<div class="large-6 columns">
 							<div class="checkbox-group">
-							  <input id="agree" type="checkbox" name="agree" value="Car" checked="checked">
+							  <input id="agree" type="checkbox" name="agree" value="true" checked="checked">
 							  <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
 							</div>
 						</div>
@@ -110,6 +110,9 @@ $form_title = get_field('learn_more_form_container_blue_title');
 							<p>*=Required</p>
 						</div>
 						<div class="large-12 columns">
+							<?php global $wp;
+							$current_url = home_url(add_query_arg(array(),$wp->request)); ?>
+						  <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
 							<input type="submit" value="Submit" id="form-submit">
 						</div>
 				</form>
@@ -212,6 +215,6 @@ $form_title = get_field('learn_more_form_container_blue_title');
 <script type="text/javascript">
     var __ss_noform = __ss_noform || [];
     __ss_noform.push(['baseURI', 'https://app-3QMGUWHS20.marketingautomation.services/webforms/receivePostback/MzawMDGwMDYyAgA/']);
-    __ss_noform.push(['endpoint', '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
+    __ss_noform.push(['form','blue-form', '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
 </script>
 <script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/noform.js?ver=1.24" ></script>

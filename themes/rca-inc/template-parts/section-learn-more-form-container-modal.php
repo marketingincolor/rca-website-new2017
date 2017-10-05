@@ -4,7 +4,7 @@
 				<div id="orange-error-message"></div>
 			</div>
 			<div class="small-10 small-offset-1 columns end">
-				<form name="modal-form" action="<?php bloginfo('template_directory'); ?>/template-parts/send-form-data.php" method="post">
+				<form id="gated-content-form" name="modal-form" action="" method="post">
 			    <div class="row">
 			    	<div class="large-6 columns">
 			    		<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
@@ -102,14 +102,14 @@
 					</div>
 					<div class="row">
 						<div class="large-12 columns">
-							<label for="" class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions*</label>
+							<label for="" class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions</label>
 							<textarea name="comments" id="form-comments" cols="30" rows="4" required></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="large-6 columns">
 						  <div class="checkbox-group">
-						    <input id="agree" type="checkbox" name="agree" value="agree" checked="checked">
+						    <input id="agree" type="checkbox" name="agree" value="true" checked="checked">
 						    <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
 						  </div>
 						</div>
@@ -119,6 +119,9 @@
 					</div>
 					<div class="row">
 						<div class="large-12 columns">
+							<?php global $wp;
+							$current_url = home_url(add_query_arg(array(),$wp->request)); ?>
+						  <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
 							<input type="submit" value="Submit" id="form-submit-modal">
 						</div>
 					</div>
@@ -162,6 +165,7 @@
 
 		//Don't send form if it has errors, otherwise send
 		$modalForm.find('#form-submit-modal').on('click',function(e){
+			e.preventDefault();
 		  if($modalForm.find('#form-first-name').val() == ''){
 		  	showError('Please enter your first name');
 		  	$modalForm.find('#form-first-name').addClass("formInvalid");
@@ -204,18 +208,19 @@
 		  	showError('Please enter your company name');
 		  	$modalForm.find('#form-company').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-comments').val() == ''){ 
-		  	showError('Please enter a comment or question');
-		  	$modalForm.find('#form-comments').focus();
-		  	$modalForm.find('#form-comments').addClass("formInvalid");
-		  	return false;
 		  } else if ($modalForm.find('div.checkbox-group.required :checkbox:checked').length == 0){
 			  	showError('Please check at least one industry');
 			  	$modalForm.find('.industry-label').css({'color':'rgba(255,0,42,1)'})
 			  	e.preventDefault();
 			  	return false;
 		  } else {
-		      document.forms["modal-form"].submit();
+		  		jQuery.ajax({
+		  			type: 'POST',
+		  			success: function(data){
+		  				__ss_noform.push(['submit', null, '89bfbeaa-be55-44e6-b904-448e0da31acc']);
+		      		jQuery('#takeover-modal').foundation('close');
+		  			}
+		  		})
 		  }
 	  });
 

@@ -21,11 +21,36 @@
 		display: none;
 	}
 </style>
-<!-- <script>
-	// show modal on page load
-	// Uncomment this function when you want to show the modal
-	
-	$(document).ready(function(){
-		jQuery('#takeover-modal').foundation('open');
-	});
-</script> -->
+
+<!-- Sharpspring native form code -->
+<script type="text/javascript">
+    var __ss_noform = __ss_noform || [];
+    __ss_noform.push(['baseURI', 'https://app-3QMGUWHS20.marketingautomation.services/webforms/receivePostback/MzawMDGwMDYyAgA/']);
+    __ss_noform.push(['form','gated-content-form', '89bfbeaa-be55-44e6-b904-448e0da31acc']);
+    __ss_noform.push(['submitType', 'manual']);
+</script>
+<script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+
+<!-- Start Dynamic Script Example -->
+<script type="text/javascript">
+var callThisOnReturn = function(resp) {
+  if (resp && resp.contact) {
+  	var takeover = jQuery('#learn-more-form-container-white');
+  	jQuery('#takeover-modal').foundation('open');
+
+  	takeover.find('#form-first-name').val(resp.contact['First Name']);
+  	takeover.find('#form-last-name').val(resp.contact['Last Name']);
+  	takeover.find('#form-email').val(resp.contact['Email']);
+  	takeover.find('#form-phone').val(resp.contact['Phone Number']);
+  	takeover.find('#form-address').val(resp.contact['Street']);
+  	takeover.find('#form-city').val(resp.contact['City']);
+  	takeover.find('#form-state').val(resp.contact['State']);
+  	takeover.find('#form-country').val(resp.contact['Country']);
+  	takeover.find('#form-zip').val(resp.contact['Zip']);
+  	takeover.find('#form-company').val(resp.contact['Company Name']);
+  	console.log(resp.contact);
+  }
+};
+_ss.push(['_setResponseCallback', callThisOnReturn]); 
+</script>
+<!-- End Dynamic Script Example -->
