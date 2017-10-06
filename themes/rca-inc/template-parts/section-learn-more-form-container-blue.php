@@ -244,29 +244,29 @@ var callThisOnReturn = function(resp) {
 	  	}
     });
 
-  	//change color of checkbox labels if one box is checked
-  	if(blueForm.find('div.checkbox-group.required :checkbox:checked').length > 0){
-  		blueForm.find('.industry-label').css({'color':'rgba(255,255,255,1)'});
-  	}else{
-  		blueForm.find('.industry-label').css({'color':'rgba(255,255,255,0.4)'});
-  	}
-  	//change color of checkboxes and their labels if checked
-  	blueForm.find('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'rgba(255,255,255,1'});
-  	blueForm.find('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(255,255,255,0.4'});
+    	//change color of checkbox labels if one box is checked
+    	if(blueForm.find('div.checkbox-group.required :checkbox:checked').length > 0){
+    		blueForm.find('.industry-label').css({'color':'rgba(255,255,255,1)'});
+    	}else{
+    		blueForm.find('.industry-label').css({'color':'rgba(255,255,255,0.4)'});
+    	}
+    	//change color of checkboxes and their labels if checked
+    	blueForm.find('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'rgba(255,255,255,1'});
+    	blueForm.find('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(255,255,255,0.4'});
 
-  	// change color of labels when their input field is valid
-  	blueFormLabel = blueForm.find('input,textarea');
-  	blueFormLabel.each(function(){
-  		if($(this).is(":valid")){
-  			$(this).next('i').css({'color':'white'});
-  			$(this).prev('label:not(.check-label),label i').css({'color':'white'});
-  			$(this).prev('label').find('i').css({'color':'white'});
-  		}else{
-  			$(this).next('i').css({'color':'rgba(255,255,255,0.4)'});
-  			$(this).prev('label:not(.check-label)').css({'color':'rgba(255,255,255,0.4)'});
-  			$(this).prev('label').find('i').css({'color':'rgba(255,255,255,0.4)'});
-  		}
-  	});
+    	// change color of labels when their input field is valid
+    	blueFormLabel = blueForm.find('input,textarea');
+    	blueFormLabel.each(function(){
+    		if($(this).is(":valid")){
+    			$(this).next('i').css({'color':'white'});
+    			$(this).prev('label:not(.check-label),label i').css({'color':'white'});
+    			$(this).prev('label').find('i').css({'color':'white'});
+    		}else{
+    			$(this).next('i').css({'color':'rgba(255,255,255,0.4)'});
+    			$(this).prev('label:not(.check-label)').css({'color':'rgba(255,255,255,0.4)'});
+    			$(this).prev('label').find('i').css({'color':'rgba(255,255,255,0.4)'});
+    		}
+    	});
   }
 };
 _ss.push(['_setResponseCallback', callThisOnReturn]); 

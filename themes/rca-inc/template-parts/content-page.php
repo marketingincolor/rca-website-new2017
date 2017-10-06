@@ -11,11 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- Title -->
-	<div class="row">
+<!-- 	<div class="row">
 		<div class="small-10 small-offset-1 small-text-center medium-text-left columns">
-			<h1><?php the_title(); ?></h1>
+			<h1><?php #the_title(); ?></h1>
 		</div>
-	</div>
+	</div> -->
 	<!-- /Title -->
 	<div class="row">
 		<div class="small-10 small-offset-1 columns">

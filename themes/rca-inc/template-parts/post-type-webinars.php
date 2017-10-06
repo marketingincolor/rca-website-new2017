@@ -47,129 +47,84 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 </div>
 
 <!-- /REGISTER & SHARE -->
-		
-<div style="background-color: #f8f7f5;">
-	<div id="webinar-information-block" class="row" data-equalizer>
+<aside id="webinar-container">
+	<div style="background-color: #f8f7f5;">
+		<div id="webinar-information-block" class="row" data-equalizer>
 
-		<div class="small-10 small-offset-1 columns">
+			<div class="small-10 small-offset-1 columns">
 
-			<!-- WHEN -->
-			<?php if($date != NULL || $time != NULL): ?>
-			<div class="when-block text-center small-12 medium-4 columns text-center" data-equalizer-watch>
-				<i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
-				<h2>When</h2>
-				<p class="meta"><?php echo $date->format('l, F d, Y'); ?>
-				<p class="meta"><?php echo $time; ?></p>
+				<!-- WHEN -->
+				<?php if($date != NULL || $time != NULL): ?>
+				<div class="when-block text-center small-12 medium-4 columns text-center" data-equalizer-watch>
+					<i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
+					<h2>When</h2>
+					<p class="meta"><?php echo $date->format('l, F d, Y'); ?>
+					<p class="meta"><?php echo $time; ?></p>
+				</div>
+				<?php endif; ?>
+				<!-- /WHEN -->
+
+
+				<!-- WHO -->
+				<div class="who-block small-12 medium-4 columns text-center" data-equalizer-watch>
+					<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+					<h2>Who Will Benefit</h2>
+					<?php
+					$count = 0;
+					if ($people):
+						foreach ($people as $person) {
+								if($count%3):
+									$addClass='medium-6';
+								endif;
+								echo '<div class="">';
+								echo '<p class="meta">'.$person.'</p>';
+								echo '</div>';
+								$count++;
+						}
+					endif;
+					?>
+				</div>
+				<!-- /WHO -->
+
+				<!-- Where -->
+				<?php if($where != NULL): ?>
+				<div class="where-block small-12 medium-4 columns text-center" data-equalizer-watch>
+					<i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
+					<h2>Where</h2>
+					<p class="meta"><?php echo $where; ?></p>
+				</div>
+				<?php endif; ?>
+				<!-- /WHERE -->
+
 			</div>
-			<?php endif; ?>
-			<!-- /WHEN -->
-
-
-			<!-- WHO -->
-			<div class="who-block small-12 medium-4 columns text-center" data-equalizer-watch>
-				<i class="fa fa-users fa-3x" aria-hidden="true"></i>
-				<h2>Who Will Benefit</h2>
-				<?php
-				$count = 0;
-				if ($people):
-					foreach ($people as $person) {
-							if($count%3):
-								$addClass='medium-6';
-							endif;
-							echo '<div class="">';
-							echo '<p class="meta">'.$person.'</p>';
-							echo '</div>';
-							$count++;
-					}
-				endif;
-				?>
-			</div>
-			<!-- /WHO -->
-
-			<!-- Where -->
-			<?php if($where != NULL): ?>
-			<div class="where-block small-12 medium-4 columns text-center" data-equalizer-watch>
-				<i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
-				<h2>Where</h2>
-				<p class="meta"><?php echo $where; ?></p>
-			</div>
-			<?php endif; ?>
-			<!-- /WHERE -->
-
 		</div>
 	</div>
-</div>
-
-<!-- FORM FOR SMALL -->
-
-<div id="webinar-form-block-mobile" class="row expanded hide-for-medium" style="">
-		<div id="form" class="small-10 small-offset-1 columns">
-			<h1 class="text-center"><?php echo $webinar_form_title; ?></h1>
-			<p class="text-center"><?php echo $webinar_form_copy; ?></p>
-
-			<form action="">
-				<div class="small-12 medium-4 columns">
-					<input type="text" name="first_name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-				</div>
-				<div class="small-12 medium-4 columns">
-					<input type="text" name="last_name" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-				</div>
-				<div class="small-12 medium-4 columns">
-					<input type="text" name="email" placeholder="Email*" required><i class="fa fa-envelope" aria-hidden="true"></i>
-				</div>
-				<div class="small-12 medium-4 columns">
-					<input type="text" name="phone_number" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
-				</div>
-				<div class="small-12 medium-4 columns">
-					<input type="text" name="title" placeholder="Title*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
-				</div>
-				<div class="small-12 medium-4 columns">
-					<input type="text" name="company" placeholder="Company Name*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
-				</div>
-				<div class="small-12 columns text-center"><input type="submit"></div>
-			</form>
-		</div>
-</div>
-			
-<!-- /FORM FOR SMALL -->
-
-<!-- FORM FOR MEDIUM UP -->
-<div id="webinar-form-block" class="show-for-medium">
-	<div class="row">
-		<div id="form" class="small-10 small-offset-1 columns">
-			<div class="row">
-				<div class="small-10 small-offset-1 columns">
-					<h1 class="text-center"><?php echo $webinar_form_title; ?></h1>
-					<p class="text-center"><?php echo $webinar_form_copy; ?></p>
-
-					<form action="">
-						<div class="small-12 medium-4 columns">
-							<input type="text" name="first_name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-						</div>
-						<div class="small-12 medium-4 columns">
-							<input type="text" name="last_name" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-						</div>
-						<div class="small-12 medium-4 columns">
-							<input type="text" name="email" placeholder="Email*" required><i class="fa fa-envelope" aria-hidden="true"></i>
-						</div>
-						<div class="small-12 medium-4 columns">
-							<input type="text" name="phone_number" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
-						</div>
-						<div class="small-12 medium-4 columns">
-							<input type="text" name="title" placeholder="Title*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
-						</div>
-						<div class="small-12 medium-4 columns">
-							<input type="text" name="company" placeholder="Company Name*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
-						</div>
-						<div class="small-12 columns text-center"><input type="submit"></div>
-					</form>
-				</div>
+	<style>
+		#webinar-form-block h2{
+			font-size: 2rem;
+			color: white;
+			font-style: italic;
+			font-family: 'lora';
+		}
+	</style>
+	<!-- FORM FOR MEDIUM UP -->
+	<div id="webinar-form-block" class="show-for-medium">
+		<div class="row">
+			<div id="form" class="small-10 small-offset-1 columns text-center">
+				<!-- SharpSpring Form for NB Test  -->
+				<script type="text/javascript">
+				    var ss_form = {'account': 'MzawMDGwMDYyAgA', 'formID': 'SzYyM0q2NEvWNUs1S9Q1MbUw0E1KMjDRTTNPtUg2TklLM060BAA'};
+				    ss_form.hidden = {'_usePlaceholders': true};
+				    ss_form.width = '100%';
+				    ss_form.domain = 'app-3QMGUWHS20.marketingautomation.services';
+				    // ss_form.hidden = {'Company': 'Anon'}; // Modify this for sending hidden variables, or overriding values
+				</script>
+				<script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/form.js?ver=1.1.1"></script>
 			</div>
-			
 		</div>
 	</div>
-</div>
-<!-- /FORM FOR MEDIUM UP -->
+	<!-- /FORM FOR MEDIUM UP -->
+</aside>
 
 <div class="row">
 	<div class="small-10 small-offset-1 columns">
@@ -195,8 +150,6 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 	</div>
 	<!-- /Content -->
 </div>
-
-
 
 <!-- HIDDEN SHARE MENU -->
 <div id="share-menu" style="display:none;">
