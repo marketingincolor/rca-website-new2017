@@ -1,103 +1,610 @@
-How to use:
+Design QA - Desktop
 
-Package -> PlainTasks
-To create a title type the title name followed by a colon.
-To create a bullet -> ctrl (cmd) + enter
-To mark as done ctrl + d
-To archive ctrl + shift + a (Puts in archive at bottom)
+UNIVERSAL
 
-**ctrl + shift + u opens the repo when cursor is on it**
-URL: www.github.com/marketingincolor/rca-website-new2017
+Header:
+ ✔ Logo needs to be updated so that it’s not pixelated -- UPDATED PNG/SVG SAVED HERE: Clients/Regulatory Compliance Associates/Website/RCA162576-Website/Creative/Website Elements/Header/Logo @done (17-10-06 16:14)
+ ✔ Contact button - needs to lead to the contact page @done (17-10-06 16:14)
+ ✔ Expertise bar font size - 12px with about 17px of padding between each set (set being case studies icon & copy) @done (17-10-06 16:14)
+ ✔ Menu dropdown - can we increase the space between each menu item and increase the space between the menu items that end up on multiple lines - https://gyazo.com/774bc262c45d42615b737e802108e4b7 @done (17-10-06 16:14)
+ ✔ Should the “About” in the menu be a dropdown since it will lead to an about page and the staff bio page @done (17-10-06 16:15)
+ ✔ (for design + dev) icons in the expertise bar are blurry and need to be updated -- UPDATED ICONS CAN BE FOUND HERE Clients/Regulatory Compliance Associates/Website/RCA162576-Website/Creative/Website Elements/Header/Expertise Icons @done (17-10-06 16:15)
+ ✔ I exported them as transparent PNGs in the actual size. If they're still blurry, I also exported them as bigger icons (in the bigger icons folder) that can be resized. @done (17-10-06 16:15)
 
-Misc:
- ☐ Opportunities Feed for Taleo
+Buttons:
+ ✔ Can we consist-ify the buttons across the website to have this padding: 12px top, 12px bottom, 26px left, 26px right - that way they’re rectangles and we don’t have some taller than others. @done (17-10-06 16:15)
+ ✔ The button on the contact form reverses out over hover - can we do that for all the buttons on hover? I like that added detail to the buttons and would like it for all the buttons. Let me know if that will eat up too much time. @done (17-10-06 16:15)
+ ✔ Right now the buttons have a light gray background - can those change to white please. @done (17-10-06 16:15)
 
-About:
+Links:
+ ✔ Can links be Roboto bold #9d938b on hover except for the header - that can stay the same. @done (17-10-06 16:15)
 
-Home:
+Footer:
+ ✔ Contact form - looks sexy af but can the "*=required" be size 12px like the "I agree to receive emails from RCA" opt in text? @done (17-10-06 16:15)
+ ✔ (more for digi + accounts)  Do we have the correct copy for the contact form? @done (17-10-06 16:15)
+ ✔ News - The headline typeface should be Lora - bold italic @done (17-10-06 16:15)
+ ✔ Footer - Can you center the entire thing so that there is equal space from the edge to “News” and from the edge to the linkedIn icon. @done (17-10-06 16:15)
 
-Case Study:
+Breadcrumbs and Social Media:
+ ✔ Please make font size 14px and color #9d938a @done (17-10-06 16:16)
+ ✔ Is it possible to change the background of the social media share link that pops up to #c4612b? -- https://gyazo.com/77b8690e9a64026c2a05adfa70706c1a @done (17-10-06 16:16)
 
-Medical Device:
- ☐ Create US Agent Services Page
- ☐ Add page content
+Related Content:
+ ✔ The spacing between the download button and the "Related Content" needs to be reduced. Right now it's at 190px (about) between --- can you shorten it to 90px between? @done (17-10-06 20:40)
+ ✔ The space between the headline for "Related Content" and the lines should be doubled. @done (17-10-06 20:40)
+ ✔ The related content content are missing icons and should be centered. https://gyazo.com/3c4d02f944939671c8bd272053fec0c6 @done (17-10-06 20:40)
 
-Pharma:
- ☐ Update Menus
- ☐ Add Pages
- ☐ Create US Agent Services Page
- ☐ Add page content
+Search Bar:
+ ✔ Divider line - please reduce by 1px if possible @done (17-10-06 16:16)
+ ✔ Search icon is not clickable - ideally would be good to link to "enter" key for when someone searches @done (17-10-06 16:16)
 
-SEARCH PAGE:
+CSS stuff:
+H1: Lora Bold Italic -- 36px -- #c4612b (orange) or white on reverse
+H2: Roboto Bold -- 22px -- #2b2b2b or white on reverse
+(I don't think this has been set) H3: Roboto Bold -- 18px -- #2b2b2b or white on reverse
+Breadcrumbs & "Share on Social Media": Roboto Regular -- 12px -- #9d938b (gray)
+Links: Roboto Bold -- #c4612b (orange) or white on reversed 
+BLOCKQUOTES: please make blockquotes Lora Bold Italic -- 20px -- #236192
 
-CASE STUDY PAGE MOBILE (DONE):
 
-WEBINAR TEMPLATE:
+REFERENCES TO STUFF:
+I have not seen this styling implemented
+ ✔ https://basecamp.com/1769933/projects/12077833/messages/71762319#comment_56… @done (17-10-06 16:17)
 
- Webinar Slide Deck Template:
- ☐ Needs to be built
+
+HOMEPAGE
+
+Spacing:
+ ✔ Please space out these areas: https://gyazo.com/e5dcabc115b6e814236cf21e97fb78d5 @done (17-10-06 16:17)
+ ✔ Teal - 85px or equivalent @done (17-10-06 16:17)
+ ✔ Pink - 60px or equivalent @done (17-10-06 16:17)
+ ✔ Purple - 30px or equivalent @done (17-10-06 16:17)
+
+Slider:
+ ✔ The all-around padding should be 55px (right now it looks like there’s more padding on the right than the left — is this because of the copy within the box? https://gyazo.com/e63c76e180772c55386cfa3baa774455 @done (17-10-06 16:17)
+ ✔ Doesn’t animate @done (17-10-06 16:17)
+
+Industries Section:
+ ✔ H2s please make #2B2B2B @done (17-10-06 16:17)
+ ✔ Is there a way to add more 15px of padding to the left and right of each copy box - https://gyazo.com/fde72cc1d71140251a88e3e4116b166c @done (17-10-06 16:17)
+
+Blue CTA Bar:
+ ✔ (for design) Background image needs to be optimized to be clear @done (17-10-06 16:18)
+ ✔ Text should be centered within the box - 62px above and 62px below @done (17-10-06 16:18)
+
+Case Studies:
+ ✔ H2s please make #2B2B2B @done (17-10-06 16:18)
+ ☐ When the excerpt text is written and posted for “Remediation & Resulting…” it will look fab
+
+
+CONTACT US:
+ ✔ Can we increase the spacing between copy that's breaks into two line. https://gyazo.com/c080721ba0824181861e00eb3fe645d2 @done (17-10-06 16:19)
+ ✔ I don't think email is needed under "West Coast Regional Office" - https://basecamp.com/1769933/projects/12077833/documents/12543164 @done (17-10-06 16:19)
+ ✔ Please give the blue social media bar the same amount of padding between elements - It looks to be about 65px. @done (17-10-06 16:19)
+
+
+PRIVACY POLICY:
+ ✔ (for design) Needs bg header image. @done (17-10-06 16:19)
+
+TERMS OF USE:
+ ✔ good. @done (17-10-06 16:19)
+
+
+ABOUT :
+
+ ✔ “We have walked the walk.” This should be an H3 @done (17-10-06 16:19)
+ ✔ Mission statement copy at the bottom needs to be erased @done (17-10-06 16:19)
+ ✔ CTA box is missing button and the font should be Lora Bold Italic @done (17-10-06 16:20)
+ ✔ (for design) We need a background image for ABOUT PAGE @done (17-10-06 16:20)
+
+
+MEET OUR TEAM OF EXPERTS:
+ ✔ The separator is pretty thicc - can it be slimmed by 2px? @done (17-10-06 16:21)
+ ✔ I remember Edd saying there was a way to line up the bio buttons with CSS so they're even, can that be done? @done (17-10-06 16:21)
+ ✔ The titles under directors at the bottom (Operations, Sales Operations, Finance, and Directors) should be Roboto Bold. @done (17-10-06 16:21)
+
+INDIVIDUAL BIOS:
+Edits needed in general (to all bio pages):
+ ✔ ALL WITH HEADSHOTS These spaces should be even - https://gyazo.com/acc66653e1a8f45c453cf8c90a351940 @done (17-10-06 16:21)
+ ✔ Emails aren't linked @done (17-10-06 16:21)
+ ✔ <br> aren't stickin @done (17-10-06 16:21)
+
+Other than the general issues, these pages are good:
+ ✔ Mitch Januszewski @done (17-10-06 16:22)
+ ✔ Steve Schultz @done (17-10-06 16:22)
+ ✔ Mike Parkes @done (17-10-06 16:22)
+ ✔ Brian Matye @done (17-10-06 16:22)
+ ✔ Susan Schniepp @done (17-10-06 16:22)
+ ✔ Judith Purdom @done (17-10-06 16:22)
+ ✔ Erika Procelli @done (17-10-06 16:22)
+ ✔ Brian Nelson @done (17-10-06 16:22)
+ ✔ Krista Kurth @done (17-10-06 16:22)
+
+These pages need fixin:
+ ✔ Seyed Khorashahi: formatting of name/title/bio is off - https://gyazo.com/e1c182f4123b058a5169497b2e2908a0 @done (17-10-06 16:23)
+ ✔ Sharon Ayd: H3s aren't set + formatting of name/title/bio is off - https://gyazo.com/7ce55f2caf4a972275525d0245fc251f @done (17-10-06 16:23)
+ ✔ Lisa Michels: links are blue + H3s aren't set @done (17-10-06 16:23)
+
+
+MEET OUR TEAM OF EXPERTS > DIRECTORS:
+ ✔ (for design) Needs background image. @done (17-10-06 16:23)
+
+**********************************DEVELOPER***************************************
+
+Please make "Share on Social Media" the same color & size as the breadcrumbs -- https://gyazo.com/fbdc08ca79cf7642cf3f27c87f3f5834
+
+
+
+
+ ✔ There needs to be more space between the columns - https://gyazo.com/d6a5f8a9ec0e0db2d40af86f18fa56bb ---> At this moment, is it 4 columns? Can we bring it down to 3? @done (17-10-06 16:23)
+ ✔ Can we add a break (5px-10px) between the icon and the title? https://gyazo.com/cd8fd2b6a64ac6b18701d0d055bbc156 @done (17-10-06 16:23)
+
+
+
+These pages are good:
+ ✔ Medical Device: Audit, Assessment and Inspection Services Handout @done (17-10-06 16:35)
+ ✔ Questions to Consider While Evaluating and Measuring Poster Presentation @done (17-10-06 16:35)
+ ✔ Pharmaceutical Regulatory Affairs Services Handout @done (17-10-06 16:35)
+ ✔ U.S. Agent Services Handout @done (17-10-06 16:35)
+ ✔ Correspondence Between ISO 13485:2016 and 21 CFR Part 820 QMS Requirements @done (17-10-06 16:35)
+
+These pages need help:
+ ☐ Most download buttons aren't linked to PDFs. 
+ ☐ Design History File Support Services Handout: is there a way to indent the bullets? When the images are in-line, the bullets look off. https://gyazo.com/7957d08d54ce608a4ed5a3b9f2c9903f
+ ☐ Lessons Learned from Combination Products Poster Presentation: bullets - https://gyazo.com/4fdee78ec44e43f118309038c15e96b6
+ ☐ Medical Device Regulatory Services Handout: bullets https://gyazo.com/b7979625823eb43253d5c66a9196b214
+ ☐ Complete List of Pharmaceutical Services Handout: bullets
+
+
+
+General edits needed to all case study pages:
+ ✔ Can the copy within the blue callout box be centered @done (17-10-06 16:36)
+ ✔ Missing download buttons @done (17-10-06 16:36)
+
+Cast studies with references need the references portion formatted: 
+ ✔ https://basecamp.com/1769933/projects/12077833/messages/71762319#comment_56… @done (17-10-06 16:36)
+ ✔ Manufacturing Automation @done (17-10-06 16:36)
+ ✔ Process Validation Remediation @done (17-10-06 16:36)
+ ✔ Product Cleaning Endotoxin Control @done (17-10-06 16:36)
+ ✔ Shelf Stability @done (17-10-06 16:36)
+ ✔ Regulatory 510(k) Analysis Development Product Cleaning/Disinfection @done (17-10-06 16:36)
+ ✔ Time, Distance and Technology for a Private Equity Due Diligence @done (17-10-06 16:36)
+ ✔ Gap Assessment Electronic Records @done (17-10-06 16:36)
+
+Other than what generally needs to be fixed, here are page-specific edits:
+ ☐ Outsourced Quality & Regulatory Leadership: the content's code is showing - you can see the tags.
+ ☐ Clearing a Hurdle for CE Mark: The Clinical Evaluation: attribution at the bottom needs to be italicized. "Bruce Marchioni
+ ☐ Senior Vice President of Quality &amp; Regulatory Affairs
+ ☐ Devicor Medical"
+ ☐ Technical File Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ FDA Warning Letter Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ Pre-Acquisition Technical Due Diligence: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ Risk Management in Product Development and Manufacturing: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ FDA Warning Letter Response and Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+ ☐ Compliance Assurance Engagement Leads to Passed FDA Inspection and Improved Workflow: THAT QUOTE!?!?!! The blue box cannot be moved, correct? If we can even jut move it up so it's a second column next to all the copy would be amazing. If it cannot be moved.... @me so we can discuss. 
+ ☐ Remediation & Resulting Sustainable Compliance within New FDA Regulatory Framework: Same question - can this blue box be moved up?
+ ☐ Compliance Assurance Engagement Leads to Passed FDA Inspection and Improved Workflow: HTML code is showing for RESULTS + the blue box looks so lonely all by itself, would be nice to move it up but let me know if not possible
+ ☐ Creating Operational Discipline to Support Quality Initiatives: very last word in the "results" paragraph is a widow -- talking to accounts to prob just get this re-written.
+
+These pages look gouda +1 :
+ ✔ Production and Process Control @done (17-10-06 16:37)
+ ✔ Reregistration with New Logo and Brand Name @done (17-10-06 16:37)
+ ✔ Improved Product Release Cycle Times, Improved Bottom Line @done (17-10-06 16:37)
+ ✔ Inspection Readiness @done (17-10-06 16:37)
+ ✔ Designing a CAPA System @done (17-10-06 16:37)
+ ✔ Speeding Up Document Change Control @done (17-10-06 16:37)
+ ✔ Strategy for Pharmaceutical Submission @done (17-10-06 16:37)
+ ✔ Pharmaceutical Development & Regulatory Submission @done (17-10-06 16:37)
+ ✔ Developing a Quality System on a Managed Budget @done (17-10-06 16:37)
+
+General issues
+ ✔ Date should be Lora Bold Italic 17px #9d938b @done (17-10-06 16:37)
+ ✔ Buttons need copy @done (17-10-06 16:37)
+
+Articles that are a-ok in my book (except for the general change that needs to happen):
+ ✔ Nurturing the Relationship Between Industry and Regulators @done (17-10-06 16:37)
+ ✔ One Strategy for Updating an Aging Facility @done (17-10-06 16:37)
+ ✔ The Quality Metrics Journey @done (17-10-06 16:37)
+ ✔ Ensure Quality in a Contract Test Laboratory @done (17-10-06 16:37)
+ ✔ Quality Agreements: Managing Global Relationships @done (17-10-06 16:37)
+ ✔ Ensuring Sterility in Small-Scale Production @done (17-10-06 16:37)
+ ✔ Options in Employee Training @done (17-10-06 16:37)
+ ✔ Defining Risk Assessment with Aseptic Processes @done (17-10-06 16:37)
+ ✔ One Strategy for Updating an Aging Facility @done (17-10-06 16:37)
+ ✔ Making Data Integrity Integral to cGMP Training @done (17-10-06 16:37)
+ ✔ Requirements for Product Technology Transfer @done (17-10-06 16:37)
+ ✔ Technology Transfer Connections @done (17-10-06 16:37)
+ ✔ Creating Robust CAPA Systems @done (17-10-06 16:37)
+ ✔ Crafting Standard Operating Procedures @done (17-10-06 16:37)
+ ✔ Investigating Biologics @done (17-10-06 16:37)
+ ✔ Defining Crucial CAPA Components @done (17-10-06 16:37)
+ ✔ The Metrics of Quality Culture @done (17-10-06 16:37)
+ ✔ An Update on the Quality Metrics Initiative @done (17-10-06 16:37)
+ ✔ Tools of the Trade for Preventing Drug Shortages @done (17-10-06 16:37)
+ ✔ Quality and Regulatory Leadership: Right-Sizing Need and Cost @done (17-10-06 16:37)
+ ✔ Risk Management within the Global Supply Chain @done (17-10-06 16:37)
+ ✔ Making the Most of Internal Audits @done (17-10-06 16:37)
+ ✔ Regulatory Strategies for AI and Emerging Technologies @done (17-10-06 16:37)
+ ✔ International Law @done (17-10-06 16:37)
+ ✔ Getting it right the first time—clinical evidence for the CE Mark @done (17-10-06 16:37)
+ ✔ Navigating Name Changes and Re-Registration @done (17-10-06 16:37)
+ ✔ Developing a Quality System on a Managed Budget @done (17-10-06 16:37)
+ ✔ FDA Inspections: Hope is Not a Strategy @done (17-10-06 16:37)
+ ✔ How to Risk-Manage Your Supplier Quality: A Roundtable Discussion @done (17-10-06 16:37)
+ ✔ Lessons Learned from Investigations of Product Failures @done (17-10-06 16:37)  
+ ✔ Managing Business Risks During a Merger or Acquisition @done (17-10-06 16:37)
+
+
+NEWS FEED:
+ ✔ Load button needs more padding (60px) between it and the footer. https://gyazo.com/ad7224fbc586c01a47e92cee5d2a9c1e @done (17-10-06 16:37)
+ ✔ Year published button needs a space between "Year Published" and the icon - https://gyazo.com/1bd12c31aaca77e5ac65fc57e00ed96b @done (17-10-06 16:37)
+ ✔ Drop down styling - https://gyazo.com/269ed443d0dee10ebc251cb2a3b91211 (do you need styling for this?) @done (17-10-06 16:37)
+ ✔ I freaking love the load animation @done (17-10-06 16:37)
+ ✔ "Read More" links need to be underlined @done (17-10-06 16:37)
+
+NEWS POSTS:
+General issues
+ ✔ Missing breadcrumb - https://gyazo.com/0247782d02df0f2139ca26fd1fa69bea?token=af203de78b59f06944… @done (17-10-06 16:52)
+ ✔ Where do the excerpts go? https://gyazo.com/dcc4a58ccaf9fb9a6506f28d4be20aa1 @done (17-10-06 16:52)
+
+Links that need to be underlined -- can this be done in CSS?: 
+ ✔ RCA Honored with Ovation Award @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Receives ISO 9001 Certification @done (17-10-06 16:56)
+ ✔ RCA Assists 503B Outsourcing Facility Achieve License for Sterile Distribution by Florida State Board of Pharmacy @done (17-10-06 16:56)
+
+Gouda pages:
+ ✔ Regulatory Compliance Associates® Inc. Congratulates Susan Schniepp on her Service Appreciation Award from the Parenteral Drug Association @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Congratulates Dr. Sharon Ayd on Selection to Women In Bio’s Boardroom Ready Program (except for this one word widow https://gyazo.com/d6ed1276e8cb0fe15c7eeb96ae0139e5) @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Welcomes Dr. Sharon Ayd as Chief Scientific Officer / Senior Vice President Pharmaceuticals @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Announces Promotions in General Counsel and Business Development Roles @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Welcomes Seyed Khorashahi as Chief Operating Officer @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Rozszerza Swoją Działalność w Polsce Dla Lepszej Obsługi Europejskich Firm Z Sektora Life Science @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Expands To Warsaw, Poland To Better Serve European Life Science Firms @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Advises Czech Manufacturers on U.S. Healthcare Market Compliance Procedures @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Congratulates Susan Schniepp on Her Appointment for the PDA Board of Directors @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Welcomes Lisa L. Michels as Associate General Counsel @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Partners with Unique Pharmaceuticals as Leaders in Compounding Pharmacy to Demonstrate Compliance with the New Federal Requirements for 503B @done (17-10-06 16:56)
+ ✔ Regulatory Compliance Associates® Inc. Announcements Resulting from Growth and Success @done (17-10-06 16:56)
+
+
+General changes need to be made:
+ ✔ Blockquotes need to be formatted without the extra space overtop if possible and with an orange line about 8px - https://gyazo.com/d5621cb72cbb1c15924b2d693864dd17 @done (17-10-06 16:57)
+ ✔ Style would be - Lora Bold Italic -- 20px -- #236192 @done (17-10-06 16:57)
+ ✔ Contact button at the bottom needs to be formatted @done (17-10-06 16:57)
+ ✔ References section needs to be formatted @done (17-10-06 16:57)
+ ✔ H3s need to be formatted to be roboto bold @done (17-10-06 16:57)
+ ☐ Bullets need to be formatted (level 1, level 2, level 3, etc.) https://gyazo.com/656de0ede5086eb2097c76ca861ff252
+
+Individual pages:
+ ☐ Navigating the Complexities of Name Changes and Re-registration (http://dev.marketingincolor.com/rca-website-2017/white-papers/navigating-co…) Needs space between the first H2 and the byline (I tried adding two <br> but it didn't work). 
+
+Gouda (other than general changes):
+ ✔ Navigating the Complexities of Name Changes and Re-registration @done (17-10-06 17:01)
+ ✔ U.S. Food and Drug Administration (FDA) Regulatory Pathways for Medical Devices @done (17-10-06 17:01)
+ ✔ Impact Assessment of Revision of the Regulatory Framework for Medical Device Directive in EU @done (17-10-06 17:01)
+ ✔ Meeting Medical Device Clinical Evidence Requirements @done (17-10-06 17:01)
+ ✔ Developing a Quality System on a Managed Budget @done (17-10-06 17:01)
+ ✔ Implementing Risk Managed Supplier Quality @done (17-10-06 17:01)
+ ✔ Challenges In Design Development—Why Design Controls Make Sense @done (17-10-06 17:01)
+ ✔ Outsourced Quality & Regulatory Leadership: Right-Sizing Need and Cost @done (17-10-06 17:01)
+ ✔ Navigating the Re-registration and other Complexities in M&A and Carve-Outs @done (17-10-06 17:01)
+ ✔ Crisis Playbook: “Lessons Learned” from Real Investigations of Product Failures @done (17-10-06 17:01)
+ ✔ Beyond The Obvious: Managing Business Risks During Life Science M&A Due Diligence @done (17-10-06 17:01)
+
+PRIVACY POLICY PAGE:
+ ✔ Just noticed that the H1 appears twice @done (17-10-06 17:01)
+
+SOCIAL MEDIA SHARE:
+ ✔ Looks beautiful, but pleas move the "share on social media" copy 16px to the right & don't hate me. https://gyazo.com/fd2e56f4587fd423bc24c644212f2b24 @done (17-10-06 17:03)
+
+
+How they link:
+
+Managing Challenging Submissions:
+http://dev.marketingincolor.com/rca-website-2017/webinars/free-webinar-mana…
+
+links to
+
+http://dev.marketingincolor.com/rca-website-2017/managing-challenging-submi…
+
+
+
+Combination Products:
+http://dev.marketingincolor.com/rca-website-2017/webinars/free-webinar-comb…
+
+links to 
+
+http://dev.marketingincolor.com/rca-website-2017/combination-products-webin…
+
+
+
+Corrective & Preventive Action
+http://dev.marketingincolor.com/rca-website-2017/webinars/free-webinar-corr…
+links to 
+http://dev.marketingincolor.com/rca-website-2017/corrective-preventive-acti…
+
+
+Performing Quality Investigations
+http://dev.marketingincolor.com/rca-website-2017/webinars/free-webinar-perf…
+
+links to 
+
+http://dev.marketingincolor.com/rca-website-2017/performing-quality-investi…
+
+
+POST-WEBINAR LANDING PAGE GENERAL CHANGES:
+Needs a background image for the header
+ ✔ Should have ONLY "who will benefit" section https://gyazo.com/a7ae5e89e96dd3594c50771b2aceab84 @done (17-10-06 20:52)
+ ✔ The blue "access" section should be just a button to success page https://gyazo.com/3bd682bf913470cd06ab96f0e4b1d888 @done (17-10-06 20:52)
+ ✔ See above for how they link to each other @done (17-10-06 20:52)
+ ✔ The button style (border) should match the style of the other buttons @done (17-10-06 20:52)
+ ☐ Does not need breadcrumbs - https://gyazo.com/aa1554eb8655c8c21824d77e3c5570f8
+ ✔ Expert presenters is not needed on the POST WEBINAR PAGE - https://gyazo.com/68fb8f55f8dfd87316e23cc37e5798e3 @done (17-10-06 20:54)
+ ✔ This visited link changed to orange, can that be changed to white? https://gyazo.com/2de98413d693a1a2875971410d39d61f @done (17-10-06 20:55)
+
+
+WEBINAR SUCCESS PAGE GENERAL CHANGES:
+Needs bg image
+ ☐ Video is not showing up
+ ☐ The buttons, social media and background color are not showing up appropriately - https://gyazo.com/97ddd12c9d67c16bf206001f69840a54 
+ ☐ https://gyazo.com/6992c0ad18e9d1202ea5f413aeadb32d
+ ☐ Spacing between the top of the video and the bottom of the content space should be the same also this is missing the contact form
+ ☐ "Share on Social media" font should be consistent with the way it is throughout the entire site (size, font and color). 
+ ☐ https://gyazo.com/a5279f48770d7d8ca84e493865e82ab9
  
-NEWS:
+
+MEDICAL DEVICES INDUSTRY PAGE (http://dev.marketingincolor.com/rca-website-2017/medical-devices/)
+Please make these spaces even https://gyazo.com/c306075195307a20efa8e01d5d9db4a2
+Can we increase the space between these lines https://gyazo.com/c7ce97edacbf013c8966bae6d3e3a3b9
+I don't think these are needed here https://gyazo.com/af3756f39bb2b61627757b78131f7134
+Most of the links are incorrect
+
+fire >> Correct Links << fire:
+Medical Devices > Regulatory Affairs link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/regulatory…
+Medical Devices > Regulatory Affairs > Regulatory Support for New Products link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/regulatory…
+Medical Devices > Regulatory Affairs > Regulatory Post Product Release Support link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/regulatory…
+Medical Devices > Regulatory Affairs > Other Regulatory Services link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/regulatory…
 
 
-EVENTS (NEWS PAGE):
+Medical Devices > Compliance Assurance link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/compliance…
+Medical Devices > Compliance Assurance > Assessments link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/compliance…
+Medical Devices > Compliance Assurance > Audits link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/compliance…
+Medical Devices > Compliance Assurance > Preparation and Training link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/compliance…
+Medical Devices > Compliance Assurance > Regulatory Agency Action Response link to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/compliance…
 
-PRESS RELEASES (NEWS PAGE):
- ☐ Add Content Type
 
-ABOUT:
+Medical Devices > Strategic Consulting links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/strategic-…
+Medical Devices > Strategic Consulting > Manufacturing Process Optimization, Automation and Aging Facilities links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/strategic-…
+Medical Devices > Strategic Consulting > New Product Development links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/strategic-…
+Medical Devices > Strategic Consulting > Product Life Cycle Management links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/strategic-…
+Medical Devices > Strategic Consulting > Staffing Support links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/strategic-…
+Medical Devices > Strategic Consulting > Mergers and Acquisitions / Due Diligence links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/strategic-…
+Medical Devices > Strategic Consulting > Services Supported Through Partners links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/strategic-…
 
-Takeover Form:
-  ☐ Map SS Fields
-  ☐ Add TRUE/FALSE ACF field. if ($gated == TRUE) add takeover form on page load
+Medical Devices > Quality Services links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/quality-as…
 
-Individual Staff Pages (DONE):
+Medical Devices > Remediation Strategy and Support links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/remediatio…
+Medical Devices > Remediation Strategy and Support > Quality System Remediation links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/remediatio…
+Medical Devices > Remediation Strategy and Support > Technical File and DHF Remediation links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/remediatio…
+Medical Devices > Remediation Strategy and Support > Data Integrity links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/remediatio…
+Medical Devices > Remediation Strategy and Support > Regulatory Action Remediation links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/remediatio…
+Medical Devices > Remediation Strategy and Support > Manufacturing Process, Equipment, Facility, and Utility Validation links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/strategic-…
+Medical Devices > Remediation Strategy and Support > Part 11 and Computerized System Validation links to: http://dev.marketingincolor.com/rca-website-2017/medical-devices/remediatio…
 
-All Staff Page:
- ☐ Reduce padding around staff members
 
- Staff Department Pages (DONE):
+boom GENERAL SERVICE PAGE CHANGES:
+Needs a contact form 
+Spacing needs to be even https://gyazo.com/56ddc30ce37b196e0a629162705e51dc
+(for design) needs a background image for the header
+Headers repeat and there only needs to be one https://gyazo.com/5ff0410a3ae98ecbf49a4c7469166af5 
+Related content needs to be formatted
+H#s need to be formatted
+Needs <br><br> between paragraphs - I tried to do it myself but it wouldn't stick
+Bullet list needs color formatting - do you need a glimpse at how it should look?
+Callouts aren't showing
 
-Archive:
- ✔ Check Padding @done (17-10-02 09:49) @project(ABOUT)
- ✔ Format @done (17-10-01 14:37) @project(About)
- ✔ Organize Staff Members (add order in backend) @done (17-09-30 20:50) @project(All Staff Page)
- ✔ Update page with updated query @done (17-09-30 20:21) @project(SEARCH PAGE)
- ✔ Add ACF fields for single-events @done (17-09-30 20:01) @project(EVENTS (NEWS PAGE))
-  $event_date     = get_field('event_date');
-  $event_location = get_field('event_location');
-  $event_time     = get_field('event_time');
- ✔ Update height of query blocks @done (17-09-30 19:57) @project(Misc)
- ✔ Create CPT (events) @done (17-09-30 19:57) @project(EVENTS (NEWS PAGE))
- ✔ Case study block height @done (17-09-30 19:57) @project(Home)
- ✔ Change order of approach/challenge @done (17-09-30 18:00) @project(Case Study)
- ✔ Add Referances Meta and Add Content @done (17-09-30 17:58) @project(Case Study)
- ✔ Update secondary and taxonomy menu order @done (17-09-30 12:51) @project(Misc)
- ✔ Update menus @done (17-09-29 21:21) @project(Medical Device)
- ✔ Fix Register/Share button (mobile) @done (17-09-29 21:20) @project(WEBINAR TEMPLATE)
- ✔ Add Pages @done (17-09-29 21:20) @project(Medical Device)
- ✔ Dots on archive pages @done (17-09-29 21:19) @project(Misc)
- ✔ Add share button menu @done (17-09-29 16:40) @project(CASE STUDY PAGE MOBILE)
- ✔ Add related articles slider @done (17-09-29 16:21) @project(CASE STUDY PAGE MOBILE (DONE) )
- ✔ Add checks for name,title, avatar for users similar to desktop template @done (17-09-29 16:21) @project(WEBINAR TEMPLATE)
- ✔ Add check for case studies if no download @done (17-09-29 14:22) @project(CASE STUDY PAGE MOBILE)
- ✔ Add PDFs to server @done (17-09-29 14:22) @project(Misc)
- ✔ Update template so content floats properly @done (17-09-29 12:38) @project(CASE STUDY PAGE MOBILE)
- ✔ Add Download/Share buttons @done (17-09-29 12:38) @project(CASE STUDY PAGE MOBILE)
- ✔ If user doesn't have avatar change the layout @done (17-09-28 16:59) @project(Individual Staff Pages)
- ✔ Add Department Page Links @done (17-09-28 16:59) @project(Individual Staff Pages)
- ✔ Director of Finance @done (17-09-28 15:57) @project(All Staff Page)
- ✔ Director of Directors @done (17-09-28 15:57) @project(All Staff Page)
- ✔ Director of Sales Operations @done (17-09-28 15:56) @project(All Staff Page)
- ✔ Director of Operations @done (17-09-28 15:56) @project(All Staff Page)
- ✔ Finance @done (17-09-28 15:53) @project(All Staff Page)
- ✔ Executive Leadership @done (17-09-28 15:29) @project(All Staff Page)
- ✔ Board of Directors @done (17-09-28 15:29) @project(All Staff Page)
- ✔ Update "Medical Devices" & "Pharma" CTAs with links @done (17-09-28 15:11) @project(Home)
- ✔ Department Page Layout @done (17-09-28 14:29) @project(Staff Pages)
- ✔ 404 @done (17-09-28 14:09) @project(Done)
- ✔ Social Media Sharing setup @done (17-09-28 14:00) @project(Done)
- ✔ Breadcrumbs (Needs to be checked across templates) @done (17-09-28 14:00) @project(Done)
- ✔ Terms of Use @done (17-09-28 13:59) @project(Done)
- ✔ Privacy Policy (Needs content) @done (17-09-28 13:59) @project(Done)
- ✔ Contact Us @done (17-09-28 13:59) @project(Done)
+
+boom PAGES THAT NEED ADDITIONAL CHANGES:
+Medical Devices > Regulatory Affairs > Regulatory Support for New Products
+http://dev.marketingincolor.com/rca-website-2017/medical-devices/regulatory…
+<em> tag showing in the first paragraph 
+Needs a <br> between the first paragraph and the first H2
+We need to format bullets - https://gyazo.com/8fa17ce7f0c0f7b5b0aab403904adfb8 
+
+Medical Devices > Strategic Consulting 
+Needs links to the subpages (similar to the other pages)
+
+
+PAGES THAT ONLY NEED GENERAL CHANGES:
+Medical Devices > Regulatory Affairs 
+Medical Devices > Regulatory Affairs > Regulatory Post Product Release Support
+Medical Devices > Regulatory Affairs > Other Regulatory Services
+Medical Devices > Compliance Assurance
+Medical Devices > Compliance Assurance
+Medical Devices > Compliance Assurance > Assessments
+Medical Devices > Compliance Assurance > Audits
+Medical Devices > Compliance Assurance > Preparation and Training
+Medical Devices > Compliance Assurance > Regulatory Agency Action Response
+Medical Devices > Strategic Consulting > Manufacturing Process Optimization, Automation and Aging Facilities
+Medical Devices > Strategic Consulting > New Product Development
+Medical Devices > Strategic Consulting > Product Life Cycle Management
+Medical Devices > Strategic Consulting > Staffing Support
+Medical Devices > Strategic Consulting > Mergers and Acquisitions / Due Diligence 
+Medical Devices > Strategic Consulting > Services Supported Through Partners 
+Medical Devices > Quality Services
+Medical Devices > Remediation Strategy and Support
+Medical Devices > Remediation Strategy and Support > Quality System Remediation
+Medical Devices > Remediation Strategy and Support > Technical File and DHF RemediationMedical Devices > Remediation Strategy and Support > Data Integrity
+Medical Devices > Remediation Strategy and Support > Regulatory Action Remediation
+Medical Devices > Remediation Strategy and Support > Manufacturing Process, Equipment, Facility, and Utility Validation
+Medical Devices > Remediation Strategy and Support > Part 11 and Computerized System Validation
+
+
+
+Additional Services links to: http://dev.marketingincolor.com/rca-website-2017/additional-services/ 
+Additional Services > Biologics Services links to: http://dev.marketingincolor.com/rca-website-2017/additional-services/biolog…
+Additional Services > Combination Products Services links to: http://dev.marketingincolor.com/rca-website-2017/additional-services/combin…
+Additional Services > Compounding Pharmacies Services links to: http://dev.marketingincolor.com/rca-website-2017/additional-services/compou…
+
+boom GENERAL SERVICE PAGE CHANGES:
+Needs a contact form 
+Spacing needs to be even https://gyazo.com/56ddc30ce37b196e0a629162705e51dc
+(for design) needs a background image for the header
+Related content needs to be formatted
+H#s need to be formatted
+Needs <br><br> between paragraphs
+Bullet list needs color formatting
+Callouts aren't showing
+
+large_blue_diamond large_blue_diamond large_blue_diamond large_blue_diamond large_blue_diamond  PHARMA SERVICES  large_blue_diamond large_blue_diamond large_blue_diamond large_blue_diamond large_blue_diamond  
+
+PHARMACEUTICAL INDUSTRY PAGE:
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/
+Links aren't linked correctly. 
+
+P SERVICE GENERAL CHANGES:
+Needs even spacing (as the other service pages)
+Needs contact form at the bottom
+<br> are not working as of 1:00pm on Thursday, Oct 5 (I've tried 
+There are multiple H1s - please get rid of the one in the white content area - https://gyazo.com/c88fc1c4189d85d25b9264d59e444d00
+Related content area isn't showing up
+Needs News section 
+
+PAGES THAT NEED INDIVIDUAL CHANGES:
+NONE - ALL THE PAGES NEED THE GENERAL CHANGES
+
+PAGES THAT ARE OK EXCEPT FOR GENERAL CHANGES
+P > REGULATORY AFFAIRS
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/regulatory-…
+P > REGULATORY AFFAIRS > REGULATORY SUPPORT FOR NEW PRODUCTS
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/regulatory-…
+P > REGULATORY AFFAIRS > LIFE CYCLE MANAGEMENT
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/regulatory-…
+P > REGULATORY AFFAIRS > OTHER REGULATORY SERVICES
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/regulatory-…
+P > COMPLIANCE ASSURANCE
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/compliance-…
+P > COMPLIANCE ASSURANCE > ASSESSMENTS
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/compliance-…
+P > COMPLIANCE ASSURANCE > AUDITS
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/compliance-…
+P > COMPLIANCE ASSURANCE > REGULATORY AGENCY ACTION RESPONSE
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/compliance-…
+P > COMPLIANCE ASSURANCE > PREPARATION AND TRAINING
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/compliance-…
+P > QUALITY ASSURANCE
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/quality-ass…
+P > STRATEGIC CONSULTING  
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+P > STRATEGIC CONSULTING >  PORTFOLIO MANAGEMENT
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+Needs Content
+P > STRATEGIC CONSULTING >  CORPORATE STRATEGY AND OPTIMIZATION
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+Needs content
+P > STRATEGIC CONSULTING >  MANUFACTURING PROCESS OPTIMIZATION, AUTOMATION AND AGING FACILITIES 
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+P > STRATEGIC CONSULTING >  MERGERS AND ACQUISITIONS/DUE DILIGENCE
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+P > STRATEGIC CONSULTING >  STAFFING SUPPORT
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+P > STRATEGIC CONSULTING >  CHANGE MANAGEMENT 
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+Need content
+P > STRATEGIC CONSULTING >  QUALITY SYSTEM AUTOMATION USING SOFTWARE
+ http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+NEED CONTENT
+P > STRATEGIC CONSULTING >  MASTER VALIDATION PLAN
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+NEED CONTENT
+P > REMEDIATION STRATEGY AND SUPPORT 
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/remediation…
+Missing links
+P > REMEDIATION STRATEGY AND SUPPORT >  DATA INTEGRITY
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/remediation…
+P > REMEDIATION STRATEGY AND SUPPORT >  REGULATORY ACTION REMEDIATION 
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/remediation…
+P > REMEDIATION STRATEGY AND SUPPORT >  MANUFACTURING PROCESS, EQUIPMENT, FACILITY AND UTILITY VALIDATION
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/strategic-c…
+P > REMEDIATION STRATEGY AND SUPPORT >  PART 11 AND COMPUTERIZED SYSTEM VALIDATION
+http://dev.marketingincolor.com/rca-website-2017/pharmaceutical/remediation…
+
+
+404 page:
+ ✔ https://gyazo.com/794347c9260a084c2d0d3fab0e0b8a27 @done (17-10-06 17:19)
+ ✔ Please align @done (17-10-06 17:19)
+
+Contact Form:
+ ☐ Fills out and it refreshes to the contact page - is that ok?
+
+Opportunities Page:
+ ☐ http://dev.marketingincolor.com/rca-website-2017/opportunities/
+ ☐ (dev) Needs a live feed from Taleo to be put in 
+ ☐ Needs a button at the bottom
+ ☐ Needs a contact form at the bottom
+ ☐ I set the feature image but it won't load onto the page.
+
+Expertise Feed:
+ ✔ Missing description @done (17-10-06 17:24)
+ ☐ Please even out the spacing so that there's more space between th e first and second row of items. https://gyazo.com/65a5956edd14f5264fa4fd4b2c28fb3e
+ ✔ Case studies - http://dev.marketingincolor.com/rca-website-2017/case-studies/  NEEDS DESCRIPTION @done (17-10-06 17:24)
+ ✔ White papers - http://dev.marketingincolor.com/rca-website-2017/white-papers/ NEEDS DESCRIPTION @done (17-10-06 17:24)
+ ✔ Webinars - http://dev.marketingincolor.com/rca-website-2017/webinars/ NEEDS DESCRIPTION @done (17-10-06 17:24)
+ ✔ Visual Resources - http://dev.marketingincolor.com/rca-website-2017/visual-resources/ NEEDS DESCRIPTION @done (17-10-06 17:24)
+ ✔ Published Articles - http://dev.marketingincolor.com/rca-website-2017/published-articles/ NEEDS DESCRIPTION @done (17-10-06 17:24)
+
+
+Events Posts:
+ ✔ Does not follow the events layout - https://gyazo.com/a87d9adabe97c9aaad5e510bd82ad194 @done (17-10-06 20:33)
+ ✔ I feel like these should be three posts rather than being put into one??? Maybe there needs top be more details.....  - https://gyazo.com/e3bf05abad3027dd21cfe5b12d78e1c5 @done (17-10-06 20:37)
+ ✔ Please fix spacing @done (17-10-06 20:37)
+
+
+TAKE OVER PAGE:
+ ☐ Form: "*=required" needs to be 12px
+ ☐ I can't un-check the "I agree" button
+ ☐ Needs actual copy of the take over page
+ ☐ Please decrease the space between this line https://gyazo.com/24ed1e0a9868575234d6c22ef073e5e0 
+ ☐ Please increase the space of the pink area so it matches the space of the purple area
+
+STAFF BIOS:
+ ☐ Operations
+ ☐ http://dev.marketingincolor.com/rca-website-2017/about/our-people/operation…
+ ☐ Missing copy
+ ☐ H#s have to be set
+ ☐ Sales Operations
+ ☐ http://dev.marketingincolor.com/rca-website-2017/about/our-people/sales-ope…
+ ☐ Missing copy
+ ☐ H#s have to be set
+ ☐ Finance
+ ☐ http://dev.marketingincolor.com/rca-website-2017/about/our-people/finance/
+ ☐ Missing copy
+ ☐ H#s have to be set
+ ☐ Directors
+ ☐ http://dev.marketingincolor.com/rca-website-2017/about/our-people/directors…
+ ☐ Missing accurate copy. 
+ ☐ H#s have to be set
+
+ABOUT > GIVING BACK: 
+ ✔ Set the header image on the backend but it has not changed even after emptying my cache https://gyazo.com/3b4da333e92578ebdb4962b58dcf75fe @done (17-10-06 17:27)
+ ☐ Needs contact form & even spacing - https://gyazo.com/8bbce56f448d686341687f9b009f1b45
+
+CONTACT US PAGE:
+ ☐ I think something got broken on the contact us form - the spacing needs to adjusted under the blue social media bar and above the text "I am interested in learning more about RCA" text - https://gyazo.com/d76884e53328cf5ec04dfad0e2bccdf6
+ ☐ Submitted a test and the page reloaded instead of heading to the success page.
+ ☐ Can we go ahead and change the phone icon to the airplane icon http://fontawesome.io/icon/paper-plane/
+ ☐ Success page looks good - http://dev.marketingincolor.com/rca-website-2017/contact-us-success/
+
+BULLET STYLING:
+ ☐ Is there a way to make the buttons reflect this format: https://gyazo.com/c58321ed3a93cd41dcb7666cb88df2cf
+ ☐ Level 1: orange button #c4612b
+ ☐ Level 2: dark gray button #2b2b2b
+ ☐ Level 3: dark gray dash #2b2b2b
+ ☐ Level 4 (not shown): open dark gray circle #2b2b2b
+
+
+
+------------------------------------------ pages that need to be qa ----------------------------------------
+
+US Agent Services
+US Agent Service Success

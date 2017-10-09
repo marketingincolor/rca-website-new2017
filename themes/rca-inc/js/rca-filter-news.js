@@ -75,7 +75,7 @@ function ajaxFilterYear() {
     var select = document.getElementById("newsFilterSelect");
     selectedNode = select.options[select.selectedIndex].value;
 
-    if(selectedNode == "" || selectedNode == "Year Published") {
+    if(selectedNode == "" || selectedNode == "Year") {
         selectedNode = yearArray;
     }
 
@@ -154,6 +154,8 @@ function filterNewsPosts(templateURL, category, dropdown_query) {
 $('#newsFilterSelect').on('change', function() {
 
     $('.load-more').show();
+
+    var templateURL = afp_vars.templateURL;
     var category = getCategory();
     var dropdown_query = ajaxFilterYear();
     var total_posts = $('.rca_total_posts').attr('value', '0');
@@ -174,22 +176,9 @@ $('#newsFilterSelect').on('change', function() {
         console.warn('RCA Information: No dropdown query found.');
     }
 
-    var content = $('.post-container');
+    filterNewsPosts(templateURL, category, dropdown_query);
+    //var content = $('.post-container');
     //content.hide();
-
-
-        $.ajax({
-            url: afp_vars.templateURL + '/filter-posts.php',
-            type: 'POST',
-            data: {category : category, dropdown_query : dropdown_query, offset : offsetValue },
-            success: function(response) {
-                        content.html(response).fadeIn(1000);
-                        total_posts = $('.rca_total_posts').val();
-                        if(total_posts < 5) {
-                            $('.load-more').hide();
-                        }                        
-            },
-        });
 
 })
 
@@ -209,6 +198,7 @@ $('#newsFilterSelect').on('change', function() {
  */
 function defaultNewsFilter(templateURL, category, dropdown_query) {
 
+    $('.rca_query').attr('value', 'all');
     var content = $('.post-container');
     $('#all').addClass('newsClick');
 
@@ -286,7 +276,7 @@ function rcaNext(templateURL, category, dropdown_query) {
 // }
 
 $('.load-more').on('click', function() {
-    var total_posts = $('.rca_total_posts').attr('value', '0');
+    //var total_posts = $('.rca_total_posts').attr('value', '0');
     var templateURL = afp_vars.templateURL;
     var content = $('.post-container');
     var offsetContainer = $('.rca_offset');

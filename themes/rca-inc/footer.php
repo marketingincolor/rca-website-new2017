@@ -175,6 +175,46 @@
 			});
 
 		</script>
-		
+
+		<!-- STICKY FOOTER -->
+		<script>
+		 $(window).bind("load", function () {
+		    var footer = $("#colophon");
+		    var pos = footer.position();
+		    var height = $(window).height();
+		    height = height - pos.top;
+		    height = height - footer.height();
+		    if (height > 0) {
+		        footer.css({
+		            'margin-top': height + 'px'
+		        });
+		    }
+		});
+		</script>
+		<!-- /STICKY FOOTER -->
+
+		<!-- HEADER -->
+		<script>
+		    $(document).ready(function() {
+		        var $header = $(".top-menu"),
+		            $clone = $header.before($header.clone().addClass("clone"));
+		        
+		        $(window).on("scroll", function() {
+		            var fromTop = $(window).scrollTop();
+		            $("body").toggleClass("down", (fromTop > 400));
+		        });
+		    });
+		</script>
+		<!-- /HEADER -->
+
+
+		<script>
+			// $(document).ready(function($) {
+			// 	console.log('REDAY');
+			// 	$('#menu-secondary-menu > a:nth-child(1) > div > span > img').on('hover', function() {
+			// 		$('#menu-secondary-menu > a:nth-child(1) > div > span > img').attr('src', afp_vars.templateURL + '/images/reversed-icons/case-study.png');
+			// 	});
+			// });
+		</script>
 
 </html>

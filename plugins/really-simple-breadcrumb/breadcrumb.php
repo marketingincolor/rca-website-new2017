@@ -51,6 +51,10 @@ function simple_breadcrumb() {
 					elseif( $post->post_type == 'visual_resources'):
 						echo '<a href="'.get_permalink(get_page_by_title('Visual Resources')).'">Visual Resources</a>';
 						echo $separator;
+					elseif( $post->post_type == 'post'):
+						echo '<a href="'.get_permalink(get_page_by_title('News')).'">News</a>';
+						echo $separator;
+
 					else:
 						echo $separator;							
 					endif;

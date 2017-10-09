@@ -2,7 +2,7 @@
 function EWD_US_Upgrade_To_Full() {
 	global $ewd_us_message, $EWD_US_Full_Version;
 	
-	$Key = $_POST['Key'];
+	$Key = trim($_POST['Key']);
 	
 	if ($Key == "EWD Trial" and !get_option("EWD_US_Trial_Happening")) {
 		$ewd_urp_message = array("Message_Type" => "Update", "Message" => __("Trial successfully started!", 'ultimate-slider'));
@@ -11,6 +11,12 @@ function EWD_US_Upgrade_To_Full() {
 		update_option("EWD_US_Trial_Happening", "Yes");
 		update_option("EWD_US_Full_Version", "Yes");
 		$EWD_US_Full_Version = get_option("EWD_US_Full_Version");
+
+		$Admin_Email = get_option('admin_email');
+
+		$opts = array('http'=>array('method'=>"GET"));
+		$context = stream_context_create($opts);
+		$Response = unserialize(file_get_contents("http://www.etoilewebdesign.com/UPCP-Key-Check/Register_Trial.php?Plugin=US&Admin_Email=" . $Admin_Email . "&Site=" . get_bloginfo('wpurl'), false, $context));
 	}
 	elseif ($Key != "EWD Trial") {
 		$opts = array('http'=>array('method'=>"GET"));

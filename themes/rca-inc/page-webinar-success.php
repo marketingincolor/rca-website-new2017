@@ -3,6 +3,10 @@
 	get_header();
 	$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	if ( have_posts() ) : while ( have_posts() ) : the_post();
+	$video_img = the_field('video_img');
+	if(empty($video_img)) {
+		$video_img = get_stylesheet_directory_uri() . '/images/webinar-coming-soon.jpg';
+	}
 ?>
 
 	<!-- Featured Image -->
@@ -20,11 +24,11 @@
 		<div class="row">
 			<div class="small-10 small-centered columns">
 				<!-- Video Embed -->
-				<a href="#!" data-open="webinar-video-modal"><img src="<?php the_field('video_img'); ?>" alt="Watch Video" title="Watch Video"></a>
+				<a href="#!" data-open="webinar-video-modal"><img src="<?php echo $video_img; ?>" alt="Watch Video" title="Watch Video"></a>
 				<!-- Download Links -->
 				<div class="download-links">
-					<a href="<?php the_field('webinar_slides_download_link'); ?>"><button class="orange-btn"><?php the_field('webinar_download_text'); ?></button></a>
-					<a href="<?php the_field('faqs_download_link'); ?>"><button class="orange-btn"><?php the_field('faq_download_text'); ?></button></a>
+					<a href="<?php the_field('webinar_slides_download_link'); ?>"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
+					<a href="<?php the_field('faqs_download_link'); ?>"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
 				</div>
 				<span class="share-widget">Share on Social Media<?php echo do_shortcode('[addtoany]'); ?></span>
 			</div>

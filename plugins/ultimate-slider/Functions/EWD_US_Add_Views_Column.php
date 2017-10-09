@@ -89,6 +89,7 @@ add_action('restrict_manage_posts','EWD_US_Restrict_By_Category');
 function EWD_US_Restrict_By_Category() {
     global $typenow;
     global $wp_query;
+    
     if ($typenow=='ultimate_slider') {
         $taxonomy = 'ultimate_slider_categories';
         $faq_taxonomy = get_taxonomy($taxonomy);
@@ -97,7 +98,7 @@ function EWD_US_Restrict_By_Category() {
             'taxonomy'        =>  $taxonomy,
             'name'            =>  'ultimate_slider_categories',
             'orderby'         =>  'name',
-            'selected'        =>  $wp_query->query['term'],
+            'selected'        =>  isset($wp_query->query['term'])? $wp_query->query['term']:"",
             'hierarchical'    =>  true,
             'depth'           =>  3,
             'show_count'      =>  true, // Show # listings in parens

@@ -14,7 +14,7 @@ $Show_TinyMCE = get_option("EWD_US_Show_TinyMCE");
 $Timer_Bar = get_option("EWD_US_Timer_Bar");
 $Slide_Indicators = get_option("EWD_US_Slide_Indicators");
 $Link_Action = get_option("EWD_US_Link_Action");
-
+ 
 $Slide_Transition_Effect = get_option("EWD_US_Slide_Transition_Effect");
 $WC_Product_Image_Slider = get_option("EWD_US_WC_Product_Image_Slider");
 $Mobile_Aspect_Ratio = get_option("EWD_US_Mobile_Aspect_Ratio");
@@ -56,7 +56,7 @@ if(get_option('EWD_us_Hide_Dash_Review_Ask')){
 else {
 	add_option('EWD_us_Hide_Dash_Review_Ask', 'No');
 }
-$hideReviewBox = $_POST["hide_us_review_box_hidden"];
+$hideReviewBox = isset($_POST["hide_us_review_box_hidden"])?$_POST["hide_us_review_box_hidden"]:"";
 if($hideReviewBox == 'Yes'){
 	update_option('EWD_us_Hide_Dash_Review_Ask', 'Yes');
 	header('Location: edit.php?post_type=ultimate_slider&page=us-options');
@@ -126,7 +126,7 @@ if($hideReviewBox == 'Yes'){
 						<td>
 							<fieldset><legend class="screen-reader-text"><span>Autoplay Delay (seconds)</span></legend>
 								<input type='text' name='autoplay_delay' value='<?php echo $Autoplay_Delay; ?>' />
-								<p>If autoplay is on, how long should should the timer wait before starting the slideshow? (Should be greater than 0)</p>
+								<p>If autoplay is on, how long should the timer wait before starting the slideshow? (Should be greater than 0)</p>
 							</fieldset>
 						</td>
 					</tr>
@@ -329,9 +329,11 @@ if($hideReviewBox == 'Yes'){
 							<fieldset><legend class="screen-reader-text"><span>Mobile Link to Full Post</span></legend>
 								<label title='Yes'><input type='radio' name='mobile_link_to_full' value='Yes' <?php if($Mobile_Link_To_Full == "Yes") {echo "checked='checked'";} ?> /> <span>Yes</span></label><br />
 								<label title='No'><input type='radio' name='mobile_link_to_full' value='No' <?php if($Mobile_Link_To_Full  == "No") {echo "checked='checked'";} ?> /> <span>No</span></label><br />
+							<p>Should clicking on a slide bring up the individual slide post on mobile?</p>
 							</fieldset>
+
 						</td>
-						<p>Should clicking on a slide bring up the individual slide post on mobile?</p>
+						
 					</tr>
 
 					<tr>
@@ -365,7 +367,7 @@ if($hideReviewBox == 'Yes'){
 							<label title='Yes'><input type='radio' name='lightbox' value='Yes' <?php if($Lightbox == "Yes") {echo "checked='checked'";} ?> <?php if ($US_Full_Version != "Yes") {echo "disabled";} ?> /> <span>Yes</span></label><br />
 							<label title='No'><input type='radio' name='lightbox' value='No' <?php if($Lightbox == "No") {echo "checked='checked'";} ?> <?php if ($US_Full_Version != "Yes") {echo "disabled";} ?> /> <span>No</span></label><br />
 							<p>Should a lightbox be opened when an image is clicked on? Particularly useful if you're using carousel mode.<br />
-							<?php _e("Want to customize this lightbox? Install the <a href='https://wordpress.org/plugins/ultimate-lightbox/' 'Ultimate Lightbox' plugin</a>, and you switch the lightbox colors, controls, behaviour and more!", 'ultimate-slider'); ?> </p>
+							<?php _e("Want to customize this lightbox? Install the <a href='https://wordpress.org/plugins/ultimate-lightbox/'> 'Ultimate Lightbox' plugin </a>, and you switch the lightbox colors, controls, behaviour and more!", 'ultimate-slider'); ?> </p>
 							</fieldset>
 						</td>
 					</tr>

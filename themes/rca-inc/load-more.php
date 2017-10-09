@@ -28,7 +28,7 @@ header("HTTP/1.1 200 OK");
 	$news_query = new WP_Query( array(
     	'post_type' => 'post',
     	'category_name' => $category,
-    	'posts_per_page' => 5,
+    	// 'posts_per_page' => 5,
     	'paged' => $paged,
     	'date_query' => array(
     		'year' => $dropdown_query
@@ -50,7 +50,7 @@ header("HTTP/1.1 200 OK");
 			</div>
 		</div>
 	</div>
-	<input class="rca_total_posts" type="hidden" value="<?php echo $news_query->post_count; ?>">
+	<input class="rca_total_posts" type="hidden" value="$news_query->post_count">
 
 <?php 
 	}
@@ -60,6 +60,13 @@ header("HTTP/1.1 200 OK");
 
 	}
 	else{
+		?>
+		<script>
+			$('.load-more').hide();
+
+		</script>
+
+		<?php
 		echo '<div class="row">';
 		echo '<div class="small-10 small-offset-1 columns">';
 		echo '<h3 class="">Sorry, we can\'t find any posts that match this search right now...</p>';

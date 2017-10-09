@@ -93,7 +93,7 @@
 				<p><?php echo $references_text; ?></p>
 			</div>
 			<?php endif; ?>
-
+			<?php the_content(); ?>
 		</div>
 	</div>
 	<!-- /Content MEDIUM -->
@@ -134,6 +134,7 @@
 			<?php if($result_text): ?>
 			<p><?php echo $result_text; ?></p>
 			<?php endif; ?>
+			<?php the_content(); ?>
 
 		</div>
 	</div>
