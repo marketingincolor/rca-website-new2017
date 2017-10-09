@@ -64,6 +64,7 @@
 								</div>
 						<?php endif; 
 					?>
+					<p class="copyright text-center">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc. All Rights Reserved. &bull; 10411 Corporate Drive, Suite 102, Pleasant Prairie, WI 53158 &bull; 262-288-6360<br>ISO 9001:2008 certified</p>
 				</div>
 			</div>
 			<!-- /DESKTOP FOOTER MENU -->

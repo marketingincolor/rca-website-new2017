@@ -2133,6 +2133,7 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; p
 footer { background-color: #2b2b2b; padding: 2.5rem 0rem; }
 .edit-link a { color: #fff; }
 .site-info a, .site-info p { color: #fff; }
+.site-info .copyright {font-size: 11px;margin-top: 10px}
 #menu-mobile-footer-left,
 #menu-mobile-footer-right { padding: 0rem; margin-left:0rem; }
 .footer-social-icon {
