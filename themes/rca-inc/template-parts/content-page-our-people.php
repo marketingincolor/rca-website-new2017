@@ -30,7 +30,7 @@
 
 				<!-- board of directors -->
 				<div class="row staff-block-area text-center" data-equalizer>
-					<a href="#board-of-directors"><h2>Board of Directors</h2></a>
+					<a id="#board-of-directors"><h2>Board of Directors</h2></a>
 					<?php get_team_members('board-of-directors'); ?>
 				</div>
 				<!-- end board of directors -->
@@ -39,7 +39,7 @@
 
 				<!-- executive leadership team -->
 				<div class="row staff-block-area text-center"  data-equalizer>
-					<a href="#executive"><h2>Executive Leadership Team</h2></a>
+					<a id="#executive"><h2>Executive Leadership Team</h2></a>
 					<?php #get_team_members('executive_leadership'); ?>
 				</div>				
 				<!-- end executive leadership team -->
@@ -49,7 +49,7 @@
 
 				<!-- directors-->
 				<div class="row staff-block-area text-center"data-equalizer >
-					<h2>Directors</h2>
+					<a id="#directors"><h2>Directors</h2></a>
 					<a href="<?php echo get_permalink( get_page_by_title( 'Operations' ) ) ?>"><h3>Operations</h3></a>
 					<?php #get_team_members('operations'); ?>
 				</div>
