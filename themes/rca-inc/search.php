@@ -58,7 +58,7 @@ get_header(); ?>
 			<?php get_template_part('template-parts/taxonomy', 'menu'); ?>
 			<!-- /TAXONOMIES MENU -->
 			
-			<div id="all-items-block" class="row" data-equalizer>
+			<div id="all-items-block" class="row">
 				
 			<?php
 				/* Start the Loop */
@@ -69,7 +69,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					echo '<div class="small-10 small-offset-1 medium-offset-0 medium-3 columns end" data-equalizer-watch>';
+					echo '<div class="small-10 small-offset-1 medium-offset-0 medium-3 columns end" >';
 					get_template_part( 'template-parts/content', 'search' );
 					echo '</div>';
 
