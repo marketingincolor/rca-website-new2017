@@ -374,7 +374,7 @@ register_nav_menus( array(
 
 function rca_top_slider($atts, $content = null) {
     extract(shortcode_atts(array(
-        'category' => 'Uncategorized'
+        'category' => 'Uncategorized',
                     ), $atts));
 
     $data_attr = "";
@@ -406,6 +406,17 @@ function rca_top_slider($atts, $content = null) {
     while ($loop->have_posts()) {
         $loop->the_post();
 
+        $call_to_action_links = get_field('call_to_action_links');
+
+        if($call_to_action_links == FALSE) {
+          $call_to_action_links = '#!';
+        }
+        //var_dump($call_to_action_links);
+        $call_to_action_title = get_field('call_to_action_title');
+        if($call_to_action_title == FALSE) {
+          $call_to_action_title = 'Read More';
+        }
+
         $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
         $meta_link = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_owlurl', true);
 
@@ -423,7 +434,7 @@ function rca_top_slider($atts, $content = null) {
             $slide_title = get_the_title();
             $slide_content = get_the_content();
             $img_overlay = '<div class="small-10 small-offset-1 medium-5 medium-offset-0 large-4 columns">';
-            $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="#!">Sign Up Here</a></p></div>';
+            $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="' .  $call_to_action_links  . '">'. $call_to_action_title . '</a></p></div>';
             $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
             $result .= '</div></div>';
         } else {
@@ -714,77 +725,84 @@ add_filter("wp_nav_menu", function( $nav_menu ) {
  * Retrievs Team Members on About > Our People Page
  * @param  string $role_type used for gettings users under each category
  */
-function get_team_members($role_type) {
-
+function get_team_members($category) {
+  wp_reset_query();
   $args = array(
-    'role' => $role_type,
-    'fields' => 'ID',
-    'meta_key' => 'order',
-    'orderby' => 'meta_value',
-    'order' => 'ASC'
+    'post_type' => 'team',
+
   );
 
+
   $team_query = new WP_User_Query( $args );
-  $team_members = $team_query->get_results();
 
+  //$team_members = $team_query->get_results();
 
-  if ( !empty($team_members)) {
+  if ( $team_query->have_posts() ) :
+    while ( $team_query->have_posts() ) : $team_query->the_post();
+      the_title();
+    endwhile;
+  else :
+    echo wpautop( 'Sorry, no posts were found' );
+  endif;
+    //var_dump($team_members->post_name);
 
-    $last = count($team_members);
-    $end = '';
+  // if ( !empty($team_members)) {
+
+  //   $last = count($team_members);
+  //   $end = '';
 
     // If we have team members count and loop through them...
-    for ( $count = 0; $count < $last; $count++ ) {
-    // foreach($team_members as $team_member) {
-      $member_info = get_userdata($team_members[$count]);
-      $member_url = $member_info->user_url;
-      //var_dump($member_info);
-      $first_name = $member_info->first_name;
-      $last_name = $member_info->last_name;
-      $avatar = get_wp_user_avatar($member_info->ID);
+    // for ( $count = 0; $count < $last; $count++ ) {
+    // // foreach($team_members as $team_member) {
+    //   $member_info = get_userdata($team_members[$count]);
+    //   $member_url = $member_info->user_url;
+    //   //var_dump($member_info);
+    //   $first_name = $member_info->first_name;
+    //   $last_name = $member_info->last_name;
+    //   $avatar = get_wp_user_avatar($member_info->ID);
 
-      // Add classes depending on count
-      // Find the longest position and adjust height accordingly.
-      if ( $count == 0 || ($count + 1)%3 == 1 ){
-        $additionalClass = 'large-offset-3';
-      }
-      if ( $count == ($last - 1)) {
-        $end = 'end';
-      }
+    //   // Add classes depending on count
+    //   // Find the longest position and adjust height accordingly.
+    //   if ( $count == 0 || ($count + 1)%3 == 1 ){
+    //     $additionalClass = 'large-offset-3';
+    //   }
+    //   if ( $count == ($last - 1)) {
+    //     $end = 'end';
+    //   }
 
-      if(empty($avatar)):
-        $missing_avatar = 'missing-avatar';
-      endif;
+    //   if(empty($avatar)):
+    //     $missing_avatar = 'missing-avatar';
+    //   endif;
 
-      echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
+    //   echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
 
-      $position = get_field('position', $member_info);
-      if( !empty($avatar)) : 
-        echo $avatar;
-      endif;
-
-
-      echo '<div class="staff-wrapper">';
-
-      if ( !empty($first_name) && !empty($last_name) ) {
-        echo '<div class="staff-name">' . $first_name . ' ' . $last_name . '</div>';
-      }
-
-      if ( !empty($position) ) {
-        echo '<div class="staff-position">' . $position . '</div>';
-      }
-
-      echo '</div>';
-      echo '<a href="'. $member_url .'"><button class="staff-btn">Bio</button></a>';
-      echo '</div>';
+    //   $position = get_field('position', $member_info);
+    //   if( !empty($avatar)) : 
+    //     echo $avatar;
+    //   endif;
 
 
-      $additionalClass = '';
-    }
+  //     echo '<div class="staff-wrapper">';
 
-  }
+  //     if ( !empty($first_name) && !empty($last_name) ) {
+  //       echo '<div class="staff-name">' . $first_name . ' ' . $last_name . '</div>';
+  //     }
+
+  //     if ( !empty($position) ) {
+  //       echo '<div class="staff-position">' . $position . '</div>';
+  //     }
+
+  //     echo '</div>';
+  //     echo '<a href="'. $member_url .'"><button class="staff-btn">Bio</button></a>';
+  //     echo '</div>';
+
+
+  //     $additionalClass = '';
+  //   }
+
+  // }
   
-  else { echo 'No Team Members Found'; }
+  // else { echo 'No Team Members Found'; }
 }
 
 class RCA_SECONDARY_WALKER extends Walker_Nav_Menu {
@@ -843,22 +861,22 @@ function get_cat_image($title) {
   $template = get_stylesheet_directory_uri();
   switch($title) {
     case('Case Studies'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/case-studies.png';
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/case-studies.png';
     break;
     case('White Papers'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/white-papers.png';
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/white-papers.png';
     break;
     case('Visual Resources'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/visual-resources.png';
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/visual-resources.png';
     break;
     case('Published Articles'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/published-articles.png';
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/published-articles.png';
     break;
     case('Webinars'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/webinars.png';
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/webinars.png';
     break;
     case('View All'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/menu-icons/view-all.png';
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/view-all.png';
     break;
     default:
       $url = '';
@@ -995,7 +1013,6 @@ function rca_tax_post_pagination() {
     //   $wp_query = $view_all;
     // endif;
     
- 
     /** Stop execution if there's only 1 page */
     if( $wp_query->max_num_pages <= 1 )
         return;
@@ -1049,13 +1066,13 @@ function rca_tax_post_pagination() {
     }
  
     /** Link to last page, plus ellipses if necessary */
-    if ( ! in_array( $max, $links ) ) {
-        if ( ! in_array( $max - 1, $links ) )
-            echo '<li>…</li>' . "\n";
+    // if ( ! in_array( $max, $links ) ) {
+    //     if ( ! in_array( $max - 1, $links ) )
+    //         echo '<li>…</li>' . "\n";
  
-        $class = $paged == $max ? ' class="active"' : '';
-        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
-    }
+    //     $class = $paged == $max ? ' class="active"' : '';
+    //     printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
+    // }
  
     /** Next Post Link */
     if ( get_next_posts_link() )
@@ -1257,21 +1274,25 @@ add_shortcode('rca-related-case-studies-mobile', 'rca_related_case_studies_mobil
  * @return [string] [icon img URL]
  */
 function rca_get_post_type_icon($post_type) {
+  //var_dump(get_page_template_slug());
   if($post_type == 'case_studies'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
-
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.jpg';
   elseif($post_type == 'webinars'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-webinar-icon.jpg';
-
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-webinars-icon.jpg';
   elseif($post_type == 'white_papers'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-white-paper-icon.jpg';
-
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-white-papers-icon.jpg';
   elseif($post_type == 'visual_resources'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-visual-resources-icon.jpg';
-
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-visual-resources-icon.jpg';
   elseif($post_type == 'published_articles'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/orange-published-articles-icon.jpg';
-
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.jpg';
+  elseif($post_type == 'post'):
+    $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
+  elseif($post_type == 'page'):
+    if(get_page_template_slug() == 'individual-staff-member.php'):
+        $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
+    else:
+    $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
+    endif;
   else:
     $icon = '';  
   endif;
@@ -1297,7 +1318,7 @@ function rca_get_featured_img($postID) {
     $img = get_stylesheet_directory_uri() . '/images/pharmaceutical.jpg';
   }
   else {
-    $img = '';
+    $img = get_the_post_thumbnail_url( $postID );
   }
   return $img;
 

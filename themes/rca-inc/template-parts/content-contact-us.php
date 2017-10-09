@@ -59,12 +59,12 @@
 									if($location_phone):
 										$block .= '<div class="location-phone"><i class="fa fa-phone" aria-hidden="true"></i><p> ' . $location_phone . '</p></div>';
 									endif;
-									if($location_email):
-										$block .= '<div class="location-email"><i class="fa fa-envelope" aria-hidden="true"></i><p>' . $location_email . '</p></div>';
-									endif;
 									if($location_fax):
 										$block .= '<div class="location-fax"><i class="fa fa-fax" aria-hidden="true"></i><p>' . $location_fax . '</p></div>';
 									endif;								
+									if($location_email):
+										$block .= '<div class="location-email"><i class="fa fa-envelope" aria-hidden="true"></i><p>' . $location_email . '</p></div>';
+									endif;
 									$block .= '</div>';
 									$block .= '</div>';
 									echo $block;
@@ -113,11 +113,11 @@
 							if($location_phone):
 								$block .= '<div class="location-phone"><i class="fa fa-phone" aria-hidden="true"></i><p style="margin-bottom: 0rem;">' . $location_phone . '</p></div>';
 							endif;
-							if($location_email):
-								$block .= '<div class="location-email"><i class="fa fa-envelope" aria-hidden="true"></i><p style="margin-bottom: 0rem;">' . $location_email . '</p></div>';
-							endif;
 							if($location_fax):
 								$block .= '<div class="location-fax"><i class="fa fa-fax" aria-hidden="true"></i><p style="margin-bottom: 0rem;">' . $location_fax . '</p></div>';
+							endif;
+							if($location_email):
+								$block .= '<div class="location-email"><i class="fa fa-envelope" aria-hidden="true"></i><p style="margin-bottom: 0rem;">' . $location_email . '</p></div>';
 							endif;
 							if($location_address):
 								$block .= '<a href="https://maps.google.com/?q=' . $location_address . '" target="_blank"><p style="margin-bottom: 0rem;"><button class="orange-btn map-btn">Map</button></a>';

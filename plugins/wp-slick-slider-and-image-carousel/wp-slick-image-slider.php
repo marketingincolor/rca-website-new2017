@@ -1,23 +1,26 @@
 <?php
 /**
  * Plugin Name: WP Slick Slider and Image Carousel
- * Plugin URI: http://www.wponlinesupport.com/
+ * Plugin URI: https://www.wponlinesupport.com/plugins
  * Text Domain: wp-slick-slider-and-image-carousel
  * Domain Path: /languages/
  * Description: Easy to add and display wp slick image slider and carousel  
  * Author: WP Online Support
- * Version: 1.2.8
- * Author URI: http://www.wponlinesupport.com/
+ * Version: 1.3.2.1
+ * Author URI: https://www.wponlinesupport.com
  *
  * @package WordPress
  * @author WP Online Support
  */
 
 if( !defined('WPSISAC_VERSION') ){
-    define( 'WPSISAC_VERSION', '1.2.8' ); // Plugin version
+    define( 'WPSISAC_VERSION', '1.3.2.1' ); // Plugin version
 }
 if( !defined( 'WPSISAC_VERSION_DIR' ) ) {
     define( 'WPSISAC_VERSION_DIR', dirname( __FILE__ ) ); // Plugin dir
+}
+if( !defined( 'WPSISAC_URL' ) ) {
+    define( 'WPSISAC_URL', plugin_dir_url( __FILE__ ) ); // Plugin url
 }
 if( !defined( 'WPSISAC_POST_TYPE' ) ) {
     define( 'WPSISAC_POST_TYPE', 'slick_slider' ); // Plugin post type
@@ -51,36 +54,21 @@ function wpsisac_load_textdomain() {
 	load_plugin_textdomain( 'wp-slick-slider-and-image-carousel', false, dirname( plugin_basename(__FILE__) ) . '/languages/' );
 } 
 
-/**
- * Function to get plugin image sizes array
- * 
- * @package WP Slick Slider and Image Carousel
- * @since 1.2.2
- */
-function wpsisac_get_unique() {
-  static $unique = 0;
-  $unique++;
+// Function file
+require_once( WPSISAC_VERSION_DIR . '/includes/wpsisac-function.php' );
 
-  return $unique;
-}
+// Script
+require_once( WPSISAC_VERSION_DIR . '/includes/class-wpsisac-script.php' );
 
-add_action( 'wp_enqueue_scripts','wpsisacstyle_css' );
-function wpsisacstyle_css() {
-    
-    // Registring slick slider script
-    if( !wp_script_is( 'wpos-slick-jquery', 'registered' ) ) {
-        wp_register_script( 'wpos-slick-jquery', plugin_dir_url( __FILE__ ).'assets/js/slick.min.js', array('jquery'), WPSISAC_VERSION, true );
-    }
+// Post type file
+require_once( WPSISAC_VERSION_DIR . '/includes/wpsisac-slider-custom-post.php' );
 
-    wp_enqueue_style( 'wpsisac_slick_style',  plugin_dir_url( __FILE__ ) . 'assets/css/slick.css', array(), WPSISAC_VERSION );
-    wp_enqueue_style( 'wpsisac_recent_post_style',  plugin_dir_url( __FILE__ ) . 'assets/css/slick-slider-style.css', array(), WPSISAC_VERSION);
-}
+// Shortcode File
+require_once( WPSISAC_VERSION_DIR . '/includes/shortcodes/wpsisac-slider.php' );
+require_once( WPSISAC_VERSION_DIR . '/includes/shortcodes/wpsisac-carousel.php' );
 
-require_once( 'wpsisac-slider-custom-post.php' );
-require_once( 'templates/wpsisac-template.php' );
-require_once( 'templates/wpsisac-carousel-template.php' );
 
 // How it work file, Load admin files
 if ( is_admin() || ( defined( 'WP_CLI' ) && WP_CLI ) ) {
-    require_once( WPSISAC_VERSION_DIR . '/admin/wpsisac-how-it-work.php' );	
+    require_once( WPSISAC_VERSION_DIR . '/includes/admin/wpsisac-how-it-work.php' );	
 }

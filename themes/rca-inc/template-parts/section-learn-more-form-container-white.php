@@ -102,7 +102,7 @@
 						  </div>
 						</div>
 						<div class="large-6 columns text-right">
-							<p>*=Required</p>
+							<p style="color: rgba(0,0,0,0.4);">*=Required</p>
 						</div>
 						<div class="large-12 columns">
 							<?php global $wp;

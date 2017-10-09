@@ -7,7 +7,7 @@ Author: Etoile Web Design
 Author URI: http://www.EtoileWebDesign.com/plugins/
 Terms and Conditions: http://www.etoilewebdesign.com/plugin-terms-and-conditions/
 Text Domain: ultimate-slider
-Version: 1.0.16
+Version: 1.0.19
 */
 
 global $ewd_us_message;
@@ -41,8 +41,10 @@ add_action('admin_menu' , 'EWD_US_Enable_Sub_Menu');
 
 function EWD_US_Make_Posts_Sortable($hook) {
     global $post;
-    if ($hook == 'edit.php' or $hook == 'post-new.php' or $hook == 'post.php' or $hook == 'ultimate_slider_page_us-options' or $hook == 'widgets.php') {
-        if ($post->post_type == 'ultimate_slider' or $hook == 'ultimate_slider_page_us-options' or $hook == 'widgets.php') {
+	if (is_object($post)) {$post_type = $post->post_type; }
+	else {  $post_type = "";    }
+   if ($hook == 'edit.php' or $hook == 'post-new.php' or $hook == 'post.php' or $hook == 'ultimate_slider_page_us-options' or $hook == 'widgets.php') {
+        if ($post_type == 'ultimate_slider' or $hook == 'ultimate_slider_page_us-options' or $hook == 'widgets.php') {
             wp_enqueue_script(  'jquery-ui-core' );
             wp_enqueue_script(  'jquery-ui-sortable' );
             wp_enqueue_script(  'ultimate-slider-admin', plugins_url('ultimate-slider/js/ultimate-slider-admin.js'), array('jquery', 'jquery-ui-core', 'jquery-ui-sortable'), true);

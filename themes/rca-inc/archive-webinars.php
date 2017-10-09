@@ -53,7 +53,9 @@ get_header(); ?>
 		$args = array(
 			'post_type' => 'webinars',
 			'posts_per_page' => 8,
-			'paged' => $paged
+			'paged' => $paged,
+			'meta_key' => 'pre_or_post',
+			'meta_value' => 'gated'
 		);
 
 		$case_studies = new WP_Query($args);
@@ -64,7 +66,7 @@ get_header(); ?>
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
 
-							<p>DESCRIPTION GOES HERE</p>
+							<p class="description">Regulatory Compliance Associates® Inc. frequently conducts online seminars or webinars for viewers and listeners all over the world on life science industry subjects. Our webinars are recorded and available to download for future reference and viewing.</p>
 
 					</header><!-- .page-header -->
 				</div>

@@ -15,7 +15,10 @@ get_header(); ?>
 	<!-- / Featured Image -->
 
 	<?php get_template_part( 'template-parts/section', 'breadcrumbs-social'); ?>
+	
 
+	<div class="page-wrapper">
+		
 	<!-- The Content -->
 	<div class="row text-center">
 		<div class="small-12 columns">
@@ -53,7 +56,7 @@ get_header(); ?>
 
 	?>
 		<!-- /List of Services -->
-		<div id="all-services" class="row">
+		<div id="" class="row">
 
 			<div class="small-12 medium-8 columns">
 				<!-- Loop Through Services -->
@@ -126,6 +129,7 @@ get_header(); ?>
 
 		</div>
 	
+	</div>
 	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	</div>

@@ -32,7 +32,7 @@ switch($post_type) {
 	</div>
 	<div class="row text-center archived-title">
 		<div class="small-10 small-offset-1 columns pagination-col">
-			<a href="<?php the_permalink(); ?>"><?php echo the_title(); ?></a>
+			<a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(), 5, "..."); ?></a>
 		</div>
 	</div>
 	<div class="row text-center">

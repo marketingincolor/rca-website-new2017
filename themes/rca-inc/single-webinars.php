@@ -1,134 +1,97 @@
 <?php
 global $post;
 
-// Get Webinar Information
-$date  = new DateTime(get_field('when', false, false));
-$time  = get_field('time_range');
-$where = get_field('where');
-$people = get_field('who_will_benefit');
-$webinar_form_title = get_field('webinar_form_title');
-$webinar_form_copy = get_field('webinar_form_copy');
-$webinar_title = get_field('webinar_title');
-$presenters = get_field('presenters');
+$youtube_embed_url = get_field('youtube_embed_url');
+$video_img = get_stylesheet_directory_uri() . '/images/webinar-coming-soon.jpg';
 
-$presenters = explode(',', $presenters);
 
-// Header BG
-$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
+// Check for embed.
+// if(empty($youtube_embed_url)):
+// 	$youtube_embed_url = get_stylesheet_directory_uri() . '/images/webinar-coming-soon.jpg';
+// endif;
 
-get_header(); ?>
-	<?php get_template_part('template-parts/section', 'takeover-modal'); ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+$pop = get_field('pre_or_post');
 
-			<?php
-			while ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/post-type', 'webinars' );
-				#get_template_part('template-parts/section', 'takeover-modal');
-				#echo '<a href="#" data-open="takeover-modal">Takeover</a>';
-			endwhile;
-			?>
+if($pop == 'pre') {
+	get_template_part('template-parts/webinars/pre', 'webinar');
+}
+elseif($pop == 'post'){
+	get_template_part('template-parts/webinars/post', 'webinar');
+}
+else {
 
-		</main>
+	/* Template Name: Webinar Success */
+	get_header();
+	$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+	if ( have_posts() ) : while ( have_posts() ) : the_post();
+	$video_img = the_field('video_img');
+	if(empty($video_img)) {
+		$video_img = get_stylesheet_directory_uri() . '/images/webinar-coming-soon.jpg';
+	}
+	?>
 
-		<!-- Presenters Small -->
-		<?php if($presenters[0] != ""): ?>
-		<ul id="presenter-accordian" class="accordion hide-for-medium" data-accordion data-allow-all-closed="true" style="border: none;">
-			<li class="accordion-item" data-accordion-item>
-				<a href="#!" class="accordion-title">Your Expert Presenters <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-				<div id="your-expert-presenters" class="accordion-content" data-tab-content>
-					<div id="title" class="row">
-						<div class="small-10 small-offset-1">
-							<div class="medium-8 medium-offset-2 columns">
-								<h2 class="text-center medium-text-left">Your Expert Presenters</h2>
-							</div>
-						</div>
-					</div>		
+	<!-- Featured Image -->
+	<div id="featured-img-wrapper" class="row expanded">
+		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
+	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
+				<div class="featured-img-title"><h1><?php the_title(); ?></h1></div>
+		</div>
+	</div>
+	<!-- / Featured Image -->
 
-					<div class="row">
-						<div class="small-10 small-offset-1 columns">
+	<section class="webinar-success">
 
-							<?php foreach($presenters as $presenter) {
-								//get user data
-								$user_data = get_userdata($presenter);
-								$user_meta = get_user_meta($user_data->ID);
-								echo '<div id="presenter-block" class="row">';
-								echo '<div class="small-12 medium-2 columns text-center">';
-								echo get_wp_user_avatar($user_data->ID);
-								echo '</div>';
-								echo '<div class="small-12 medium-8 columns text-center end">';
-								echo '<h3>' . $user_data->display_name . '</h3>';
-								echo '<p>' . $user_meta["position"][0] . '</p>';
-								echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
-								echo '</div>';
-								echo '</div>';
-							}
-							?>
-							
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul>
-		<?php endif; ?>
-		<!-- /Presenters Small -->
-
-		<!-- Presenters Medium -->
-		<?php if($presenters[0] != "" ): ?>
-		<div id="your-expert-presenters" class="show-for-medium">
-
-			<div id="title" class="row">
-				<div class="small-10 small-offset-1">
-					<div class="medium-8 medium-offset-2 columns">
-						<h2 class="text-center medium-text-left">Your Expert Presenters</h2>
-					</div>
-				</div>
-			</div>		
-
+		<section class="webinar-success-top">
 			<div class="row">
-				<div class="small-10 small-offset-1 columns">
+				<div class="small-10 small-centered columns">
 
-					<?php foreach($presenters as $presenter) {
-						//get user data
-						$user_data = get_userdata($presenter);
-						$user_meta = get_user_meta($user_data->ID);
-						echo '<div id="presenter-block" class="row">';
-						echo '<div class="small-12 medium-2 columns small-text-center">';
-						if( get_wp_user_avatar($user_data->ID) != NULL ):
-							echo get_wp_user_avatar($user_data->ID);
-						else:
-							echo '&nbsp;';
-						endif;
+					<!-- VIDEO EMBED -->
 
-						echo '</div>';
-						echo '<div class="small-12 medium-8 columns end">';
-						echo '<h3>' . $user_data->display_name . '</h3>';
-
-						if( isset($user_meta["position"][0]) ):
-							echo '<p>' . $user_meta["position"][0] . '</p>';
-						endif;
-
-						if( isset($user_meta["webinar_biography"][0]) ):
-							echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
-						endif;
-
-						echo '</div>';
-						echo '</div>';
-					}
-					?>
+					<!-- IF WE HAVE AN EMBED CODE -->
+					<?php if(!empty(get_field('youtube_embed_url'))) { ?>
+					<a href="#!" data-open="webinar-video-modal"><iframe width="1000" height="562.5" src="<?php the_field('youtube_embed_url'); ?>" frameborder="0" allowfullscreen></iframe></a>
 					
+					<!-- MISSING EMBED CODE -->
+					<?php } else { ?>
+					<img src="<?php echo $video_img; ?>" />
+
+					<?php } ?>
+					<!-- /VIDEO EMBED -->
+					
+					<!-- DOWNLOAD LINKS -->
+					<div class="download-links">
+						<?php if(!empty(get_field('webinar_download_text')) && !empty(get_field('webinar_slides_download_link')) ): ?>
+							<a href="<?php the_field('webinar_slides_download_link'); ?>"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
+						<?php endif; ?>
+
+						<?php if(!empty(get_field('faqs_download_link')) && !empty(get_field('faq_download_text')) ): ?>
+							<a href="<?php the_field('faqs_download_link'); ?>"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
+						<?php endif; ?>
+					</div>
+					<!-- /DOWNLOAD LINKS -->
+
+					<span class="share-widget"><p id="share-p" style="margin-right: 16px; display: inline-block;">Share on Social Media </p><?php echo do_shortcode('[addtoany]'); ?></span>
 				</div>
 			</div>
-		</div>
-		<?php endif; ?>
-		<!-- /Presenters Medium -->
+		</section>
+
+		<section class="webinar-success-bottom">
+			<div class="row">
+				<div class="small-10 small-centered columns">
+					<article><?php the_content(); ?></article>
+				</div>
+			</div>
+		</section>
+
+	</section>
+
+	<?php endwhile;endif;get_footer(); ?>
+
+	<!-- Video Modal -->
+	<div class="reveal" id="webinar-video-modal" data-reveal data-reset-on-close="true">
+		<iframe src="<?php the_field('youtube_embed_url'); ?>" allowfullscreen></iframe>
+	  <button class="close-button" data-close aria-label="Close modal" type="button">
+	    <span aria-hidden="true">&times;</span>
+	  </button>
 	</div>
-
-	<!-- LEARN MORE -->
-	<?php //get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
-	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
-	<!-- /LEARN MORE -->
-
-<?php
-//get_sidebar();
-get_footer();
+<?php } ?>

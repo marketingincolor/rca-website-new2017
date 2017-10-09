@@ -17,7 +17,7 @@ get_header(); ?>
 	<!-- TOP SLIDER -->
 	<section class="top-slider">
 
-		<?php echo do_shortcode('[rca-top-slider category="front-page-top" items=1 autoPlay="true" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="false"]'); ?>
+		<?php echo do_shortcode('[rca-top-slider category="front-page-top" items=1 autoPlay="true" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="false" buttonTitle =""]'); ?>
 		
 	</section>
 	<!-- /TOP SLIDER -->

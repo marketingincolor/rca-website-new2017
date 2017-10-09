@@ -167,6 +167,17 @@ Yes. When creating or editing a slide, there are two options in the "Content" ta
 --------------------------------------------------------------
 
 == Changelog ==
+
+= 1.0.19 =
+- CSS corrections for carousel mode
+- Added in carousel_mode shortcode attribute
+
+= 1.0.18 =
+- Minor update to remove a number of notices
+
+= 1.0.17 =
+- Fixed a number of miinor styling issues
+
 = 1.0.16 =
 - Minor admin styling update
 

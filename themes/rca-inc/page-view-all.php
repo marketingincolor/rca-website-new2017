@@ -64,13 +64,13 @@ get_header(); ?>
 		$wp_query   = $view_all;
 		if ( $view_all->have_posts() ) : ?>
 			
-			<div class="row show-for-medium">
+<!-- 			<div class="row show-for-medium">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
 						<p>DESCRIPTION GOES HERE</p>
-					</header><!-- .page-header -->
+					</header>
 				</div>
-			</div>
+			</div> -->
 
 			<!-- TAXONOMIES MENU -->
 			<?php get_template_part('template-parts/taxonomy', 'menu'); ?>
@@ -94,7 +94,7 @@ get_header(); ?>
 				endwhile;
 			?>
 			<div class="row text-center">
-				<div class="small-10 small-offset-1 columns">
+				<div class="small-10 small-offset-1 columns pagination-col">
 					<?php #get_previous_posts_link(); ?>
 					
 					<?php rca_tax_post_pagination($view_all); ?>
