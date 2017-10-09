@@ -2139,7 +2139,7 @@ footer { background-color: #2b2b2b; padding: 2.5rem 0rem; }
 	color: #c4612b;
   border: 2px solid #c4612b;
   border-radius: 50%;
-  padding: 10px;
+  padding: 8px;
   display: inline-block;
   transition: all 0.25s ease-in-out;
 }
@@ -2155,19 +2155,21 @@ footer { background-color: #2b2b2b; padding: 2.5rem 0rem; }
 #menu-desktop-footer-menu a:hover{
 	color: #c4612b;
 }
-#menu-desktop-footer-menu li a { font-weight: normal; }
+#menu-desktop-footer-menu li a {
+  font-weight: normal;
+  font-size: 13px;
+  font-family: 'Roboto';
+}
 #menu-desktop-footer-menu li a:hover { font-weight: normal; }
-
-
 .footer-social-link { 
-    line-height: 1;
-    position: relative;
-    padding: 0 0.3rem;
-    display: inline-block;
+  line-height: 1;
+  position: relative;
+  padding: 0 0.3rem;
+  display: inline-block;
 }
 
 #menu-mobile-footer-left.menu>li {
-    display: block;
+  display: block;
 }
 #menu-mobile-footer-right.menu>li {
 	display: block;
