@@ -21,7 +21,7 @@ get_header(); ?>
 	<div id="featured-img-wrapper" class="row expanded">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
 	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg; ?>'); background-size: cover;">
-				<div class="featured-img-title"><h1>View All</h1></div>
+				<div class="featured-img-title"><h1><?php echo the_title(); ?></h1></div>
 		</div>
 	</div>
 	<!-- / Featured Image -->
