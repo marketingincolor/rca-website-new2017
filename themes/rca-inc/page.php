@@ -35,6 +35,7 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 	</div>
+	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 
 <?php
 //get_sidebar();
