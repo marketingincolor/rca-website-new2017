@@ -51,51 +51,51 @@
 							<div class="checkbox-group required">
 								<div class="medium-4 large-2 small-6 columns">
 									<input id="a1" type='checkbox' name='industry[]' class="chkrad X fade" value='Technology' />
-									<label class="check-label" for="a1"> Technology</label>
+									<label class="check-label" for="a1"> Lorem Ipsum</label>
 									<input id="a2" type='checkbox' name='industry[]' class="chkrad X fade" value='Manufacturing' />
-									<label class="check-label" for="a2"> Manufacturing</label>
+									<label class="check-label" for="a2"> Lorem Ipsum</label>
 									<input id="a3" type='checkbox' name='industry[]' class="chkrad X fade" value='Food' />
-									<label class="check-label" for="a3"> Food</label>
+									<label class="check-label" for="a3"> Lorem Ipsum</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
 									<input id="a4" type='checkbox' name='industry[]' class="chkrad X fade" value='Games' />
-									<label class="check-label" for="a4"> Games</label>
+									<label class="check-label" for="a4"> Lorem Ipsum</label>
 									<input id="a5" type='checkbox' name='industry[]' class="chkrad X fade" value='Fun' />
-									<label class="check-label" for="a5"> Fun</label>
+									<label class="check-label" for="a5"> Lorem Ipsum</label>
 									<input id="a6" type='checkbox' name='industry[]' class="chkrad X fade" value='Ranching' />
-									<label class="check-label" for="a6"> Ranching</label>
+									<label class="check-label" for="a6"> Lorem Ipsum</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
 									<input id="a7" type='checkbox' name='industry[]' class="chkrad X fade" value='Agriculture' />
-									<label class="check-label" for="a7"> Agriculture</label>
+									<label class="check-label" for="a7"> Lorem Ipsum</label>
 									<input id="a8" type='checkbox' name='industry[]' class="chkrad X fade" value='Retail' />
-									<label class="check-label" for="a8"> Retail</label>
+									<label class="check-label" for="a8"> Lorem Ipsum</label>
 									<input id="a9" type='checkbox' name='industry[]' class="chkrad X fade" value='Marketing' />
-									<label class="check-label" for="a9"> Marketing</label>
+									<label class="check-label" for="a9"> Lorem Ipsum</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
 									<input id="a10" type='checkbox' name='industry[]' class="chkrad X fade" value='Sales' />
-									<label class="check-label" for="a10"> Sales</label>
+									<label class="check-label" for="a10"> Lorem Ipsum</label>
 									<input id="a11" type='checkbox' name='industry[]' class="chkrad X fade" value='Nate' />
-									<label class="check-label" for="a11"> Nate</label>
+									<label class="check-label" for="a11"> Lorem Ipsum</label>
 									<input id="a12" type='checkbox' name='industry[]' class="chkrad X fade" value='Meteorology' />
-									<label class="check-label" for="a12"> Meteorology</label>
+									<label class="check-label" for="a12"> Lorem Ipsum</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
 									<input id="a13" type='checkbox' name='industry[]' class="chkrad X fade" value='Security' />
-									<label class="check-label" for="a13"> Security</label>
+									<label class="check-label" for="a13"> Lorem Ipsum</label>
 									<input id="a14" type='checkbox' name='industry[]' class="chkrad X fade" value='Law Enforcement' />
-									<label class="check-label" for="a14"> Law Enforcement</label>
+									<label class="check-label" for="a14"> Lorem Ipsum</label>
 									<input id="a15" type='checkbox' name='industry[]' class="chkrad X fade" value='Singing' />
-									<label class="check-label" for="a15"> Singing</label>
+									<label class="check-label" for="a15"> Lorem Ipsum</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
 									<input id="a16" type='checkbox' name='industry[]' class="chkrad X fade" value='Pharmaceuticals' />
-									<label class="check-label" for="a16"> Pharmaceuticals</label>
+									<label class="check-label" for="a16"> Lorem Ipsum</label>
 									<input id="a17" type='checkbox' name='industry[]' class="chkrad X fade" value='Oil Driling' />
-									<label class="check-label" for="a17"> Oil Driling</label>
+									<label class="check-label" for="a17"> Lorem Ipsum</label>
 									<input id="a18" type='checkbox' name='industry[]' class="chkrad X fade" value='Other' />
-									<label class="check-label" for="a18"> Other</label>
+									<label class="check-label" for="a18"> Lorem Ipsum</label>
 								</div>
 							</div>
 						</div>
