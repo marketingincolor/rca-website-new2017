@@ -28,6 +28,7 @@ get_header(); ?>
 
 
 
+
 	<div id="mob-before-title-block" class="row hide-for-medium" data-equalizer>
 		<div id="mobile-cat-picker" class="small-offset-1 small-8 columns" data-equalizer-watch>
 			<select name="mobile_category" id="">
@@ -64,13 +65,13 @@ get_header(); ?>
 		$wp_query   = $view_all;
 		if ( $view_all->have_posts() ) : ?>
 			
-<!-- 			<div class="row show-for-medium">
+			<div class="row show-for-medium">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-						<p>DESCRIPTION GOES HERE</p>
-					</header>
+						<p class="description">Recent case studies, white papers, webinars, visual resources, and published articles are listed below to illustrate our work with life science clients in regulatory affairs, quality assurance, compliance challenges, assessments and audits, agency response, preparation and remediation, mergers / acquisitions, strategic consulting, new product development, launch and lifecycles, and staffing support. Click on the title to read the full account.</p>
+					</header><!-- .page-header -->
 				</div>
-			</div> -->
+			</div>
 
 			<!-- TAXONOMIES MENU -->
 			<?php get_template_part('template-parts/taxonomy', 'menu'); ?>
