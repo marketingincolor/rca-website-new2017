@@ -135,7 +135,13 @@ body.down .top-menu.clone {
 #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item { width: 16.6%; }
 
 /*Override styles on our people page for those that don't have avatars*/
-.missing-avatar { margin-top: 1rem !important; }
+.missing-avatar {
+  /*margin-top: 1rem !important*/
+}
+/*Make all people images be same height*/
+.staff-column img{
+  height: 165px;
+}
 
 /*Blockquotes seen on white papers*/
 blockquote, blockquote p {
