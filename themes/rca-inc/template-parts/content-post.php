@@ -14,6 +14,7 @@
 	<div class="row">
 		<div class="small-10 small-offset-1 small-text-center medium-text-left columns">
 			<h1><?php the_title(); ?></h1>
+				<p class="post-date"><?php echo get_the_date(); ?></p>
 		</div>
 	</div>
 	<!-- /Title -->

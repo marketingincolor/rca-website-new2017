@@ -173,6 +173,7 @@ $('#newsFilterSelect').on('change', function() {
 
     // If we don't have a year from the dropdown log an error to the console.
     if(dropdown_query == "" ) {
+        dropdown_query == '2017';
         console.warn('RCA Information: No dropdown query found.');
     }
 
