@@ -28,6 +28,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+.blue-callout a { color: #fff; }
+
 #scrollUp {     
     display: block;
     position: fixed;
@@ -158,7 +160,14 @@ blockquote, blockquote p {
 blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; }
 
 /*References Section on Case Studies*/
-.references-section { background-color: #cac3bb; padding: 30px; color: #fff; clear: right; }
+.references-section {
+  background-color: #cac3bb;
+  padding: 30px;
+  color: #2b2b2b;
+  clear: right;
+  font-size: 13px;
+}
+
 .references-section p:first-child { letter-spacing: .025rem; margin-bottom: 1rem; }
 .references-section p:last-child { margin-bottom: 0rem; }
 /*Footer form no fields*/
@@ -1836,7 +1845,7 @@ a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-
+.entry-conten h2 { display:inline-block; }
 .entry-content a { text-decoration: underline; }
 
 /*--------------------------------------------------------------
