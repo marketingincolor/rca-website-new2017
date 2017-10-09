@@ -77,7 +77,7 @@ body.down .top-menu.clone {
 /*Social links - Fixes hoverstate opacity*/
 .addtoany_list a:hover img { opacity: 1 !important; }
 #share-p {
-  margin-right: 16px;
+  margin-right: 12px;
   display: inline-block;
   color: #9d938a;
   font-weight: bold;
@@ -221,7 +221,7 @@ blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; 
 
 /*Overwrite breadcrumb styles*/
 #breadcrumbs, .breadcrumb, .breadcrumb p, .breadcrumb a, #breadcrumbs a, #breadcrumbs p {     
-	font-size: 14px !important;
+	font-size: 12px !important;
     color: #9d938a !important; 
 }
 
@@ -2125,6 +2125,7 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; p
 footer { background-color: #2b2b2b; padding: 2.5rem 0rem; }
 .edit-link a { color: #fff; }
 .site-info a, .site-info p { color: #fff; }
+.site-info .copyright {font-size: 11px;margin-top: 10px}
 #menu-mobile-footer-left,
 #menu-mobile-footer-right { padding: 0rem; margin-left:0rem; }
 .footer-social-icon {
@@ -2621,7 +2622,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 }
 #share p { 
 	/*padding-right: 1.2rem;*/
-	font-size: 14px !important;
+	font-size: 12px !important;
     color: #9d938a !important;
 }
 
@@ -2912,7 +2913,8 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
   line-height: 1rem;
   color: #ffffff;
   font-size: .75rem;
-  font-weight: normal;
+  font-weight: bold;
+  letter-spacing: .75px;
  }
 
 /*hide standard search button*/
