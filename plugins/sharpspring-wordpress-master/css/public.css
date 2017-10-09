@@ -1,0 +1,13 @@
+/* SharpSpring plugin CSS */
+
+.sswp_if_field_equals,
+.sswp_if_field_empty,
+.sswp_if_field_not_empty,
+.sswp_if_is_not_contact,
+.sswp_if_is_contact {
+	display:none;
+}
+
+.show_initially {
+	display:inline !important;
+}

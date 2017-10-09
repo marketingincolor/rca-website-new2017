@@ -55,7 +55,7 @@ header("HTTP/1.1 200 OK");
 	}
 
 	//rca_tax_post_pagination();
-	wp_reset_postdata();
+	wp_reset_query();
 
 	}
 	else {

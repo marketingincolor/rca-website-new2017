@@ -15,6 +15,7 @@ $presenters = get_field('presenters');
 
 $presenters = explode(',', $presenters);
 
+
 // Header BG
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
 
@@ -26,6 +27,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/post-type', 'webinars' );
+
 			endwhile;
 			?>
 
@@ -33,6 +35,7 @@ get_header(); ?>
 
 		<!-- Presenters Small -->
 		<?php if($presenters[0] != ""): ?>
+
 		<ul id="presenter-accordian" class="accordion hide-for-medium" data-accordion data-allow-all-closed="true" style="border: none;">
 			<li class="accordion-item" data-accordion-item>
 				<a href="#!" class="accordion-title">Your Expert Presenters <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -62,6 +65,7 @@ get_header(); ?>
 								echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
 								echo '</div>';
 								echo '</div>';
+
 							}
 							?>
 							
@@ -75,6 +79,7 @@ get_header(); ?>
 
 		<!-- Presenters Medium -->
 		<?php if($presenters[0] != "" ): ?>
+
 		<div id="your-expert-presenters" class="show-for-medium">
 
 			<div id="title" class="row">
@@ -96,6 +101,7 @@ get_header(); ?>
 						echo '<div class="small-12 medium-2 columns small-text-center">';
 						if( get_wp_user_avatar($user_data->ID) != NULL ):
 							echo get_wp_user_avatar($user_data->ID);
+
 						else:
 							echo '&nbsp;';
 						endif;
@@ -110,6 +116,7 @@ get_header(); ?>
 
 						if( isset($user_meta["webinar_biography"][0]) ):
 							echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
+
 						endif;
 
 						echo '</div>';

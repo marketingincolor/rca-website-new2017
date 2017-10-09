@@ -6,7 +6,7 @@
  *
  * @package RCA_Inc.
  */
-$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+$backgroundImg = get_stylesheet_directory_uri() . '/images/medical-device-header.jpg';
 get_header(); ?>
 
 	<!-- Featured Image -->
@@ -76,7 +76,7 @@ get_header(); ?>
 				endwhile;
 			?>
 			<div class="row text-center">
-				<div class="small-10 small-offset-1 columns">
+				<div class="small-10 small-offset-1 columns pagination-col">
 					<?php get_previous_posts_link(); ?>
 					
 					<?php rca_tax_post_pagination(); ?>

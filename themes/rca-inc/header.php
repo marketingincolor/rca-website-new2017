@@ -95,7 +95,8 @@
 					<!-- LOGO -->
 					<div class="row expanded">
 						<div class="site-branding small-12 columns align-items-center text-center">
-							<?php the_custom_logo(); ?>
+							<?php #the_custom_logo(); ?>
+							<a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/images/rca-header-logo-svg.svg'; ?>" style="display:block; margin: 0 auto; width: 32%; max-width: 500px;"/></a>
 						</div>
 					</div>
 					<!-- /LOGO -->
@@ -113,10 +114,18 @@
 						</div>
 					</div>
 					<!-- /PHONE ON MOBILE BUTTON -->
+					
 					<div class="top-menu">
 						<div class="row">
-							<div class="small-12 columns">
+
+							<div class="small-12 columns relative">
+								<?php echo do_shortcode( '[maxmegamenu location=max_mega_menu_1]'); ?>
 								<?php echo do_shortcode( '[maxmegamenu location=menu-1]' ); ?>
+								<a href="<?php echo home_url('/contact/');?>">
+									<div id="contact-header-btn" class="">
+										<li class="contact-menu-item columns" style="float:right;"><i class="fa fa-phone" aria-hidden="true"></i> Contact</li>
+									</div>
+								</a>
 							</div>
 							
 						</div>
@@ -281,7 +290,7 @@
 						<!-- SECONDARY NAV ON DESKTOP -->
 						<div id="secondary-menu">
 							<div  class="row show-for-large">
-								<div class="large-12 columns" style="background-color: #9d938a; padding: 1rem;">
+								<div class="large-12 columns" style="background-color: #9d938a; padding: 1.375rem 1rem;">
 									<div class="row" data-equalizer>
 										<div class="small-8 columns" data-equalizer-watch>
 											<?php 

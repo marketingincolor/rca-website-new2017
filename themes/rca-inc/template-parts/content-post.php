@@ -10,18 +10,24 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="row text-center">
-		<div class="small-10 small-offset-1 medium-3 columns">
-			<header class="entry-header">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			</header><!-- .entry-header -->
+	<!-- Title -->
+	<div class="row">
+		<div class="small-10 small-offset-1 small-text-center medium-text-left columns">
+			<h1><?php the_title(); ?></h1>
 		</div>
 	</div>
-
+	<!-- /Title -->
 	<div class="row">
 		<div class="small-10 small-offset-1 columns">
 			<div class="entry-content">
+				<?php
+					the_content();
 
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rca-inc' ),
+						'after'  => '</div>',
+					) );
+				?>
 			</div><!-- .entry-content -->
 		</div>
 	</div>

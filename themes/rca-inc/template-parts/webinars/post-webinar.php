@@ -7,6 +7,7 @@ $terms = get_the_terms( $post->ID, 'registration' );
 $date  = new DateTime(get_field('when', false, false));
 $time  = get_field('time_range');
 $where = get_field('where');
+
 $people = get_field('who_will_benefit');
 $webinar_form_title = get_field('webinar_form_title');
 $webinar_form_copy = get_field('webinar_form_copy');
@@ -26,6 +27,7 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/post-type', 'webinars' );
+
 			endwhile;
 			?>
 
@@ -122,6 +124,7 @@ get_header(); ?>
 		</div>
 		<?php endif; ?>
 		<!-- /Presenters Medium -->
+
 	</div>
 
 	<!-- LEARN MORE -->

@@ -12,6 +12,7 @@ function EWD_US_Display_Slider($atts, $content = null) {
 	$Link_Action = get_option("EWD_US_Link_Action");
 	$Add_Watermark = get_option("EWD_US_Add_Watermark");
 	$Lightbox = get_option("EWD_US_Lightbox");
+	$Aspect = get_option("EWD_US_Aspect_Ratio");
 
 	if ($Link_Action == "Same") {$Target_Text = "";}
 	elseif ($Link_Action == "New") {$Target_Text = "target='_blank'";}
@@ -46,7 +47,9 @@ function EWD_US_Display_Slider($atts, $content = null) {
 		'posts' => '-1',
 		'slider_type' => '',
 		'category' => '',
-		'post__in_string' => ''
+		'post__in_string' => '',
+		'carousel_mode' => 'No',
+		'aspect_ratio' => '',
 	), $atts ) );
 
 	$return_string = '<div class="clear"></div>';
@@ -61,7 +64,7 @@ function EWD_US_Display_Slider($atts, $content = null) {
 							'posts_per_page' => $posts,
 							'post_type' => 'product',
 							'product_cat' => $category,
-							'orderby' => 'rand'
+							'orderby' => 'rand',
 				);
 		}
 		elseif ($slider_type == "upcp") {
@@ -195,7 +198,7 @@ function EWD_US_Display_Slider($atts, $content = null) {
 			if ($Slide_Counter != 0) {$Hidden_Class = "ewd-us-hidden";}
 			else {$Hidden_Class = "";}
 
-			if ($Carousel == 'Yes') {$carouselClass = 'carouselSlider ';}
+			if ($Carousel == 'Yes' || $carousel_mode == 'Yes') {$carouselClass = 'carouselSlider ';}
 			else {$carouselClass = '';}
 
 			if ($Lightbox == "Yes") {
