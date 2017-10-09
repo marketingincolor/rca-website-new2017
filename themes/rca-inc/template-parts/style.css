@@ -28,6 +28,16 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+/* ==== MEGA MENU STYLE CHANGES ==== */
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 {
+  padding: 0;
+}
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item > a.mega-menu-link{
+	padding: 10px 0;
+	height: auto;
+	line-height: auto;
+}
+
 /*References Section on Case Studies*/
 .references-section { background-color: #cac3bb; padding: 30px; color: #fff; clear: right; }
 .references-section p:first-child { letter-spacing: .025rem; margin-bottom: 1rem; }
