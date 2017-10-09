@@ -3107,4 +3107,5 @@ div.bar.animate::after { background: #c4612b; }
 #all-expertise-content { padding: 3rem 0rem; }
 #expertise-content { padding: 3rem 0rem; }
 #expertise-content ul { list-style:outside; display:inline-block; }
+#expertise-content h2 { display:inline-block; }
 .page-wrapper { margin-bottom: 4.5rem; }
