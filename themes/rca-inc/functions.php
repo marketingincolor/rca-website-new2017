@@ -1095,11 +1095,14 @@ function get_team_members_department($role_type) {
     // If we have team members count and loop through them...
     for ( $count = 0; $count < $last; $count++ ) {
     // foreach($team_members as $team_member) {
-      var_dump($team_members[$count]);
+     // var_dump($team_members[$count]);
       $member_info = get_userdata($team_members[$count]);
-      $author_description = get_the_author_meta( 'description', $user_id = $team_members[$count]->ID );
-      $member_id = $member_info->ID;
+      $person_info = get_user_meta( $team_members[$count] );
+      //$author_description = get_the_author_meta( 'description', $user_id = $team_members[$count]->ID );
+      //$member_id = $member_info->ID;
       //var_dump($member_id);
+      //
+      //var_dump($person_info['description'][0]);
       
       $member_url = $member_info->user_url;
       $email = $member_info->user_email;
@@ -1127,7 +1130,7 @@ function get_team_members_department($role_type) {
       }
 
       echo '<div id="individual-email" class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> '. $email .'</div>';
-      echo '<p>'.  $author_description .'</p>';
+      echo '<p>'. $person_info['description'][0] .'</p>';
       echo '</div>';
       echo '</div>';
       echo '</div>';
