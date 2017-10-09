@@ -1845,7 +1845,7 @@ a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-
+.entry-conten h2 { display:inline-block; }
 .entry-content a { text-decoration: underline; }
 
 /*--------------------------------------------------------------
