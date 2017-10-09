@@ -1,5 +1,7 @@
 <?php
-get_header(); ?>
+get_header();
+$type = 'visual resource'; 
+?>
 <?php get_template_part('template-parts/section', 'takeover-modal'); ?>
 
 	<div id="primary" class="content-area">

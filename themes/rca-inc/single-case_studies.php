@@ -1,5 +1,8 @@
 <?php
-get_header(); ?>
+get_header();
+global $type;
+$type = 'case study';
+?>
 	
 	<?php get_template_part('template-parts/section', 'takeover-modal'); ?>
 	<div id="primary" class="content-area">
