@@ -1323,3 +1323,12 @@ function rca_get_featured_img($postID) {
   return $img;
 
 }
+
+/**
+ * Shortcode for Blue Callout Box - Inline styling
+ * usage = [blue-callout] your callout content here [/blue-callout]
+ */
+function blue_callout_shortcode( $atts, $content = null ) {
+  return '<div class="blue-callout case-study-quote">' . $content . '</div>';
+}
+add_shortcode( 'blue-callout', 'blue_callout_shortcode' );

@@ -44,7 +44,7 @@ header("HTTP/1.1 200 OK");
 		<div class="small-10 small-offset-1 columns">
 			<div class="story-container">
 				<h2><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<p class="story-date"><?php echo get_the_date(); ?></p>
+				<p class="post-date"><?php echo get_the_date(); ?></p>
 				<?php echo wp_trim_words(get_the_excerpt(), 40, '...<a href="'. get_permalink() . '" class="read-more">Read More</a>'); ?>
 			</div>
 		</div>

@@ -40,10 +40,9 @@ get_header(); ?>
 				<?php 
 					$beginning_year = 2013;
 					$current_year = date("Y");
-					var_dump($current_year);
-					echo '<option value="Year Published">Year</option>';
-					for ($i = $beginning_year; $i <= $current_year; $i++ ){ ?>
-						<center><option class="news-filter" value="<?php echo $i;?>" news_filter="<?php echo $i; ?>"><?php echo $i; ?></option></center>
+					echo '<option value="">Year</option>';
+					for ($current_year; $current_year >= $beginning_year; $current_year-- ){ ?>
+						<center><option class="news-filter" value="<?php echo $current_year;?>" news_filter="<?php echo $current_year; ?>"><?php echo $current_year; ?></option></center>
 				<?php	}
 				?>
 				</select>
