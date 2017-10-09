@@ -997,7 +997,7 @@ input[type=number]::-webkit-outer-spin-button {
 	border-radius: 0px;
 	border: 2px solid #fff;
 	color: #fff;
-	margin: 0rem auto;
+	margin: 3rem auto;
 	width: 100%;
 	font-weight: bold;
 	display: block;
@@ -2294,7 +2294,7 @@ button.newsClick { color: #c4612b; border-color: #c4612b; }
 .story-container { border-left: 10px solid #c4612b; padding-left: 2rem; margin: 1.25rem 0rem; }
 .post-container h2 { font-size: 1.375rem; color: #000; font-weight: bold; }
 .post-container .story-date { font-size: 1rem; color: #9d938b; font-family: 'Lora', sans-serif; font-weight: bold; font-style: italic; margin-bottom: .5rem; }
-
+.post-date { font-size: 1rem; color: #9d938b; font-family: 'Lora', sans-serif; font-weight: bold; font-style: italic; margin-bottom: .5rem; }
 .spinner {
   width: 40px;
   height: 40px;
