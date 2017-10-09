@@ -725,86 +725,66 @@ add_filter("wp_nav_menu", function( $nav_menu ) {
  * Retrievs Team Members on About > Our People Page
  * @param  string $role_type used for gettings users under each category
  */
-function get_team_members($category) {
-  wp_reset_query();
+
+/**
+ * Author : Doe
+ * Retrievs Team Members on About > Our People Page
+ * @param  string $role_type used for gettings users under each category
+ */
+function get_team_members($role_type) {
   $args = array(
-    'post_type' => 'team',
-
+    'role' => $role_type,
+    'fields' => 'ID',
+    'meta_key' => 'order',
+    'orderby' => 'meta_value',
+    'order' => 'ASC'
   );
-
-
   $team_query = new WP_User_Query( $args );
-
-  //$team_members = $team_query->get_results();
-
-  if ( $team_query->have_posts() ) :
-    while ( $team_query->have_posts() ) : $team_query->the_post();
-      the_title();
-    endwhile;
-  else :
-    echo wpautop( 'Sorry, no posts were found' );
-  endif;
-    //var_dump($team_members->post_name);
-
-  // if ( !empty($team_members)) {
-
-  //   $last = count($team_members);
-  //   $end = '';
-
+  $team_members = $team_query->get_results();
+  if ( !empty($team_members)) {
+    $last = count($team_members);
+    $end = '';
     // If we have team members count and loop through them...
-    // for ( $count = 0; $count < $last; $count++ ) {
-    // // foreach($team_members as $team_member) {
-    //   $member_info = get_userdata($team_members[$count]);
-    //   $member_url = $member_info->user_url;
-    //   //var_dump($member_info);
-    //   $first_name = $member_info->first_name;
-    //   $last_name = $member_info->last_name;
-    //   $avatar = get_wp_user_avatar($member_info->ID);
-
-    //   // Add classes depending on count
-    //   // Find the longest position and adjust height accordingly.
-    //   if ( $count == 0 || ($count + 1)%3 == 1 ){
-    //     $additionalClass = 'large-offset-3';
-    //   }
-    //   if ( $count == ($last - 1)) {
-    //     $end = 'end';
-    //   }
-
-    //   if(empty($avatar)):
-    //     $missing_avatar = 'missing-avatar';
-    //   endif;
-
-    //   echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
-
-    //   $position = get_field('position', $member_info);
-    //   if( !empty($avatar)) : 
-    //     echo $avatar;
-    //   endif;
-
-
-  //     echo '<div class="staff-wrapper">';
-
-  //     if ( !empty($first_name) && !empty($last_name) ) {
-  //       echo '<div class="staff-name">' . $first_name . ' ' . $last_name . '</div>';
-  //     }
-
-  //     if ( !empty($position) ) {
-  //       echo '<div class="staff-position">' . $position . '</div>';
-  //     }
-
-  //     echo '</div>';
-  //     echo '<a href="'. $member_url .'"><button class="staff-btn">Bio</button></a>';
-  //     echo '</div>';
-
-
-  //     $additionalClass = '';
-  //   }
-
-  // }
+    for ( $count = 0; $count < $last; $count++ ) {
+    // foreach($team_members as $team_member) {
+      $member_info = get_userdata($team_members[$count]);
+      $member_url = $member_info->user_url;
+      //var_dump($member_info);
+      $first_name = $member_info->first_name;
+      $last_name = $member_info->last_name;
+      $avatar = get_wp_user_avatar($member_info->ID);
+      // Add classes depending on count
+      // Find the longest position and adjust height accordingly.
+      if ( $count == 0 || ($count + 1)%3 == 1 ){
+        $additionalClass = 'large-offset-3';
+      }
+      if ( $count == ($last - 1)) {
+        $end = 'end';
+      }
+      if(empty($avatar)):
+        $missing_avatar = 'missing-avatar';
+      endif;
+      echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
+      $position = get_field('position', $member_info);
+      if( !empty($avatar)) : 
+        echo $avatar;
+      endif;
+      echo '<div class="staff-wrapper">';
+      if ( !empty($first_name) && !empty($last_name) ) {
+        echo '<div class="staff-name">' . $first_name . ' ' . $last_name . '</div>';
+      }
+      if ( !empty($position) ) {
+        echo '<div class="staff-position">' . $position . '</div>';
+      }
+      echo '</div>';
+      echo '<a href="'. get_field('bio_page_link', 'user_' . $member_info->ID) .'"><button class="staff-btn">Bio</button></a>';
+      echo '</div>';
+      $additionalClass = '';
+    }
+  }
   
-  // else { echo 'No Team Members Found'; }
+  else { echo 'No Team Members Found'; }
 }
-
 class RCA_SECONDARY_WALKER extends Walker_Nav_Menu {
 
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
@@ -1090,7 +1070,7 @@ function rca_tax_post_pagination() {
 
 /**
  * Author : Doe
- * Retrievs Team Members on About > Staff Department
+ * Retrieves Team Members on About > Staff Department
  * @param  string $role_type used for gettings users under each category
  */
 function get_team_members_department($role_type) {
@@ -1115,7 +1095,12 @@ function get_team_members_department($role_type) {
     // If we have team members count and loop through them...
     for ( $count = 0; $count < $last; $count++ ) {
     // foreach($team_members as $team_member) {
+      var_dump($team_members[$count]);
       $member_info = get_userdata($team_members[$count]);
+      $author_description = get_the_author_meta( 'description', $user_id = $team_members[$count]->ID );
+      $member_id = $member_info->ID;
+      //var_dump($member_id);
+      
       $member_url = $member_info->user_url;
       $email = $member_info->user_email;
       $first_name = $member_info->first_name;
@@ -1142,7 +1127,7 @@ function get_team_members_department($role_type) {
       }
 
       echo '<div id="individual-email" class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> '. $email .'</div>';
-      echo '<p>' . get_the_content() . '</p>';
+      echo '<p>'.  $author_description .'</p>';
       echo '</div>';
       echo '</div>';
       echo '</div>';
