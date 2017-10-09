@@ -11,13 +11,10 @@ $people = get_field('who_will_benefit');
 $webinar_form_title = get_field('webinar_form_title');
 $webinar_form_copy = get_field('webinar_form_copy');
 $webinar_title = get_field('webinar_title');
-//$presenters = get_field('presenters');
+$presenters = get_field('presenters');
 
-// Presenter Fields
-$presenters = get_field('your_presenters');
-// $test = get_field('your_presenters', post_title);
-//var_dump($presenters);
-//$presenters = explode(',', $presenters);
+$presenters = explode(',', $presenters);
+
 
 // Header BG
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
@@ -30,15 +27,15 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 				get_template_part( 'template-parts/post-type', 'webinars' );
-				#get_template_part('template-parts/section', 'takeover-modal');
-				#echo '<a href="#" data-open="takeover-modal">Takeover</a>';
+
 			endwhile;
 			?>
 
 		</main>
 
 		<!-- Presenters Small -->
-		<?php if($presenters != ""): ?>
+		<?php if($presenters[0] != ""): ?>
+
 		<ul id="presenter-accordian" class="accordion hide-for-medium" data-accordion data-allow-all-closed="true" style="border: none;">
 			<li class="accordion-item" data-accordion-item>
 				<a href="#!" class="accordion-title">Your Expert Presenters <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
@@ -54,27 +51,21 @@ get_header(); ?>
 					<div class="row">
 						<div class="small-10 small-offset-1 columns">
 
-							<?php for($i=0; $i<count($presenters); $i++) {
+							<?php foreach($presenters as $presenter) {
 								//get user data
-							// 	$user_data = get_userdata($presenter);
-							// 	$user_meta = get_user_meta($user_data->ID);
-							 	echo '<div id="presenter-block" class="row">';
-							 	echo '<div class="small-12 medium-2 columns text-center">';
-									if( get_the_post_thumbnail($presenters[$i]->ID) != NULL ):
-									echo get_the_post_thumbnail($presenters[$i]->ID);
-								else:
-									echo '&nbsp;';
-								endif;
-							 	echo '</div>';
-							 	echo '<div class="small-12 medium-8 columns text-center end">';
-							 	echo '<h3>' . $presenters[$i]->post_title . '</h3>';
-							 	echo '<p>' . $user_meta["position"][0] . '</p>';
-							 	
-								if( isset( $presenters[$i]->webinar_biography) ):
-									echo '<p>' . $presenters[$i]->webinar_biography . '</p>';
-								endif;
-							// 	echo '</div>';
-							// 	echo '</div>';
+								$user_data = get_userdata($presenter);
+								$user_meta = get_user_meta($user_data->ID);
+								echo '<div id="presenter-block" class="row">';
+								echo '<div class="small-12 medium-2 columns text-center">';
+								echo get_wp_user_avatar($user_data->ID);
+								echo '</div>';
+								echo '<div class="small-12 medium-8 columns text-center end">';
+								echo '<h3>' . $user_data->display_name . '</h3>';
+								echo '<p>' . $user_meta["position"][0] . '</p>';
+								echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
+								echo '</div>';
+								echo '</div>';
+
 							}
 							?>
 							
@@ -87,7 +78,8 @@ get_header(); ?>
 		<!-- /Presenters Small -->
 
 		<!-- Presenters Medium -->
-		<?php if($presenters != "" ): ?>
+		<?php if($presenters[0] != "" ): ?>
+
 		<div id="your-expert-presenters" class="show-for-medium">
 
 			<div id="title" class="row">
@@ -100,29 +92,31 @@ get_header(); ?>
 
 			<div class="row">
 				<div class="small-10 small-offset-1 columns">
-	
-					<?php for($i=0; $i<count($presenters); $i++) {
+
+					<?php foreach($presenters as $presenter) {
 						//get user data
-						// $user_data = get_userdata($presenter);
-						// $user_meta = get_user_meta($user_data->ID);
+						$user_data = get_userdata($presenter);
+						$user_meta = get_user_meta($user_data->ID);
 						echo '<div id="presenter-block" class="row">';
 						echo '<div class="small-12 medium-2 columns small-text-center">';
-						if( get_the_post_thumbnail($presenters[$i]->ID) != NULL ):
-							echo get_the_post_thumbnail($presenters[$i]->ID);
+						if( get_wp_user_avatar($user_data->ID) != NULL ):
+							echo get_wp_user_avatar($user_data->ID);
+
 						else:
 							echo '&nbsp;';
 						endif;
 
 						echo '</div>';
 						echo '<div class="small-12 medium-8 columns end">';
-						echo '<h3>' . $presenters[$i]->post_title . '</h3>';
+						echo '<h3>' . $user_data->display_name . '</h3>';
 
 						if( isset($user_meta["position"][0]) ):
-							echo '<p>' . the_field('your_presenters', $presenter->post_title) . '</p>';
+							echo '<p>' . $user_meta["position"][0] . '</p>';
 						endif;
 
-						if( isset( $presenters[$i]->webinar_biography) ):
-							echo '<p>' . $presenters[$i]->webinar_biography . '</p>';
+						if( isset($user_meta["webinar_biography"][0]) ):
+							echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
+
 						endif;
 
 						echo '</div>';
