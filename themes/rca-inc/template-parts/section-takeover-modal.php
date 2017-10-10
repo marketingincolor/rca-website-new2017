@@ -1,9 +1,26 @@
+<?php
+  $post_type = get_post_type();
+  switch ($post_type) {
+    case 'case_studies':
+      $type = 'case study';
+      break;
+    case 'white_papers':
+      $type = 'white paper';
+      break;
+    case 'visual_resources':
+      $type = 'visual resource';
+      break;
+    default:
+      $type = 'webinar';
+      break;
+  }
+?>
 <div class="reveal" id="takeover-modal" data-reveal data-options="closeOnBackgroundClick:false;closeOnEsc:false;">
   <div class="row">
   	<div class="small-10 small-centered columns text-center">
-  		<h1>Outsourcing Product Development Creates Quantum Leap in Resulting Product While Expediting Timeframes</h1>
-  		<p><small>Summary: Vestibulum pharetra velit a nisi vestibulum, a accumsan neque vehicula. Phasellus pretium leo et posuere ultrices. Aliquam eleifend ut massa ac lacinia. Nunc risus nisl, porttitor a elit et, cursus varius quam. Nunc porttitor euismod vehicula. Curabitur leo urna, ultrices a sem sit amet, blandit blandit mauris.</small></p>
-  		<p><strong>We're happy to share our insights that illustrate our work and expertise.<br class="hide-for-small-only">Please complete the form to access the case study.</strong></p>
+  		<h1><?php the_title(); ?></h1>
+  		<p><small><?php the_excerpt(); ?></small></p>
+  		<p><strong>We're happy to share our insights that illustrate our work and expertise.<br class="hide-for-small-only">Please complete the form to access the <?php echo $type; ?>.</strong></p>
   	</div>
   </div>
   <?php get_template_part('template-parts/section', 'learn-more-form-container-modal'); ?>
