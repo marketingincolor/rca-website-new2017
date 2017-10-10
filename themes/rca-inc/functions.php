@@ -1320,3 +1320,10 @@ function blue_callout_shortcode( $atts, $content = null ) {
   return '<div class="blue-callout case-study-quote">' . $content . '</div>';
 }
 add_shortcode( 'blue-callout', 'blue_callout_shortcode' );
+/**
+ * Enable HTML in Profile Bios
+ */
+//disable WordPress sanitization to allow more than just $allowedtags from /wp-includes/kses.php
+remove_filter('pre_user_description', 'wp_filter_kses');
+//add sanitization for WordPress posts
+add_filter( 'pre_user_description', 'wp_filter_post_kses');
