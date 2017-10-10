@@ -99,8 +99,8 @@
 		<!-- mobile cta -->
 		<div class="row text-center hide-for-medium">
 			<div class="small-10 small-offset-1 columns">
-				<h3>Sign up for our Free Combination Products Webinar</h3><br />
-				<button id="learn-more-btn">Sign Up Here</button>
+				<h3>Access our Managing Challenging Submissions Webinar</h3><br />
+				<a href="<?php echo site_url() ?>/webinars/display/managing-challenging-submissions-webinar/"><button id="learn-more-btn" class="white-btn">Sign Up Here</button></a>
 			</div>
 		</div>
 		<!-- end mobile cta -->
@@ -108,10 +108,10 @@
 		<!-- desktop cta -->
 		<div id="front-page-cta" class="row text-center medium-text-left show-for-medium" data-equalizer>
 			<div class="medium-6 medium-offset-2 columns relative" data-equalizer-watch>
-				<h3>Sign up for our Free Combination Products Webinar</h3><br />
+				<h3>Access our Managing Challenging Submissions Webinar</h3><br />
 			</div>
 			<div class="medium-2 columns end relative" data-equalizer-watch>
-				<button id="learn-more-btn" class="white-btn">Sign Up Here</button>
+				<a href="<?php echo site_url() ?>/webinars/display/managing-challenging-submissions-webinar/"><button id="learn-more-btn" class="white-btn">Sign Up Here</button></a>
 			</div>
 		</div>
 		<!-- end desktop cta -->

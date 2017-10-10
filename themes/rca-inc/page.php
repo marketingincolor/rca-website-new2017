@@ -35,9 +35,11 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 	</div>
+	<?php if(is_page(2162)) { ?>
+		<?php get_template_part('template-parts/section', 'agent-services-form'); ?>
+	<?php }else{ ?>
 	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
+	<?php } ?>
 
 <?php
-//get_sidebar();
-get_template_part('template-parts/section', 'learn-more-form-container-blue');
 get_footer();
