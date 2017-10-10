@@ -83,6 +83,7 @@ body.down .top-menu.clone {
   display: inline-block;
   color: #9d938a;
   font-weight: bold;
+  font-size: 12px;
 }
 
 
@@ -1845,7 +1846,7 @@ a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-.entry-conten h2 { display:inline-block; }
+.entry-content h2 { display:inline-block; }
 .entry-content a { text-decoration: underline; }
 
 /*--------------------------------------------------------------
@@ -2140,7 +2141,7 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; p
 footer { background-color: #2b2b2b; padding: 2.5rem 0rem; }
 .edit-link a { color: #fff; }
 .site-info a, .site-info p { color: #fff; }
-.site-info .copyright {font-size: 11px;margin-top: 10px}
+.site-info .copyright {font-size: 11px; margin-top: 1.5rem; }
 #menu-mobile-footer-left,
 #menu-mobile-footer-right { padding: 0rem; margin-left:0rem; }
 .footer-social-icon {
@@ -2698,7 +2699,8 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 }
 
 .staff-wrapper { width: 100%; }
-.staff-name { padding-top: 1.5rem; }
+/*.staff-name { padding-top: 1.5rem; }
+*/
 .staff-position { padding: 1rem 0rem; }
 .staff-position { font-size: .9rem; }
 

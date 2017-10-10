@@ -64,7 +64,7 @@
 
 
 				<!-- directors > sales operations-->
-				<div class="row staff-block-area text-center" data-equalizer
+				<div class="row staff-block-area text-center" data-equalizer>
 					<a href="<?php echo get_permalink( get_page_by_title( 'Finance' ) ) ?>"><h3>Finance</h3></a>
 					<?php get_team_members('finance'); ?>
 				</div>
