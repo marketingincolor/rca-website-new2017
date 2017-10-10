@@ -10,13 +10,16 @@
     case 'visual_resources':
       $type = 'visual resource';
       break;
+    default:
+      $type = 'webinar';
+      break;
   }
 ?>
 <div class="reveal" id="takeover-modal" data-reveal data-options="closeOnBackgroundClick:false;closeOnEsc:false;">
   <div class="row">
   	<div class="small-10 small-centered columns text-center">
   		<h1><?php the_title(); ?></h1>
-  		<p><small>Summary: <?php the_excerpt(); ?></small></p>
+  		<p><small><?php the_excerpt(); ?></small></p>
   		<p><strong>We're happy to share our insights that illustrate our work and expertise.<br class="hide-for-small-only">Please complete the form to access the <?php echo $type; ?>.</strong></p>
   	</div>
   </div>
