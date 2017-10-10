@@ -35,9 +35,11 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 	</div>
-	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
+	<!-- RELATED CONTENT -->
+	<?php get_template_part('template-parts/content', 'related-content'); ?>
+	<!-- /RELATED CONTENT -->
 
 <?php
-//get_sidebar();
+// LEARN MORE FORM & FOOTER...
 get_template_part('template-parts/section', 'learn-more-form-container-blue');
 get_footer();

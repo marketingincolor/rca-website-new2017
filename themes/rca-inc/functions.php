@@ -866,10 +866,32 @@ function get_cat_image($title) {
 }
 
 function get_service_image($title) { 
-  $title = $title;
-  $term_obj = get_term_by( 'name', $title, 'services' );
-  $term_id = $term_obj->term_taxonomy_id;
-  $icon_img = get_field('icon',  'services_' . $term_id);
+
+  $template = get_stylesheet_directory_uri();
+  switch($title) {
+    case('Regulatory Affairs'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/case-studies.png';
+    break;
+    case('White Papers'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/white-papers.png';
+    break;
+    case('Visual Resources'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/visual-resources.png';
+    break;
+    case('Published Articles'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/published-articles.png';
+    break;
+    case('Webinars'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/webinars.png';
+    break;
+    case('View All'):
+      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/view-all.png';
+    break;
+    default:
+      $url = '';
+    break;
+  }
+  return $url;
   return $icon_img['url'];
 }
 

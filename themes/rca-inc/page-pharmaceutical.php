@@ -130,9 +130,16 @@ get_header(); ?>
 		</div>
 	
 	</div>
+
+	<!-- RELATED CONTENT -->
+	<?php get_template_part('template-parts/content', 'related-content'); ?>
+	<!-- /RELATED CONTENT -->
+
+	<!-- LEARN MORE FORM -->
 	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	</div>
+	<!-- /LEARN MORE FORM -->
 
 	
 	<!-- NEWS -->
