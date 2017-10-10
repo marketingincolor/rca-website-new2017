@@ -35,6 +35,8 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 	</div>
+
+	<?php get_template_part('template-parts/content', 'related-content'); ?>
 	<?php if(is_page(2162)) { ?>
 		<?php get_template_part('template-parts/section', 'agent-services-form'); ?>
 	<?php }else{ ?>
@@ -42,4 +44,5 @@ get_header(); ?>
 	<?php } ?>
 
 <?php
+
 get_footer();
