@@ -8,7 +8,6 @@
 				get_template_part( 'template-parts/post-type', 'events' );
 				$gated = get_field('gated',  'expertise_' . $term_id);
 				if ($gated) {
-					get_template_part('template-parts/section', 'takeover-modal');
 				  echo '<a href="#" data-open="takeover-modal">Takeover</a>';
 				}
 			endwhile;

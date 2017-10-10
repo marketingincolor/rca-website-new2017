@@ -1,6 +1,6 @@
 <?php
 get_header(); 
-
+$type = 'white paper';
 ?>
 	<?php get_template_part('template-parts/section', 'takeover-modal'); ?>
 	<div id="primary" class="content-area">
