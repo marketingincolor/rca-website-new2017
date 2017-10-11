@@ -1,8 +1,11 @@
 <?php
 
-$post_type = get_post_type();
-$terms     = wp_get_post_terms($post->ID,'services');
-$tax_id  = $terms[0]->term_id;
+$post_type   = get_post_type();
+$terms       = wp_get_post_terms($post->ID,'services');
+$terms_array = array();
+foreach ($terms as $term) {
+	array_push($terms_array, $term->term_id);
+}
 
 switch ($post_type) {
 	case 'webinars':
@@ -35,12 +38,12 @@ if (!is_page()) {
 		'post_type'      => $post_type,
 		'posts_per_page' => 3,
 		'post__not_in'   => array($post->ID),
-	  'orderby'   => 'rand',
-		'tax_query' => array(
+	  'orderby'        => 'rand',
+		'tax_query'      => array(
 			array(
-				'taxonomy' => 'services',
-				'field'    => 'term_id',
-				'terms'    => $tax_id,
+				'taxonomy'   => 'services',
+				'field'      => 'term_id',
+				'terms'      => $terms_array,
 			),
 		),
 	);
@@ -49,12 +52,12 @@ if (!is_page()) {
 		'post_type'      => array('webinars', 'published_articles', 'case_studies','visual_resources','white_papers'),
 		'posts_per_page' => 3,
 		'post__not_in'   => array($post->ID),
-	  'orderby'   => 'rand',
-		'tax_query' => array(
+	  'orderby'        => 'rand',
+		'tax_query'      => array(
 			array(
-				'taxonomy' => 'services',
-				'field'    => 'term_id',
-				'terms'    => $tax_id,
+				'taxonomy'   => 'services',
+				'field'      => 'term_id',
+				'terms'      => $tax_id,
 			),
 		),
 	);
