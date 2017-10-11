@@ -35,11 +35,14 @@ get_header(); ?>
 		</div><!-- #primary -->
 
 	</div>
-	<!-- RELATED CONTENT -->
+
 	<?php get_template_part('template-parts/content', 'related-content'); ?>
-	<!-- /RELATED CONTENT -->
+	<?php if(is_page(2162)) { ?>
+		<?php get_template_part('template-parts/section', 'agent-services-form'); ?>
+	<?php }else{ ?>
+	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
+	<?php } ?>
 
 <?php
-// LEARN MORE FORM & FOOTER...
-get_template_part('template-parts/section', 'learn-more-form-container-blue');
+
 get_footer();

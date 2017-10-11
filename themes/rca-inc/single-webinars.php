@@ -22,6 +22,7 @@ else {
 
 	/* Template Name: Webinar Success */
 	get_header();
+	get_template_part('template-parts/section', 'takeover-modal');
 	$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 	if ( have_posts() ) : while ( have_posts() ) : the_post();
 	$video_img = the_field('video_img');

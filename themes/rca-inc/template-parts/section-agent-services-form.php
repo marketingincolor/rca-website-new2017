@@ -1,13 +1,14 @@
 <div id="learn-more-form-container-white">
 		<div class="row" >
-			<div class="small-10 small-offset-1 columns text-center">
-				<h1>I'm interested in Learning More About RCA</h1>
+			<div class="small-10 small-offset-1 medium-8 medium-offset-2 columns text-center">
+				<h1 style="margin-bottom:30px">RCA welcomes the opportunity to serve as your U.S. Agent</h1>
+				<p>Complete this form to start the online Drug / Medical Device Listing and Establishment Registration process.</p>
 				<div id="orange-error-message"></div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="small-10 small-offset-1">
-				<form id="blue-form" name="blue-form" action="" method="post">
+				<form id="blue-form" name="blue-form" action="<?php echo site_url(); ?>/us-agent-services-success" method="post">
 			    <div class="large-4 columns">
 			    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
 			    </div>
@@ -21,59 +22,24 @@
 			 			<input type="email" name="email_address" id="form-email" placeholder="Email Address*" required><i class="fa fa-envelope" aria-hidden="true"></i>
 			    </div>
 					<div class="large-4 columns">
-				    	<input type="text" name="address" id="form-address" placeholder="Address*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+				    	<input type="text" name="facility_name" id="form-facility-name" placeholder="Facility Name*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-4 columns">
-				    	<input type="text" name="city" id="form-city" placeholder="City*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+				    	<input type="text" name="facility_street" id="form-facility-street" placeholder="Facility Street*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-4 columns">
-						<input type="text" name="state" id="form-state" placeholder="State*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+						<input type="text" name="facility_country" id="form-facility-country" placeholder="Facility Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-4 columns">
-				    	<input type="text" name="country" id="form-country" placeholder="Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+				    	<input type="number" name="facility_zip" id="form-facility-zip" placeholder="Facility Zip*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-4 columns">
-				    	<input type="number" name="zip_code" id="form-zip" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+				    	<input type="text" name="num_products" id="form-num-products" placeholder="Number of Products*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-12 columns">
-				    	<input type="text" name="company" id="form-company" placeholder="Company*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
+				    	<input type="text" name="products_names" id="form-products-names" placeholder="Product(s) Name(s)*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
 					</div>
-					<div class="large-12 columns">
-						<label for="" class="industry-label"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
-						<div class="checkbox-group required">
-							<div class="medium-4 large-2 small-6 columns">
-								<input id="a1" type='checkbox' name='industry[]' class="chkrad X fade" value='Biotechnology' />
-								<label class="check-label" for="a1"> Biotechnology</label>
-							</div>
-							<div class="medium-4 large-2 small-6 columns">
-								<input id="a2" type='checkbox' name='industry[]' class="chkrad X fade" value='Medical Device' />
-								<label class="check-label" for="a2"> Medical Device</label>
-							</div>
-							<div class="medium-4 large-2 small-6 columns">
-								<input id="a3" type='checkbox' name='industry[]' class="chkrad X fade" value='Pharmaceutical' />
-								<label class="check-label" for="a3"> Pharmaceutical</label>
-							</div>
-							<div class="medium-4 large-2 small-6 columns">
-								<input id="a4" type='checkbox' name='industry[]' class="chkrad X fade" value='Law Firm' />
-								<label class="check-label" for="a4"> Law Firm</label>
-							</div>
-							<div class="medium-4 large-2 small-6 columns end">
-								<input id="a5" type='checkbox' name='industry[]' class="chkrad X fade" value='Other' />
-								<label class="check-label" for="a5"> Other</label>
-							</div>
-						</div>
-					</div>
-					<div class="large-12 columns">
-						<label for=""><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions*</label>
-						<textarea name="comments" id="form-comments" cols="30" rows="4" required></textarea>
-					</div>
-					<div class="large-6 columns">
-					  <div class="checkbox-group">
-					    <input id="agree" type="checkbox" name="agree" value="true" checked="checked">
-					    <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
-					  </div>
-					</div>
-					<div class="large-6 columns text-right">
+					<div class="large-12 columns text-right">
 						<p>*=Required</p>
 					</div>
 					<div class="large-12 columns">
@@ -139,42 +105,37 @@
 		  	showError('Please enter your email');
 		  	$('#form-email').focus();
 		  	return false;
-		  } else if($('#form-address').val() == ''){ 
-		  	showError('Please enter your street address');
-		  	$('#form-address').focus();
+		  } else if($('#form-facility-name').val() == ''){ 
+		  	showError('Please enter your facility address');
+		  	$('#form-facility-name').focus();
 		  	return false;
-		  } else if($('#form-city').val() == ''){ 
-		  	showError('Please enter your city');
-		  	$('#form-city').focus();
+		  } else if($('#form-facility-street').val() == ''){ 
+		  	showError('Please enter facility street');
+		  	$('#form-facility-street').focus();
 		  	return false;
-		  } else if($('#form-state').val() == ''){ 
-		  	showError('Please enter your state');
-		  	$('#form-state').focus();
+		  } else if($('#form-facility-country').val() == ''){ 
+		  	showError('Please enter facility country');
+		  	$('#form-facility-country').focus();
 		  	return false;
-		  } else if($('#form-country').val() == ''){ 
-		  	showError('Please enter your country');
-		  	$('#form-country').focus();
+		  } else if($('#form-facility-zip').val() == ''){ 
+		  	showError('Please enter facility zip code');
+		  	$('#form-facility-zip').focus();
 		  	return false;
-		  } else if($('#form-zip').val() == ''){ 
-		  	showError('Please enter your zip code');
-		  	$('#form-zip').focus();
+		  } else if($('#form-num-products').val() == ''){ 
+		  	showError('Please enter your number of products');
+		  	$('#form-num-products').focus();
 		  	return false;
 		  } else if($('#form-company').val() == ''){ 
 		  	showError('Please enter your company name');
 		  	$('#form-company').focus();
 		  	return false;
-		  } else if($('#form-comments').val() == ''){ 
-		  	showError('Please enter a comment or question');
-		  	$('#form-comments').focus();
-		  	$('#form-comments').addClass("formInvalid");
+		  } else if($('#form-products-names').val() == ''){ 
+		  	showError('Please enter your product names');
+		  	$('#form-products-names').focus();
+		  	$('#form-products-names').addClass("formInvalid");
 		  	return false;
-		  } else if ($('div.checkbox-group.required :checkbox:checked').length == 0){
-			  	showError('Please check at least one industry');
-			  	$('.industry-label').css({'color':'rgba(255,0,42,1)'})
-			  	e.preventDefault();
-			  	return false;
 		  } else {
-		      document.forms["blue-form"].submit();
+		    document.forms["blue-form"].submit();
 		  }
 	  });
 
