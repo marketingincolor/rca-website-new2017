@@ -105,7 +105,7 @@
 					<div id="phone-icon" class="row expanded title-bar hide-for-large" data-equalizer>
 
 						<div class="small-6 columns text-center" data-equalizer-watch>
-							<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p></a>		
+							<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact Us</p></a>		
 						</div>
 						<div id="menu-section" class="small-6 columns relative" data-equalizer-watch>
 							<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">
@@ -123,7 +123,7 @@
 								<?php echo do_shortcode( '[maxmegamenu location=menu-1]' ); ?>
 								<a href="<?php echo home_url('/contact/');?>">
 									<div id="contact-header-btn" class="">
-										<li class="contact-menu-item columns" style="float:right;"><i class="fa fa-phone" aria-hidden="true"></i> Contact</li>
+										<li class="contact-menu-item columns" style="float:right;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</li>
 									</div>
 								</a>
 							</div>
@@ -281,7 +281,7 @@
 										<li><a href="<?php echo home_url('/news/' );?>">News</a></li>
 
 										<!-- CONTACT -->
-										<li class="contact-menu-item" style="float:right;"><a href="<?php echo home_url('/contact/');?>"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a></li></a>
+										<li class="contact-menu-item" style="float:right;"><a href="<?php echo home_url('/contact/');?>"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</a></li></a>
 									</li>
 								</ul>	 	
 							</div>
@@ -326,7 +326,7 @@
 					<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
 
 						<div class="small-6 columns text-center" data-equalizer-watch style="padding: 1rem 0rem;">
-							<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem; border-right: 2px solid #fff;"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</p></a>		
+							<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem; border-right: 2px solid #fff;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact Us</p></a>		
 						</div>
 						<div id="menu-section" class="small-6 columns relative" data-equalizer-watch style="">
 							<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">
