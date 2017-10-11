@@ -884,7 +884,16 @@ function get_service_image($title) {
     break;
     case('Quality Services'):
       $url = $template_path . 'quality-services-icon.jpg';
-    break;            
+    break;
+    case('Biologics'):
+      $url = $template_path . 'strategic-consulting-icon.jpg';
+    break;
+    case('Combination Products'):
+      $url = $template_path . 'regulatory-affairs-icon.jpg';
+    break;
+    case('Compounding Pharmacies'):
+      $url = $template_path . 'compliance-assurance-icon.jpg';
+    break;
     case('White Papers'):
       $url = $template_path . 'white-papers.png';
     break;

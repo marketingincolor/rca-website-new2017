@@ -291,8 +291,8 @@
 						<div id="secondary-menu">
 							<div  class="row show-for-large">
 								<div class="large-12 columns" style="background-color: #9d938a; padding: 1.375rem 1rem;">
-									<div class="row" data-equalizer>
-										<div class="small-8 columns" data-equalizer-watch>
+									<div class="row">
+										<div class="small-8 columns">
 											<?php 
 												wp_nav_menu( 
 													$args = array( 
@@ -302,7 +302,7 @@
 												); 
 											?>
 										</div>
-										<div class="small-4 columns" data-equalizer-watch>
+										<div class="small-4 columns">
 											<?php get_search_form(); ?>
 										</div>
 									</div>

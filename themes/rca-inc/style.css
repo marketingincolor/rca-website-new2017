@@ -2949,7 +2949,12 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 .cat-image img {
   width: 50%;
 }
-.secondary-menu-item-wrapper { display: inline-block; width: 16.6%; }
+#menu-secondary-menu{
+  display:flex;
+}
+#menu-secondary-menu a{
+  width: 16.6%;
+}
 .secondary-menu-item-wrapper li { 
 	width: 50%;
   display: inline-block;
