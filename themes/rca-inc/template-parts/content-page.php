@@ -21,6 +21,20 @@
 		<div class="small-10 small-offset-1 columns">
 			<div class="entry-content">
 				<?php
+					// Taleo API Call
+					// $options = array(
+					//   'http'=>array(
+					//     'method'=>"GET",
+					//     'header'=>"Username=username@<<COMPANY_CODE>>\r\n" .
+					//               "Password=xxxxxxx\r\n" .
+					//               "Content-type: application/json\r\n" 
+					//   )
+					// );
+					// $context=stream_context_create($options);
+					// $data=file_get_contents('http://www.someservice.com/api/fetch?key=1234567890',false,$context);
+
+
+
 					the_content();
 
 					wp_link_pages( array(

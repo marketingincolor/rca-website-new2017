@@ -480,7 +480,10 @@ h2 {
 }
 
 #related-content-block .random-item {
-	padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
 }
 
 /*--------------------------------------------------------------
@@ -783,9 +786,9 @@ input[type=number]::-webkit-outer-spin-button {
 	border-bottom: 2px solid #FFF;
 	color: #FFF;
 }
-#learn-more-form-container-white input:valid{
-	border-bottom: 2px solid #363636;
-	color: #363636;
+#learn-more-form-container-white input:valid:not(:submit),#learn-more-form-container-white select:valid{
+	border-bottom: 2px solid #363636 !important;
+	color: #363636 !important;
 }
 #learn-more-form-container-blue input[type=submit],#learn-more-form-container-blue input[type=submit]{
 	transition: all 0.25s ease-in-out;
@@ -881,6 +884,15 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #learn-more-form-container-white input.formInvalid ::-ms-input-placeholder {
    color: red;
+}
+#learn-more-form-container-white select{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid #e9e7e3;
+  padding-left: 39px;
+  color: rgba(0,0,0,0.4);
+  text-transform: uppercase;
 }
 #learn-more-form-container-blue .checkbox-group label,#learn-more-form-container-white .checkbox-group label{
 	margin:0;

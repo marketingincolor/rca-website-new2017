@@ -61,6 +61,7 @@ get_header(); ?>
 			<div class="small-12 medium-8 columns">
 				<!-- Loop Through Services -->
 					<?php
+						echo get_stylesheet_directory_uri();
 						$count = 1;
 						foreach($services_array as $service){
 							if($count % 2 == 0):
