@@ -28,6 +28,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+.contact-header-icon { margin-right: .25rem; }
+
 /*== BULLET STYLES ==*/
 ul > li{list-style: none}
   ul > li::before {

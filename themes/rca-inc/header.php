@@ -123,7 +123,7 @@
 								<?php echo do_shortcode( '[maxmegamenu location=menu-1]' ); ?>
 								<a href="<?php echo home_url('/contact/');?>">
 									<div id="contact-header-btn" class="">
-										<li class="contact-menu-item columns" style="float:right;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</li>
+										<li class="contact-menu-item columns" style="float:right;"><i class="fa fa-paper-plane contact-header-icon" aria-hidden="true"></i> Contact</li>
 									</div>
 								</a>
 							</div>
