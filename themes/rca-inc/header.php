@@ -287,6 +287,9 @@
 							</div>
 						</div>
 						<?php endif; ?>
+						<style>
+							
+						</style>
 						<!-- SECONDARY NAV ON DESKTOP -->
 						<div id="secondary-menu">
 							<div  class="row show-for-large">
@@ -299,7 +302,7 @@
 														'menu' => 'Secondary Menu',
 														'walker' => new RCA_SECONDARY_WALKER()
 												 	)
-												); 
+												);
 											?>
 										</div>
 										<div class="small-4 columns">
