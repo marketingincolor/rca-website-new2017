@@ -776,10 +776,9 @@ function get_team_members($role_type) {
       if ( !empty($position) ) {
         echo '<div class="staff-position">' . $position . '</div>';
       }
-      $bio_link = get_field('bio_page_link', 'user_' . $member_info->ID);
-      //$bio_link = '/foot';
       echo '</div>';
-      echo '<a href="' . site_url() . $bio_link .'"><button class="staff-btn">Bio</button></a>';      echo '</div>';
+      echo '<a href="'. get_field('bio_page_link', 'user_' . $member_info->ID) .'"><button class="staff-btn">Bio</button></a>';
+      echo '</div>';
       $additionalClass = '';
     }
   }
@@ -867,32 +866,10 @@ function get_cat_image($title) {
 }
 
 function get_service_image($title) { 
-
-  $template = get_stylesheet_directory_uri();
-  switch($title) {
-    case('Regulatory Affairs'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/case-studies.png';
-    break;
-    case('White Papers'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/white-papers.png';
-    break;
-    case('Visual Resources'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/visual-resources.png';
-    break;
-    case('Published Articles'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/published-articles.png';
-    break;
-    case('Webinars'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/webinars.png';
-    break;
-    case('View All'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/view-all.png';
-    break;
-    default:
-      $url = '';
-    break;
-  }
-  return $url;
+  $title = $title;
+  $term_obj = get_term_by( 'name', $title, 'services' );
+  $term_id = $term_obj->term_taxonomy_id;
+  $icon_img = get_field('icon',  'services_' . $term_id);
   return $icon_img['url'];
 }
 
@@ -1132,7 +1109,7 @@ function get_team_members_department($role_type) {
       $first_name = $member_info->first_name;
       $last_name = $member_info->last_name;
       $avatar = get_wp_user_avatar($member_info->ID);
-      $id_link = strtolower($first_name . '-' . $last_name);
+
       // Add classes depending on count
       // Find the longest position and adjust height accordingly.
 
@@ -1141,10 +1118,11 @@ function get_team_members_department($role_type) {
 
       $position = get_field('position', $member_info);
 
+
       echo '<div class="staff-wrapper">';
 
       if ( !empty($first_name) && !empty($last_name) ) {
-        echo '<div class="department-staff-name text-center"><h1><a href="'. $member_url .'" id="' . $id_link . '">' . $first_name . ' ' . $last_name . '</a></h1></div>';
+        echo '<div class="department-staff-name text-center"><h1><a href="'. $member_url .'">' . $first_name . ' ' . $last_name . '</a></h1></div>';
       }
 
       if ( !empty($position) ) {
@@ -1342,10 +1320,3 @@ function blue_callout_shortcode( $atts, $content = null ) {
   return '<div class="blue-callout case-study-quote">' . $content . '</div>';
 }
 add_shortcode( 'blue-callout', 'blue_callout_shortcode' );
-/**
- * Enable HTML in Profile Bios
- */
-//disable WordPress sanitization to allow more than just $allowedtags from /wp-includes/kses.php
-remove_filter('pre_user_description', 'wp_filter_kses');
-//add sanitization for WordPress posts
-add_filter( 'pre_user_description', 'wp_filter_post_kses');

@@ -28,6 +28,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+.blue-callout #learn-more-btn { font-style: normal; }
+
 .blue-callout a { color: #fff; }
 
 #scrollUp {     
@@ -88,7 +90,7 @@ body.down .top-menu.clone {
 
 
 /*Descriptions on archives pages*/
-.description { margin-bottom: 3.5rem; }
+/*.description { margin-bottom: 3.5rem; }*/
 /*contact button color in header*/
 #entire-header > div.top-menu > div > div > a { color: white; }
 

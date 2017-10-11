@@ -1,4 +1,4 @@
-h<?php
+<?php
 /**
  * The template for displaying archive pages
  *
@@ -8,11 +8,33 @@ h<?php
  */
 global $post;
 $term = $wp_query->queried_object;
-$name = 'Webinars';
+$name = 'Case Studies';
 $term_obj = get_term_by( 'name', $name, 'expertise' );
 $term_id = $term_obj->term_taxonomy_id;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
-$page_title = get_field('taxonomy_title_in_orange_bar');
+
+// Switch determines bg img
+
+switch($post_type) {
+	case('case_studies'):
+		$img = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.jpg';
+	break;
+	case('published_articles'):
+		$img = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.jpg';
+	break;
+	case('webinars'):
+		$img = get_stylesheet_directory_uri() . '/images/icons/archive-webinars-icon.jpg';
+	break;
+	case('white_papers'):
+		$img = get_stylesheet_directory_uri() . '/images/icons/archive-white-papers-icon.jpg';
+	break;
+	case('visual_resources'):
+		$img = get_stylesheet_directory_uri() . '/images/icons/archive-visual-resources-icon.jpg';
+	break;
+	default:
+		$img = '#';
+	break;
+}
 
 get_header(); ?>
 
@@ -20,7 +42,7 @@ get_header(); ?>
 	<div id="featured-img-wrapper" class="row expanded">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
 	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg; ?>'); background-size: cover;">
-				<div class="featured-img-title"><h1>Webinars</h1></div>
+				<div class="featured-img-title"><h1>Visual Resources</h1></div>
 		</div>
 	</div>
 	<!-- / Featured Image -->
@@ -28,11 +50,11 @@ get_header(); ?>
 	<div id="mob-before-title-block" class="row hide-for-medium" data-equalizer>
 		<div id="mobile-cat-picker" class="small-offset-1 small-8 columns" data-equalizer-watch>
 			<select name="mobile_category" id="" onchange="location.href=this.value">
-				<option value="/webinars">Webinars</option></a>
+				<option value="/visual-resources">Visual Resources</option>
 				<option value="/case-studies">Case Studies</option>
+				<option value="/webinars">Webinars</option></a>
 				<option value="/white-papers">White Papers</option>
 				<option value="/published-articles">Published Articles</option>
-				<option value="/visual-resources">Visual Resources</option>
 			</select>
 		</div>
 		<div id="mobile-share-btn" class="small-2 end columns text-center" data-equalizer-watch>
@@ -51,11 +73,9 @@ get_header(); ?>
 		<?php
 		$paged = get_query_var('paged') ? get_query_var('paged') : 1; 
 		$args = array(
-			'post_type' => 'webinars',
+			'post_type' => 'visual_resources',
 			'posts_per_page' => 8,
-			'paged' => $paged,
-			'meta_key' => 'pre_or_post',
-			'meta_value' => 'gated'
+			'paged' => $paged
 		);
 
 		$case_studies = new WP_Query($args);
@@ -65,15 +85,13 @@ get_header(); ?>
 			<div class="row">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-
-							<p class="description">Regulatory Compliance Associates® Inc. frequently conducts online seminars or webinars for viewers and listeners all over the world on life science industry subjects. Our webinars are recorded and available to download for future reference and viewing.</p>
-
+							<p class="description">Visual Resources include handouts, posters, and correspondence that visually illustrate Regulatory Compliance Associates® Inc.’s expertise in a particular service.</p>
 					</header><!-- .page-header -->
 				</div>
 			</div>
 
 			<!-- TAXONOMIES MENU -->
-			<?php #get_template_part('template-parts/taxonomy', 'menu'); ?>
+			<?php get_template_part('template-parts/taxonomy', 'menu'); ?>
 			<!-- /TAXONOMIES MENU -->
 			
 			<div id="all-items-block" class="row">
