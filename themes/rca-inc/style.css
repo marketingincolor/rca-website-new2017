@@ -27,6 +27,31 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 1.0 Remove Slick Slider Styles
 2.0 Organize Styles
 */
+
+/*== BULLET STYLES ==*/
+ul > li{list-style: none}
+  ul > li::before {
+  content: "•";
+  color: orange;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+ul > li > ul > li::before {
+  content: "•";
+  color: #000;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+ul > li > ul > li > ul > li::before {
+  content: "-";
+  color: #000;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+/*== END BULLET STYLES ==*/
 #sign-up-cta .mobile div h3 { 
   position: static;
   top: normal;
@@ -549,7 +574,7 @@ h2 {
 
 .pagination a { display: inline-block; }
 .page-numbers { display: inline-block; }
-
+.page h2{margin-bottom: 1.5em}
 #all-items-block { padding: 3rem 0rem 3rem; }
 .item-block button { width: auto; margin: 0 auto; display: block; }
 
