@@ -1,46 +1,64 @@
 <?php
 
 $post_type = get_post_type();
-//var_dump($post_type);
+$terms     = wp_get_post_terms($post->ID,'services');
+$tax_id  = $terms[0]->term_id;
 
-// BUILD QUERIES
-if($post_type == 'case_studies'):
-	$query1 = new WP_Query(get_random_case_study());
-	$query2 = new WP_Query(get_random_case_study());
-	$query3 = new WP_Query(get_random_case_study());
-	$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
+switch ($post_type) {
+	case 'webinars':
+		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-webinar-icon.jpg';
+		break;
 
-elseif($post_type == 'webinars'):
-	$query1 = new WP_Query(get_random_webinar());
-	$query2 = new WP_Query(get_random_webinar());
-	$query3 = new WP_Query(get_random_webinar());
-	$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-webinar-icon.jpg';
+	case 'published_articles':
+		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-published-articles-icon.jpg';
+		break;
 
-elseif($post_type == 'white_papers'):
-	$query1 = new WP_Query(get_random_whitepaper());
-	$query2 = new WP_Query(get_random_whitepaper());
-	$query3 = new WP_Query(get_random_whitepaper());
-	$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-white-paper-icon.jpg';
+	case 'case_studies':
+		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
+		break;
 
-elseif($post_type == 'visual_resources'):
-	$query1 = new WP_Query(get_random_visualresource());
-	$query2 = new WP_Query(get_random_visualresource());
-	$query3 = new WP_Query(get_random_visualresource());
-	$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-visual-resources-icon.jpg';
+	case 'white_papers':
+		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-white-paper-icon.jpg';
+		break;
 
-elseif($post_type == 'published_articles'):
-	$query1 = new WP_Query(get_random_publishedarticle());
-	$query2 = new WP_Query(get_random_publishedarticle());
-	$query3 = new WP_Query(get_random_publishedarticle());
-	$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-published-articles-icon.jpg';	
+	case 'visual_resources':
+		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-visual-resources-icon.jpg';
+		break;
+	
+	default:
+		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
+		break;
+}
 
-elseif($post_type == 'page'):
-	$query1 = new WP_Query(get_random_case_study());
-	$query2 = new WP_Query(get_random_webinar());
-	$query3 = new WP_Query(get_random_visualresource());
-	$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
-
-endif;
+if (!is_page()) {
+	$args = array(
+		'post_type'      => $post_type,
+		'posts_per_page' => 3,
+		'post__not_in'   => array($post->ID),
+	  'orderby'   => 'rand',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'services',
+				'field'    => 'term_id',
+				'terms'    => $tax_id,
+			),
+		),
+	);
+}else{
+	$args = array(
+		'post_type'      => array('webinars', 'published_articles', 'case_studies','visual_resources','white_papers'),
+		'posts_per_page' => 3,
+		'post__not_in'   => array($post->ID),
+	  'orderby'   => 'rand',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'services',
+				'field'    => 'term_id',
+				'terms'    => $tax_id,
+			),
+		),
+	);
+}	
 
 ?>	
 	<div id="related-content-block-outer" class="row show-for-large">
@@ -51,40 +69,20 @@ endif;
 		</div>
 		<div class="row" data-equalizer>
 			<div id="related-content-block" class="small-10 small-offset-1 columns">
-				
-				<div class="small-12 medium-4 columns random-item" data-equalizer-watch>
 				<?php
-					if ( $query1->have_posts() ) : while ( $query1->have_posts() ) : $query1->the_post(); 
-						echo '<img src="' . $icon . '">';
-						$title  = the_title('','',false);
-						 echo '<p>' . trim(substr($title, 0, 65)).'...' . '<a href="' . get_the_permalink() . '">Read More</a></p>';
-						endwhile; 
-					endif;
-				?>
-				</div>
-				
-				<div class="small-12 medium-4 columns random-item" data-equalizer-watch>
-				<?php
-					if ( $query2->have_posts() ) : while ( $query2->have_posts() ) : $query2->the_post(); 
-						echo '<img src="' . $icon . '">';						
-						$title  = the_title('','',false);
-						echo '<p>' . trim(substr($title, 0, 65)).'...' . '<a href="' . get_the_permalink() . '">Read More</a></p>';
-						endwhile; 
-					endif;	
-				?>
-				</div>
-				
-				<div class="small-12 medium-4 columns random-item" data-equalizer-watch>
-				<?php
+				$the_query = new WP_Query($args);
 
-					if ( $query3->have_posts() ) : while ( $query3->have_posts() ) : $query3->the_post();
-						echo '<img src="' . $icon . '">';
-						$title  = the_title('','',false);
-						echo '<p>' . trim(substr($title, 0, 65)).'...' . '<a href="' . get_the_permalink() . '">Read More</a></p>';
-						endwhile; 
-					endif;
-				?>	
+				if ( $the_query->have_posts() ) {
+					while ( $the_query->have_posts() ) {
+						$the_query->the_post();
+				?>
+
+				<div class="small-12 medium-4 columns random-item" data-equalizer-watch>
+					<img src="<?php echo $icon; ?>" alt="">
+					<p><?php echo wp_trim_words(get_the_title(),10,'...') ?> <a href="<?php the_permalink(); ?>">Read More</a></p>
 				</div>
+
+				<?php }} wp_reset_postdata(); ?>
 
 			</div>
 		</div>

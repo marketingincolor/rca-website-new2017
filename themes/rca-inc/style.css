@@ -478,7 +478,10 @@ h2 {
 }
 
 #related-content-block .random-item {
-	padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
 }
 
 /*--------------------------------------------------------------
