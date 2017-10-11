@@ -36,13 +36,19 @@ get_header(); ?>
 
 	</div>
 
-	<?php get_template_part('template-parts/content', 'related-content'); ?>
-	<?php if(is_page(2162)) { ?>
-		<?php get_template_part('template-parts/section', 'agent-services-form'); ?>
-	<?php }else{ ?>
-	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
-	<?php } ?>
+	<?php
 
-<?php
+		// If not these pages show related content on page.php
+		$remove_on_page = array('privacy-policy', 'terms-of-use');
+		if( !is_page( $remove_on_page ) ) {
+			get_template_part('template-parts/content', 'related-content');
+		}
+
+		if(is_page(2162)) {
+			get_template_part('template-parts/section', 'agent-services-form');
+		} else{
+			get_template_part('template-parts/section', 'learn-more-form-container-blue');
+		}
+
 
 get_footer();
