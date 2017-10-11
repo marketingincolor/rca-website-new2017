@@ -27,6 +27,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 1.0 Remove Slick Slider Styles
 2.0 Organize Styles
 */
+#sign-up-cta .mobile div h3 { 
+  position: static;
+  top: normal;
+  transform: translateY(0%);
+
+}
 
 .blue-callout #learn-more-btn { font-style: normal; }
 
@@ -2082,15 +2088,11 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; p
 /*Front Page - Sign Up CTA*/
 #sign-up-cta { 
   background-color:#1a365d; color:#ffffff; padding: 3.875rem 0rem;
-    background: url(http://localhost/rca-website/wp-content/themes/rca-inc/images/blue-cta-bg.jpg);
-    background-size: cover;
-    height: auto;
-    background-attachment: fixed;
-    /* background-position: center; */
-    /* background-repeat: no-repeat; */
-    background-size: contain;
-
+  background-size: 120%;  
+  height: auto;
+  background-attachment: fixed;
 }
+
 #sign-up-cta .row div { margin-top: 0rem; }
 #sign-up-cta button { 
 /*	border-radius: 0px; 
@@ -2750,6 +2752,11 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 /* Small only */
 @media(max-width:360px){
+
+#sign-up-cta { 
+  background-size: 600%;
+}
+
 	#mobile-share-btn{
 		padding: 0;
 	}
@@ -2802,6 +2809,13 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 	.no-js .top-bar {
 	display: block;
 	}
+
+  #sign-up-cta { 
+    background-color:#1a365d; color:#ffffff; padding: 3.875rem 0rem;
+    background-size: contain !important;  
+    height: auto;
+    background-attachment: fixed;
+  }
 
 	.no-js .title-bar {
 	display: none;

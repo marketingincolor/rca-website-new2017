@@ -15,7 +15,7 @@ endif;
 
 		<div class="row">
 			<?php if($pdf): ?>
-			<a href="<?php echo $pdf; ?>" title="Download">
+			<a href="<?php echo $pdf; ?>" title="Download" target="_blank">
 				<div id="dl-block" class="small-6 columns text-center hide-for-medium">
 					<p>Download <i class="fa fa-download" aria-hidden="true"></i></p>
 				</div>

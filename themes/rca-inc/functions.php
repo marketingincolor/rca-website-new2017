@@ -1361,3 +1361,43 @@ add_shortcode( 'blue-callout', 'blue_callout_shortcode' );
 remove_filter('pre_user_description', 'wp_filter_kses');
 //add sanitization for WordPress posts
 add_filter( 'pre_user_description', 'wp_filter_post_kses');
+
+/**
+ * Adds column to Webinars post type.
+ * @param  [type] $postID [description]
+ * @return [type]         [description]
+ */
+  function webinars_columns_head ( $columns ) {
+   return array_merge ( $columns, array ( 
+     'webinar_type' => __( 'Webinar Type' ),
+   ) );
+ }
+
+function webinars_columns_content($column) {
+    global $post;
+    if ($column == 'webinar_type') {
+      $webinar_status = get_post_meta ( $post->ID, 'pre_or_post', true );
+      if($webinar_status == 'pre'):
+        $webinar_status = 'Pre Webinar';
+      elseif($webinar_status == 'post'):
+        $webinar_status = 'Post Webinar';
+      elseif($webinar_status == 'gated'):
+        $webinar_status = 'Gated Webinar';
+      else:
+        $webinar_status = '—';
+      endif;
+      echo $webinar_status;
+    }
+
+}
+
+function sort_webinar_status_column( $columns ) {
+    $columns['webinar_type'] = 'webinar_type';
+ 
+    return $columns;
+}
+
+add_filter( 'manage_edit-webinars_sortable_columns', 'sort_webinar_status_column' );
+add_filter('manage_webinars_posts_columns', 'webinars_columns_head');
+add_action('manage_webinars_posts_custom_column', 'webinars_columns_content', 10);
+

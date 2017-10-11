@@ -60,13 +60,10 @@ header("HTTP/1.1 200 OK");
 
 	}
 	else{
-		?>
-		<script>
-			$('.load-more').hide();
-
-		</script>
-
-		<?php
+		
+		echo '<script>';
+		echo '$(\'.load-more\').hide(); ';
+		echo '</script>';
 		echo '<div class="row">';
 		echo '<div class="small-10 small-offset-1 columns">';
 		echo '<h3 class="">Sorry, we can\'t find any posts that match this search right now...</p>';

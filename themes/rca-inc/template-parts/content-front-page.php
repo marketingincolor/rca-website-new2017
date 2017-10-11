@@ -94,10 +94,10 @@
 	</div>
 
 	<!-- CTA -->
-	<div id="sign-up-cta" class="rca"  style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/blue-cta-bg.jpg'; ?>'); background-size: cover;     background-attachment: fixed; background-size: contain; height: auto;">
+	<div id="sign-up-cta" class="rca"  style="background: url('<?php echo get_stylesheet_directory_uri() . '/images/blue-cta-bg.jpg'; ?>'); background-attachment: fixed;">
 
 		<!-- mobile cta -->
-		<div class="row text-center hide-for-medium">
+		<div class="row text-center hide-for-medium mobile">
 			<div class="small-10 small-offset-1 columns">
 				<h3>Access our Managing Challenging Submissions Webinar</h3><br />
 				<a href="<?php echo site_url() ?>/webinars/display/managing-challenging-submissions-webinar/"><button id="learn-more-btn" class="white-btn">Sign Up Here</button></a>
