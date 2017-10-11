@@ -53,10 +53,6 @@ get_header(); ?>
 					</header><!-- .page-header -->
 				</div>
 			</div>
-
-			<!-- TAXONOMIES MENU -->
-			<?php get_template_part('template-parts/taxonomy', 'menu'); ?>
-			<!-- /TAXONOMIES MENU -->
 			
 			<div id="all-items-block" class="row">
 				

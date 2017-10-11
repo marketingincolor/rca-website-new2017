@@ -30,27 +30,55 @@ get_header(); ?>
 		<!-- List of Services -->
 		<?php
 
-		// $services_array = array(
-		// 	'regulatory_affairs' => array(
-		// 		'title' => 'Regulatory Affairs',
-		// 		'menu_name'   => 'Regulatory Affairs'
-		// 	),
-		// 	'compliance_assurance' => array(
-		// 		'title' => 'Compliance Assurance',
-		// 		'menu_name'   => 'Compliance Assurance'
-		// 	),
-		// 	'remediation' => array(
-		// 		'title' => 'Remediation Strategy and Support',
-		// 		'menu_name'   => 'Remediation Strategy and Support'
-		// 	),
-		// 	'quality_services' => array(
-		// 		'title' => 'Quality Services',
-		// 		'menu_name'   => ''
-		// 	)
-		// );
+		$services_array = array(
+			'biologics' => array(
+				'title'     => 'Biologics',
+				'menu_name' => 'Biologics',
+				'slug'      => 'biologics'
+			),
+			'combination_products' => array(
+				'title'     => 'Combination Products',
+				'menu_name' => 'Combination Products',
+				'slug'      => 'combination-products'
+			),
+			'compounding_pharmacies' => array(
+				'title'     => 'Compounding Pharmacies',
+				'menu_name' => 'Compounding Pharmacies',
+				'slug'      => 'compounding-pharmacies'
+			)
+		);
 
 		?>
-	</div>
+		<!-- /List of Services -->
+
+		<div id="" class="row">
+
+				<!-- Loop Through Services -->
+					<?php
+						$count = 1;
+						foreach($services_array as $service){
+
+								echo '<div class="small-10 small-offset-1 medium-4 medium-offset-0 columns text-center end" data-equalizer-watch>';
+								echo '<div class="service-block">';
+								echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
+								echo '<div class="service-title"><a href="' . home_url( 'services/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
+								echo '</div>';
+
+							// If our menu array isn't empty display the menu.
+							// if($service['menu_name'] != '' || $service['menu_name'] != 'Strategic Consulting' ):
+							// 	echo '<div class="text-left service-menu-items">';
+							// 	echo wp_nav_menu( array('menu' => $service['menu_name']));
+							// 	echo '</div>';
+							// endif;
+
+							echo '</div>';
+						}
+
+					?>
+
+				<!-- /Loop Through Services -->
+		</div>
+	</div> <!-- /.page-wrapper -->
 	
 	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>

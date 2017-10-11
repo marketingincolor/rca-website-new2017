@@ -868,25 +868,46 @@ function get_cat_image($title) {
 
 function get_service_image($title) { 
 
-  $template = get_stylesheet_directory_uri();
+  $template_path = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/';
   switch($title) {
     case('Regulatory Affairs'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/case-studies.png';
+      $url = $template_path . 'regulatory-affairs-icon.jpg';
+    break;
+    case('Compliance Assurance'):
+      $url = $template_path . 'compliance-assurance-icon.jpg';
+    break;
+    case('Strategic Consulting'):
+      $url = $template_path . 'strategic-consulting-icon.jpg';
+    break;
+    case('Remediation Strategy and Support'):
+      $url = $template_path . 'remediation-strategy-icon.jpg';
+    break;
+    case('Quality Services'):
+      $url = $template_path . 'quality-services-icon.jpg';
+    break;
+    case('Biologics'):
+      $url = $template_path . 'strategic-consulting-icon.jpg';
+    break;
+    case('Combination Products'):
+      $url = $template_path . 'regulatory-affairs-icon.jpg';
+    break;
+    case('Compounding Pharmacies'):
+      $url = $template_path . 'compliance-assurance-icon.jpg';
     break;
     case('White Papers'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/white-papers.png';
+      $url = $template_path . 'white-papers.png';
     break;
     case('Visual Resources'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/visual-resources.png';
+      $url = $template_path . 'visual-resources.png';
     break;
     case('Published Articles'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/published-articles.png';
+      $url = $template_path . 'published-articles.png';
     break;
     case('Webinars'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/webinars.png';
+      $url = $template_path . 'webinars.png';
     break;
     case('View All'):
-      $url = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/view-all.png';
+      $url = $template_path . 'view-all.png';
     break;
     default:
       $url = '';
