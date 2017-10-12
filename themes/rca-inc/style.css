@@ -953,7 +953,7 @@ input[type=number]::-webkit-outer-spin-button {
   width: 12px;
 }
 #learn-more-form-container-white input[type="checkbox"] + label:before{
-	border: 2px solid rgba(0,0,0,0.4);
+	border: 2px solid rgba(0,0,0,0.1);
 }
 #learn-more-form-container-blue input[type="checkbox"]:checked + label:before,#learn-more-form-container-white input[type="checkbox"]:checked + label:before {
   background: #fff;
