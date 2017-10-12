@@ -34,7 +34,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 .contact-header-icon { margin-right: .25rem; }
 
 /*== BULLET STYLES ==*/
-ul > li,{
+ul > li,.entry-content ul{
   list-style: none
 }
 ul:not(#menu-desktop-footer-menu):not(#menu-regulatory-affairs):not(.submenu):not(#menu-compliance-assurance):not(#menu-remediation-strategy-and-support):not(#menu-strategic-consulting):not(#mega-menu-menu-1):not(#wp-admin-bar-root-default):not(.mega-sub-menu):not(#menu-mobile-footer-right):not(#menu-mobile-footer-left):not(#menu-pharmaceutical-regulatory-affairs):not(#menu-pharmaceutical-compliance-assurance):not(#menu-pharmaceutical-remediation-strategy-and-support):not(#menu-pharmaceutical-strategic-consulting):not(#menu-our-people):not(#menu-strategic-consulting-2):not(#menu-compliance-assurance-1):not(#menu-regulatory-affairs-1):not(#menu-remediation-strategy-and-support-1):not(#menu-pharmaceutical-compliance-assurance-1):not(#menu-pharmaceutical-regulatory-affairs-1):not(#menu-pharmaceutical-remediation-strategy-and-support-1) > li::before {
@@ -46,17 +46,11 @@ ul:not(#menu-desktop-footer-menu):not(#menu-regulatory-affairs):not(.submenu):no
 }
 ul > li > ul > li::before {
   content: "•";
-  color: #000;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  color: #000!important;
 }
 ul > li > ul > li > ul > li::before {
-  content: "-";
+  content: "-"!important;
   color: #000;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
 }
 /*== END BULLET STYLES ==*/
 #sign-up-cta .mobile div h3 { 
