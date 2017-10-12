@@ -28,6 +28,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+
+
+
 .contact-header-icon { margin-right: .25rem; }
 
 /*== BULLET STYLES ==*/
@@ -2766,12 +2769,19 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
   color: #9d938b;
 }
 .event-post #related-content-block .random-item{
-/*  display: block;
-  align-items: center;
-  margin: 0 auto;
-  text-align: center;*/
+    font-size: 16px;
+    font-family: 'lora';
+    font-weight: bold;
+    color: #9d938b;
+    font-style: italic;
 }
-.event-post #related-content-block p { width: auto; padding-left: 0px; }
+.event-post #related-content-block p {
+  width: auto; 
+  padding-left: 0px; 
+  color: #9d938b;
+  font-family: 'Lora';  
+}
+
 .event-post #related-content-block .random-item i{
   font-size: 2.5rem;
   margin-right: 1.25rem;
