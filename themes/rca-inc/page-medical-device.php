@@ -35,23 +35,23 @@ get_header(); ?>
 			$services_array = array(
 				'regulatory_affairs' => array(
 					'title' => 'Regulatory Affairs',
-					'menu_name'   => 'Medical Device: Regulatory Affairs',
+					'menu_name'   => 'Regulatory Affairs',
 					'slug' => 'regulatory-affairs'
 				),
 				'compliance_assurance' => array(
 					'title' => 'Compliance Assurance',
-					'menu_name'   => 'Medical Device: Compliance Assurance',
+					'menu_name'   => 'Compliance Assurance',
 					'slug' => 'compliance-assurance'
 				),
 				'remediation' => array(
 					'title' => 'Remediation Strategy and Support',
-					'menu_name'   => 'Medical Device: Remediation Strategy and Support',
+					'menu_name'   => 'Remediation Strategy and Support',
 					'slug' => 'remediation-strategy-and-support'
 				),
-				'quality_services' => array(
-					'title' => 'Quality Services',
-					'menu_name'   => '',
-					'slug' => 'quality-services'
+				'quality_assurance' => array(
+					'title' => 'Quality Assurance',
+					'menu_name'   => 'Quality Services',
+					'slug' => 'quality-assurance'
 				)
 			);
 
@@ -81,7 +81,13 @@ get_header(); ?>
 								endif;
 
 								// If our menu array isn't empty display the menu.
-								if($service['menu_name'] != '' || $service['menu_name'] != 'Strategic Consulting' ):
+								// if($service['menu_name'] != '' || $service['menu_name'] != 'Strategic Consulting' ):
+								// 	echo '<div class="text-left service-menu-items">';
+								// 	echo wp_nav_menu( array('menu' => $service['menu_name']));
+								// 	echo '</div>';
+								// endif;
+
+								if($service['menu_name'] == 'Regulatory Affairs' || $service['menu_name'] == 'Compliance Assurance' || $service['menu_name'] == 'Remediation Strategy and Support' ):
 									echo '<div class="text-left service-menu-items">';
 									echo wp_nav_menu( array('menu' => $service['menu_name']));
 									echo '</div>';

@@ -882,7 +882,7 @@ function get_service_image($title) {
     case('Remediation Strategy and Support'):
       $url = $template_path . 'remediation-strategy-icon.jpg';
     break;
-    case('Quality Services'):
+    case('Quality Assurance'):
       $url = $template_path . 'quality-services-icon.jpg';
     break;
     case('Biologics'):

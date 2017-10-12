@@ -34,8 +34,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 .contact-header-icon { margin-right: .25rem; }
 
 /*== BULLET STYLES ==*/
-ul > li{list-style: none}
-  ul > li::before {
+ul > li,{
+  list-style: none
+}
+ul:not(#menu-desktop-footer-menu):not(#menu-regulatory-affairs):not(.submenu):not(#menu-compliance-assurance):not(#menu-remediation-strategy-and-support):not(#menu-strategic-consulting):not(#mega-menu-menu-1):not(#wp-admin-bar-root-default):not(.mega-sub-menu):not(#menu-mobile-footer-right):not(#menu-mobile-footer-left):not(#menu-pharmaceutical-regulatory-affairs):not(#menu-pharmaceutical-compliance-assurance):not(#menu-pharmaceutical-remediation-strategy-and-support):not(#menu-pharmaceutical-strategic-consulting):not(#menu-our-people):not(#menu-strategic-consulting-2):not(#menu-compliance-assurance-1):not(#menu-regulatory-affairs-1):not(#menu-remediation-strategy-and-support-1):not(#menu-pharmaceutical-compliance-assurance-1):not(#menu-pharmaceutical-regulatory-affairs-1):not(#menu-pharmaceutical-remediation-strategy-and-support-1) > li::before {
   content: "•";
   color: orange;
   display: inline-block;
@@ -1891,6 +1893,9 @@ a:active {
 .entry-summary {
 	margin: 1.5em 0 0;
 }
+.entry-content ul{
+  list-style-type: none;
+}
 
 .page-links {
 	clear: both;
@@ -3114,19 +3119,30 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 #mobile-menu #top-nav-wrapper { padding: 1.5rem 0rem; }
 #mobile-menu > #bottom-nav-wrapper > li > a:focus { background-color: #c4612b; color: #fff; }
 #mobile-menu > #bottom-nav-wrapper > li { border-bottom: 1px solid #9d938b; }
-#mobile-menu > #bottom-nav-wrapper > li ul { background-color: #fff; margin-left: 0rem; padding-left: 1.5rem; }
+#mobile-menu > #bottom-nav-wrapper > li ul { background-color: #fff; margin-left: 0rem; padding-left: 2rem; }
 
 
 #bottom-nav-wrapper { border-top: 1px solid #9d938b; border-bottom: 1px solid #9d938b; }
-
-#bottom-nav-wrapper > li:first-child > ul { padding: 2rem 0rem; }
+#bottom-nav-wrapper li.menu-item a{
+  font-size: 0.9rem;
+}
+#bottom-nav-wrapper h3 a{
+  color: #000 !important;
+}
+#bottom-nav-wrapper > li > ul { padding: 1rem 0rem; }
 #mobile-menu > #bottom-nav-wrapper > li > ul > li > div > ul,
 #mobile-menu > #bottom-nav-wrapper > li > ul > li > div > ul a { 
 	padding-left: 0rem; 
-    padding: .5rem 0rem;
-    line-height: 1.5rem;
+  padding: .5rem 0rem;
+  line-height: 1.5rem;
 }
-#mobile-menu li ul li { list-style: none; }
+#mobile-menu > #bottom-nav-wrapper > li > ul > li > div > ul{
+  padding-left: .5rem;
+}
+#mobile-menu li ul li {
+  list-style: none;
+  display:block
+}
 #mobile-menu li h3 { font-weight: bold; font-size: 19px; color: #000; }
 #mobile-menu #bottom-nav-wrapper li  ul li:first-child { font-size: 1rem; }
 
@@ -3162,7 +3178,6 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 	font-family: 'FontAwesome';
     transform: translateY(-50%) !important; 
 }
-
 .open { background-color: #f8f7f5; }
 .bar-open { background: #c4612b; }
 div.bar.animate::before { background: #c4612b; }
