@@ -1410,3 +1410,13 @@ add_filter( 'manage_edit-webinars_sortable_columns', 'sort_webinar_status_column
 add_filter('manage_webinars_posts_columns', 'webinars_columns_head');
 add_action('manage_webinars_posts_custom_column', 'webinars_columns_content', 10);
 
+function orange_button_shortcode( $atts, $content = null ) {
+  $atts = shortcode_atts(
+    array(
+      'link'   => '',
+      'target' => '',
+    ), $atts
+  );
+  return '<a href="'.$atts['link'].'"'. 'target="' . $atts['target'] . '"><button class="orange-btn" style="width: auto;">' . $content . '</div></a>';
+}
+add_shortcode( 'orange-button', 'orange_button_shortcode' );
