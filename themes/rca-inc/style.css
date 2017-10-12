@@ -29,7 +29,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 */
 
 
-
+#menu-desktop-footer-menu li::before { content: none; }
 
 .contact-header-icon { margin-right: .25rem; }
 
