@@ -74,7 +74,7 @@ get_header(); ?>
 									echo '<div class="row">';
 									echo '<div class="small-12 columns">';
 									echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
-									echo '<div class="service-title"><a href="' . home_url( 'services/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
+									echo '<div class="service-title"><a href="' . home_url( 'medical-device/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
 									echo '</div>';
 									echo '</div>';
 									echo '</div>';
@@ -141,7 +141,7 @@ get_header(); ?>
 	</div>
 
 	<!-- RELATED CONTENT -->
-	<?php get_template_part('template-parts/content', 'related-content'); ?>
+	<?php //get_template_part('template-parts/content', 'related-content'); ?>
 	<!-- /RELATED CONTENT -->
 	
 	<!-- LEARN MORE FORM -->

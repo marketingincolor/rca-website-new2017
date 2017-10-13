@@ -14,9 +14,26 @@ $references_text  = get_field('references_text');
 	<div class="row">
 		<div class="small-10 small-offset-1 columns text-left">
 			<h1><?php the_title(); ?></h1>
+
+			<?php if (get_field('subheading')) { ?>
+				<h2 class="subheading"><?php the_field('subheading') ?></h2>
+			<?php } ?>
+
 		</div>
 	</div>
 	<!-- /Title -->
+
+	<!-- Author Info -->
+	<?php if (get_field('subheading')) { ?>
+
+	<div class="row">
+		<div class="small-10 small-offset-1 columns text-left">
+			<aside style="color:#9d938b"><?php the_field('author_info'); ?></aside>
+		</div>
+	</div>
+
+	<?php } ?>
+	<!-- /Author Info -->
 
 	<!-- Button -->
 	<div class="row">

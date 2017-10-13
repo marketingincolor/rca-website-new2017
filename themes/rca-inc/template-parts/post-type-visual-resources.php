@@ -28,7 +28,14 @@ $pdf              = get_field('visual_resource_pdf');
 	<!-- Content -->
 	<div id="expertise-content" class="row">
 		<div class="small-10 small-offset-1 columns" >
-			<?php the_content(); ?>
+			<div class="row">
+				<div class="medium-3 columns">
+					<a href="<?php the_field('resource_image'); ?>"><img src="<?php the_field('resource_image'); ?>" alt="<?php the_title(); ?>"></a>
+				</div>
+				<div class="medium-9 columns">
+					<?php the_content(); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 	<!-- /Content -->

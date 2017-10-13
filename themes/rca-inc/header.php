@@ -297,8 +297,7 @@
 									<div class="row">
 										<div class="small-8 columns">
 											<?php 
-												wp_nav_menu( 
-													$args = array( 
+											    wp_nav_menu($args = array( 
 														'menu' => 'Secondary Menu',
 														'walker' => new RCA_SECONDARY_WALKER()
 												 	)
