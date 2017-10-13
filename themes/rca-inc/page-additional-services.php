@@ -15,7 +15,7 @@ get_header(); ?>
 	<!-- / Featured Image -->
 
 	<div class="page-wrapper">
-			
+		
 		<?php get_template_part( 'template-parts/section', 'breadcrumbs-social'); ?>
 
 		<!-- The Content -->

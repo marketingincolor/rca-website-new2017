@@ -47,11 +47,16 @@ get_header(); ?>
 			'menu_name'   => 'Pharmaceutical Remediation Strategy and Support',
 			'slug' => 'remediation-strategy-and-support'
 		),
-		'quality_assurance' => array(
-			'title' => 'Quality Assurance',
-			'menu_name'   => 'Quality Assurance',
-			'slug' => 'quality-assurance'
-		)
+		'strategic_consulting' => array(
+			'title' => 'Strategic Consulting',
+			'menu_name'   => 'Pharmaceutical Strategic Consulting',
+			'slug' => 'strategic-consulting'
+		),
+		// 'quality_assurance' => array(
+		// 	'title' => 'Quality Assurance',
+		// 	'menu_name'   => 'Quality Assurance',
+		// 	'slug' => 'quality-assurance'
+		// )
 	);
 
 	?>
@@ -70,12 +75,12 @@ get_header(); ?>
 							if ( true ): 
 								echo '<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center" data-equalizer-watch>';
 								echo '<div class="service-block">';
-								echo '<div class="row">';
-								echo '<div class="small-12 columns">';
-								echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
-								echo '<div class="service-title"><a href="' . home_url( 'pharmaceutical/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
-								echo '</div>';
-								echo '</div>';
+								  echo '<div class="row">';
+								    echo '<div class="small-12 columns">';
+								      echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
+								        echo '<div class="service-title"><a href="' . home_url( 'pharmaceutical/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
+								    echo '</div>';
+								  echo '</div>';
 								echo '</div>';
 							endif;
 
@@ -86,7 +91,7 @@ get_header(); ?>
 							// 	echo '</div>';
 							// endif;
 
-							if($service['menu_name'] == 'Pharmaceutical Regulatory Affairs' || $service['menu_name'] == 'Pharmaceutical Compliance Assurance' || $service['menu_name'] == 'Pharmaceutical Remediation Strategy and Support' ):
+							if($service['menu_name'] == 'Pharmaceutical Regulatory Affairs' || $service['menu_name'] == 'Pharmaceutical Compliance Assurance' || $service['menu_name'] == 'Pharmaceutical Remediation Strategy and Support' || $service['menu_name'] == 'Pharmaceutical Strategic Consulting' ):
 								echo '<div class="text-left service-menu-items">';
 								echo wp_nav_menu( array('menu' => $service['menu_name']));
 								echo '</div>';
@@ -109,11 +114,11 @@ get_header(); ?>
 				<!-- Hardcoded Strategic Consulting  -->
 				<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 					<div class="service-block">
-						<div class="service-icon"><img src="<?php echo get_service_image('Strategic Consulting'); ?>" alt=""></div>
-						<div class="service-title"><a href="<?php echo home_url('services/strategic-consulting'); ?>">Strategic Consulting</a></div>
+						<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
+						<div class="service-title"><a href="<?php echo home_url('pharmaceutical/quality-assurance'); ?>">Quality Assurance</a></div>
 					</div>
 					<div class="text-left service-menu-items">
-						<?php echo wp_nav_menu( array('menu'=> 'Strategic Consulting' ) ); ?>
+						<?php echo wp_nav_menu(array('menu'=> 'Pharaceutical Quality Assurance')); ?>
 					</div>
 				</div>
 				<!-- /Hardcoded Strategic Consulting -->
@@ -123,11 +128,11 @@ get_header(); ?>
 				<!-- Hardcoded Strategic Consulting  -->
 				<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 					<div class="service-block">
-						<div class="service-icon"><img src="<?php echo get_service_image('Strategic Consulting'); ?>" alt=""></div>
-						<div class="service-title"><a href="<?php echo home_url('services/strategic-consulting'); ?>">Strategic Consulting</a></div>
+						<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
+						<div class="service-title"><a href="<?php echo home_url('services/quality-assurance'); ?>">Quality Assurance</a></div>
 					</div>
 					<div class="text-left service-menu-items">
-						<?php echo wp_nav_menu( array('menu'=> 'Strategic Consulting' ) ); ?>
+						<?php //echo wp_nav_menu( array('menu'=> 'Quality Assurance' ) ); ?>
 					</div>
 				</div>
 				<!-- /Hardcoded Strategic Consulting -->

@@ -66,7 +66,7 @@ else {
 						<?php endif; ?>
 
 						<?php if(!empty(get_field('faqs_download_link')) && !empty(get_field('faq_download_text')) ): ?>
-							<a href="<?php the_field('faqs_download_link'); ?>"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
+							<a href="<?php the_field('faqs_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
 						<?php endif; ?>
 					</div>
 					<!-- /DOWNLOAD LINKS -->
