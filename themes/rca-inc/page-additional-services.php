@@ -61,7 +61,7 @@ get_header(); ?>
 								echo '<div class="small-10 small-offset-1 medium-4 medium-offset-0 columns text-center end" data-equalizer-watch>';
 								echo '<div class="service-block">';
 								echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
-								echo '<div class="service-title"><a href="' . home_url( 'services/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
+								echo '<div class="service-title"><a href="' . home_url( 'additional-services/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
 								echo '</div>';
 
 							// If our menu array isn't empty display the menu.

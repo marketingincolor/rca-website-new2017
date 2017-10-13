@@ -57,7 +57,7 @@ if (!is_page()) {
 			array(
 				'taxonomy'   => 'services',
 				'field'      => 'term_id',
-				'terms'      => $tax_id,
+				'terms'      => $terms_array,
 			),
 		),
 	);

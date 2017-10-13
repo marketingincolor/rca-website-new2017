@@ -1059,7 +1059,7 @@ function rca_tax_post_pagination() {
         $links[] = $paged + 1;
     }
  
-    echo '<div class="navigation text-center"><ul>' . "\n";
+    echo '<div class="navigation text-center"><ul id="pagination">' . "\n";
 
     /** Previous Post Link */
     if(!get_previous_posts_link() ):
