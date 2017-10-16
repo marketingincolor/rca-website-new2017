@@ -731,56 +731,71 @@ add_filter("wp_nav_menu", function( $nav_menu ) {
  * Retrievs Team Members on About > Our People Page
  * @param  string $role_type used for gettings users under each category
  */
-function get_team_members($role_type) {
+function get_team_members($department) {
+
   $args = array(
-    'role' => $role_type,
-    'fields' => 'ID',
-    'meta_key' => 'order',
-    'orderby' => 'meta_value',
-    'order' => 'ASC'
+    'post_type' => 'staff',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'department',
+        'field'    => 'slug',
+        'terms'    => $department,
+      ),
+    ),
   );
-  $team_query = new WP_User_Query( $args );
-  $team_members = $team_query->get_results();
+
+  $team_query = new WP_Query( $args );
+  $team_members = $team_query->posts;
   if ( !empty($team_members)) {
     $last = count($team_members);
     $end = '';
     // If we have team members count and loop through them...
     for ( $count = 0; $count < $last; $count++ ) {
     // foreach($team_members as $team_member) {
+      
+      $staff_meta = get_post_meta( $team_members[$count]->ID );
+      $position = $staff_meta["position"][0];
       $member_info = get_userdata($team_members[$count]);
-      $member_url = $member_info->user_url;
-      //var_dump($member_info);
-      $first_name = $member_info->first_name;
-      $last_name = $member_info->last_name;
-      $avatar = get_wp_user_avatar($member_info->ID);
-      // Add classes depending on count
-      // Find the longest position and adjust height accordingly.
+
+      $name = get_the_title( $team_members[$count]->ID );
+      $avatar = get_the_post_thumbnail($team_members[$count]->ID);
+
+      // COLUMN HELPER
       if ( $count == 0 || ($count + 1)%3 == 1 ){
         $additionalClass = 'large-offset-3';
       }
       if ( $count == ($last - 1)) {
         $end = 'end';
       }
+
+      // CHECK FOR MISSING THUMBNAIL AND ADD CLASS
       if(empty($avatar)):
         $missing_avatar = 'missing-avatar';
+      else:
+        $missing_avatar = '';
       endif;
+
       echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
-      $position = get_field('position', $member_info);
+
+      // DISPLAY THE AVATAR
       if( !empty($avatar)) : 
         echo $avatar;
       endif;
+
+      // DISPLAY THE NAME
       echo '<div class="staff-wrapper">';
-      if ( !empty($first_name) && !empty($last_name) ) {
-        echo '<div class="staff-name">' . $first_name . ' ' . $last_name . '</div>';
+      if ( !empty($name) ) {
+        echo '<div class="staff-name">' . $name . '</div>';
       }
+
+      // DISPLAY THE POSITION
       if ( !empty($position) ) {
-        echo '<div class="staff-position">' . $position . '</div>';
+        echo '<div class="staff-position">' . $position .  '</div>';
       }
-      $bio_link = get_field('bio_page_link', 'user_' . $member_info->ID);
-      //$bio_link = '/foot';
+
+      $bio_link = get_the_permalink(get_post($team_members[$count]->ID));
       echo '</div>';
-      echo '<a href="' . site_url() . $bio_link .'"><button class="staff-btn">Bio</button></a>';      echo '</div>';
-      $additionalClass = '';
+      echo '<a href="' . $bio_link .'"><button class="staff-btn">Bio</button></a>';      echo '</div>';
     }
   }
   
