@@ -11,9 +11,9 @@ $people = get_field('who_will_benefit');
 $webinar_form_title = get_field('webinar_form_title');
 $webinar_form_copy = get_field('webinar_form_copy');
 $webinar_title = get_field('webinar_title');
-$presenters = get_field('presenters');
-
-$presenters = explode(',', $presenters);
+$presenters = get_field('your_presenters');
+//var_dump($presenters);
+//$presenters = explode(',', $presenters);
 
 
 // Header BG
@@ -34,9 +34,9 @@ get_header(); ?>
 		</main>
 
 		<!-- Presenters Small -->
-		<?php if($presenters[0] != ""): ?>
+		<?php #if($presenters[0] != ""): ?>
 
-		<ul id="presenter-accordian" class="accordion hide-for-medium" data-accordion data-allow-all-closed="true" style="border: none;">
+<!-- 		<ul id="presenter-accordian" class="accordion hide-for-medium" data-accordion data-allow-all-closed="true" style="border: none;">
 			<li class="accordion-item" data-accordion-item>
 				<a href="#!" class="accordion-title">Your Expert Presenters <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				<div id="your-expert-presenters" class="accordion-content" data-tab-content>
@@ -51,34 +51,34 @@ get_header(); ?>
 					<div class="row">
 						<div class="small-10 small-offset-1 columns">
 
-							<?php foreach($presenters as $presenter) {
+							<?php #foreach($presenters as $presenter) {
 								//get user data
-								$user_data = get_userdata($presenter);
-								$user_meta = get_user_meta($user_data->ID);
-								echo '<div id="presenter-block" class="row">';
-								echo '<div class="small-12 medium-2 columns text-center">';
-								echo get_wp_user_avatar($user_data->ID);
-								echo '</div>';
-								echo '<div class="small-12 medium-8 columns text-center end">';
-								echo '<h3>' . $user_data->display_name . '</h3>';
-								echo '<p>' . $user_meta["position"][0] . '</p>';
-								echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
-								echo '</div>';
-								echo '</div>';
+								// $user_data = get_userdata($presenter);
+								// $user_meta = get_user_meta($user_data->ID);
+								// echo '<div id="presenter-block" class="row">';
+								// echo '<div class="small-12 medium-2 columns text-center">';
+								// echo get_wp_user_avatar($user_data->ID);
+								// echo '</div>';
+								// echo '<div class="small-12 medium-8 columns text-center end">';
+								// echo '<h3>' . $user_data->display_name . '</h3>';
+								// echo '<p>' . $user_meta["position"][0] . '</p>';
+								// echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
+								// echo '</div>';
+								// echo '</div>';
 
-							}
+							#}
 							?>
 							
 						</div>
 					</div>
 				</div>
 			</li>
-		</ul>
-		<?php endif; ?>
+		</ul> -->
+		<?php #endif; ?>
 		<!-- /Presenters Small -->
 
 		<!-- Presenters Medium -->
-		<?php if($presenters[0] != "" ): ?>
+		<?php if($presenters): ?>
 
 		<div id="your-expert-presenters" class="show-for-medium">
 
@@ -95,30 +95,28 @@ get_header(); ?>
 
 					<?php foreach($presenters as $presenter) {
 						//get user data
-						$user_data = get_userdata($presenter);
-						$user_meta = get_user_meta($user_data->ID);
+						//var_dump('id:' . $presenter->ID);
+						$user_data = get_userdata($presenter->ID);
+						$user_meta = get_user_meta($presenter->ID);
+
+						// GET USER DATA BY POST NAME
+						
+						
+						//var_dump($user_meta);
 						echo '<div id="presenter-block" class="row">';
 						echo '<div class="small-12 medium-2 columns small-text-center">';
-						if( get_wp_user_avatar($user_data->ID) != NULL ):
-							echo get_wp_user_avatar($user_data->ID);
-
-						else:
-							echo '&nbsp;';
-						endif;
-
+						echo get_the_post_thumbnail( $presenter->ID );
 						echo '</div>';
 						echo '<div class="small-12 medium-8 columns end">';
-						echo '<h3>' . $user_data->display_name . '</h3>';
+						echo '<h3>' . $presenter->post_title . '</h3>';
 
-						if( isset($user_meta["position"][0]) ):
-							echo '<p>' . $user_meta["position"][0] . '</p>';
+						if( !empty($presenter->position) ):
+							echo '<p>' . $presenter->position . '</p>';
+						else: 
+							echo '<br/>';
 						endif;
 
-						if( isset($user_meta["webinar_biography"][0]) ):
-							echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
-
-						endif;
-
+						echo $presenter->post_content;
 						echo '</div>';
 						echo '</div>';
 					}
