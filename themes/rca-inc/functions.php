@@ -739,9 +739,10 @@ function get_team_members($department) {
       array(
         'taxonomy' => 'department',
         'field'    => 'slug',
-        'terms'    => $department,
+        'terms'    => $department
       ),
     ),
+    'posts_per_page' => -1
   );
 
   $team_query = new WP_Query( $args );
@@ -752,7 +753,7 @@ function get_team_members($department) {
     // If we have team members count and loop through them...
     for ( $count = 0; $count < $last; $count++ ) {
     // foreach($team_members as $team_member) {
-      
+      $additionalClass = '';
       $staff_meta = get_post_meta( $team_members[$count]->ID );
       $position = $staff_meta["position"][0];
       $member_info = get_userdata($team_members[$count]);
@@ -777,7 +778,7 @@ function get_team_members($department) {
 
       echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
 
-      // DISPLAY THE AVATAR
+      // DISPLAY THE AVATAR INSIDE DIV. 
       if( !empty($avatar)) : 
         echo $avatar;
       endif;
@@ -797,6 +798,7 @@ function get_team_members($department) {
       echo '</div>';
       echo '<a href="' . $bio_link .'"><button class="staff-btn">Bio</button></a>';      echo '</div>';
     }
+  wp_reset_postdata();
   }
   
   else { echo 'No Team Members Found'; }
