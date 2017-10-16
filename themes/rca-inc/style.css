@@ -186,7 +186,7 @@ body.down .top-menu.clone {
 }
 /*Make all people images be same height*/
 .staff-column img{
-  height: 165px;
+  /*height: 165px;*/
 }
 
 /*Blockquotes seen on white papers*/

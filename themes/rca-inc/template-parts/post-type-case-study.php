@@ -93,13 +93,13 @@
 			<?php if($result_text): ?>
 			<p><?php echo $result_text; ?></p>
 			<?php endif; ?>
+			<?php the_content(); ?>
 			<?php if($references_title && $references_text): ?>
 			<div class="references-section">
 				<p><strong><?php echo $references_title; ?></strong></p>
 				<p><?php echo $references_text; ?></p>
 			</div>
 			<?php endif; ?>
-			<?php the_content(); ?>
 		</div>
 	</div>
 	<!-- /Content MEDIUM -->
@@ -154,7 +154,7 @@
 	<?php if($pdf): ?>
 	<div class="row show-for-medium">
 		<div class="small-10 small-offset-1 columns">
-			<a href="<?php echo $pdf ?>" title="Download" target="_blank"><button style="margin: 1rem 0rem 0rem; width: auto;" class="text-left"><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
+			<a href="<?php echo $pdf ?>" title="Download" target="_blank"><button style="margin: 0rem auto 3rem auto; width: auto; display: block;" class=""><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
 		</div>
 	</div>
 	<?php endif; ?>
