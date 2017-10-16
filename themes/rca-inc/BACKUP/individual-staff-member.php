@@ -1,6 +1,5 @@
 <?php
 /* Template Name: Individual Staff Page */
-$articles = get_field('published_articles_relationship', get_the_ID());
 
 
 get_header(); ?>
@@ -15,26 +14,28 @@ get_header(); ?>
 					<?php
 					while ( have_posts() ) : the_post();
 					
-					$articles = get_field('published_articles_relationship');
-					//var_dump($articles);
+
 					$staff_id = get_field('staff_id');
 					$staff_data = get_userdata($staff_id);
 					$staff_meta = get_user_meta($staff_id);
 					$first_name = $staff_meta["first_name"];
 					$last_name = $staff_meta["last_name"];
-					$email = get_field('email');
+					$full_name = $first_name[0] . ' ' . $last_name[0];
+					$email = $staff_data->user_email;
 					$position = get_field('position', $staff_data);
 
+					//$position = $staff_meta->position;
+					// echo $full_name;
+					// echo $email;
+					// echo $position;
 
 
         			if( has_post_thumbnail()): ?>
         					<div id="individual-staff-wrapper" class="">
         					<img src="<?php echo the_post_thumbnail_url(); ?>" align="left"/>
-        					<h1 style="display:inline-block;"><?php echo the_title(); ?></h1><br />
+        					<h1 style="display:inline-block;"><?php echo $full_name; ?></h1><br />
         					<h2 style="display:inline;"><?php echo $position; ?></h2><br />
-        					<?php if($email): ?>
-        						<div id="individual-email" class="text-left medium-text-center"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto: <?php echo $email; ?>"> <?php echo $email; ?></a></div>
-        					<?php endif; ?>
+        					<div id="individual-email" class="text-left medium-text-center"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto: <?php echo $email; ?>"> <?php echo $email; ?></a></div>
         						
 	        				<?php the_content(); ?>
         					</div>
@@ -54,24 +55,8 @@ get_header(); ?>
 					?>
 
 				</div>
-
-
-
 			</div>
 
-			<!-- PUBLISHED ARTICLES SECTION -->
-			<?php if(!empty($articles)): ?>
-			<div id="pa-section" class="">
-				<div class="row">
-					<div class="small-10 small-offset-1 columns text-center">
-						<h3>Expertise Items</h3>
-						<?php echo do_shortcode('[rca-staff-articles category="" post_id="'.get_the_id() .'" navigation="true" navigationText="&#xf104;, &#xf105;" items=3 autoPlay="true" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="false"]'); ?>
-
-					</div>
-				</div>
-			</div>
-			<?php endif; ?>
-			<!-- /PUBLISHED ARTICLES SECTION -->
 			
 		</main><!-- #main -->
 

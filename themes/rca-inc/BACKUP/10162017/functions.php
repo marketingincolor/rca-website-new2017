@@ -731,57 +731,75 @@ add_filter("wp_nav_menu", function( $nav_menu ) {
  * Retrievs Team Members on About > Our People Page
  * @param  string $role_type used for gettings users under each category
  */
-function get_team_members($role_type) {
+function get_team_members($department) {
+
   $args = array(
-    'role' => $role_type,
-    'fields' => 'ID',
-    'meta_key' => 'order',
-    'orderby' => 'meta_value',
-    'order' => 'ASC'
+    'post_type' => 'staff',
+    'order' => 'menu_order',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'department',
+        'field'    => 'slug',
+        'terms'    => $department
+      ),
+    ),
+    'posts_per_page' => -1
   );
-  $team_query = new WP_User_Query( $args );
-  $team_members = $team_query->get_results();
+
+  $team_query = new WP_Query( $args );
+  $team_members = $team_query->posts;
   if ( !empty($team_members)) {
     $last = count($team_members);
     $end = '';
     // If we have team members count and loop through them...
     for ( $count = 0; $count < $last; $count++ ) {
     // foreach($team_members as $team_member) {
+      $additionalClass = '';
+      $staff_meta = get_post_meta( $team_members[$count]->ID );
+      $position = $staff_meta["position"][0];
       $member_info = get_userdata($team_members[$count]);
-      $member_url = $member_info->user_url;
-      //var_dump($member_info);
-      $first_name = $member_info->first_name;
-      $last_name = $member_info->last_name;
-      $avatar = get_wp_user_avatar($member_info->ID);
-      // Add classes depending on count
-      // Find the longest position and adjust height accordingly.
+
+      $name = get_the_title( $team_members[$count]->ID );
+      $avatar = get_the_post_thumbnail($team_members[$count]->ID);
+
+      // COLUMN HELPER
       if ( $count == 0 || ($count + 1)%3 == 1 ){
         $additionalClass = 'large-offset-3';
       }
       if ( $count == ($last - 1)) {
         $end = 'end';
       }
+
+      // CHECK FOR MISSING THUMBNAIL AND ADD CLASS
       if(empty($avatar)):
         $missing_avatar = 'missing-avatar';
+      else:
+        $missing_avatar = '';
       endif;
+
       echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
-      $position = get_field('position', $member_info);
+
+      // DISPLAY THE AVATAR INSIDE DIV. 
       if( !empty($avatar)) : 
         echo $avatar;
       endif;
+
+      // DISPLAY THE NAME
       echo '<div class="staff-wrapper">';
-      if ( !empty($first_name) && !empty($last_name) ) {
-        echo '<div class="staff-name">' . $first_name . ' ' . $last_name . '</div>';
+      if ( !empty($name) ) {
+        echo '<div class="staff-name">' . $name . '</div>';
       }
+
+      // DISPLAY THE POSITION
       if ( !empty($position) ) {
-        echo '<div class="staff-position">' . $position . '</div>';
+        echo '<div class="staff-position">' . $position .  '</div>';
       }
-      $bio_link = get_field('bio_page_link', 'user_' . $member_info->ID);
-      //$bio_link = '/foot';
+
+      $bio_link = get_the_permalink(get_post($team_members[$count]->ID));
       echo '</div>';
-      echo '<a href="' . site_url() . $bio_link .'"><button class="staff-btn">Bio</button></a>';      echo '</div>';
-      $additionalClass = '';
+      echo '<a href="' . $bio_link .'"><button class="staff-btn">Bio</button></a>';      echo '</div>';
     }
+  wp_reset_postdata();
   }
   
   else { echo 'No Team Members Found'; }
@@ -1240,19 +1258,26 @@ function rca_tax_post_pagination() {
  * Retrieves Team Members on About > Staff Department
  * @param  string $role_type used for gettings users under each category
  */
-function get_team_members_department($role_type) {
+function get_team_members_department($department) {
 
   $args = array(
-    'role' => $role_type,
-    'fields' => 'ID',
-    'meta_key' => 'order',
-    'orderby' => 'meta_value',
-    'order' => 'ASC'
+    'post_type' => 'staff',
+    //'order' => 'menu_order',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'department',
+        'field'    => 'slug',
+        'terms'    => $department
+      ),
+    ),
+    'posts_per_page' => -1
   );
 
-  $team_query = new WP_User_Query( $args );
-  $team_members = $team_query->get_results();
 
+  $dept_query = new WP_Query( $args );
+  $team_members = $dept_query->posts;
+
+  //var_dump($team_members);
 
   if ( !empty($team_members)) {
 
@@ -1262,47 +1287,53 @@ function get_team_members_department($role_type) {
     // If we have team members count and loop through them...
     for ( $count = 0; $count < $last; $count++ ) {
     // foreach($team_members as $team_member) {
-     // var_dump($team_members[$count]);
-      $member_info = get_userdata($team_members[$count]);
-      $person_info = get_user_meta( $team_members[$count] );
+     //var_dump($team_members[$count]);
+      // $member_info = get_userdata($team_members[$count]);
+      // var_dump($member_info);
+      // $person_info = get_user_meta( $team_members[$count] );
       //$author_description = get_the_author_meta( 'description', $user_id = $team_members[$count]->ID );
-      //$member_id = $member_info->ID;
+      $member_id = $team_members[$count]->ID;
+      $member_description = $team_members[$count]->post_content;
       //var_dump($member_id);
-      //
+
+      //var_dump($member_info);
       //var_dump($person_info['description'][0]);
       
-      $member_url = $member_info->user_url;
-      $email = $member_info->user_email;
-      $first_name = $member_info->first_name;
-      $last_name = $member_info->last_name;
-      $avatar = get_wp_user_avatar($member_info->ID);
-      $id_link = strtolower($first_name . '-' . $last_name);
+      // $member_url = $member_info->user_url;
+      $email = get_field('email', $member_id);
+      // $first_name = $member_info->first_name;
+      // $last_name = $member_info->last_name;
+      //$avatar = get_wp_user_avatar($member_info->ID);
+      //$id_link = strtolower($first_name . '-' . $last_name);
       // Add classes depending on count
       // Find the longest position and adjust height accordingly.
 
       echo '<div id="staff-block" class="row">';
       echo '<div class="small-10 small-offset-1">';
 
-      $position = get_field('position', $member_info);
+      //$position = get_field('position', $member_info);
 
       echo '<div class="staff-wrapper">';
 
-      if ( !empty($first_name) && !empty($last_name) ) {
-        echo '<div class="department-staff-name text-center"><h1><a href="'. $member_url .'" id="' . $id_link . '">' . $first_name . ' ' . $last_name . '</a></h1></div>';
+      if ( !empty( $member_id ) ) {
+        echo '<div class="department-staff-name text-center"><h1><a href="' . get_the_permalink($member_id) .'" id="">' . get_the_title($member_id) . '</a></h1></div>';
       }
 
       if ( !empty($position) ) {
-        echo '<h2 class="text-center">' . $position . '</h2>';
+        //echo '<h2 class="text-center">' . $position . '</h2>';
       }
 
-      echo '<div id="individual-email" class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> '. $email .'</div>';
-      echo '<p>'. $person_info['description'][0] .'</p>';
+      if( !empty($email)) : 
+        echo '<div id="individual-email" class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> '. $email .'</div>';
+      endif;
+      echo '<p>'. $member_description .'</p>';
+
       echo '</div>';
       echo '</div>';
       echo '</div>';
 
 
-      $additionalClass = '';
+      // $additionalClass = '';
     }
 
   }
@@ -1543,3 +1574,48 @@ function orange_button_shortcode( $atts, $content = null ) {
   return '<a href="'.$atts['link'].'"'. 'target="' . $atts['target'] . '"><button class="orange-btn" style="width: auto;">' . $content . '</div></a>';
 }
 add_shortcode( 'orange-button', 'orange_button_shortcode' );
+
+function rca_staff_articles($atts, $content = null) {
+    extract(shortcode_atts(array(
+        'category' => 'Uncategorized',
+                    ), $atts));
+
+    $data_attr = "";
+    foreach ($atts as $key => $value) {
+        if ($key != "category") {
+            $data_attr .= ' data-' . $key . '="' . $value . '" ';
+        }
+    }
+
+  $lazyLoad = array_key_exists("lazyload", $atts) && $atts["lazyload"] == true;
+  $result = '<div id="owl-carousel-pa-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
+
+
+
+
+        $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
+        $meta_link = get_post_meta(get_the_ID());
+
+        #var_dump(get_post_meta(get_the_ID()));
+
+          $articles = get_field('published_articles_relationship', get_the_ID());
+          foreach($articles as $article) {
+            $result .= '<div class="item">';
+            $result .= '<div class="row">';
+            $result .= '<div class="small-10 small-offset-1 columns">';
+            $result .= '<div class="owl-carousel-item-text">';
+            $result .= '<a href="' . get_the_permalink($article) . '">';
+            $result .= '<p>' . $article->post_title . '...<span style="color: #c4612b; text-decoration: underline;">Read More</span></p></a>';
+            $result .= '</div></div>';
+            $result .= '</div></div>';
+          }
+    
+
+    $result .= '</div>';
+    
+    /* Restore original Post Data */
+    wp_reset_postdata();
+
+    return $result;
+}
+add_shortcode('rca-staff-articles', 'rca_staff_articles');

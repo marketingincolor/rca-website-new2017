@@ -3,7 +3,7 @@
 
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-$department = strtolower($post->post_name);
+$department = $post->post_name;
 
 get_header(); ?>
 	
@@ -18,7 +18,7 @@ get_header(); ?>
 
 	<?php get_template_part( 'template-parts/section', 'breadcrumbs-social'); ?>
 	<?php
-		//var_dump($department);
+
 		$staff_id = get_field('staff_id');
 		$staff_data = get_userdata($staff_id);
 		$staff_meta = get_user_meta($staff_id);
@@ -34,27 +34,27 @@ get_header(); ?>
 		// get_team_members_department returns page content for that user role.
 		switch($department) {
 			case("board-of-directors"):
-				get_team_members_department($department);
+				get_team_members_department('board_of_directors');
 				break;
 
 			case("executive-leadership-team"):
-				get_team_members_department($department);
+				get_team_members_department('executive_leadership');
 				break;
 
 			case("directors"):
-				get_team_members_department($department);
+				get_team_members_department('directors');
 				break;
 			
 			case("operations"):
-				get_team_members_department($department);
+				get_team_members_department('operations');
 				break;
 
 			case("sales-operations"):
-				get_team_members_department($department);
+				get_team_members_department('sales_operations');
 				break;
 
 			case("finance"):
-				get_team_members_department($department);
+				get_team_members_department('finance');
 				break;
 			default:
 				echo 'No members found...';
