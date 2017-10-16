@@ -28,6 +28,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+#pa-section { height: 150px; background-color: #f8f7f5; }
 
 #menu-desktop-footer-menu li::before { content: none; }
 

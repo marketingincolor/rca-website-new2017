@@ -14,21 +14,16 @@ get_header(); ?>
 					<?php
 					while ( have_posts() ) : the_post();
 					
-
+					$articles = get_field('published_articles_relationship');
+					var_dump($articles);
 					$staff_id = get_field('staff_id');
 					$staff_data = get_userdata($staff_id);
 					$staff_meta = get_user_meta($staff_id);
 					$first_name = $staff_meta["first_name"];
 					$last_name = $staff_meta["last_name"];
-					//$full_name = $first_name[0] . ' ' . $last_name[0];
-					//$email = $staff_data->user_email;
 					$email = '';
 					$position = get_field('position', $staff_data);
 
-					//$position = $staff_meta->position;
-					// echo $full_name;
-					// echo $email;
-					// echo $position;
 
 
         			if( has_post_thumbnail()): ?>
@@ -58,8 +53,18 @@ get_header(); ?>
 					?>
 
 				</div>
+
+
+
 			</div>
 
+			<!-- PUBLISHED ARTICLES SECTION -->
+			<div id="pa-section" class="row expanded">
+				<div class="small-12 columns text-center">
+					<h3>Published Articles</h3>
+				</div>
+			</div>
+			<!-- /PUBLISHED ARTICLES SECTION -->
 			
 		</main><!-- #main -->
 
