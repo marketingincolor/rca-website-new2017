@@ -34,27 +34,25 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 .contact-header-icon { margin-right: .25rem; }
 
 /*== BULLET STYLES ==*/
-ul > li{list-style: none}
-  ul > li::before {
+ul > li,.entry-content ul,.archive ul{
+  list-style: none
+}
+ul:not(#menu-desktop-footer-menu):not(#menu-strategic-consulting-3):not(#wp-admin-bar-user-actions):not(#wp-admin-bar-new-content-default):not(#wp-admin-bar-appearance):not(#wp-admin-bar-site-name-default):not(#wp-admin-bar-top-secondary):not(#menu-strategic-consulting-1):not(#menu-pharmaceutical-strategic-consulting-1):not(#pagination):not(#menu-regulatory-affairs):not(.submenu):not(#menu-compliance-assurance):not(#menu-remediation-strategy-and-support):not(#menu-strategic-consulting):not(#mega-menu-menu-1):not(#wp-admin-bar-root-default):not(.mega-sub-menu):not(#menu-mobile-footer-right):not(#menu-mobile-footer-left):not(#menu-pharmaceutical-regulatory-affairs):not(#menu-pharmaceutical-compliance-assurance):not(#menu-pharmaceutical-remediation-strategy-and-support):not(#menu-pharmaceutical-strategic-consulting):not(#menu-our-people):not(#menu-strategic-consulting-2):not(#menu-compliance-assurance-1):not(#menu-regulatory-affairs-1):not(#menu-remediation-strategy-and-support-1):not(#menu-pharmaceutical-compliance-assurance-1):not(#menu-pharmaceutical-regulatory-affairs-1):not(#menu-pharmaceutical-remediation-strategy-and-support-1) > li::before {
   content: "•";
-  color: orange;
+  color: #C4612B;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+  font-size: 20px;
+  line-height: 10px;
 }
 ul > li > ul > li::before {
   content: "•";
-  color: #000;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  color: #000!important;
 }
 ul > li > ul > li > ul > li::before {
-  content: "-";
+  content: "-"!important;
   color: #000;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
 }
 /*== END BULLET STYLES ==*/
 #sign-up-cta .mobile div h3 { 
@@ -193,7 +191,7 @@ blockquote, blockquote p {
     font-weight: bold;
     font-style: italic;
     font-size: 20px;
-    color: #236192;
+    color: #2B2B2B;
 }
 
 blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; }
@@ -619,7 +617,11 @@ h2 {
 	font-size: 1.375rem;
 	font-family: 'roboto', sans-serif;  
 }
-
+.subheading{
+  font-size: 1.375rem;
+  color: #2B2B2B;
+  margin: 1.875rem 0;
+}
 #your-expert-presenters-label i { font-size: 1rem; }
 
 #location-accordian .accordian-content { padding: 3rem 0rem; }
@@ -1070,7 +1072,15 @@ input[type=number]::-webkit-outer-spin-button {
 	padding: 1rem 4rem;
 }
 
-
+#additional-services .service-block{
+  border-bottom: none
+}
+#additional-services img{
+  width: 60px
+}
+.service-block img{
+  height: 60px;
+}
 /* Used on pre-footer large form */
 #learn-more-form-container-white [type=color], 
 #learn-more-form-container-white [type=date], 
@@ -1890,6 +1900,9 @@ a:active {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
+}
+.entry-content ul{
+  list-style-type: none;
 }
 
 .page-links {
@@ -2968,20 +2981,32 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 
 .cat-image { 
-    display: inline-block;
-    border: 1px solid white;
-    padding: 0px;
-    border-radius: 50%;
-
-    position: relative;
-    vertical-align: middle;
-	   display: flex;
-    align-items: center;
-    justify-content: center;
-    float: left;
-    height: 40px;
-    width: 40px;
-
+  display: inline-block;
+  border: 1px solid white;
+  padding: 0px;
+  border-radius: 50%;
+  position: relative;
+  vertical-align: middle;
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  height: 40px;
+  width: 40px;
+  transition: all 0.25s ease-in-out;
+}
+#menu-secondary-menu a{
+  width: 16.6%;
+  transition: all 0.25s ease-in-out;
+}
+#menu-secondary-menu a:hover .cat-image {
+  background-color: #FFF;
+}
+#White_Papers_Icon,#Posters_Icon,#Published_Articles_Icon,#webinar_icon,#view_all_icon,#Case_Studies_Icon{
+  transition: all 0.25s ease-in-out;
+}
+#menu-secondary-menu a:hover #White_Papers_Icon,#menu-secondary-menu a:hover #Posters_Icon,#menu-secondary-menu a:hover #Published_Articles_Icon,#menu-secondary-menu a:hover #webinar_icon,#menu-secondary-menu a:hover #Case_Studies_Icon,#menu-secondary-menu a:hover #view_all_icon{
+  fill: #9d938a;
 }
 
 .cat-image img {
@@ -2989,9 +3014,6 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 }
 #menu-secondary-menu{
   display:flex;
-}
-#menu-secondary-menu a{
-  width: 16.6%;
 }
 .secondary-menu-item-wrapper li { 
 	width: 50%;
@@ -3114,19 +3136,30 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 #mobile-menu #top-nav-wrapper { padding: 1.5rem 0rem; }
 #mobile-menu > #bottom-nav-wrapper > li > a:focus { background-color: #c4612b; color: #fff; }
 #mobile-menu > #bottom-nav-wrapper > li { border-bottom: 1px solid #9d938b; }
-#mobile-menu > #bottom-nav-wrapper > li ul { background-color: #fff; margin-left: 0rem; padding-left: 1.5rem; }
+#mobile-menu > #bottom-nav-wrapper > li ul { background-color: #fff; margin-left: 0rem; padding-left: 2rem; }
 
 
 #bottom-nav-wrapper { border-top: 1px solid #9d938b; border-bottom: 1px solid #9d938b; }
-
-#bottom-nav-wrapper > li:first-child > ul { padding: 2rem 0rem; }
+#bottom-nav-wrapper li.menu-item a{
+  font-size: 0.9rem;
+}
+#bottom-nav-wrapper h3 a{
+  color: #000 !important;
+}
+#bottom-nav-wrapper > li > ul { padding: 1rem 0rem; }
 #mobile-menu > #bottom-nav-wrapper > li > ul > li > div > ul,
 #mobile-menu > #bottom-nav-wrapper > li > ul > li > div > ul a { 
 	padding-left: 0rem; 
-    padding: .5rem 0rem;
-    line-height: 1.5rem;
+  padding: .5rem 0rem;
+  line-height: 1.5rem;
 }
-#mobile-menu li ul li { list-style: none; }
+#mobile-menu > #bottom-nav-wrapper > li > ul > li > div > ul{
+  padding-left: .5rem;
+}
+#mobile-menu li ul li {
+  list-style: none;
+  display:block
+}
 #mobile-menu li h3 { font-weight: bold; font-size: 19px; color: #000; }
 #mobile-menu #bottom-nav-wrapper li  ul li:first-child { font-size: 1rem; }
 
@@ -3162,7 +3195,6 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 	font-family: 'FontAwesome';
     transform: translateY(-50%) !important; 
 }
-
 .open { background-color: #f8f7f5; }
 .bar-open { background: #c4612b; }
 div.bar.animate::before { background: #c4612b; }
@@ -3191,3 +3223,7 @@ div.bar.animate::after { background: #c4612b; }
 #expertise-content ul { list-style:outside; display:inline-block; }
 #expertise-content h2 { display:inline-block; }
 .page-wrapper { margin-bottom: 4.5rem; }
+.page-wrapper .menu>li>a{
+  line-height: 1.25rem;
+  font-weight: 400;
+}

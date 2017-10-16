@@ -22,7 +22,7 @@ get_header(); ?>
 			
 			<!-- The Content -->
 			<div class="row text-center">
-				<div class="small-10 small-offset-1 columns">
+				<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns">
 					<?php echo the_content(); ?>
 				</div>
 			</div>
@@ -35,24 +35,29 @@ get_header(); ?>
 			$services_array = array(
 				'regulatory_affairs' => array(
 					'title' => 'Regulatory Affairs',
-					'menu_name'   => 'Medical Device: Regulatory Affairs',
+					'menu_name'   => 'Regulatory Affairs',
 					'slug' => 'regulatory-affairs'
+				),
+				'strategic_consulting' => array(
+					'title' => 'Strategic Consulting',
+					'menu_name'   => 'Strategic Consulting',
+					'slug' => 'strategic-consulting'
 				),
 				'compliance_assurance' => array(
 					'title' => 'Compliance Assurance',
-					'menu_name'   => 'Medical Device: Compliance Assurance',
+					'menu_name'   => 'Compliance Assurance',
 					'slug' => 'compliance-assurance'
 				),
 				'remediation' => array(
 					'title' => 'Remediation Strategy and Support',
-					'menu_name'   => 'Medical Device: Remediation Strategy and Support',
+					'menu_name'   => 'Remediation Strategy and Support',
 					'slug' => 'remediation-strategy-and-support'
 				),
-				'quality_services' => array(
-					'title' => 'Quality Services',
-					'menu_name'   => '',
-					'slug' => 'quality-services'
-				)
+				// 'quality_assurance' => array(
+				// 	'title' => 'Quality Assurance',
+				// 	'menu_name'   => 'Quality Services',
+				// 	'slug' => 'quality-assurance'
+				// ),
 			);
 
 			?>
@@ -73,15 +78,21 @@ get_header(); ?>
 									echo '<div class="service-block">';
 									echo '<div class="row">';
 									echo '<div class="small-12 columns">';
-									echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
-									echo '<div class="service-title"><a href="' . home_url( 'services/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
+									echo '<a href="' . home_url( 'medical-device/' . $service['slug'] ) . '"><div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
+									echo '<div class="service-title">' . $service['title'] . '</a></div>';
 									echo '</div>';
 									echo '</div>';
 									echo '</div>';
 								endif;
 
 								// If our menu array isn't empty display the menu.
-								if($service['menu_name'] != '' || $service['menu_name'] != 'Strategic Consulting' ):
+								// if($service['menu_name'] != '' || $service['menu_name'] != 'Strategic Consulting' ):
+								// 	echo '<div class="text-left service-menu-items">';
+								// 	echo wp_nav_menu( array('menu' => $service['menu_name']));
+								// 	echo '</div>';
+								// endif;
+
+								if($service['menu_name'] == 'Regulatory Affairs' || $service['menu_name'] == 'Compliance Assurance' || $service['menu_name'] == 'Remediation Strategy and Support' || $service['menu_name'] == 'Strategic Consulting' ):
 									echo '<div class="text-left service-menu-items">';
 									echo wp_nav_menu( array('menu' => $service['menu_name']));
 									echo '</div>';
@@ -104,11 +115,11 @@ get_header(); ?>
 					<!-- Hardcoded Strategic Consulting  -->
 					<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 						<div class="service-block">
-							<div class="service-icon"><img src="<?php echo get_service_image('Strategic Consulting'); ?>" alt=""></div>
-							<div class="service-title"><a href="<?php echo home_url('services/strategic-consulting'); ?>">Strategic Consulting</a></div>
+							<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
+							<div class="service-title"><a href="<?php echo home_url('medical-device/quality-assurance'); ?>">Quality Assurance</a></div>
 						</div>
 						<div class="text-left service-menu-items">
-							<?php echo wp_nav_menu( array('menu'=> 'Strategic Consulting' ) ); ?>
+							<?php //echo wp_nav_menu( array('menu'=> 'Quality Assurance' ) ); ?>
 						</div>
 					</div>
 					<!-- /Hardcoded Strategic Consulting -->
@@ -118,11 +129,11 @@ get_header(); ?>
 					<!-- Hardcoded Strategic Consulting  -->
 					<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 						<div class="service-block">
-							<div class="service-icon"><img src="<?php echo get_service_image('Strategic Consulting'); ?>" alt=""></div>
-							<div class="service-title"><a href="<?php echo home_url('services/strategic-consulting'); ?>">Strategic Consulting</a></div>
+							<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
+							<div class="service-title"><a href="<?php echo home_url('medical-device/quality-assurance'); ?>">Quality Assurance</a></div>
 						</div>
 						<div class="text-left service-menu-items">
-							<?php echo wp_nav_menu( array('menu'=> 'Strategic Consulting' ) ); ?>
+							<?php //echo wp_nav_menu( array('menu'=> 'Quality Assurance' ) ); ?>
 						</div>
 					</div>
 					<!-- /Hardcoded Strategic Consulting -->
@@ -135,7 +146,7 @@ get_header(); ?>
 	</div>
 
 	<!-- RELATED CONTENT -->
-	<?php get_template_part('template-parts/content', 'related-content'); ?>
+	<?php //get_template_part('template-parts/content', 'related-content'); ?>
 	<!-- /RELATED CONTENT -->
 	
 	<!-- LEARN MORE FORM -->

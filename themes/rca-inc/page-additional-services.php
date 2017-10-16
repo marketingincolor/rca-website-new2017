@@ -15,13 +15,13 @@ get_header(); ?>
 	<!-- / Featured Image -->
 
 	<div class="page-wrapper">
-			
+		
 		<?php get_template_part( 'template-parts/section', 'breadcrumbs-social'); ?>
 
 		<!-- The Content -->
 		<div class="row text-center">
-			<div class="small-12 columns">
-				<article class="article-content"><?php echo the_content(); ?></article>
+			<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
+				<?php the_content(); ?>
 			</div>
 		</div>
 		<!-- /The Content -->
@@ -51,7 +51,7 @@ get_header(); ?>
 		?>
 		<!-- /List of Services -->
 
-		<div id="" class="row">
+		<div id="additional-services" class="row">
 
 				<!-- Loop Through Services -->
 					<?php
@@ -60,8 +60,8 @@ get_header(); ?>
 
 								echo '<div class="small-10 small-offset-1 medium-4 medium-offset-0 columns text-center end" data-equalizer-watch>';
 								echo '<div class="service-block">';
-								echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
-								echo '<div class="service-title"><a href="' . home_url( 'services/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
+								echo '<a href="' . home_url( 'additional-services/' . $service['slug'] ) . '"><div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
+								echo '<div class="service-title">' . $service['title'] . '</a></div>';
 								echo '</div>';
 
 							// If our menu array isn't empty display the menu.
