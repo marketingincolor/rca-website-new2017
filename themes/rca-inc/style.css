@@ -344,7 +344,7 @@ main { margin-bottom: 0rem; }
     font-weight: bold;
 }
 #related-content-mobile h4 { padding-bottom: 2.5rem; }
-#all-case-study-content {  }
+#all-case-study-content { padding-bottom: 5%; }
 
 #dl-block p { margin-bottom: 0rem; }
 #share-block-cs p { margin-bottom: 0rem; }
