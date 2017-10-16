@@ -37,6 +37,11 @@ get_header(); ?>
 			'menu_name'   => 'Pharmaceutical Regulatory Affairs',
 			'slug' => 'regulatory-affairs'
 		),
+		'strategic_consulting' => array(
+			'title' => 'Strategic Consulting',
+			'menu_name'   => 'Pharmaceutical Strategic Consulting',
+			'slug' => 'strategic-consulting'
+		),
 		'compliance_assurance' => array(
 			'title' => 'Compliance Assurance',
 			'menu_name'   => 'Pharmaceutical Compliance Assurance',
@@ -46,11 +51,6 @@ get_header(); ?>
 			'title' => 'Remediation Strategy and Support',
 			'menu_name'   => 'Pharmaceutical Remediation Strategy and Support',
 			'slug' => 'remediation-strategy-and-support'
-		),
-		'strategic_consulting' => array(
-			'title' => 'Strategic Consulting',
-			'menu_name'   => 'Pharmaceutical Strategic Consulting',
-			'slug' => 'strategic-consulting'
 		),
 		// 'quality_assurance' => array(
 		// 	'title' => 'Quality Assurance',
@@ -77,8 +77,8 @@ get_header(); ?>
 								echo '<div class="service-block">';
 								  echo '<div class="row">';
 								    echo '<div class="small-12 columns">';
-								      echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
-								        echo '<div class="service-title"><a href="' . home_url( 'pharmaceutical/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
+								      echo '<a href="' . home_url( 'pharmaceutical/' . $service['slug'] ) . '"><div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
+								        echo '<div class="service-title">' . $service['title'] . '</a></div>';
 								    echo '</div>';
 								  echo '</div>';
 								echo '</div>';

@@ -22,7 +22,7 @@ get_header(); ?>
 			
 			<!-- The Content -->
 			<div class="row text-center">
-				<div class="small-10 small-offset-1 medium-12 columns">
+				<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns">
 					<?php echo the_content(); ?>
 				</div>
 			</div>
@@ -38,6 +38,11 @@ get_header(); ?>
 					'menu_name'   => 'Regulatory Affairs',
 					'slug' => 'regulatory-affairs'
 				),
+				'strategic_consulting' => array(
+					'title' => 'Strategic Consulting',
+					'menu_name'   => 'Strategic Consulting',
+					'slug' => 'strategic-consulting'
+				),
 				'compliance_assurance' => array(
 					'title' => 'Compliance Assurance',
 					'menu_name'   => 'Compliance Assurance',
@@ -47,11 +52,6 @@ get_header(); ?>
 					'title' => 'Remediation Strategy and Support',
 					'menu_name'   => 'Remediation Strategy and Support',
 					'slug' => 'remediation-strategy-and-support'
-				),
-				'strategic_consulting' => array(
-					'title' => 'Strategic Consulting',
-					'menu_name'   => 'Strategic Consulting',
-					'slug' => 'strategic-consulting'
 				),
 				// 'quality_assurance' => array(
 				// 	'title' => 'Quality Assurance',
@@ -78,8 +78,8 @@ get_header(); ?>
 									echo '<div class="service-block">';
 									echo '<div class="row">';
 									echo '<div class="small-12 columns">';
-									echo '<div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
-									echo '<div class="service-title"><a href="' . home_url( 'medical-device/' . $service['slug'] ) . '">' . $service['title'] . '</a></div>';
+									echo '<a href="' . home_url( 'medical-device/' . $service['slug'] ) . '"><div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
+									echo '<div class="service-title">' . $service['title'] . '</a></div>';
 									echo '</div>';
 									echo '</div>';
 									echo '</div>';

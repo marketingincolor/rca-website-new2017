@@ -20,8 +20,8 @@ get_header(); ?>
 
 		<!-- The Content -->
 		<div class="row text-center">
-			<div class="small-12 columns">
-				<article class="article-content"><?php echo the_content(); ?></article>
+			<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
+				<?php the_content(); ?>
 			</div>
 		</div>
 		<!-- /The Content -->
