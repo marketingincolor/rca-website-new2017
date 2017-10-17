@@ -760,7 +760,7 @@ function get_team_members($department) {
       $member_info = get_userdata($team_members[$count]);
 
       $name = get_the_title( $team_members[$count]->ID );
-      $photo = get_the_post_thumbnail($team_members[$count]->ID);
+      $avatar = get_the_post_thumbnail($team_members[$count]->ID);
 
       // COLUMN HELPER
       if ( $count == 0 || ($count + 1)%3 == 1 ){
@@ -777,11 +777,11 @@ function get_team_members($department) {
         $missing_avatar = '';
       endif;
 
-      echo '<div class="small-10 small-offset-1 medium-offset-0 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
+      echo '<div class="small-12 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
 
       // DISPLAY THE AVATAR INSIDE DIV. 
-      if( !empty($photo)) : 
-        echo $photo;
+      if( !empty($avatar)) : 
+        echo $avatar;
       endif;
 
       // DISPLAY THE NAME
@@ -795,13 +795,7 @@ function get_team_members($department) {
         echo '<div class="staff-position">' . $position .  '</div>';
       }
 
-      if($department == 'operations' || $department == 'sales-operations' || $department == 'finance' || $department == 'directors') {
-        $bio_link = $department . '#' . preg_replace('/[\s_]/', '-', get_the_title($team_members[$count]->ID));
-      }
-      else{
-        $bio_link = get_the_permalink(get_post($team_members[$count]->ID));
-      }
-
+      $bio_link = get_the_permalink(get_post($team_members[$count]->ID));
       echo '</div>';
       echo '<a href="' . $bio_link .'"><button class="staff-btn">Bio</button></a>';      echo '</div>';
     }
@@ -1307,7 +1301,6 @@ function get_team_members_department($department) {
       
       // $member_url = $member_info->user_url;
       $email = get_field('email', $member_id);
-      $position = get_field('position', $member_id);
       // $first_name = $member_info->first_name;
       // $last_name = $member_info->last_name;
       //$avatar = get_wp_user_avatar($member_info->ID);
@@ -1323,11 +1316,11 @@ function get_team_members_department($department) {
       echo '<div class="staff-wrapper">';
 
       if ( !empty( $member_id ) ) {
-        echo '<div class="department-staff-name text-center"><h1><a href="' . get_the_permalink($member_id) .'" id="'. preg_replace('/[\s_]/', '-', get_the_title($member_id)) .'">' . get_the_title($member_id) . '</a></h1></div>';
+        echo '<div class="department-staff-name text-center"><h1><a href="' . get_the_permalink($member_id) .'" id="">' . get_the_title($member_id) . '</a></h1></div>';
       }
 
       if ( !empty($position) ) {
-        echo '<h2 class="text-center">' . $position . '</h2>';
+        //echo '<h2 class="text-center">' . $position . '</h2>';
       }
 
       if( !empty($email)) : 

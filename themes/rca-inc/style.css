@@ -28,6 +28,13 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+/*PUBLISHED ARTICLE SLIDER FOR AUTHORS*/
+#owl-carousel-pa-slider div .owl-pagination { padding-top: 0rem; }
+#owl-carousel-pa-slider .owl-prev,#owl-carousel-pa-slider .owl-next { bottom: 0px; top: 30%;}
+#owl-carousel-pa-slider div.item { padding: 0px 0px;  }
+#owl-carousel-pa-slider a { color: #2b2b2b; }
+#pa-section { background-color: #f8f7f5; padding: 75px 0px;}
+#pa-section h3 { padding-bottom: 50px; }
 
 #menu-desktop-footer-menu li::before { content: none; }
 
@@ -179,7 +186,7 @@ body.down .top-menu.clone {
 }
 /*Make all people images be same height*/
 .staff-column img{
-  height: 165px;
+  /*height: 165px;*/
 }
 
 /*Blockquotes seen on white papers*/
@@ -2730,7 +2737,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 .service-title { font-family: 'Roboto'; font-size: 1.375rem; font-weight: bold; padding: 0rem 0rem 1rem 0rem; }
 .service-title a { color: #2b2b2b; }
 .service-icon { padding: 1rem 0rem; }
-.service-block { border-bottom: 2px solid #cbc5bd;margin-bottom: 1rem;}
+.service-block { margin-bottom: 1rem;}
 .service-menu-items div ul li a { font-size: 1rem; font-family: 'Roboto', sans-serif; color: #2b2b2b; }
 .service-menu-items div ul li a:hover { color: #c4612b; }
 .service-menu-items div .menu > li { display: block; }
