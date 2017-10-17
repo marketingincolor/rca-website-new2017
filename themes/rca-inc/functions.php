@@ -8,79 +8,79 @@
  */
 
 if ( ! function_exists( 'rca_inc_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
-	function rca_inc_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on RCA Inc., use a find and replace
-		 * to change 'rca-inc' to the name of your theme in all the template files.
-		 */
-		load_theme_textdomain( 'rca-inc', get_template_directory() . '/languages' );
+  /**
+   * Sets up theme defaults and registers support for various WordPress features.
+   *
+   * Note that this function is hooked into the after_setup_theme hook, which
+   * runs before the init hook. The init hook is too late for some features, such
+   * as indicating support for post thumbnails.
+   */
+  function rca_inc_setup() {
+    /*
+     * Make theme available for translation.
+     * Translations can be filed in the /languages/ directory.
+     * If you're building a theme based on RCA Inc., use a find and replace
+     * to change 'rca-inc' to the name of your theme in all the template files.
+     */
+    load_theme_textdomain( 'rca-inc', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
+    // Add default posts and comments RSS feed links to head.
+    add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
-		add_theme_support( 'title-tag' );
+    /*
+     * Let WordPress manage the document title.
+     * By adding theme support, we declare that this theme does not use a
+     * hard-coded <title> tag in the document head, and expect WordPress to
+     * provide it for us.
+     */
+    add_theme_support( 'title-tag' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
-		add_theme_support( 'post-thumbnails' );
+    /*
+     * Enable support for Post Thumbnails on posts and pages.
+     *
+     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     */
+    add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'rca-inc' ),
+    // This theme uses wp_nav_menu() in one location.
+    register_nav_menus( array(
+      'menu-1' => esc_html__( 'Primary', 'rca-inc' ),
       'secondary' => esc_html__( 'Secondary Menu Desktop', 'rca-inc' )
-		) );
+    ) );
 
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support( 'html5', array(
+      'search-form',
+      'comment-form',
+      'comment-list',
+      'gallery',
+      'caption',
+    ) );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'rca_inc_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+    // Set up the WordPress core custom background feature.
+    add_theme_support( 'custom-background', apply_filters( 'rca_inc_custom_background_args', array(
+      'default-color' => 'ffffff',
+      'default-image' => '',
+    ) ) );
 
-		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
+    // Add theme support for selective refresh for widgets.
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
-	}
+    /**
+     * Add support for core custom logo.
+     *
+     * @link https://codex.wordpress.org/Theme_Logo
+     */
+    add_theme_support( 'custom-logo', array(
+      'height'      => 250,
+      'width'       => 250,
+      'flex-width'  => true,
+      'flex-height' => true,
+    ) );
+  }
 endif;
 add_action( 'after_setup_theme', 'rca_inc_setup' );
 
@@ -92,7 +92,7 @@ add_action( 'after_setup_theme', 'rca_inc_setup' );
  * @global int $content_width
  */
 function rca_inc_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'rca_inc_content_width', 640 );
+  $GLOBALS['content_width'] = apply_filters( 'rca_inc_content_width', 640 );
 }
 add_action( 'after_setup_theme', 'rca_inc_content_width', 0 );
 
@@ -102,15 +102,15 @@ add_action( 'after_setup_theme', 'rca_inc_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function rca_inc_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'rca-inc' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'rca-inc' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+  register_sidebar( array(
+    'name'          => esc_html__( 'Sidebar', 'rca-inc' ),
+    'id'            => 'sidebar-1',
+    'description'   => esc_html__( 'Add widgets here.', 'rca-inc' ),
+    'before_widget' => '<section id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h2 class="widget-title">',
+    'after_title'   => '</h2>',
+  ) );
 }
 add_action( 'widgets_init', 'rca_inc_widgets_init' );
 
@@ -129,20 +129,20 @@ function rca_inc_scripts() {
       )
   );
   wp_enqueue_script( 'rca-cat-sorting', get_template_directory_uri() . '/js/selected-category.js');
-	wp_enqueue_style( 'rca-inc-style', get_stylesheet_uri() );
-	// wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css');
-//	wp_enqueue_script( 'top-slider', get_stylesheet_directory_uri() . '/js/top-slider.js' );
-	wp_enqueue_script( 'rca-inc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+  wp_enqueue_style( 'rca-inc-style', get_stylesheet_uri() );
+  // wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css');
+//  wp_enqueue_script( 'top-slider', get_stylesheet_directory_uri() . '/js/top-slider.js' );
+  wp_enqueue_script( 'rca-inc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
   wp_enqueue_script( 'header-scroll-js', get_template_directory_uri() . '/js/header-scroll.js' );
-	wp_enqueue_script( 'rca-inc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+  wp_enqueue_script( 'rca-inc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 
   $translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
   //after wp_enqueue_script
   wp_localize_script( 'rca-filter-news', 'object_name', $translation_array );
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+  if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+    wp_enqueue_script( 'comment-reply' );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'rca_inc_scripts' );
 
@@ -170,7 +170,7 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+  require get_template_directory() . '/inc/jetpack.php';
 }
 
 
@@ -179,8 +179,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * ------------------------------------------------------------------------ */
 function rca_theme_menu()
 {
-	//add_theme_page( $page_title, $menu_title, $capability, $menu_slug, $function );
- 	add_theme_page( 'Theme Option', 'Theme Options', 'manage_options', 'rca-theme-options', 'rca_theme_page');  
+  //add_theme_page( $page_title, $menu_title, $capability, $menu_slug, $function );
+  add_theme_page( 'Theme Option', 'Theme Options', 'manage_options', 'rca-theme-options', 'rca_theme_page');  
 }
 add_action('admin_menu', 'rca_theme_menu');
 
@@ -191,32 +191,32 @@ function rca_theme_page()
 {
 
 echo '<div class="wrap">
-		<div id="icon-options-general" class="icon32"></div>
-			<h1>RCA: Theme Options</h1>
-			<div id="poststuff">
-				<div id="post-body" class="metabox-holder columns-1">
-				<div id="post-body-content">
-					<div class="meta-box-sortables ui-sortable">
-						<div class="postbox">
-							<div class="inside">
-								<div class="section-panel">
-									<h1></h1>
-									<form method="post" enctype="multipart/form-data" action="options.php">';
-									settings_fields('rca_theme_options'); 
-									do_settings_sections('rca_theme_options.php');
-									echo '<p class="submit">
-									<input type="submit" class="button-primary" value="Save Changes" />
-									</p>
-									</form>
-								</div>
-								<p></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div id="icon-options-general" class="icon32"></div>
+      <h1>RCA: Theme Options</h1>
+      <div id="poststuff">
+        <div id="post-body" class="metabox-holder columns-1">
+        <div id="post-body-content">
+          <div class="meta-box-sortables ui-sortable">
+            <div class="postbox">
+              <div class="inside">
+                <div class="section-panel">
+                  <h1></h1>
+                  <form method="post" enctype="multipart/form-data" action="options.php">';
+                  settings_fields('rca_theme_options'); 
+                  do_settings_sections('rca_theme_options.php');
+                  echo '<p class="submit">
+                  <input type="submit" class="button-primary" value="Save Changes" />
+                  </p>
+                  </form>
+                </div>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div> ';
 
 }
@@ -412,7 +412,7 @@ function rca_top_slider($atts, $content = null) {
         'nopaging' => true
     );
 
-	$result = '<div id="owl-carousel-top-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
+  $result = '<div id="owl-carousel-top-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
 
     $loop = new WP_Query($args);
     while ($loop->have_posts()) {
@@ -547,7 +547,7 @@ function rca_news_slider($atts, $content = null) {
         'nopaging' => true
     );
 
-	$result = '<div id="owl-carousel-news" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
+  $result = '<div id="owl-carousel-news" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
 
     $loop = new WP_Query($args);
     while ($loop->have_posts()) {
@@ -1532,8 +1532,11 @@ function rca_get_bio_slider_icons($post_type) {
   return $icon;
 }
 
+// Returns icons for search items.
 function rca_get_search_icons($post_id) {
-  //var_dump($post_id);
+  $icon = '';
+
+  //var_dump(get_post_type( $post_id ));
   $post_type = get_post_type( $post_id );
   if($post_type == 'case_studies'):
     $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.jpg';
@@ -1547,15 +1550,14 @@ function rca_get_search_icons($post_id) {
     $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.jpg';
   elseif($post_type == 'post'):
     $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
-  elseif($post_type == 'team'):
-    if(get_page_template_slug() == 'individual-staff-member.php' || get_page_template_slug() == 'single-staff.php'):
+  elseif($post_type == 'staff' || get_page_template_slug( $post_id ) == 'single-staff.php' || get_page_template_slug($post_id) == 'individual-staff-member.php' || is_singular('staff')):
         $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
-    endif;
   else:
-    $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
+        $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
+
   endif;
 
-  return $icon;
+return $icon;
 
 }
 

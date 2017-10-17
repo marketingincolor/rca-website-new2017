@@ -24,7 +24,7 @@ $references_text  = get_field('references_text');
 	<!-- /Title -->
 
 	<!-- Author Info -->
-	<?php if (get_field('subheading')) { ?>
+	<?php if (get_field('author_info')) { ?>
 
 	<div class="row">
 		<div class="small-10 small-offset-1 columns text-left">
