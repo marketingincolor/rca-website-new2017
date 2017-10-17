@@ -26,7 +26,7 @@
 					if (get_field('bottom_button_link') && get_field('bottom_button_text')) {
 				?>
 
-					<p><a href="<?php the_field('bottom_button_link'); ?>"><button class="orange-btn width-auto"><?php the_field('bottom_button_text'); ?></button></a></p>
+					<p><a href="<?php echo site_url();the_field('bottom_button_link'); ?>"><button class="orange-btn width-auto"><?php the_field('bottom_button_text'); ?></button></a></p>
 					
 				<?php
 				  }
