@@ -26,7 +26,7 @@
 					if (get_field('bottom_button_link') && get_field('bottom_button_text')) {
 				?>
 
-					<p style="margin-top:30px"><a href="<?php echo site_url();the_field('bottom_button_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('bottom_button_text'); ?></button></a></p>
+					<p style="margin-top:30px"><a href="<?php if(!get_field('external_link')){echo site_url();} ?><?php the_field('bottom_button_link'); ?>" <?php if(get_field('external_link')){echo 'target="_blank"';} ?>><button class="orange-btn width-auto"><?php the_field('bottom_button_text'); ?></button></a></p>
 					
 				<?php
 				  }
