@@ -23,7 +23,13 @@
 			<div class="entry-content">
 				<?php
 					the_content();
+					if (get_field('bottom_button_link') && get_field('bottom_button_text')) {
+				?>
 
+					<p><a href="<?php the_field('bottom_button_link'); ?>"><button class="orange-btn width-auto"><?php the_field('bottom_button_text'); ?></button></a></p>
+					
+				<?php
+				  }
 					wp_link_pages( array(
 						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rca-inc' ),
 						'after'  => '</div>',
