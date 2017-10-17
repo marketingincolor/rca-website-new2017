@@ -3139,9 +3139,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 #mobile-menu #bottom-nav-wrapper > li { background-color: #f8f7f5; color: #9d938b; font-size: 1.375rem; }
 #mobile-menu #bottom-nav-wrapper li a:first-child { color: #9d938b; display: block; }
 #mobile-menu #bottom-nav-wrapper li.is-active { background-color: #c4612b; }
-#mobile-menu #bottom-nav-wrapper >li>a { padding: 1rem 2rem; }
+#mobile-menu #bottom-nav-wrapper >li>a { padding: 1rem 2rem; font-size: 16px; }
 #mobile-menu #top-nav-wrapper { padding: 1.5rem 0rem; }
-#mobile-menu > #bottom-nav-wrapper > li > a:focus { background-color: #c4612b; color: #fff; }
+#mobile-menu > #bottom-nav-wrapper > li > a:focus { background-color: #c4612b; color: #fff; font-size: 16px; }
 #mobile-menu > #bottom-nav-wrapper > li { border-bottom: 1px solid #9d938b; }
 #mobile-menu > #bottom-nav-wrapper > li ul { background-color: #fff; margin-left: 0rem; padding-left: 2rem; }
 

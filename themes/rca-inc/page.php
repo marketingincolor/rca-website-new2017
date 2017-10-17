@@ -39,7 +39,7 @@ get_header(); ?>
 	<?php
 
 		// If not these pages show related content on page.php
-		$remove_on_page = array('privacy-policy', 'terms-of-use');
+		$remove_on_page = array('privacy-policy', 'terms-of-use', 'us-agent-services');
 		if( !is_page( $remove_on_page ) ) {
 			get_template_part('template-parts/content', 'related-content');
 		}

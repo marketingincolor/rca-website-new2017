@@ -55,7 +55,7 @@ function simple_breadcrumb() {
 						echo '<a href="'.get_permalink(get_page_by_title('News')).'">News</a>';
 						echo $separator;
 					elseif( $post->post_type == 'staff'):
-						echo '<a href="'.get_permalink(get_page_by_title('News')).'">About</a>';
+						echo '<a href="'.get_permalink(get_page_by_path('news')).'">About</a> ' . $separator . ' <a href="'.get_permalink(get_page_by_path('about/our-people')).'">Our People</a>' . $separator;
 
 					else:
 						echo $separator;							

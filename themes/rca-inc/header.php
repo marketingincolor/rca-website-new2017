@@ -336,6 +336,8 @@
 							</div>
 						</div>
 					</div>
+					<?php echo do_shortcode( '[maxmegamenu location=menu-1]' ); ?>
+				<?php if(FALSE): ?>
 					<ul id="mobile-menu" class="vertical menu accordion-menu hide" data-accordion-menu >
 						<div id="top-nav-wrapper">
 							<div class="row">
@@ -400,23 +402,23 @@
 					</li>
 					<!-- Pharm Dropdown Menu -->
 					<li>
-						<a href="<?php echo get_permalink( get_page_by_title( 'Pharmaceutical' ) ); ?>">Pharmaceutical</a>
+						<a href="<?php echo get_permalink( get_page_by_path( 'Pharmaceutical' ) ); ?>">Pharmaceutical</a>
 				
 						<ul>
 							<li>
-								<h3><a href="<?php echo site_url(); ?>pharmaceutical/regulatory-affairs">Regulatory Affairs</a></h3>
+								<h3><a href="<?php echo site_url(); ?>/pharmaceutical/regulatory-affairs">Regulatory Affairs</a></h3>
 								<?php wp_nav_menu(array('menu' => 'Pharmaceutical Regulatory Affairs',)); ?>
 							</li>
 						</ul>
 						<ul>
 							<li>
-								<h3><a href="<?php echo site_url(); ?>pharmaceutical/compliance-assurance">Compliance Assurance</a></h3>
+								<h3><a href="<?php echo site_url(); ?>/pharmaceutical/compliance-assurance">Compliance Assurance</a></h3>
 								<?php wp_nav_menu( array('menu' => 'Pharmaceutical Compliance Assurance')); ?>
 							</li>
 						</ul>
 						<ul>
 							<li>
-								<h3><a href="<?php echo site_url(); ?>pharmaceutical/quality-services">Quality Services</a></h3>
+								<h3><a href="<?php echo site_url(); ?>/pharmaceutical/quality-services">Quality Services</a></h3>
 								<?php //wp_nav_menu(array('menu' => 'Pharmaceutical Quality Services')); ?>
 							</li>
 						</ul>
@@ -440,7 +442,7 @@
 						<a href="<?php echo get_permalink( get_page_by_path( 'About' ) ); ?>">About</a>
 						<ul>
 							<li>
-								<h3><a href="<?php echo get_permalink(get_page_by_title('Our People')); ?>">Our People</a></h3>
+								<h3><a href="<?php echo get_permalink(get_page_by_path( 'about/our-people') ); ?>">Our People</a></h3>
 								<?php wp_nav_menu( array('menu' => 'Our People')); ?>
 							</li>
 						</ul>
@@ -455,10 +457,11 @@
 							</li>
 						</ul>
 					</li>
-					<li><a href="<?php echo get_permalink( get_page_by_title( 'News' ) ); ?>">News</a></li>
+					<li><a href="<?php echo get_permalink( get_page_by_path( 'news' ) ); ?>">News & Events</a></li>
 					</ul>
 					</div>
 				</section>
+			<?php endif; ?>
 			<!-- /MOBILE NAV -->
 
 			</header>

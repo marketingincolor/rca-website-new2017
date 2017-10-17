@@ -1,7 +1,7 @@
 <?php
 /* Template Name: Individual Staff Page */
 $articles = get_field('published_articles_relationship', get_the_ID());
-
+$options = get_option('rca_theme_options');
 
 get_header(); ?>
 	
@@ -60,16 +60,24 @@ get_header(); ?>
 			</div>
 
 			<!-- PUBLISHED ARTICLES SECTION -->
-			<?php if(!empty($articles)): ?>
-			<div id="pa-section" class="">
-				<div class="row">
-					<div class="small-10 small-offset-1 columns text-center">
-						<h3>Expertise Items</h3>
-						<?php echo do_shortcode('[rca-staff-articles category="" post_id="'.get_the_id() .'" navigation="true" navigationText="&#xf104;, &#xf105;" items=3 autoPlay="true" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="false"]'); ?>
+			<?php 
 
+				// IF WE HAVE LESS THAN 3 ARTICLES TO SHOW DON'T SHOW ANY.
+			    $articles = get_field('published_articles_relationship', get_the_ID());
+			    if( count($articles) >= 3 ) :
+
+
+			?>
+
+				<div id="pa-section" class="">
+					<div class="row">
+						<div class="small-10 small-offset-1 columns text-center">
+							<h3><?php echo $options['bio_page_slider_title']; ?></h3>
+							<?php echo do_shortcode('[rca-staff-articles category="" post_id="'.get_the_id() .'" navigation="true" navigationText="&#xf104;, &#xf105;" items=3 autoPlay="true" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="false"]'); ?>
+
+						</div>
 					</div>
 				</div>
-			</div>
 			<?php endif; ?>
 			<!-- /PUBLISHED ARTICLES SECTION -->
 			

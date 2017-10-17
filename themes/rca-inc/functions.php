@@ -285,11 +285,23 @@ function rca_register_settings()
       'class'     => 'css_class'
     );
 
+    $bio_page_slider_title = array(
+      'type'      => 'text',
+      'id'        => 'bio_page_slider_title',
+      'name'      => 'bio_page_slider_title',
+      'desc'      => 'Slider used on single-staff.php.',
+      'std'       => '',
+      'label_for' => 'bio_page_slider_title',
+      'class'     => 'css_class'
+    );
+
     add_settings_field( 'rca_fb_link', 'Facebook Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $fb_args );
     add_settings_field( 'rca_twitter_link', 'Twitter Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $twitter_args );
     add_settings_field( 'rca_youtube_link', 'YouTube Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $youtube_args );
     add_settings_field( 'rca_linkedin_link', 'LinkedIn Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $linkedin_args );
     add_settings_field( 'rca_phone_number', 'Phone Number:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $phone_args );
+    add_settings_field( 'bio_page_slider_title', 'Staff Bio Slider Title:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $bio_page_slider_title );
+
 }
 add_action( 'admin_init', 'rca_register_settings' );
 
@@ -1333,7 +1345,7 @@ function get_team_members_department($department) {
       if( !empty($email)) : 
         echo '<div id="individual-email" class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> '. $email .'</div>';
       endif;
-      echo '<p>'. $member_description .'</p>';
+      echo '<p>'. wpautop( $member_description, $br = true ) .'</p>';
 
       echo '</div>';
       echo '</div>';
@@ -1493,6 +1505,33 @@ function rca_get_post_type_icon($post_type) {
   return $icon;
 }
 
+function rca_get_bio_slider_icons($post_type) {
+    if($post_type == 'case_studies'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.png';
+  elseif($post_type == 'webinars'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-webinars-icon.png';
+  elseif($post_type == 'white_papers'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-white-papers-icon.png';
+  elseif($post_type == 'visual_resources'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-visual-resources-icon.png';
+  elseif($post_type == 'published_articles'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.png';
+  elseif($post_type == 'post'):
+    $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
+  elseif($post_type == 'page'):
+    if(get_page_template_slug() == 'individual-staff-member.php'):
+        $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
+    else:
+    $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
+    endif;
+  else:
+    $icon = '';  
+  endif;
+
+
+  return $icon;
+}
+
 /**
  * Automatically return medical-device/pharma URLs
  * @param  [type] $postID [description]
@@ -1611,6 +1650,7 @@ function rca_staff_articles($atts, $content = null) {
             $result .= '<div class="row">';
             $result .= '<div class="small-10 small-offset-1 columns">';
             $result .= '<div class="owl-carousel-item-text">';
+            $result .= '<img src="'. rca_get_bio_slider_icons(get_post_type($article)).'" title="icon" style="max-width: 15%;">';
             $result .= '<a href="' . get_the_permalink($article) . '">';
             $result .= '<p>' . $article->post_title . '...<span style="color: #c4612b; text-decoration: underline;">Read More</span></p></a>';
             $result .= '</div></div>';

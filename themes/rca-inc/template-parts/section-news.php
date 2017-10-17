@@ -34,7 +34,7 @@
 									$news_query->the_post();
 									echo '<div class="small-12 medium-6 large-4 columns" style="Color: white;">';
 									#the_title();
-									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/>Read More');
+									echo wp_trim_words(get_the_title(), $num_words = 15, '...<br/>Read More');
 									echo '</div>';
 								}
 							}
@@ -56,7 +56,7 @@
 					</div>
 				</div>
 
-				<div id="news-snippets-wrapper" class="row text-center">
+				<div id="news-snippets-wrapper" class="row text-center" data-equalizer>
 						
 						<?php
 							wp_reset_postdata();
@@ -76,9 +76,9 @@
 							if ( $news_query->have_posts() ) { 
 								while ( $news_query->have_posts() ) {
 									$news_query->the_post();
-									echo '<div class="small-12 medium-6 large-4 columns" style="Color: white;">';
+									echo '<div class="small-12 medium-6 large-4 columns" style="Color: white;" data-equalizer-watch>';
 									#the_title();
-									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/>Read More');
+									echo wp_trim_words(get_the_title(), $num_words = 15, '...<br/>Read More');
 									echo '</div>';
 								}
 							}
@@ -98,7 +98,7 @@
 					</div>
 				</div>
 				
-				<div id="news-snippets-wrapper" class="row text-center">
+				<div id="news-snippets-wrapper" class="row text-center" data-equalizer>
 						
 						<?php
 							wp_reset_postdata();
@@ -118,9 +118,10 @@
 							if ( $news_query->have_posts() ) { 
 								while ( $news_query->have_posts() ) {
 									$news_query->the_post();
-									echo '<div class="small-12 medium-6 large-4 columns">';
+									echo '<div class="small-12 medium-6 large-4 columns" data-equalizer-watch>';
 									#the_title();
-									echo wp_trim_words(get_the_content(), $num_words = 15, '...<br/><a href="'. get_permalink() .'">Read More</a>');
+									echo wp_trim_words(get_the_title(), $num_words = 15, '');
+									echo '...<br/><a href="'. get_permalink() .'">Read More</a>';
 									echo '</div>';
 								}
 							}
