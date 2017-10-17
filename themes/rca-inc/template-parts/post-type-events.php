@@ -23,6 +23,13 @@
 	<div id="expertise-content" class="row">
 		<div class="small-10 small-offset-1 columns">
 			<p><?php the_content(); ?></p>
+
+			<?php if (get_field('bottom_button_link') && get_field('bottom_button_text')) { ?>
+
+				<p style="margin-top:30px"><a href="<?php if(!get_field('external_link')){echo site_url();} ?><?php the_field('bottom_button_link'); ?>" <?php if(get_field('external_link')){echo 'target="_blank"';} ?>><button class="orange-btn width-auto"><?php the_field('bottom_button_text'); ?></button></a></p>
+
+			<?php } ?>
+			
 		</div>
 	</div>
 	<!-- /Content -->
