@@ -1492,7 +1492,7 @@ function rca_get_post_type_icon($post_type) {
   elseif($post_type == 'post'):
     $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
   elseif($post_type == 'page'):
-    if(get_page_template_slug() == 'individual-staff-member.php'):
+    if(get_page_template_slug() == 'individual-staff-member.php' || get_page_template_slug() == 'single-staff.php'):
         $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
     else:
     $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
@@ -1530,6 +1530,33 @@ function rca_get_bio_slider_icons($post_type) {
 
 
   return $icon;
+}
+
+function rca_get_search_icons($post_id) {
+  //var_dump($post_id);
+  $post_type = get_post_type( $post_id );
+  if($post_type == 'case_studies'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.jpg';
+  elseif($post_type == 'webinars'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-webinars-icon.jpg';
+  elseif($post_type == 'white_papers'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-white-papers-icon.jpg';
+  elseif($post_type == 'visual_resources'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-visual-resources-icon.jpg';
+  elseif($post_type == 'published_articles'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.jpg';
+  elseif($post_type == 'post'):
+    $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
+  elseif($post_type == 'team'):
+    if(get_page_template_slug() == 'individual-staff-member.php' || get_page_template_slug() == 'single-staff.php'):
+        $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
+    endif;
+  else:
+    $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
+  endif;
+
+  return $icon;
+
 }
 
 /**

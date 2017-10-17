@@ -15,7 +15,7 @@ global $post;
 // $itemSlug = $terms[0]->name;
 // $term_id  = $terms[0]->term_id;
 
-$icon_img = rca_get_post_type_icon(get_post_type( $post->ID ));
+$icon_img = rca_get_search_icons(get_post( $post->ID ));
 
 ?>
 
