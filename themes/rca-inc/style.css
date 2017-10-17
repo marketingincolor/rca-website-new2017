@@ -28,6 +28,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+
+#mobile-top-bar #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item { width: 100% !important; font-family:'Roboto' !important;  }
+
 /*PUBLISHED ARTICLE SLIDER FOR AUTHORS*/
 #owl-carousel-pa-slider div .owl-pagination { padding-top: 0rem; }
 #owl-carousel-pa-slider .owl-prev,#owl-carousel-pa-slider .owl-next { bottom: 0px; top: 30%;}
@@ -2807,6 +2810,11 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
   margin-right: 1.25rem;
   color: #9d938b;
 }
+
+#mobile-menu ul li { width: 100%; display:block; }
+#mobile-menu ul li a { width: 100%; display:block; }
+#mobile-menu ul > li > ul > li::before { content: none; }
+
 
 /* Small only */
 @media(max-width:360px){

@@ -50,7 +50,7 @@ get_header(); ?>
 		'remediation' => array(
 			'title' => 'Remediation Strategy and Support',
 			'menu_name'   => 'Pharmaceutical Remediation Strategy and Support',
-			'slug' => 'remediation-strategy-and-support'
+			'slug' => 'remediation-strategy-support'
 		),
 		// 'quality_assurance' => array(
 		// 	'title' => 'Quality Assurance',
@@ -129,7 +129,7 @@ get_header(); ?>
 				<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 					<div class="service-block">
 						<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
-						<div class="service-title"><a href="<?php echo home_url('services/quality-assurance'); ?>">Quality Assurance</a></div>
+						<div class="service-title"><a href="<?php echo home_url('pharmaceutical/quality-assurance'); ?>">Quality Assurance</a></div>
 					</div>
 					<div class="text-left service-menu-items">
 						<?php //echo wp_nav_menu( array('menu'=> 'Quality Assurance' ) ); ?>

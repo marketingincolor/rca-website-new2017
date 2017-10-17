@@ -326,6 +326,9 @@
 					</div>
 					<!-- PHONE ON MOBILE BUTTON -->
 					<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
+						<?php #echo do_shortcode( '[maxmegamenu location=menu-1]' ); 
+							
+						?>
 
 						<div class="small-6 columns text-center" data-equalizer-watch style="padding: 1rem 0rem;">
 							<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem; border-right: 2px solid #fff;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact Us</p></a>		
@@ -336,7 +339,17 @@
 							</div>
 						</div>
 					</div>
-					<?php echo do_shortcode( '[maxmegamenu location=menu-1]' ); ?>
+					<?php
+							$args = array(
+								'menu' => 'primary',
+								'container_id' => 'mobile-menu',
+								'container_class' => 'hide vertical menu accordion-menu',
+								'items_wrap'      => '<ul class="%2$s" data-responsive-menu="accordion large-dropdown">%3$s</ul>',
+								'walker' => new RCA_Mega_Mobile_Menu_Walker()							
+
+							);
+							wp_nav_menu( $args );
+					?>
 				<?php if(FALSE): ?>
 					<ul id="mobile-menu" class="vertical menu accordion-menu hide" data-accordion-menu >
 						<div id="top-nav-wrapper">
