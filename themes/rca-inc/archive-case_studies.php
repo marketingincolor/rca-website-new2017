@@ -65,7 +65,7 @@ get_header(); ?>
 			<div class="row show-for-medium">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-						<p class="description">Regulatory Compliance Associates® Inc. utilizes Case Studies to exemplify real-life dilemmas, conflicts, or concerns from our life science clients, and the corresponding actions we developed to solve them.</p>
+						<p class="description">Regulatory Compliance Associates<sup>®</sup> Inc. utilizes Case Studies to exemplify real-life dilemmas, conflicts, or concerns from our life science clients, and the corresponding actions we developed to solve them.</p>
 					</header><!-- .page-header -->
 				</div>
 			</div>

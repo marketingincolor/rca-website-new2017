@@ -66,7 +66,7 @@ get_header(); ?>
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
 
-							<p class="description">Regulatory Compliance Associates® Inc. frequently conducts online seminars or webinars for viewers and listeners all over the world on life science industry subjects. Our webinars are recorded and available to download for future reference and viewing.</p>
+							<p class="description">Regulatory Compliance Associates<sup>®</sup> Inc. frequently conducts online seminars or webinars for viewers and listeners all over the world on life science industry subjects. Our webinars are recorded and available to download for future reference and viewing.</p>
 
 					</header><!-- .page-header -->
 				</div>

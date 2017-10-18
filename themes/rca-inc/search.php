@@ -29,6 +29,7 @@ get_header(); ?>
 		$paged = get_query_var('paged') ? get_query_var('paged') : 1; 
 		$args = array(
 			'posts_per_page' => 8,
+			'post__not_in'   => array(197,1217,14,201,513,6,8,209),
 			// 'tax_query' => array(
 			// 	array(
 			// 		'taxonomy' => 'expertise',

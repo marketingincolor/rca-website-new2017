@@ -94,7 +94,7 @@ if ( $the_query->have_posts() ) {
 				
 				<div class="small-12 medium-4 columns random-item" data-equalizer-watch>
 					<img src="<?php echo $icon; ?>" alt="">
-					<p><?php echo wp_trim_words(get_the_title(),10,'...') ?> <a href="<?php the_permalink(); ?>">Read More</a></p>
+					<p><?php echo wp_trim_words(get_the_title(),10,'') ?>...<a href="<?php the_permalink(); ?>">Read More</a></p>
 				</div>
 
 				<?php }} wp_reset_postdata(); ?>

@@ -85,7 +85,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-							<p class="description">Published articles are written by Regulatory Compliance Associates® Inc. experts on industry-related subjects, and published in relevant life science digital and/or print media.</p>
+							<p class="description">Published articles are written by Regulatory Compliance Associates<sup>®</sup> Inc. experts on industry-related subjects, and published in relevant life science digital and/or print media.</p>
 					</header><!-- .page-header -->
 				</div>
 			</div>

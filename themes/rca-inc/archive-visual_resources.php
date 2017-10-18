@@ -85,7 +85,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-							<p class="description">Visual Resources include handouts, posters, and correspondence that visually illustrate Regulatory Compliance Associates® Inc.’s expertise in a particular service.</p>
+							<p class="description">Visual Resources include handouts, posters, and correspondence that visually illustrate Regulatory Compliance Associates<sup>®</sup> Inc.’s expertise in a particular service.</p>
 					</header><!-- .page-header -->
 				</div>
 			</div>

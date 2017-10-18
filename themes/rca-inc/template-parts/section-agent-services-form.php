@@ -124,7 +124,7 @@
 		  	$('#form-products-names').addClass("formInvalid");
 		  	return false;
 		  } else {
-		    document.forms["blue-form"].submit();
+		    $('#blue-form').find('[type="submit"]').trigger('click');
 		  }
 	  });
 
