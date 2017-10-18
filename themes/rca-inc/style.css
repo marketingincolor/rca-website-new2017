@@ -369,7 +369,10 @@ main { margin-bottom: 0rem; }
 #all-case-study-content { padding-bottom: 5%; }
 
 #dl-block p { margin-bottom: 0rem; }
-#share-block-cs p { margin-bottom: 0rem; }
+#share-block-cs p {
+  margin-bottom: 0rem;
+  cursor: pointer;
+}
 #dl-block { 
 	background-color: #c4612b; 
 	font-size: 1rem;
@@ -2861,7 +2864,26 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 }
 
 @media screen and (max-width: 39.9375em) {
+
+  #featured-img {
+    padding: 50px 0;
+  }
+  #featured-img-wrapper #featured-img .featured-img-title h1 {
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .case-study-quote {
+    width: auto;
+    padding: 20px;
+    display: block;
+    margin: 20px 0;
+  }
+  .case-study-quote p{
+    font-size: 1rem;
+  }
+
   .site-branding a, img { max-width: 350px; }
+
 
   #learn-more-cta{
   	padding: 5% 0 12%;
