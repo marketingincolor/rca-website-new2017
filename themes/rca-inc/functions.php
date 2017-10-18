@@ -1696,55 +1696,21 @@ function rca_staff_articles($atts, $content = null) {
 }
 add_shortcode('rca-staff-articles', 'rca_staff_articles');
 
+
 class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
-
-  /**
-   * Starts the list before the elements are added.
-   *
-   * @see Walker::start_lvl()
-   *
-   * @since 1.0
-   *
-   * @param string $output Passed by reference. Used to append additional content.
-   * @param int    $depth  Depth of menu item. Used for padding.
-   * @param array  $args   An array of arguments. @see wp_nav_menu()
+  /*
+   * Add vertical menu class
    */
+
   function start_lvl( &$output, $depth = 0, $args = array() ) {
-
-    $indent = str_repeat("\t", $depth);
-
-    $output .= "\n$indent<ul class=\"mega-sub-menu\">\n";
+    $indent = str_repeat( "\t", $depth );
+    $output .= "\n$indent<ul class=\"active\">\n";
   }
-
-  /**
-   * Ends the list of after the elements are added.
-   *
-   * @see Walker::end_lvl()
-   *
-   * @since 1.0
-   *
-   * @param string $output Passed by reference. Used to append additional content.
-   * @param int    $depth  Depth of menu item. Used for padding.
-   * @param array  $args   An array of arguments. @see wp_nav_menu()
-   */
   function end_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat("\t", $depth);
     $output .= "$indent</ul>\n";
   }
 
-  /**
-   * Custom walker. Add the widgets into the menu.
-   *
-   * @see Walker::start_el()
-   *
-   * @since 1.0
-   *
-   * @param string $output Passed by reference. Used to append additional content.
-   * @param object $item   Menu item data object.
-   * @param int    $depth  Depth of menu item. Used for padding.
-   * @param array  $args   An array of arguments. @see wp_nav_menu()
-   * @param int    $id     Current item ID.
-   */
   function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
     $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
@@ -1768,7 +1734,7 @@ class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
     // Item ID
     $id = esc_attr( apply_filters( 'megamenu_nav_menu_item_id', "mega-menu-item-{$item->ID}", $item, $args ) );
 
-    $output .= "<li class='{$class}' id='{$id}'>";
+    $output .= "<li>";
 
     // output the widgets
     if ( $item->type == 'widget' && $item->content ) {
@@ -1805,8 +1771,10 @@ class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
 
       // required for Surface/Win10/Edge
       if ( in_array('menu-item-has-children', $classes ) ) {
-        $atts['aria-haspopup'] = "true";
+        //$atts['aria-haspopup'] = "true";
       }
+
+      //$atts['aria-expanded'] = "true";
 
       if ( $depth == 0 ) {
         $atts['tabindex'] = "0";
@@ -1850,19 +1818,10 @@ class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
     $output .= apply_filters( 'megamenu_walker_nav_menu_start_el', $item_output, $item, $depth, $args );
   }
 
-  /**
-   * Ends the element output, if needed.
-   *
-   * @see Walker::end_el()
-   *
-   * @since 1.7
-   *
-   * @param string $output Passed by reference. Used to append additional content.
-   * @param object $item   Page data object. Not used.
-   * @param int    $depth  Depth of page. Not Used.
-   * @param array  $args   An array of arguments. @see wp_nav_menu()
-   */
-  public function end_el( &$output, $item, $depth = 0, $args = array() ) {
-    $output .= "</li>"; // remove new line to remove the 4px gap between menu items
+
+  function end_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+    $output .= "</li>";
   }
+
 }
+

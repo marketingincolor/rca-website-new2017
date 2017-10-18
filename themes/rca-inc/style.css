@@ -1386,7 +1386,7 @@ optgroup,
 textarea {
 	color: #404040;
 	font-family: sans-serif;
-	font-size: 16px;
+	/*font-size: 16px;*/
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -2812,10 +2812,21 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 }
 
 #mobile-menu ul li { width: 100%; display:block; }
-#mobile-menu ul li a { width: 100%; display:block; }
+#mobile-menu > ul > li > a { width: 100%; display:block; padding:25px 1rem; }
+#mobile-menu ul li ul li a { width: 100%; display: block; }
 #mobile-menu ul > li > ul > li::before { content: none; }
-
-
+#mobile-menu > ul > li { border-bottom: 1px solid #9d938a; }
+#mobile-menu li::before { display:none !important; }
+#mobile-menu .is-active { padding-top: 3rem; }
+#mobile-menu li ul li ul { display: block !important; }
+#mobile-menu  > li  > ul  > li > a { color: #2b2b2b; }
+#mobile-menu  > li  > ul  > li > a::after { display: none; }
+#mobile-menu > li > ul > li > ul { padding-bottom: 3rem; font-weight: normal; }
+#mobile-menu > li > ul > li > ul > li > a { font-weight: normal; color: #2b2b2b; }
+#mobile-menu > li > a { border-bottom: 1px solid #9d938a; color: #9d938b; }
+#mobile-menu { border-bottom: 1px solid #9d938a;  }
+#mobile-menu > li > a{ padding: 1.5rem 1rem; }
+#top-nav-wrapper { padding: 30px 0px; }
 /* Small only */
 @media(max-width:360px){
 
