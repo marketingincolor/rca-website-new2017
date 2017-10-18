@@ -47,7 +47,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ul > li,.entry-content ul,.archive ul{
   list-style: none
 }
-ul:not(#menu-desktop-footer-menu):not(#menu-strategic-consulting-3):not(#wp-admin-bar-user-actions):not(#wp-admin-bar-new-content-default):not(#wp-admin-bar-appearance):not(#wp-admin-bar-site-name-default):not(#wp-admin-bar-top-secondary):not(#menu-strategic-consulting-1):not(#menu-pharmaceutical-strategic-consulting-1):not(#pagination):not(#menu-regulatory-affairs):not(.submenu):not(#menu-compliance-assurance):not(#menu-remediation-strategy-and-support):not(#menu-strategic-consulting):not(#mega-menu-menu-1):not(#wp-admin-bar-root-default):not(.mega-sub-menu):not(#menu-mobile-footer-right):not(#menu-mobile-footer-left):not(#menu-pharmaceutical-regulatory-affairs):not(#menu-pharmaceutical-compliance-assurance):not(#menu-pharmaceutical-remediation-strategy-and-support):not(#menu-pharmaceutical-strategic-consulting):not(#menu-our-people):not(#menu-strategic-consulting-2):not(#menu-compliance-assurance-1):not(#menu-regulatory-affairs-1):not(#menu-remediation-strategy-and-support-1):not(#menu-pharmaceutical-compliance-assurance-1):not(#menu-pharmaceutical-regulatory-affairs-1):not(#menu-pharmaceutical-remediation-strategy-and-support-1) > li::before {
+ul:not(#menu-desktop-footer-menu):not(#location-accordian):not(#menu-strategic-consulting-3):not(#wp-admin-bar-user-actions):not(#wp-admin-bar-new-content-default):not(#wp-admin-bar-appearance):not(#wp-admin-bar-site-name-default):not(#wp-admin-bar-top-secondary):not(#menu-strategic-consulting-1):not(#menu-pharmaceutical-strategic-consulting-1):not(#pagination):not(#menu-regulatory-affairs):not(.submenu):not(#menu-compliance-assurance):not(#menu-remediation-strategy-and-support):not(#menu-strategic-consulting):not(#mega-menu-menu-1):not(#wp-admin-bar-root-default):not(.mega-sub-menu):not(#menu-mobile-footer-right):not(#menu-mobile-footer-left):not(#menu-pharmaceutical-regulatory-affairs):not(#menu-pharmaceutical-compliance-assurance):not(#menu-pharmaceutical-remediation-strategy-and-support):not(#menu-pharmaceutical-strategic-consulting):not(#menu-our-people):not(#menu-strategic-consulting-2):not(#menu-compliance-assurance-1):not(#menu-regulatory-affairs-1):not(#menu-remediation-strategy-and-support-1):not(#menu-pharmaceutical-compliance-assurance-1):not(#menu-pharmaceutical-regulatory-affairs-1):not(#menu-pharmaceutical-remediation-strategy-and-support-1) > li::before {
   content: "•";
   color: #C4612B;
   display: inline-block;
@@ -468,7 +468,7 @@ main { margin-bottom: 0rem; }
 }
 
 
-#share-section { padding: 3rem 0rem 0rem; }
+#share-section { padding: 3rem 0 }
 .location-address p { color: #2b2b2b; font-weight: normal; }
 #location-accordian > li > div { padding: 3rem 0rem; }
 .map-btn { width: 80%; text-align: center; margin: 0 auto; display: block; margin-top: 2rem; }
@@ -834,11 +834,15 @@ input[type=number]::-webkit-outer-spin-button {
 	border-bottom: 2px solid #FFF;
 	color: #FFF;
 }
-#learn-more-form-container-white input:valid:not(:submit),#learn-more-form-container-white select:valid{
+#learn-more-form-container-white input:valid,#learn-more-form-container-white select:valid{
 	border-bottom: 2px solid #363636 !important;
 	color: #363636 !important;
 }
-#learn-more-form-container-blue input[type=submit],#learn-more-form-container-blue input[type=submit]{
+#learn-more-form-container-white #form-submit{
+  border-bottom:2px solid #c4612b !important;
+  color: #c4612b !important;
+}
+#learn-more-form-container-blue input[type=submit],#learn-more-form-container-white input[type=submit]{
 	transition: all 0.25s ease-in-out;
 }
 #learn-more-form-container-blue input[type=submit]{
@@ -848,8 +852,8 @@ input[type=number]::-webkit-outer-spin-button {
 	color: #1a365d;
 	background-color: #FFF;
 }
-#learn-more-form-container-white input[type=submit]:hover{
-	color: #FFF;
+#learn-more-form-container-white #form-submit:hover{
+	color: #FFF !important;
 	background-color: #c4612b;
 }
 #learn-more-form-container-blue textarea,#learn-more-form-container-white textarea{
