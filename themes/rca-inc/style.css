@@ -368,7 +368,10 @@ main { margin-bottom: 0rem; }
 #all-case-study-content { padding-bottom: 5%; }
 
 #dl-block p { margin-bottom: 0rem; }
-#share-block-cs p { margin-bottom: 0rem; }
+#share-block-cs p {
+  margin-bottom: 0rem;
+  cursor: pointer;
+}
 #dl-block { 
 	background-color: #c4612b; 
 	font-size: 1rem;
@@ -2865,6 +2868,15 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
   #featured-img-wrapper #featured-img .featured-img-title h1 {
     padding: 0;
     margin-bottom: 0;
+  }
+  .case-study-quote {
+    width: auto;
+    padding: 20px;
+    display: block;
+    margin: 20px 0;
+  }
+  .case-study-quote p{
+    font-size: 1rem;
   }
   #learn-more-cta{
   	padding: 5% 0 12%;
