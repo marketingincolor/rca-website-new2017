@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<div id="top-contact-us" class="row">
-		<div class="small-10 small-offset-1 medium-8 medium-offset-2 text-center columns">
+		<div class="small-10 small-offset-1 large-8 large-offset-2 text-center columns">
 			<div class="entry-content">
 				<?php
 					the_content();

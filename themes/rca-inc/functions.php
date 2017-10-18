@@ -1217,7 +1217,12 @@ function rca_tax_post_pagination() {
         $links[] = $paged + 2;
         $links[] = $paged + 1;
     }
- 
+
+    sort( $links );
+    if ($paged != $max - 1) {
+      array_pop($links);
+    }
+    
     echo '<div class="navigation text-center"><ul id="pagination">' . "\n";
 
     /** Previous Post Link */
@@ -1226,14 +1231,10 @@ function rca_tax_post_pagination() {
     else:
         printf( get_previous_posts_link('<i class="fa fa-angle-left" aria-hidden="true"></i>') );
     endif;   
-
- 
-
  
     /** Link to first page, plus ellipses if necessary */
     if ( ! in_array( 1, $links ) ) {
         $class = 1 == $paged ? ' class="active"' : '';
-        
 
         printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
  
@@ -1242,7 +1243,6 @@ function rca_tax_post_pagination() {
     }
  
     /** Link to current page, plus 2 pages in either direction if necessary */
-    sort( $links );
     foreach ( (array) $links as $link ) {
         $class = $paged == $link ? ' class="active"' : '';
         printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
@@ -1257,9 +1257,12 @@ function rca_tax_post_pagination() {
     //     printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
     // }
  
-    /** Next Post Link */
-    if ( get_next_posts_link() )
-        printf( get_next_posts_link( '<i class="fa fa-angle-right" aria-hidden="true"></i>' ) );
+    $difference = $max - $paged;
+
+    while ($difference > 1) {
+      printf( get_next_posts_link( '<i class="fa fa-angle-right" aria-hidden="true"></i>' ) );
+      break;
+    }
  
     echo '</ul></div>' . "\n";
  

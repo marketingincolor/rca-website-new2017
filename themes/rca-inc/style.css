@@ -32,10 +32,25 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 #mobile-top-bar #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item { width: 100% !important; font-family:'Roboto' !important;  }
 
 /*PUBLISHED ARTICLE SLIDER FOR AUTHORS*/
+#individual-email {
+  text-align: center;
+}
+#pa-section {
+  padding: 75px 0 10px
+}
 #owl-carousel-pa-slider div .owl-pagination { padding-top: 0rem; }
 #owl-carousel-pa-slider .owl-prev,#owl-carousel-pa-slider .owl-next { bottom: 0px; top: 30%;}
 #owl-carousel-pa-slider div.item { padding: 0px 0px;  }
 #owl-carousel-pa-slider a { color: #2b2b2b; }
+#owl-carousel-pa-slider .item img{
+  margin-bottom: 15px;
+}
+#owl-carousel-pa-slider .owl-pagination{
+  display: none;
+}
+#owl-carousel-pa-slider .owl-item{
+  padding: 0 30px;
+}
 #pa-section { background-color: #f8f7f5; padding: 75px 0px;}
 #pa-section h3 { padding-bottom: 50px; }
 
@@ -47,7 +62,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ul > li,.entry-content ul,.archive ul{
   list-style: none
 }
-ul:not(#menu-desktop-footer-menu):not(#menu-strategic-consulting-3):not(#wp-admin-bar-user-actions):not(#wp-admin-bar-new-content-default):not(#wp-admin-bar-appearance):not(#wp-admin-bar-site-name-default):not(#wp-admin-bar-top-secondary):not(#menu-strategic-consulting-1):not(#menu-pharmaceutical-strategic-consulting-1):not(#pagination):not(#menu-regulatory-affairs):not(.submenu):not(#menu-compliance-assurance):not(#menu-remediation-strategy-and-support):not(#menu-strategic-consulting):not(#mega-menu-menu-1):not(#wp-admin-bar-root-default):not(.mega-sub-menu):not(#menu-mobile-footer-right):not(#menu-mobile-footer-left):not(#menu-pharmaceutical-regulatory-affairs):not(#menu-pharmaceutical-compliance-assurance):not(#menu-pharmaceutical-remediation-strategy-and-support):not(#menu-pharmaceutical-strategic-consulting):not(#menu-our-people):not(#menu-strategic-consulting-2):not(#menu-compliance-assurance-1):not(#menu-regulatory-affairs-1):not(#menu-remediation-strategy-and-support-1):not(#menu-pharmaceutical-compliance-assurance-1):not(#menu-pharmaceutical-regulatory-affairs-1):not(#menu-pharmaceutical-remediation-strategy-and-support-1) > li::before {
+ul:not(#menu-desktop-footer-menu):not(#location-accordian):not(#menu-strategic-consulting-3):not(#wp-admin-bar-user-actions):not(#wp-admin-bar-new-content-default):not(#wp-admin-bar-appearance):not(#wp-admin-bar-site-name-default):not(#wp-admin-bar-top-secondary):not(#menu-strategic-consulting-1):not(#menu-pharmaceutical-strategic-consulting-1):not(#pagination):not(#menu-regulatory-affairs):not(.submenu):not(#menu-compliance-assurance):not(#menu-remediation-strategy-and-support):not(#menu-strategic-consulting):not(#mega-menu-menu-1):not(#wp-admin-bar-root-default):not(.mega-sub-menu):not(#menu-mobile-footer-right):not(#menu-mobile-footer-left):not(#menu-pharmaceutical-regulatory-affairs):not(#menu-pharmaceutical-compliance-assurance):not(#menu-pharmaceutical-remediation-strategy-and-support):not(#menu-pharmaceutical-strategic-consulting):not(#menu-our-people):not(#menu-strategic-consulting-2):not(#menu-compliance-assurance-1):not(#menu-regulatory-affairs-1):not(#menu-remediation-strategy-and-support-1):not(#menu-pharmaceutical-compliance-assurance-1):not(#menu-pharmaceutical-regulatory-affairs-1):not(#menu-pharmaceutical-remediation-strategy-and-support-1) > li::before {
   content: "•";
   color: #C4612B;
   display: inline-block;
@@ -187,10 +202,6 @@ body.down .top-menu.clone {
 .missing-avatar {
   /*margin-top: 1rem !important*/
 }
-/*Make all people images be same height*/
-.staff-column img{
-  /*height: 165px;*/
-}
 
 /*Blockquotes seen on white papers*/
 blockquote, blockquote p {
@@ -291,7 +302,7 @@ blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; 
 #mega-menu-container li a { padding-right: 0rem; padding-left: 0rem; }
 main { margin-bottom: 0rem; }
 .about-us-testimonial { background-color: #1a365d; color: #fff; padding: 40px; margin-bottom: 40px; }
-.about-us-testimonial p { color: #fff; font-family: 'Lora', sans-serif; font-weight: bold; font-size: 1.25rem; font-style: italic; }
+.about-us-testimonial p { color: #fff; font-family: 'Lora',margin-bottom: 0; sans-serif; font-weight: bold; font-size: 1.25rem; font-style: italic; }
 
 .item-block { margin: 1rem 0rem; }
 .archived-title { height: 80px; }
@@ -468,7 +479,7 @@ main { margin-bottom: 0rem; }
 }
 
 
-#share-section { padding: 3rem 0rem 0rem; }
+#share-section { padding: 3rem 0 }
 .location-address p { color: #2b2b2b; font-weight: normal; }
 #location-accordian > li > div { padding: 3rem 0rem; }
 .map-btn { width: 80%; text-align: center; margin: 0 auto; display: block; margin-top: 2rem; }
@@ -834,11 +845,15 @@ input[type=number]::-webkit-outer-spin-button {
 	border-bottom: 2px solid #FFF;
 	color: #FFF;
 }
-#learn-more-form-container-white input:valid:not(:submit),#learn-more-form-container-white select:valid{
+#learn-more-form-container-white input:valid,#learn-more-form-container-white select:valid{
 	border-bottom: 2px solid #363636 !important;
 	color: #363636 !important;
 }
-#learn-more-form-container-blue input[type=submit],#learn-more-form-container-blue input[type=submit]{
+#learn-more-form-container-white #form-submit{
+  border-bottom:2px solid #c4612b !important;
+  color: #c4612b !important;
+}
+#learn-more-form-container-blue input[type=submit],#learn-more-form-container-white input[type=submit]{
 	transition: all 0.25s ease-in-out;
 }
 #learn-more-form-container-blue input[type=submit]{
@@ -848,8 +863,8 @@ input[type=number]::-webkit-outer-spin-button {
 	color: #1a365d;
 	background-color: #FFF;
 }
-#learn-more-form-container-white input[type=submit]:hover{
-	color: #FFF;
+#learn-more-form-container-white #form-submit:hover{
+	color: #FFF !important;
 	background-color: #c4612b;
 }
 #learn-more-form-container-blue textarea,#learn-more-form-container-white textarea{
@@ -2846,6 +2861,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 @media screen and (max-width: 39.9375em) {
   #learn-more-cta{
   	padding: 5% 0 12%;
+  }
+  .staff-column img{
+    margin-bottom: .625rem;
   }
 	#all-case-study-content > div:nth-child(1) > div > h1 { margin-bottom: 3rem; }
 	#breadcrumbs { margin: 1rem 0; }

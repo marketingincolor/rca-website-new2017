@@ -45,12 +45,8 @@ get_header(); ?>
 	
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<div id="contact-learn-more-wrapper" class="show-for-medium">
+	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-white'); ?>
-	</div>
-
-	<div id="contact-learn-more-wrapper" class="hide-for-medium">
-		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	</div>
 <?php
 //get_sidebar();
