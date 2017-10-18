@@ -295,7 +295,8 @@ blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; 
 /*Overwrite breadcrumb styles*/
 #breadcrumbs, .breadcrumb, .breadcrumb p, .breadcrumb a, #breadcrumbs a, #breadcrumbs p {     
 	font-size: 12px !important;
-    color: #9d938a !important; 
+  color: #9d938a !important;
+  font-family: 'roboto', sans-serif !important; 
 }
 
 #learn-more-form-container-blue p { font-size: .75rem; color: #76869f; }
@@ -2119,7 +2120,6 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; p
     background-color: #fff;
     padding: 2rem 0rem;
 }
-.site-branding a, img { }
 
 /*Front Page - Sliders*/
 #home-slider { border: 2px solid red; }
@@ -2257,7 +2257,7 @@ footer { background-color: #2b2b2b; padding: 2.5rem 0rem; }
 .footer-social-link { 
   line-height: 1;
   position: relative;
-  padding: 0 0.3rem;
+  padding: 0.6rem 0.3rem;
   display: inline-block;
 }
 
@@ -2845,6 +2845,8 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 /* Small only */
 @media(max-width:360px){
 
+.site-branding a, img { max-width: 350px; }
+
 #sign-up-cta { 
   background-size: 600%;
 }
@@ -2859,6 +2861,8 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 }
 
 @media screen and (max-width: 39.9375em) {
+  .site-branding a, img { max-width: 350px; }
+
   #learn-more-cta{
   	padding: 5% 0 12%;
   }
@@ -2952,6 +2956,11 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 
 /* Large and up */
 @media screen and (min-width: 64em) {
+
+  .site-branding a, img { max-width: 500px; }
+
+
+  .footer-social-link { padding: 0 0.3rem; }
 
 	#top-contact-us {
 		padding-top: 65px;

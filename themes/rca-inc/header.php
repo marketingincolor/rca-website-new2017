@@ -96,7 +96,7 @@
 					<div class="row expanded">
 						<div class="site-branding small-12 columns align-items-center text-center">
 							<?php #the_custom_logo(); ?>
-							<a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/images/rca-header-logo-svg.svg'; ?>" style="display:block; margin: 0 auto; width: 32%; max-width: 500px;"/></a>
+							<a href="<?php echo home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/images/rca-header-logo-svg.svg'; ?>" style="display:block; margin: 0 auto;"/></a>
 						</div>
 					</div>
 					<!-- /LOGO -->

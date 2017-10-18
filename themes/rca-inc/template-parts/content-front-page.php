@@ -80,7 +80,7 @@
 
 					echo '<div id="individual-service" class="small-12 medium-4 ' . $additional_class . ' columns rca" data-equalizer-watch>';
 					echo '<img src="' . $img_array[$i]['url'] . '" />';
-					echo '<h2>' . $title_array[$i] . '</h2>';
+					echo '<h2 style="margin-bottom: 0rem;">' . $title_array[$i] . '</h2>';
 					echo '<p>' . $content_array[$i] . '</p>';
 					echo '<a href="'.home_url("/$button_array[$i]/").'"><button>Learn More</button></a>';
 					echo '</div>';
