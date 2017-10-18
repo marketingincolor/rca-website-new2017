@@ -1217,7 +1217,12 @@ function rca_tax_post_pagination() {
         $links[] = $paged + 2;
         $links[] = $paged + 1;
     }
- 
+
+    sort( $links );
+    if ($paged != $max - 1) {
+      array_pop($links);
+    }
+    
     echo '<div class="navigation text-center"><ul id="pagination">' . "\n";
 
     /** Previous Post Link */
@@ -1238,7 +1243,6 @@ function rca_tax_post_pagination() {
     }
  
     /** Link to current page, plus 2 pages in either direction if necessary */
-    sort( $links );
     foreach ( (array) $links as $link ) {
         $class = $paged == $link ? ' class="active"' : '';
         printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
