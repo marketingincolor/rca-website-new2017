@@ -32,10 +32,25 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 #mobile-top-bar #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item { width: 100% !important; font-family:'Roboto' !important;  }
 
 /*PUBLISHED ARTICLE SLIDER FOR AUTHORS*/
+#individual-email {
+  text-align: center;
+}
+#pa-section {
+  padding: 75px 0 10px
+}
 #owl-carousel-pa-slider div .owl-pagination { padding-top: 0rem; }
 #owl-carousel-pa-slider .owl-prev,#owl-carousel-pa-slider .owl-next { bottom: 0px; top: 30%;}
 #owl-carousel-pa-slider div.item { padding: 0px 0px;  }
 #owl-carousel-pa-slider a { color: #2b2b2b; }
+#owl-carousel-pa-slider .item img{
+  margin-bottom: 15px;
+}
+#owl-carousel-pa-slider .owl-pagination{
+  display: none;
+}
+#owl-carousel-pa-slider .owl-item{
+  padding: 0 30px;
+}
 #pa-section { background-color: #f8f7f5; padding: 75px 0px;}
 #pa-section h3 { padding-bottom: 50px; }
 
@@ -187,10 +202,6 @@ body.down .top-menu.clone {
 .missing-avatar {
   /*margin-top: 1rem !important*/
 }
-/*Make all people images be same height*/
-.staff-column img{
-  /*height: 165px;*/
-}
 
 /*Blockquotes seen on white papers*/
 blockquote, blockquote p {
@@ -291,7 +302,7 @@ blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; 
 #mega-menu-container li a { padding-right: 0rem; padding-left: 0rem; }
 main { margin-bottom: 0rem; }
 .about-us-testimonial { background-color: #1a365d; color: #fff; padding: 40px; margin-bottom: 40px; }
-.about-us-testimonial p { color: #fff; font-family: 'Lora', sans-serif; font-weight: bold; font-size: 1.25rem; font-style: italic; }
+.about-us-testimonial p { color: #fff; font-family: 'Lora',margin-bottom: 0; sans-serif; font-weight: bold; font-size: 1.25rem; font-style: italic; }
 
 .item-block { margin: 1rem 0rem; }
 .archived-title { height: 80px; }
@@ -2839,6 +2850,9 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 @media screen and (max-width: 39.9375em) {
   #learn-more-cta{
   	padding: 5% 0 12%;
+  }
+  .staff-column img{
+    margin-bottom: .625rem;
   }
 	#all-case-study-content > div:nth-child(1) > div > h1 { margin-bottom: 3rem; }
 	#breadcrumbs { margin: 1rem 0; }
