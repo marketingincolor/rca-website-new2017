@@ -100,26 +100,13 @@
 						</div>
 					</div>
 					<!-- /LOGO -->
-
-					<!-- PHONE ON MOBILE BUTTON -->
-					<div id="phone-icon" class="row expanded title-bar hide-for-large" data-equalizer>
-
-						<div class="small-6 columns text-center" data-equalizer-watch>
-							<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact Us</p></a>		
-						</div>
-						<div id="menu-section" class="small-6 columns relative" data-equalizer-watch>
-							<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">
-								<div class="hamburger-menu" type="button" data-toggle><div class="bar"></div></div>
-							</div>
-						</div>
-					</div>
-					<!-- /PHONE ON MOBILE BUTTON -->
 					
+
+					<!-- PRIMARY MENU -->
 					<div class="top-menu">
 						<div class="row">
 
 							<div class="small-12 columns relative">
-								<?php echo do_shortcode( '[maxmegamenu location=max_mega_menu_1]'); ?>
 								<?php echo do_shortcode( '[maxmegamenu location=menu-1]' ); ?>
 								<a href="<?php echo home_url('/contact/');?>">
 									<div id="contact-header-btn" class="">
@@ -130,188 +117,30 @@
 							
 						</div>
 					</div>
+					<!-- /PRIMARY MENU -->
 
-					<?php if(false): ?>
-					<!-- MEGA MENU -->
-					<div id="top-menu">
-						<div id="top-menu" class="row">
-							<div class="large-12 columns">
-								<ul id="mega-menu-container" class="dropdown menu show-for-large" data-dropdown-menu> 
-									<li class="mega-menu">
-
-										<!-- MEDICAL DEVICES -->
-										<a href="<?php echo home_url('/medical-devices/'); ?>">Medical Devices</a>
-										<ul class="menu">
-											<li>
-												<div class="row">
-													<div class="small-8 columns">
-
-														<div class="medium-6 columns">
-															<h3><a href="<?php echo home_url('services/regulatory-affairs');?>">Regulatory Affairs</a></h3>
-															<?php
-
-															wp_nav_menu( 
-															  array(
-															    'menu' => 'Regulatory Affairs', 
-															    'menu_class' => 'menu',
-															  )
-															); ?>
-														</div>
-
-														<div class="medium-6 columns">
-															<h3>Quality Services</h3>
-														</div>
-
-														<div class="medium-6 columns">
-															<h3>Compliance Assurance</h3>
-															<?php wp_nav_menu( array('menu' => 'Compliance Assurance' )); ?>
-														</div>
-
-														<div class="medium-6 column end">
-															<h3>Remediation Strategy and Support</h3>
-															<?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support' )); ?>
-														</div>
-
-													</div>
-													<div class="small-4 columns">
-														<div class="medium-12 column">
-															<h3>Strategic Consulting</h3>
-															<?php wp_nav_menu( array('menu' => 'Strategic Consulting' )); ?>
-														</div>
-													</div>
-												</div>
-											</li>
-										</ul>
-									</li>
-
-									<!-- PHARMA -->
-									<li class="mega-menu">
-										<a href="<?php echo home_url('/Pharmaceutical/'); ?>">Pharmaceutical</a>
-											<ul class="menu">
-												<li>
-													<div class="row">
-														<div class="small-8 columns">
-															
-															<div class="medium-6 columns">
-																<h3><a href="<?php echo home_url('services/regulatory-affairs');?>">Regulatory Affairs</a></h3>
-																<?php
-
-																wp_nav_menu( 
-																  array(
-																    'menu' => 'Pharmaceutical Regulatory Affairs', 
-																    'menu_class' => 'menu',
-																  )
-																); ?>
-															</div>
-															<div class="medium-6 end columns">
-																<h3><a href="<?php echo home_url('services/regulatory-affairs');?>">Quality Services</a></h3>
-																<?php
-																// wp_nav_menu( 
-																//   array(
-																//     'menu' => 'Pharmaceutical Quality Services', 
-																//     'menu_class' => 'menu',
-																//   )
-																// );
-																 ?>
-															</div>
-															<div class="medium-6 columns">
-																<h3><a href="<?php echo home_url('services/regulatory-affairs');?>">Compliance Assurance</a></h3>
-																<?php
-
-																wp_nav_menu( 
-																  array(
-																    'menu' => 'Pharmaceutical Compliance Assurance', 
-																    'menu_class' => 'menu',
-																  )
-																); ?>
-															</div>
-															<div class="medium-6 end columns">
-																<h3><a href="<?php echo home_url('services/regulatory-affairs');?>">Remediation Strategy & Support</a></h3>
-																<?php
-
-																wp_nav_menu( 
-																  array(
-																    'menu' => 'Pharmaceutical Remediation Strategy and Support', 
-																    'menu_class' => 'menu',
-																  )
-																); ?>
-															</div>
-														</div>
-														<div class="small-4 columns">
-																	<h3>Strategic Consulting</h3>
-																	<?php wp_nav_menu( array('menu' => 'Pharmaceutical Strategic Consulting' )); ?>
-														</div>
-													</div>
-
-												</li>
-											</ul>
-										</li>
-										<!-- /PHARMA -->
-
-										<!-- ADDITIONAL SERVICES -->
-										<li><a href="<?php echo get_permalink( get_page_by_path('Additional Services' ) ); ?>">Additional Services</a></li>
-										
-										<!-- ABOUT -->
-										<li class="mega-menu">
-											<a href="<?php echo get_permalink( get_page_by_path( 'About' ) ); ?>">About</a>
-												<ul class="menu">
-												<li>
-													<div class="row">
-														<div class="small-12 columns">
-
-															<div class="medium-4 columns">
-																<h3><a href="<?php echo home_url('services/regulatory-affairs');?>">About</a></h3>
-																<?php
-
-																wp_nav_menu( 
-																  array(
-																    'menu' => 'About', 
-																    'menu_class' => 'menu',
-																  )
-																); ?>
-															</div>
-														</div>
-													</div>
-												</li>
-											</ul>
-										</li>
-										<!-- /ABOUT -->
-
-										<!-- NEWS -->
-										<li><a href="<?php echo home_url('/news/' );?>">News</a></li>
-
-										<!-- CONTACT -->
-										<li class="contact-menu-item" style="float:right;"><a href="<?php echo home_url('/contact/');?>"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</a></li></a>
-									</li>
-								</ul>	 	
-							</div>
-						</div>
-						<?php endif; ?>
-						<style>
-							
-						</style>
-						<!-- SECONDARY NAV ON DESKTOP -->
-						<div id="secondary-menu">
-							<div  class="row show-for-large">
-								<div class="large-12 columns" style="background-color: #9d938a; padding: 1.375rem 1rem;">
-									<div class="row">
-										<div class="small-8 columns">
-											<?php 
-											    wp_nav_menu($args = array( 
-														'menu' => 'Secondary Menu',
-														'walker' => new RCA_SECONDARY_WALKER()
-												 	)
-												);
-											?>
-										</div>
-										<div class="small-4 columns">
-											<?php get_search_form(); ?>
-										</div>
+					<!-- SECONDARY NAV ON DESKTOP -->
+					<div id="secondary-menu">
+						<div  class="row show-for-large">
+							<div class="large-12 columns" style="background-color: #9d938a; padding: 1.375rem 1rem;">
+								<div class="row">
+									<div class="small-8 columns">
+										<?php 
+										    wp_nav_menu($args = array( 
+													'menu' => 'Secondary Menu',
+													'walker' => new RCA_SECONDARY_WALKER()
+											 	)
+											);
+										?>
+									</div>
+									<div class="small-4 columns">
+										<?php get_search_form(); ?>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- /SECONDARY NAV ON DESKTOP -->
+					</div>
+					<!-- /SECONDARY NAV ON DESKTOP -->
 
 				</section>
 				<!-- ENTIRE HEADER ON DESKTOP -->
@@ -324,12 +153,9 @@
 							<?php the_custom_logo(); ?>
 						</div>
 					</div>
-					<!-- PHONE ON MOBILE BUTTON -->
-					<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
-						<?php #echo do_shortcode( '[maxmegamenu location=menu-1]' ); 
-							
-						?>
 
+					<!-- CONTACT ON MOBILE BUTTON -->
+					<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
 						<div class="small-6 columns text-center" data-equalizer-watch style="padding: 1rem 0rem;">
 							<a href="<?php echo home_url('/contact/');?>"><p style="margin-bottom:0rem; border-right: 2px solid #fff;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact Us</p></a>		
 						</div>
@@ -339,143 +165,38 @@
 							</div>
 						</div>
 					</div>
-					<?php
-							$args = array(
-								'menu' => 'primary',
-								'container_id' => 'mobile-menu',
-								'container_class' => 'hide vertical menu accordion-menu',
-								'items_wrap'      => '<ul class="%2$s" data-responsive-menu="accordion large-dropdown">%3$s</ul>',
-								'walker' => new RCA_Mega_Mobile_Menu_Walker()							
+					<!-- CONTACT ON MOBILE -->
 
-							);
-							wp_nav_menu( $args );
-					?>
-				<?php if(FALSE): ?>
-					<ul id="mobile-menu" class="vertical menu accordion-menu hide" data-accordion-menu >
-						<div id="top-nav-wrapper">
-							<div class="row">
-								<div class="small-10 small-offset-1 columns">
-									<?php get_search_form(); ?>
-								</div>
-							</div>
-							<div class="row">
-								<div class="small-10 small-offset-1 columns">
-									<button class="">Explore all of Our Expertise</button>
-								</div>
+					<!-- MOBILE MENU -->
+
+					<div id="top-nav-wrapper" class="hide">
+						<div class="row">
+							<div class="small-10 small-offset-1 columns">
+								<?php get_search_form(); ?>
 							</div>
 						</div>
-					<div id="bottom-nav-wrapper">
-					<li>
-						<a href="<?php echo get_permalink( get_page_by_path( 'Medical Devices' ) ); ?>">Medical Devices</a>
-
-						<!-- Regulatory Affairs -->
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>/medical-device/regulatory-affairs">Regulatory Affairs</a></h3>
-								<?php wp_nav_menu( array('menu' => 'Regulatory Affairs')); ?>
-
-							</li>
-						</ul>
-						
-						<!-- Compliance Assurance -->
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>medical-device/compliance-assurance">Compliance Assurance</a></h3>
-								<?php wp_nav_menu( array('menu' => 'Compliance Assurance')); ?>
-
-							</li>
-						</ul>
-
-						<!-- Quality Services -->
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>medical-device/quality-services">Quality Services</a></h3>
-								<?php #wp_nav_menu( array('menu' => 'Quality Services')); ?>
-
-							</li>
-						</ul>
-						
-						<!-- Remediation Strategy & Support -->
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>/medical-device/remediation-strategy-support-for-medical-device-quality-and-regulatory-remediations">Remediation Strategy and Support</a></h3>
-								<?php wp_nav_menu( array('menu' => 'Remediation Strategy and Support')); ?>
-
-							</li>
-						</ul>
-
-						<!-- Strategic Consulting -->
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>/medical-device/strategic-consulting">Strategic Consulting</a></h3>
-								<?php wp_nav_menu( array('menu' => 'Strategic Consulting')); ?>
-								
-							</li>
-						</ul>
-					</li>
-					<!-- Pharm Dropdown Menu -->
-					<li>
-						<a href="<?php echo get_permalink( get_page_by_path( 'Pharmaceutical' ) ); ?>">Pharmaceutical</a>
-				
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>/pharmaceutical/regulatory-affairs">Regulatory Affairs</a></h3>
-								<?php wp_nav_menu(array('menu' => 'Pharmaceutical Regulatory Affairs',)); ?>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>/pharmaceutical/compliance-assurance">Compliance Assurance</a></h3>
-								<?php wp_nav_menu( array('menu' => 'Pharmaceutical Compliance Assurance')); ?>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>/pharmaceutical/quality-services">Quality Services</a></h3>
-								<?php //wp_nav_menu(array('menu' => 'Pharmaceutical Quality Services')); ?>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>/pharmaceutical/remediation-strategy-support-for-medical-device-quality-and-regulatory-remediations">Remediation Strategy and Support</a></h3>
-								<?php wp_nav_menu( array('menu' => 'Pharmaceutical Remediation Strategy and Support')); ?>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<h3><a href="<?php echo site_url(); ?>/pharmaceutical/strategic-consulting">Strategic Consulting</a></h3>
-								<?php wp_nav_menu( array('menu' => 'Pharmaceutical Strategic Consulting')); ?>
-							</li>
-						</ul>
-					</li><!-- /Pharm Dropdown Menu -->
-
-					<li><a href="<?php echo get_permalink( get_page_by_title( 'Additional Services' ) ); ?>">Additional Services</a></li>
-					<!-- About Dropdown Menu -->
-					<li>
-						<a href="<?php echo get_permalink( get_page_by_path( 'About' ) ); ?>">About</a>
-						<ul>
-							<li>
-								<h3><a href="<?php echo get_permalink(get_page_by_path( 'about/our-people') ); ?>">Our People</a></h3>
-								<?php wp_nav_menu( array('menu' => 'Our People')); ?>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<h3><a href="<?php echo get_permalink(get_page_by_title('Giving Back')); ?>">Giving Back</a></h3>
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<h3><a href="<?php echo get_permalink(get_page_by_title('Join Our Global Team and Discover the RCA Difference!')); ?>">Join Our Team</a></h3>
-							</li>
-						</ul>
-					</li>
-					<li><a href="<?php echo get_permalink( get_page_by_path( 'news' ) ); ?>">News & Events</a></li>
-					</ul>
+						<div class="row">
+							<div class="small-10 small-offset-1 columns">
+								<a href="<?php echo site_url() . '/view-all' ?>" ><button class="">Explore all of Our Expertise</button></a>
+							</div>
+						</div>
 					</div>
-				</section>
-			<?php endif; ?>
-			<!-- /MOBILE NAV -->
+					<?php
+
+						$args = array(
+							'container'      => false,
+							'menu'           => 'Main Menu',
+							'menu_class'     => 'vertical menu accordion-menu hide',
+							'menu_id' => 'mobile-menu',
+							'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu style="width: 100%;">%3$s</ul>',
+							//Recommend setting this to false, but if you need a fallback...
+							'fallback_cb'    => 'false',
+							'walker'         => new RCA_Mega_Mobile_Menu_Walker()						
+
+						);
+						wp_nav_menu( $args );
+					?>
+					<!-- /MOBILE MENU -->
 
 			</header>
 
