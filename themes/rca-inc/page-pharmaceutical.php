@@ -37,10 +37,10 @@ get_header(); ?>
 			'menu_name'   => 'Pharmaceutical Regulatory Affairs',
 			'slug' => 'regulatory-affairs'
 		),
-		'strategic_consulting' => array(
-			'title' => 'Strategic Consulting',
-			'menu_name'   => 'Pharmaceutical Strategic Consulting',
-			'slug' => 'strategic-consulting'
+		'quality_assurance' => array(
+			'title' => 'Quality Assurance',
+			'menu_name'   => 'Quality Assurance',
+			'slug' => 'quality-assurance'
 		),
 		'compliance_assurance' => array(
 			'title' => 'Compliance Assurance',
@@ -52,11 +52,11 @@ get_header(); ?>
 			'menu_name'   => 'Pharmaceutical Remediation Strategy and Support',
 			'slug' => 'remediation-strategy-support'
 		),
-		// 'quality_assurance' => array(
-		// 	'title' => 'Quality Assurance',
-		// 	'menu_name'   => 'Quality Assurance',
-		// 	'slug' => 'quality-assurance'
-		// )
+		// 'strategic_consulting' => array(
+		// 	'title' => 'Strategic Consulting',
+		// 	'menu_name'   => 'Pharmaceutical Strategic Consulting',
+		// 	'slug' => 'strategic-consulting'
+		// ),
 	);
 
 	?>
@@ -91,7 +91,7 @@ get_header(); ?>
 							// 	echo '</div>';
 							// endif;
 
-							if($service['menu_name'] == 'Pharmaceutical Regulatory Affairs' || $service['menu_name'] == 'Pharmaceutical Compliance Assurance' || $service['menu_name'] == 'Pharmaceutical Remediation Strategy and Support' || $service['menu_name'] == 'Pharmaceutical Strategic Consulting' ):
+							if($service['menu_name'] == 'Pharmaceutical Regulatory Affairs' || $service['menu_name'] == 'Pharmaceutical Compliance Assurance' || $service['menu_name'] == 'Pharmaceutical Remediation Strategy and Support' || $service['menu_name'] == 'Pharmaceutical Quality Assurance' ):
 								echo '<div class="text-left service-menu-items">';
 								echo wp_nav_menu( array('menu' => $service['menu_name']));
 								echo '</div>';
@@ -114,11 +114,11 @@ get_header(); ?>
 				<!-- Hardcoded Strategic Consulting  -->
 				<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 					<div class="service-block">
-						<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
-						<div class="service-title"><a href="<?php echo home_url('pharmaceutical/quality-assurance'); ?>">Quality Assurance</a></div>
+						<div class="service-icon"><img src="<?php echo get_service_image('Strategic Consulting'); ?>" alt=""></div>
+						<div class="service-title"><a href="<?php echo home_url('pharmaceutical/strategic-consulting'); ?>">Strategic Consulting</a></div>
 					</div>
 					<div class="text-left service-menu-items">
-						<?php echo wp_nav_menu(array('menu'=> 'Pharaceutical Quality Assurance')); ?>
+						<?php echo wp_nav_menu(array('menu'=> 'Pharmaceutical Strategic Consulting')); ?>
 					</div>
 				</div>
 				<!-- /Hardcoded Strategic Consulting -->
@@ -128,11 +128,11 @@ get_header(); ?>
 				<!-- Hardcoded Strategic Consulting  -->
 				<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 					<div class="service-block">
-						<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
-						<div class="service-title"><a href="<?php echo home_url('pharmaceutical/quality-assurance'); ?>">Quality Assurance</a></div>
+						<div class="service-icon"><img src="<?php echo get_service_image('Strategic Consulting'); ?>" alt=""></div>
+						<div class="service-title"><a href="<?php echo home_url('pharmaceutical/strategic-consulting'); ?>">Strategic Consulting</a></div>
 					</div>
 					<div class="text-left service-menu-items">
-						<?php //echo wp_nav_menu( array('menu'=> 'Quality Assurance' ) ); ?>
+						<?php echo wp_nav_menu(array('menu'=> 'Pharmaceutical Strategic Consulting')); ?>
 					</div>
 				</div>
 				<!-- /Hardcoded Strategic Consulting -->
