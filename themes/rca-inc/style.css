@@ -249,6 +249,7 @@ blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; 
 
 /*archive blocks*/
 .archive-img { margin-bottom: 10px; }
+.archive-img img{max-height: 45px;}
 .pagination-col {font-size: 14px}
 .pagination-col a { font-weight: normal; }
 .pagination-col a:hover { font-weight: normal; color: #2b2b2b; }
