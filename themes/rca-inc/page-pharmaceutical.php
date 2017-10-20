@@ -56,7 +56,7 @@ get_header(); ?>
 		// 	'title' => 'Quality Assurance',
 		// 	'menu_name'   => 'Quality Assurance',
 		// 	'slug' => 'quality-assurance'
-		// )
+		// ),
 	);
 
 	?>
@@ -118,21 +118,21 @@ get_header(); ?>
 						<div class="service-title"><a href="<?php echo home_url('pharmaceutical/quality-assurance'); ?>">Quality Assurance</a></div>
 					</div>
 					<div class="text-left service-menu-items">
-						<?php echo wp_nav_menu(array('menu'=> 'Pharaceutical Quality Assurance')); ?>
+						<?php //echo wp_nav_menu(array('menu'=> 'Pharmaceutical Quality Assurance')); ?>
 					</div>
 				</div>
-				<!-- /Hardcoded Strategic Consulting -->
+				<!-- /Hardcoded Quality Assurance -->
 			</div>
  
 			<div class="show-for-medium medium-4 columns">
-				<!-- Hardcoded Strategic Consulting  -->
+				<!-- Hardcoded Quality Assurance  -->
 				<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 					<div class="service-block">
 						<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
 						<div class="service-title"><a href="<?php echo home_url('pharmaceutical/quality-assurance'); ?>">Quality Assurance</a></div>
 					</div>
 					<div class="text-left service-menu-items">
-						<?php //echo wp_nav_menu( array('menu'=> 'Quality Assurance' ) ); ?>
+						<?php //echo wp_nav_menu(array('menu'=> 'Pharmaceutical Quality Assurance')); ?>
 					</div>
 				</div>
 				<!-- /Hardcoded Strategic Consulting -->

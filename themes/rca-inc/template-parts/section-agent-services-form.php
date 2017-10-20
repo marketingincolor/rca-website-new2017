@@ -31,13 +31,18 @@
 						<?php get_template_part('template-parts/content', 'country-list') ?><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-4 columns">
-				    	<input type="number" name="facility_zip" id="form-facility-zip" placeholder="Facility Zip*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+				    <input type="number" name="facility_zip" id="form-facility-zip" placeholder="Facility Zip*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-4 columns">
-				    	<select name="num_products" id="form-num-products" required><option value="" selected="selected" disabled>Number of Products*</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><i class="fa fa-slack" aria-hidden="true"></i>
+				    <select name="num_products" id="form-num-products" required><option value="" selected="selected" disabled>Number of Products*</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><i class="fa fa-briefcase" aria-hidden="true"></i>
+					</div>
+					<div class="clearfix"></div>
+					<div id="product-fields">
+						
 					</div>
 					<div class="large-12 columns">
-				    	<input type="text" name="products_names" id="form-products-names" placeholder="Product(s) Name(s)*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
+				    <label for=""><i class="fa fa-briefcase" aria-hidden="true"></i> Please List Product Names*</label>
+				    	<textarea name="products_names" id="form-products-names" cols="30" rows="4" required></textarea>
 					</div>
 					<div class="large-12 columns text-right">
 						<p>*=Required</p>
@@ -54,7 +59,7 @@
 	  // change colors on inputs to white when field is filled
 	  // out properly 
 		var $form = $('#learn-more-form-container-white');
-		$form.find('input,textarea,select').on('keyup change',function(){
+		$form.on('keyup change','input,textarea,select',function(){
 
 			// change color of labels when their input field is valid
 			if($(this).is(":valid")){
@@ -67,6 +72,18 @@
 				$(this).next('i').css({'color':'rgba(0,0,0,0.4)'});
 				$(this).prev('label:not(.check-label)').css({'color':'rgba(0,0,0,0.4)'});
 				$(this).prev('label').find('i').css({'color':'rgba(0,0,0,0.4)'});
+			}
+		});
+
+		// Add product fields depending how many is selected from 
+		// num products dropdown
+		$('#form-num-products').on('change',function(){
+			var num = this.value;
+			$('#product-fields').html('');
+			for(var i = 1; i <= num; i++){
+				$('#product-fields').append(
+					'<div class="large-4 columns end"><input type="text" name="product-num-'+ i +'" id="product-num-'+ i +'" placeholder="Product No. ' + i +'*" required><i class="fa fa-briefcase" aria-hidden="true"></i></div>'
+				)
 			}
 		});
 
@@ -151,7 +168,7 @@
 	  	blueForm.find('#form-facility-state').val(resp.contact['State']);
 	  	blueForm.find('#form-facility-country').val(resp.contact['Country']);
 	  	blueForm.find('#form-facility-zip').val(resp.contact['Zip'])
-	  	blueForm.find('#form-num-products').val(resp.contact['Number of Products']);
+	  	// blueForm.find('#form-num-products').val(resp.contact['Number of Products']);
 	  	blueForm.find('#form-products-names').val(resp.contact['Product Names']);
 
 	  	// change color of labels when their input field is valid

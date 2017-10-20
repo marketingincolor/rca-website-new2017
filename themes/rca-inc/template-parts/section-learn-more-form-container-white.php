@@ -7,7 +7,7 @@
 		</div>
 		<div class="row">
 			<div class="small-10 small-offset-1">
-				<form id="blue-form" name="blue-form" action="" method="post">
+				<form id="blue-form" name="blue-form" action="<?php echo site_url(); ?>/success" method="post">
 			    <div class="large-4 columns">
 			    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
 			    </div>
