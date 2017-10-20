@@ -62,7 +62,7 @@ else {
 					<!-- DOWNLOAD LINKS -->
 					<div class="download-links">
 						<?php if(!empty(get_field('webinar_download_text')) && !empty(get_field('webinar_slides_download_link')) ): ?>
-							<a href="<?php the_field('webinar_slides_download_link'); ?>"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
+							<a href="<?php the_field('webinar_slides_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
 						<?php endif; ?>
 
 						<?php if(!empty(get_field('faqs_download_link')) && !empty(get_field('faq_download_text')) ): ?>
@@ -85,6 +85,10 @@ else {
 		</section>
 
 	</section>
+
+	<!-- LEARN MORE -->
+	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
+	<!-- /LEARN MORE -->
 
 	<?php endwhile;endif;get_footer(); ?>
 

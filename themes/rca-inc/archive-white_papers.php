@@ -63,7 +63,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-						<p class="description">White Papers are reports written by Regulatory Compliance Associates<sup>®</sup>sup> Inc. subject matter experts that help readers understand complex issues, and assist them in making decisions or solve problems.</p>
+						<p class="description">White Papers are reports written by Regulatory Compliance Associates<sup>®</sup> Inc. subject matter experts that help readers understand complex issues, and assist them in making decisions or solve problems.</p>
 					</header><!-- .page-header -->
 				</div>
 			</div>
