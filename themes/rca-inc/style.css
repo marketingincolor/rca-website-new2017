@@ -1139,14 +1139,18 @@ input[type=number]::-webkit-outer-spin-button {
 #learn-more-form-container-white input[type="submit"] {
 	background-color: transparent;
 	border-radius: 0px;
-	border: 2px solid #c4612b;
-	color: #fff;
+	border: 2px solid #c4612b !important;
 	margin: 0rem auto;
 	width: 100%;
 	font-weight: bold;
 	display: block;
 	padding: 1rem 4rem;
-	color: #c4612b;
+	color: #c4612b !important;
+  transition: all 0.25s ease-in-out;
+}
+#learn-more-form-container-white input[type="submit"]:hover{
+  color: #FFF !important;
+  background-color: #c4612b;
 }
 
 label { font-size: 1rem; padding: .5rem 0rem; }
