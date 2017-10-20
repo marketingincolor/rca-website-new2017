@@ -549,7 +549,12 @@ h2 {
 # TAXONOMY TEMPLATE
 --------------------------------------------------------------*/
 #mob-before-title-block { padding: 2rem 0rem; }
-#mobile-share-btn { color: #c4612b; border: 2px solid #c4612b; }
+#mobile-share-btn { 
+  color: #c4612b;
+  border: 2px solid #c4612b;
+  padding: 0.35rem;
+  line-height: 1;
+}
 #mobile-share-btn p { margin-bottom: 0rem; font-weight: bold; }
 #mobile-cat-picker select {
 	border: 2px solid #c9c3ba;

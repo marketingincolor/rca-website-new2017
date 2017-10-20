@@ -39,7 +39,9 @@ get_header(); ?>
 			</select>
 		</div>
 		<div id="mobile-share-btn" class="small-2 end columns text-center" data-equalizer-watch>
-			<i class="fa fa-share" aria-hidden="true"></i>
+			<div>
+				<i class="fa fa-share" aria-hidden="true"></i>
+			</div>
 			<p>Share</p>
 		</div>
 	</div>
