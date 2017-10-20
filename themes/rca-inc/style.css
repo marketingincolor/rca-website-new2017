@@ -549,7 +549,12 @@ h2 {
 # TAXONOMY TEMPLATE
 --------------------------------------------------------------*/
 #mob-before-title-block { padding: 2rem 0rem; }
-#mobile-share-btn { color: #c4612b; border: 2px solid #c4612b; }
+#mobile-share-btn { 
+  color: #c4612b;
+  border: 2px solid #c4612b;
+  padding: 0.35rem;
+  line-height: 1;
+}
 #mobile-share-btn p { margin-bottom: 0rem; font-weight: bold; }
 #mobile-cat-picker select {
 	border: 2px solid #c9c3ba;
@@ -1139,14 +1144,18 @@ input[type=number]::-webkit-outer-spin-button {
 #learn-more-form-container-white input[type="submit"] {
 	background-color: transparent;
 	border-radius: 0px;
-	border: 2px solid #c4612b;
-	color: #fff;
+	border: 2px solid #c4612b !important;
 	margin: 0rem auto;
 	width: 100%;
 	font-weight: bold;
 	display: block;
 	padding: 1rem 4rem;
-	color: #c4612b;
+	color: #c4612b !important;
+  transition: all 0.25s ease-in-out;
+}
+#learn-more-form-container-white input[type="submit"]:hover{
+  color: #FFF !important;
+  background-color: #c4612b;
 }
 
 label { font-size: 1rem; padding: .5rem 0rem; }
@@ -1930,7 +1939,7 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 1em 0 0;
 }
 .entry-content ul{
   list-style-type: none;

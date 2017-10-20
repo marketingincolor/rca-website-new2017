@@ -30,7 +30,7 @@
 	#takeover-modal{
 		width: 100%;
 		max-width: 100%;
-		height: auto;
+		height: 100%;
 		top:0 !important;
 		background-color: rgba(255,255,255,0.9);
 	}
