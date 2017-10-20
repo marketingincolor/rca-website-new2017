@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
 		$('div > #menu-section').toggleClass('open');
 		$('div > .animate:before').toggleClass('bar-open');
 		$('#top-nav-wrapper').toggleClass('hide');
+		$('#mobile-top-bar p').toggleClass('mobile-divider');
 	});
 	// $('body').on("click mousedown mouseup focus blur keydown change",function(e){
 	//      console.log(e);

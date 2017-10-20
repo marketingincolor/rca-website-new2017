@@ -115,7 +115,8 @@ get_header(); ?>
 				<div class="small-10 small-offset-1 columns pagination-col">
 					<?php get_previous_posts_link(); ?>
 					
-					<?php rca_tax_post_pagination(); ?>
+					<?php //rca_tax_post_pagination(); ?>
+					<?php the_posts_pagination( array( 'mid_size'  => 2, 'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'next_text' => '<i class="fa fa-angle-right" aria-hidden="true"></i>' ) ); ?>
 				</div>
 			</div>
 			<?php
