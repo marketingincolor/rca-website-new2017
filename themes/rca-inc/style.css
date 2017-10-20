@@ -28,6 +28,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+/*Overwrite foundation pagination*/
+.pagination { margin: 1rem 0rem; }
 
 #mobile-top-bar #mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item { width: 100% !important; font-family:'Roboto' !important;  }
 
@@ -2909,12 +2911,18 @@ input#search-input {
     font-size: 12px;
 }
 
-.pagination .current:hover, .pagination .next:hover, .pagination .prev:hover {
+.pagination .current:hover, .pagination .next:hover, .pagination .prev:hover, .current:active, .next:active, .prev:active {
     padding: .1875rem .625rem;
     background: #9d938a;
     border: 2px solid #9d938a;
     color: #fff;
     cursor: pointer;
+}
+
+.dots {
+  color: #9d938a;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 

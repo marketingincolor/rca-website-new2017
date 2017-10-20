@@ -208,6 +208,21 @@
 		</script>
 		<!-- /HEADER -->
 
+		<!-- PAGINATION -->
+		<script>
+			$(document).ready(function() {
+				console.log('footer');
+				$('.next').hover(function() {
+					$('.next i').toggleClass('white-font');
+				});
+				$('.prev').hover(function() {
+					$('.prev i').toggleClass('white-font');
+				});
+			});
+		</script>	
+
+		<!-- /PAGINATION -->
+
 
 		<script>
 			// $(document).ready(function($) {

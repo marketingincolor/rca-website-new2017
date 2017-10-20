@@ -58,9 +58,9 @@ get_header(); ?>
 			'paged' => $paged
 		);
 
-		$case_studies = new WP_Query($args);
+		$case_studies_query = new WP_Query($args);
 
-		if ( $case_studies->have_posts() ) : ?>
+		if ( $case_studies_query->have_posts() ) : ?>
 			
 			<div class="row show-for-medium">
 				<div class="small-10 small-offset-1 columns text-center">
@@ -78,7 +78,7 @@ get_header(); ?>
 				
 			<?php
 				/* Start the Loop */
-				while ( $case_studies->have_posts() ) : $case_studies->the_post();
+				while ( $case_studies_query->have_posts() ) : $case_studies_query->the_post();
 
 					/*
 					 * Include the Post-Format-specific template for the content.
@@ -95,9 +95,10 @@ get_header(); ?>
 			
 			<div class="row text-center">
 				<div class="small-10 small-offset-1 columns pagination-col">
-					<?php get_previous_posts_link(); ?>
+					<?php #get_previous_posts_link(); ?>
 					
-					<?php rca_tax_post_pagination(); ?>
+					<?php //rca_tax_post_pagination(); ?>
+					<?php the_posts_pagination( array( 'mid_size'  => 1, 'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'next_text' => '<i class="fa fa-angle-right" aria-hidden="true"></i>','total' => $case_studies_query->max_num_pages ) ); ?>
 				</div>
 			</div>
 			<?php

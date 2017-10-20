@@ -100,7 +100,8 @@ get_header(); ?>
 				<div class="small-10 small-offset-1 columns pagination-col">
 					<?php #get_previous_posts_link(); ?>
 					
-					<?php rca_tax_post_pagination($view_all); ?>
+					<?php #rca_tax_post_pagination($view_all); ?>
+					<?php the_posts_pagination( array( 'mid_size'  => 1, 'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'next_text' => '<i class="fa fa-angle-right" aria-hidden="true"></i>', 'total' => $view_all->max_num_pages ) ); ?>
 				</div>
 			</div>
 			<?php
