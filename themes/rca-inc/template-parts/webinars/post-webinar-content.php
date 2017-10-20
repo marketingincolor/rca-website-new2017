@@ -151,27 +151,21 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 		</div>
 	</div>
 	<div id="social-icons">
-		<div class="row a2a_kit a2a_kit_size_32 a2a_default_style">
-			<div class="small-offset-2 small-8 columns">
-				<div class="small-4 columns text-center">
-					<a class="a2a_button_facebook"><i class="fa fa-facebook-square fa-3x a2a_button_facebook" aria-hidden="true"></i></a>
-				</div>
-				<div class="small-4 columns text-center">
-					<a class="a2a_button_linkedin"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-				</div>
-				<div class="small-4 columns text-center">
-					<a class="a2a_button_googleplusone"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i></a>
-				</div>
+		<div class="row a2a_kit a2a_kit_size_32 a2a_default_style text-center">
+			<div class="small-2 columns text-center">
+				<a class="a2a_button_facebook"><i class="fa fa-facebook-square fa-3x a2a_button_facebook" aria-hidden="true"></i></a>
 			</div>
-		</div>
-		<div class="row">
-			<div class="small-offset-2 small-8 columns">
-				<div class="small-6 columns text-center">
-					<a class="a2a"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>	
-				</div>
-				<div class="small-6 columns text-center">
-					<i class="fa fa-envelope fa-3x" aria-hidden="true"></i>
-				</div>
+			<div class="small-2 columns text-center">
+				<a class="a2a_button_linkedin"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+			</div>
+			<div class="small-2 columns text-center">
+				<a class="a2a_button_googleplusone"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i></a>
+			</div>
+			<div class="small-2 columns text-center">
+				<a class="a2a_button_twitter"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
+			</div>
+			<div class="small-2 columns text-center">
+				<a class="a2a_button_email"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i></a>
 			</div>
 		</div>
 	</div>
