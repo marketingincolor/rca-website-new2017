@@ -86,7 +86,9 @@ else {
 
 	</section>
 
-	<?php endwhile;endif;get_footer(); ?>
+	<?php endwhile;endif; ?>
+	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
+	<?php get_footer(); ?>
 
 	<!-- Video Modal -->
 	<div class="reveal" id="webinar-video-modal" data-reveal data-reset-on-close="true">
