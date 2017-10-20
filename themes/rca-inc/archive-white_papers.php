@@ -28,11 +28,12 @@ get_header(); ?>
 	<div id="mob-before-title-block" class="row hide-for-medium" data-equalizer>
 		<div id="mobile-cat-picker" class="small-offset-1 small-8 columns" data-equalizer-watch>
 			<select name="mobile_category" id="" onchange="location.href=this.value">
-				<option value="/white-papers">White Papers</option>
-				<option value="/case-studies">Case Studies</option>
-				<option value="/webinars">Webinars</option></a>
-				<option value="/published-articles">Published Articles</option>
-				<option value="/visual-resources">Visual Resources</option>
+				<option value="<?php echo site_url(); ?>/white-papers" disabled selected>White Papers</option>
+				<option value="<?php echo site_url(); ?>/webinars">Webinars</option></a>
+				<option value="<?php echo site_url(); ?>/case-studies">Case Studies</option>
+				<option value="<?php echo site_url(); ?>/published-articles">Published Articles</option>
+				<option value="<?php echo site_url(); ?>/visual-resources">Visual Resources</option>
+				<option value="<?php echo site_url(); ?>/view-all">View All</option>
 			</select>
 		</div>
 		<div id="mobile-share-btn" class="small-2 end columns text-center" data-equalizer-watch>
