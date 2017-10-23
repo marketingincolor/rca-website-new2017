@@ -1422,6 +1422,7 @@ function get_all_post_types() {
 }
 
 function rca_related_content_mobile($atts, $content = null) {
+    global $post;
     extract(shortcode_atts(array(
         'category' => 'Uncategorized'
                     ), $atts));
@@ -1435,12 +1436,13 @@ function rca_related_content_mobile($atts, $content = null) {
 
     $lazyLoad = array_key_exists("lazyload", $atts) && $atts["lazyload"] == true;
 
+    $current_post_type = get_post_type();
+
     $args = array(
-        'post_type' => $atts['post_type'],
-        'orderby' => 'rand',
-        'order' => 'asc',
-        'posts_per_page' => 3,
-        //'nopaging' => true
+      'post_type'      => $current_post_type,
+      'posts_per_page' => 3,
+      'post__not_in'   => array($post->ID),
+      'orderby'        => 'rand',
     );
 
   $result = '<div id="owl-carousel-cs-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
