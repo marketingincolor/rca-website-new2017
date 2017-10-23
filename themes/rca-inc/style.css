@@ -2967,6 +2967,9 @@ input#search-input {
   #all-expertise-content{
     padding: 0 0 3rem;
   }
+  #all-expertise-content h1{
+    margin-bottom: 2rem;
+  }
   .case-study-quote {
     width: auto;
     padding: 20px;
