@@ -227,7 +227,9 @@ blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; 
   clear: right;
   font-size: 13px;
 }
-
+.references-section p, .references-section li {
+  word-wrap: break-word;
+}
 .references-section p:first-child { letter-spacing: .025rem; margin-bottom: 1rem; }
 .references-section p:last-child { margin-bottom: 0rem; }
 /*Footer form no fields*/
