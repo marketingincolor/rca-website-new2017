@@ -68,7 +68,7 @@
 								'cat' => $category_id,
 								// 'orderby' => 'date',
 								// 'order' => 'ASC',
-								'posts_per_page' => 2
+								'posts_per_page' => 1
 
 							);
 
@@ -77,7 +77,7 @@
 							if ( $news_query->have_posts() ) { 
 								while ( $news_query->have_posts() ) {
 									$news_query->the_post();
-									echo '<div class="small-12 medium-6 large-4 columns" data-equalizer-watch>';
+									echo '<div class="medium-10 medium-offset-1 columns" data-equalizer-watch>';
 									#the_title();
 									echo wp_trim_words(get_the_title(), $num_words = 15, '');
 									echo '...<br/><a href="'. get_permalink() .'">Read More</a>';
