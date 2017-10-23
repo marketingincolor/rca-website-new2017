@@ -105,7 +105,7 @@
 	<!-- /Content MEDIUM -->
 
 	<!-- Content small -->
-	<div id="expertise-content" class="row case-study-content hide-for-medium">
+	<div id="" class="row case-study-content hide-for-medium">
 
 		<div class="small-10 small-offset-1 columns">
 			<?php if($background_title): ?>
@@ -132,7 +132,7 @@
 		<?php endif; ?>
 		<!-- /Featured Quote Mobile -->
 
-	<div id="expertise-content" class="row case-study-content hide-for-medium">
+	<div id="" class="row case-study-content hide-for-medium">
 		<div class="small-10 small-offset-1 colums">
 			<?php if($result_title): ?>
 			<h3><?php echo $result_title; ?></h3>
