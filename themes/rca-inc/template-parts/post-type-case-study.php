@@ -23,12 +23,12 @@
 
 <?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
 
-<div id="all-case-study-content">
+<div id="all-expertise-content">
 
 	<!-- Title -->
 	<div class="row">
 		<div class="small-10 small-offset-1 columns text-left">
-			<h1><?php the_title(); ?></h1>
+			<h1 class="case-study-title"><?php the_title(); ?></h1>
 		</div>
 	</div>
 	<!-- /Title -->
@@ -105,7 +105,7 @@
 	<!-- /Content MEDIUM -->
 
 	<!-- Content small -->
-	<div id="expertise-content" class="row case-study-content hide-for-medium">
+	<div id="" class="row case-study-content hide-for-medium">
 
 		<div class="small-10 small-offset-1 columns">
 			<?php if($background_title): ?>
@@ -132,7 +132,7 @@
 		<?php endif; ?>
 		<!-- /Featured Quote Mobile -->
 
-	<div id="expertise-content" class="row case-study-content hide-for-medium">
+	<div id="" class="row case-study-content hide-for-medium">
 		<div class="small-10 small-offset-1 colums">
 			<?php if($result_title): ?>
 			<h3><?php echo $result_title; ?></h3>
@@ -146,19 +146,6 @@
 	</div>
 	<!-- /Content MEDIUM -->
 
-	<!-- BUTTONS SMALL -->
-	<?php get_template_part('template-parts/mobile', 'download-share'); ?>
-	<!-- /BUTTONS SMALLS -->
-
-	<!-- BUTTON MEDIUM+-->
-	<?php if($pdf): ?>
-	<div class="row show-for-medium">
-		<div class="small-10 small-offset-1 columns">
-			<a href="<?php echo $pdf ?>" title="Download" target="_blank"><button style="margin: 0rem auto 3rem auto; width: auto; display: block;" class=""><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
-		</div>
-	</div>
-	<?php endif; ?>
-	<!-- /BUTTON MEDIUM+ -->
 
 
 <!-- HIDDEN SHARE MENU -->
@@ -206,7 +193,23 @@
 
 <!-- /HIDDEN SHARE MENU -->
 
+
+</div> <!-- /all case study content -->
+
+<!-- BUTTONS SMALL -->
+<?php get_template_part('template-parts/mobile', 'download-share'); ?>
+<!-- /BUTTONS SMALLS -->
+
+<!-- BUTTON MEDIUM+-->
+<?php if($pdf): ?>
+<div class="row show-for-medium">
+	<div class="small-10 small-offset-1 columns">
+		<a href="<?php echo $pdf ?>" title="Download" target="_blank"><button style="margin: 0rem auto 3rem auto; width: auto; display: block;" class=""><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
+	</div>
 </div>
+<?php endif; ?>
+<!-- /BUTTON MEDIUM+ -->
+
 <!-- RELATED CONTENT SMALL -->
 <?php get_template_part('template-parts/mobile', 'related-content'); ?>
 <!-- /RELATED CONTENT SMALL -->
