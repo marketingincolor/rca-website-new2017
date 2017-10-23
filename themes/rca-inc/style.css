@@ -28,6 +28,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+/*PRE WEBINER STYLE*/
+  #webinar-form-block h2{
+    font-size: 2rem;
+    color: white;
+    font-style: italic;
+    font-family: 'lora';
+  }
+
 /*Overwrite foundation pagination*/
 .pagination { margin: 1rem 0rem; }
 
