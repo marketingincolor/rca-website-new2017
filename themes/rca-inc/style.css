@@ -1425,7 +1425,7 @@ select,
 optgroup,
 textarea {
 	color: #404040;
-	font-family: sans-serif;
+	font-family: 'Roboto', sans-serif;
 	/*font-size: 16px;*/
 	font-size: 1rem;
 	line-height: 1.5;
@@ -2933,6 +2933,26 @@ input#search-input {
   font-weight: bold;
 }
 
+  .case-study-content h3{
+    font-size: 22px;
+    font-weight: bold;
+    color: #2b2b2b;
+    display: inline;
+  }
+  .case-study-quote{
+    float: right;
+    width: 41.6667%;
+    padding: 40px;
+    color: #FFF;
+    background-color: #1a365d;
+    display: inline;
+  }
+  .case-study-quote p{
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.25rem;
+    margin-bottom: 0;
+  }
 
 /* Small only */
 @media(max-width:360px){
@@ -2956,6 +2976,7 @@ input#search-input {
 
 @media screen and (max-width: 39.9375em) {
 
+
   #terms-content { padding: 3rem 0rem; }
   #featured-img {
     padding: 50px 0;
@@ -2974,8 +2995,11 @@ input#search-input {
     font-size: 1rem;
   }
 
-  .site-branding img { max-width: 350px; }
+  .site-branding img { max-width: 350px; width: 95%;}
 
+  .error-404 h1 {
+      padding: 2rem 0rem;
+  }
 
   #learn-more-cta{
   	padding: 5% 0 12%;
@@ -2984,7 +3008,7 @@ input#search-input {
     margin-bottom: .625rem;
   }
 	#all-case-study-content > div:nth-child(1) > div > h1 { margin-bottom: 3rem; }
-	#breadcrumbs { margin: 40px 0; }
+	#breadcrumbs { margin: 3rem 0; }
 	#all-items-block{padding-top:0}
 	.accordian-menu > li {    
 		border-top: .5px solid gray;
@@ -3024,7 +3048,10 @@ input#search-input {
 	.no-js .top-bar {
 	display: block;
 	}
-
+  .site-branding img { max-width: 350px; width: 95%;}
+  .error-404 h1 {
+      padding: 0rem 0rem;
+  }
   #sign-up-cta { 
     background-color:#1a365d; color:#ffffff; padding: 3.875rem 0rem;
     background-size: contain !important;  

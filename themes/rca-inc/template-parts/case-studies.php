@@ -11,7 +11,7 @@
 	$result_text      = get_field('result_text');
 	$featured_quote   = get_field('featured_quote');
 ?>
-<div id="all-expertise-content">
+<div id="">
 
 	<!-- Title -->
 	<div class="row">
@@ -54,26 +54,3 @@
 	<!-- /Button -->
 
 </div>
-
-<style>
-	.case-study-content h3{
-		font-size: 22px;
-		font-weight: bold;
-		color: #2b2b2b;
-		display: inline;
-	}
-	.case-study-quote{
-		float: right;
-		width: 41.6667%;
-		padding: 40px;
-		color: #FFF;
-		background-color: #1a365d;
-		display: inline;
-	}
-	.case-study-quote p{
-		font-weight: 700;
-		font-style: italic;
-		font-size: 1.25rem;
-		margin-bottom: 0;
-	}
-</style>

@@ -146,19 +146,6 @@
 	</div>
 	<!-- /Content MEDIUM -->
 
-	<!-- BUTTONS SMALL -->
-	<?php get_template_part('template-parts/mobile', 'download-share'); ?>
-	<!-- /BUTTONS SMALLS -->
-
-	<!-- BUTTON MEDIUM+-->
-	<?php if($pdf): ?>
-	<div class="row show-for-medium">
-		<div class="small-10 small-offset-1 columns">
-			<a href="<?php echo $pdf ?>" title="Download" target="_blank"><button style="margin: 0rem auto 3rem auto; width: auto; display: block;" class=""><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
-		</div>
-	</div>
-	<?php endif; ?>
-	<!-- /BUTTON MEDIUM+ -->
 
 
 <!-- HIDDEN SHARE MENU -->
@@ -206,7 +193,23 @@
 
 <!-- /HIDDEN SHARE MENU -->
 
+
+</div> <!-- /all case study content -->
+
+<!-- BUTTONS SMALL -->
+<?php get_template_part('template-parts/mobile', 'download-share'); ?>
+<!-- /BUTTONS SMALLS -->
+
+<!-- BUTTON MEDIUM+-->
+<?php if($pdf): ?>
+<div class="row show-for-medium">
+	<div class="small-10 small-offset-1 columns">
+		<a href="<?php echo $pdf ?>" title="Download" target="_blank"><button style="margin: 0rem auto 3rem auto; width: auto; display: block;" class=""><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
+	</div>
 </div>
+<?php endif; ?>
+<!-- /BUTTON MEDIUM+ -->
+
 <!-- RELATED CONTENT SMALL -->
 <?php get_template_part('template-parts/mobile', 'related-content'); ?>
 <!-- /RELATED CONTENT SMALL -->
