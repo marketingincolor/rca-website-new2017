@@ -23,7 +23,7 @@
 
 <?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
 
-<div id="all-case-study-content">
+<div id="all-expertise-content">
 
 	<!-- Title -->
 	<div class="row">

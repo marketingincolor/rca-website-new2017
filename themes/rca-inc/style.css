@@ -3415,7 +3415,7 @@ div.bar.animate::after { background: #c4612b; }
 /*Services Page*/
 #all-services { padding: 3rem 0rem; }
 
-#all-expertise-content { padding: 3rem 0rem; }
+/*#all-expertise-content { padding: 3rem 0rem; }*/
 #expertise-content { padding: 3rem 0rem; }
 #expertise-content ul { list-style:outside; display:inline-block; }
 #expertise-content h2 { display:inline-block; }

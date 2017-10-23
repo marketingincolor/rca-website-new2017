@@ -65,9 +65,9 @@ if (!is_page()) {
 
 
 $the_query = new WP_Query($args);
-
 if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
+		$count = '';
 		$the_query->the_post();
 		$count = $the_query->found_posts;
 
