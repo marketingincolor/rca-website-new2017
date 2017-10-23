@@ -7,6 +7,11 @@ header("HTTP/1.1 200 OK");
 	
 	// Retrieve Query Vars.
 	$category  = $_POST['category'];
+
+	if($category == 'all') {
+		$category = '';
+	}
+
 	$dropdown_query = $_POST['dropdown_query'];
 
 	// If we have an offset use that.
@@ -28,11 +33,11 @@ header("HTTP/1.1 200 OK");
 	$news_query = new WP_Query( array(
     	'post_type' => 'post',
     	'category_name' => $category,
-    	// 'posts_per_page' => 5,
     	'paged' => $paged,
     	'date_query' => array(
     		'year' => $dropdown_query
     	),
+    	'posts_per_page' => 5,
     	'offset' => $offset,
 	));
 
@@ -46,11 +51,11 @@ header("HTTP/1.1 200 OK");
 			<div class="story-container">
 				<h2><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<p class="story-date"><?php echo get_the_date(); ?></p>
-				<?php echo wp_trim_words(get_the_excerpt(), 40, '...<a href="'. get_permalink() . '">Read More</a>'); ?>
+				<?php echo wp_trim_words(get_the_excerpt(), 25, '...<a href="'. get_permalink() . '">Read More</a>'); ?>
 			</div>
 		</div>
 	</div>
-	<input class="rca_total_posts" type="hidden" value="$news_query->post_count">
+	<!-- <input class="rca_total_posts" type="hidden" value="$news_query->post_count"> -->
 
 <?php 
 	}

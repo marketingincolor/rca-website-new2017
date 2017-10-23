@@ -45,6 +45,7 @@ $('.news-filter').on('click',function() {
  */
 function getCategory() {
     var category = $('.rca_query').val();
+    console.warn("The Category: " + category);
     return category;
 }
 
@@ -124,7 +125,7 @@ function filterNewsPosts(templateURL, category, dropdown_query) {
     console.log('Offset: ' + offset);
 
         $.ajax({
-            url: templateURL + '/filter-posts.php',
+            url: templateURL + '/load-more.php',
             type: 'POST',
             beforeSend: function() {
                 $('.spinner').fadeIn(500); 
@@ -165,10 +166,14 @@ $('#newsFilterSelect').on('change', function() {
     
     offsetContainer.attr("value", Number(offsetValue));
     offsetValue = offsetContainer.val();
+
     // If we don't have a category log an error to the console.
     if(category == "") {
         console.warn('RCA Information: No Category Selected. Showing All Posts...');
-        category = 'all';
+    }
+
+    if(category == "all"){
+        console.warn("Viewing All Categories.");
     }
 
     // If we don't have a year from the dropdown log an error to the console.
@@ -197,17 +202,20 @@ $('#newsFilterSelect').on('change', function() {
  * @param  {[array]} dropdown_query ["defaults to get all years"]
  * @return {[void]}                [AJAX request]
  */
-function defaultNewsFilter(templateURL, category, dropdown_query) {
+function defaultNewsFilter(templateURL, dropdown_query) {
 
     $('.rca_query').attr('value', 'all');
+    var offsetContainer = $('.rca_offset');
+    var offsetValue = $('.rca_offset').val();
+    offsetContainer.attr("value", Number(offsetValue) );
     var content = $('.post-container');
     $('#all').addClass('newsClick');
 
     $.ajax({
-        url: templateURL + '/filter-posts.php',
+        url: templateURL + '/load-more.php',
         type: 'POST',
         beforeSend: function() {$('.spinner').fadeIn(500); },
-        data: {category : category, dropdown_query : dropdown_query },
+        data: {category : 'all', dropdown_query : dropdown_query },
         success: function(response) {
                     content.html(response).fadeIn(1000);
         },
@@ -216,65 +224,7 @@ function defaultNewsFilter(templateURL, category, dropdown_query) {
 
 }
 
-/**
- * Description:
- * Used for retrieving posts on next button clicks.
- *
- * @author  Doe
- * @param  {string} templateURL    [Page the function was called on]
- * @param  {string} category       [Category that's being filtered]
- * @param  {int} dropdown_query [Year that's being filtered]
- * @return {void}                [AJAX call]
- */
-function rcaNext(templateURL, category, dropdown_query) {
-    // var offset = 5;
-    // var counter = $('.rca_offset');
-    // var content = $('.post-container');
-    // var counterValue = Number(counter.val()) + Number(offset);
-    // counter.attr('value', counterValue);
 
-    // $.ajax({
-    //     url: templateURL + '/filter-posts.php',
-    //     type: 'POST',
-    //     beforeSend: function() {
-    //         $('.spinner').fadeIn(500); 
-    //     },
-    //     data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
-    //     success: function(response) {
-    //                 content.html(response).fadeIn(1000);
-    //     },
-    //     complete: function() { $('.spinner').fadeOut(500); }
-    // });
-}
-
-/**
- * Description:
- * Used for retrieving posts on previous button clicks.
- * 
- * @param  {string} templateURL    [description]
- * @param  {stirng} category       [description]
- * @param  {string} dropdown_query [description]
- * @return {void}                  [description]
- */
-// function rcaPrevious(templateURL, category, dropdown_query) {
-//     var offset = 5;
-//     var counter = $('.rca_offset');
-//     var content = $('.post-container');
-//     var counterValue = Number(counter.val()) - Number(offset);
-//     counter.attr('value', counterValue);
-//     $.ajax({
-//         url: templateURL + '/filter-posts.php',
-//         type: 'POST',
-//         beforeSend: function() {
-//             $('.spinner').fadeIn(500); 
-//         },
-//         data: {category : category, dropdown_query : dropdown_query, offset : counterValue },
-//         success: function(response) {
-//                     content.html(response).fadeIn(1000);
-//         },
-//         complete: function() { $('.spinner').fadeOut(500); }
-//     });
-// }
 
 $('.load-more').on('click', function() {
     //var total_posts = $('.rca_total_posts').attr('value', '0');

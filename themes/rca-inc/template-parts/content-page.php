@@ -10,19 +10,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<!-- Title -->
-<!-- 	<div class="row">
-		<div class="small-10 small-offset-1 small-text-center medium-text-left columns">
-			<h1><?php #the_title(); ?></h1>
-		</div>
-	</div> -->
-	<!-- /Title -->
 
+	<!-- SHARE -->
+	<?php if(!is_page('privacy-policy') ): ?>
 	<div class="row hide-for-medium">
 		<div class="small-10 small-offset-1">
 			<button id="share-btn" style="margin-top: .5rem;">Share</button>
 		</div>
 	</div>
+	<?php endif; ?>
+	<!-- /SHARE -->
+
 	<div class="row">
 		<div class="small-10 small-offset-1 columns">
 			<div class="entry-content">

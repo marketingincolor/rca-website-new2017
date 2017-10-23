@@ -78,17 +78,17 @@ get_header(); ?>
 	</div>
 	<!-- Hidden Inputs -->
 	<input class="rca_query" type="hidden" value="">
-	<input class="rca_offset" type="hidden" value="5">
-	<input class="year_switch" type="hidden" value="5">
+	<input class="rca_offset" type="hidden" value="0">
+	<input class="year_switch" type="hidden" value="">
 	<input class="total_posts" type="hidden" value="">
 	<!-- /Hidden Inputs -->
 
 	<script>
 	$(document).ready(function() {
-		category = $('.rca_query').val();
-		if(category == "") {
-			defaultNewsFilter('<?php echo get_stylesheet_directory_uri(); ?>', 'all', ajaxFilterYear());
-		}
+		//category = $('.rca_query').val();
+		
+		defaultNewsFilter('<?php echo get_stylesheet_directory_uri(); ?>', ajaxFilterYear());
+		
 	});
 	</script>
 	

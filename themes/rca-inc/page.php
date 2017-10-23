@@ -2,6 +2,7 @@
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 $updated_bg = rca_get_featured_img($post->ID);
+$remove_on_page = array('privacy-policy', 'terms-of-use', 'us-agent-services');
 get_header(); ?>
 	
 	<!-- Featured Image -->
@@ -14,7 +15,16 @@ get_header(); ?>
 	<!-- / Featured Image -->
 	<div class="page-wrapper">
 		
-		<?php get_template_part( 'template-parts/section', 'breadcrumbs-social' ); ?>
+		
+		<!-- Get Breadcrumbs except on privacy policy -->
+		<?php
+			if(!is_page( 'privacy-policy' ) ):
+				get_template_part( 'template-parts/section', 'breadcrumbs-social' );
+			endif; 
+		?>
+		<!-- /Get Breadcrumbs except on privacy policy -->
+
+
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main">
 
@@ -39,7 +49,6 @@ get_header(); ?>
 	<?php
 
 		// If not these pages show related content on page.php
-		$remove_on_page = array('privacy-policy', 'terms-of-use', 'us-agent-services');
 		if( !is_page( $remove_on_page ) ) {
 			get_template_part('template-parts/content', 'related-content');
 		}
