@@ -25,7 +25,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 <div id="featured-img-wrapper" class="row expanded">
 	<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
             rgba(196,97,43,0.7) url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
-			<div class="featured-img-title"><h1><?php the_title(); ?></h1></div>
+			<div class="featured-img-title"><h1>Free Webinar</h1></div>
 	</div>
 </div>
 <!-- / Featured Image -->
@@ -52,16 +52,16 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 
 			<div class="small-10 small-offset-1 columns">
 
-				<!-- WHEN -->
-				<?php if($date != NULL || $time != NULL): ?>
+				
+				<!-- TOPIC -->
+				<?php if(!empty(get_the_title())): ?>
 				<div class="when-block text-center small-12 medium-4 columns text-center" data-equalizer-watch>
-					<i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
-					<h2>When</h2>
-					<p class="meta"><?php echo $date->format('l, F d, Y'); ?>
-					<p class="meta"><?php echo $time; ?></p>
+					<i class="fa fa-desktop fa-3x" aria-hidden="true"></i>
+					<h2>Topic</h2>
+					<p class="meta"><?php the_title(); ?></p>
 				</div>
 				<?php endif; ?>
-				<!-- /WHEN -->
+				<!-- /TOPIC -->
 
 
 				<!-- WHO -->
@@ -86,14 +86,25 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 				<!-- /WHO -->
 
 				<!-- Where -->
-				<?php if($where != NULL): ?>
-				<div class="where-block small-12 medium-4 columns text-center" data-equalizer-watch>
+				<?php #if($where != NULL): ?>
+<!-- 				<div class="where-block small-12 medium-4 columns text-center" data-equalizer-watch>
 					<i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
 					<h2>Where</h2>
-					<p class="meta"><?php echo $where; ?></p>
+					<p class="meta"><?php #echo $where; ?></p>
+				</div> -->
+				<?php #endif; ?>
+				<!-- /WHERE -->
+
+				<!-- WHEN -->
+				<?php if($date != NULL || $time != NULL): ?>
+				<div class="when-block text-center small-12 medium-4 columns text-center" data-equalizer-watch>
+					<i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
+					<h2>When</h2>
+					<p class="meta"><?php echo $date->format('l, F d, Y'); ?>
+					<p class="meta"><?php echo $time; ?></p>
 				</div>
 				<?php endif; ?>
-				<!-- /WHERE -->
+				<!-- /WHEN -->
 
 			</div>
 		</div>

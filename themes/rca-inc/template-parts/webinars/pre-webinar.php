@@ -34,9 +34,9 @@ get_header(); ?>
 		</main>
 
 		<!-- Presenters Small -->
-		<?php #if($presenters[0] != ""): ?>
+		<?php if($presenters): ?>
 
-<!-- 		<ul id="presenter-accordian" class="accordion hide-for-medium" data-accordion data-allow-all-closed="true" style="border: none;">
+ 		<ul id="presenter-accordian" class="accordion hide-for-medium" data-accordion data-allow-all-closed="true" style="border: none;">
 			<li class="accordion-item" data-accordion-item>
 				<a href="#!" class="accordion-title">Your Expert Presenters <i class="fa fa-chevron-right" aria-hidden="true"></i><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
 				<div id="your-expert-presenters" class="accordion-content" data-tab-content>
@@ -51,30 +51,29 @@ get_header(); ?>
 					<div class="row">
 						<div class="small-10 small-offset-1 columns">
 
-							<?php #foreach($presenters as $presenter) {
-								//get user data
-								// $user_data = get_userdata($presenter);
-								// $user_meta = get_user_meta($user_data->ID);
-								// echo '<div id="presenter-block" class="row">';
-								// echo '<div class="small-12 medium-2 columns text-center">';
-								// echo get_wp_user_avatar($user_data->ID);
-								// echo '</div>';
-								// echo '<div class="small-12 medium-8 columns text-center end">';
-								// echo '<h3>' . $user_data->display_name . '</h3>';
-								// echo '<p>' . $user_meta["position"][0] . '</p>';
-								// echo '<p>' . $user_meta["webinar_biography"][0] . '</p>';
-								// echo '</div>';
-								// echo '</div>';
+							<?php foreach($presenters as $presenter) {
+								$user_data = get_userdata($presenter);
+								$user_meta = get_user_meta($presenter->ID);
+								echo '<div id="presenter-block" class="row">';
+								echo '<div class="small-12 medium-2 columns text-center">';
+								echo get_the_post_thumbnail( $presenter->ID, 'thumbnail' );
+								echo '</div>';
+								echo '<div class="small-12 medium-8 columns text-center end">';
+								echo '<h3>' . $presenter->post_title . '</h3>';
+								echo '<p>' . $presenter->position . '</p>';
+								echo '<p>' . $presenter->post_content . '</p>';
+								echo '</div>';
+								echo '</div>';
 
-							#}
+							}
 							?>
 							
 						</div>
 					</div>
 				</div>
 			</li>
-		</ul> -->
-		<?php #endif; ?>
+		</ul>
+		<?php endif; ?>
 		<!-- /Presenters Small -->
 
 		<!-- Presenters Medium -->
