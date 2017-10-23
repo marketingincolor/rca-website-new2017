@@ -78,7 +78,7 @@
 						$additional_class = '';
 					}
 
-					echo '<div id="individual-service" class="small-12 medium-4 ' . $additional_class . ' columns rca" data-equalizer-watch>';
+					echo '<div id="individual-service" class="small-12 large-4 ' . $additional_class . ' columns rca" data-equalizer-watch>';
 					echo '<img src="' . $img_array[$i]['url'] . '" />';
 					echo '<h2 style="margin-bottom: 0rem;">' . $title_array[$i] . '</h2>';
 					echo '<p>' . $content_array[$i] . '</p>';
