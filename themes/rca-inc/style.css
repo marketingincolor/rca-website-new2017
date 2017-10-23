@@ -2979,6 +2979,9 @@ input#search-input {
   .case-study-quote p{
     font-size: 1rem;
   }
+  .single-visual_resources #expertise-content {
+    padding: 3rem 0 0;
+  }
   .single-visual_resources #expertise-content img{
     margin-bottom: 3rem;
   }

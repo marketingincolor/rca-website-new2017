@@ -45,7 +45,7 @@
 					</div>
 					<div class="large-12 columns textarea">
 				    <label for=""><i class="fa fa-briefcase" aria-hidden="true"></i> Comments/Questions</label>
-				    	<textarea name="products_names" id="form-products-names" cols="30" rows="4"></textarea>
+				    	<textarea name="comments_questions" id="form-products-names" cols="30" rows="4"></textarea>
 					</div>
 					<div class="large-12 columns text-right">
 						<p>*=Required</p>
