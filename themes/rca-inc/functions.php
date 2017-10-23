@@ -1550,6 +1550,8 @@ function rca_get_search_icons($post_type) {
     $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
   elseif($post_type == 'post'):
     $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
+  elseif($post_type == 'staff'):
+    $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
   elseif($post_type == 'page'):
     if(get_page_template_slug() == 'individual-staff-member.php'):
         $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';

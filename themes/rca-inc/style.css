@@ -3208,6 +3208,10 @@ input#search-input {
 
 /*hide standard search button*/
  .search-submit { display: none; }
+ .search .item-block img{
+  height: 50px;
+  margin-bottom: 20px;
+ }
 
  #secondary-menu input[type="search"] { 
  	color: #9d938b; 
