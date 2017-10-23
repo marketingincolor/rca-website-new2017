@@ -5,19 +5,19 @@ $post_type = get_post_type();
 
 switch($post_type) {
 	case('case_studies'):
-		$img = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.jpg';
+		$img = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
 	break;
 	case('published_articles'):
-		$img = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.jpg';
+		$img = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
 	break;
 	case('webinars'):
-		$img = get_stylesheet_directory_uri() . '/images/icons/archive-webinars-icon.jpg';
+		$img = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Webinar-Icon-Gray-01.svg';
 	break;
 	case('white_papers'):
-		$img = get_stylesheet_directory_uri() . '/images/icons/archive-white-papers-icon.jpg';
+		$img = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/White-Papers-Icon-Gray-01.svg';
 	break;
 	case('visual_resources'):
-		$img = get_stylesheet_directory_uri() . '/images/icons/archive-visual-resources-icon.jpg';
+		$img = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
 	break;
 	default:
 		$img = '#';
@@ -28,7 +28,7 @@ switch($post_type) {
 
 <div class="item-block">
 	<div class="archive-img row text-center">
-		<img src="<?php echo $img; ?>" />
+		<a href="<?php the_permalink(); ?>"><img src="<?php echo $img; ?>" /></a>
 	</div>
 	<div class="row text-center archived-title">
 		<div class="small-10 small-offset-1 columns pagination-col">

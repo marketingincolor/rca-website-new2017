@@ -249,6 +249,7 @@ blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; 
 
 /*archive blocks*/
 .archive-img { margin-bottom: 10px; }
+.archive-img img{max-height: 45px;}
 .pagination-col {font-size: 14px}
 .pagination-col a { font-weight: normal; }
 .pagination-col a:hover { font-weight: normal; color: #2b2b2b; }
@@ -385,11 +386,12 @@ main { margin-bottom: 0rem; }
 }
 #share-block-cs { 
 	background-color: #c4612b;
-	font-size: 1rem;
-    font-weight: bold;
-    padding: 1.5rem 0rem;
-    color: #fff;
-    margin-bottom: 0rem;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1.5rem 0rem;
+  color: #fff;
+  margin-bottom: 0rem;
+  border-left: 1px solid #FFF;
 }
 
 #news-snippets-wrapper a { color: white; text-decoration: underline; }
@@ -630,6 +632,12 @@ h2 {
 #share-menu .title { padding: 3rem 0rem 0rem;  }
 #share-menu .close { padding: 3rem 0rem 0rem; }
 #share-menu #social-icons { padding: 1rem 0rem; }
+#social-icons .small-2 {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #share-menu i { color: #fff; }
 #share-menu h1 { color: #fff; text-align: center; }
 .share-menu-js { position: fixed; background-color: rgb(29, 56, 94); width: 100%; height: 100%; }
