@@ -19,7 +19,7 @@
 				<a class="a2a_button_linkedin"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
 			</div>
 			<div class="small-2 columns text-center">
-				<a class="a2a_button_googleplusone"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i></a>
+				<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>" class="" target="_blank"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i></a>
 			</div>
 			<div class="small-2 columns text-center">
 				<a class="a2a_button_twitter"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
