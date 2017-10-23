@@ -1421,7 +1421,7 @@ function get_all_post_types() {
   return $all;
 }
 
-function rca_related_case_studies_mobile($atts, $content = null) {
+function rca_related_content_mobile($atts, $content = null) {
     extract(shortcode_atts(array(
         'category' => 'Uncategorized'
                     ), $atts));
@@ -1436,7 +1436,7 @@ function rca_related_case_studies_mobile($atts, $content = null) {
     $lazyLoad = array_key_exists("lazyload", $atts) && $atts["lazyload"] == true;
 
     $args = array(
-        'post_type' => 'case_studies',
+        'post_type' => $atts['post_type'],
         'orderby' => 'rand',
         'order' => 'asc',
         'posts_per_page' => 3,
@@ -1471,7 +1471,7 @@ function rca_related_case_studies_mobile($atts, $content = null) {
 
     return $result;
 }
-add_shortcode('rca-related-case-studies-mobile', 'rca_related_case_studies_mobile');
+add_shortcode('rca-related-content-mobile', 'rca_related_content_mobile');
 
 /**
  * Description:

@@ -64,6 +64,9 @@ $references_text  = get_field('references_text');
 	</div>
 	<!-- /Button -->
 
+	<!-- RELATED CONTENT SMALL -->
+	<?php get_template_part('template-parts/mobile', 'related-content'); ?>
+	<!-- /RELATED CONTENT SMALL -->
 
 
 </div>

@@ -122,12 +122,12 @@
 		</script> -->
 		<script>
 			$(document).ready(function() {
-				console.log('...............starting');
+				//console.log('...............starting');
 				var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
 				var close = $('#share-menu .close');
 				logo = Math.abs(logo);
 				console.log( 'logoheight ' + logo);
-				var shareButton = $('#share-block-cs');
+				var shareButton = $('.share-block');
 				var shareMenu = $('#share-menu');
 
 				shareButton.on('click', function() {

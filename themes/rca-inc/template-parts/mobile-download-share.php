@@ -34,7 +34,7 @@ endif;
 				</div>
 			</a>
 		<?php endif; ?>
-			<div id="share-block-cs" class="small-<?php echo $shareBlockClass;?> columns text-center hide-for-medium">
+			<div id="" class="small-<?php echo $shareBlockClass;?> columns text-center hide-for-medium share-block">
 				<p>Share <i class="fa fa-share" aria-hidden="true"></i></p>
 			</div>
 		</div>
