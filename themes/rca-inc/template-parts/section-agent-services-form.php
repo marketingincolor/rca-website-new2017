@@ -31,7 +31,10 @@
 						<?php get_template_part('template-parts/content', 'country-list') ?><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-4 columns">
-				    <input type="number" name="facility_zip" id="form-facility-zip" placeholder="Facility Zip*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+				    <input type="text" name="facility_city" id="form-facility-city" placeholder="Facility City*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+					</div>
+					<div class="large-4 columns">
+				    <input type="number" name="facility_zip" id="form-facility-zip" placeholder="Facility Postal Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 					</div>
 					<div class="large-4 columns">
 				    <select name="num_products" id="form-num-products" required><option value="" selected="selected" disabled>Number of Products*</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><i class="fa fa-briefcase" aria-hidden="true"></i>
@@ -40,9 +43,9 @@
 					<div id="product-fields">
 						
 					</div>
-					<div class="large-12 columns">
-				    <label for=""><i class="fa fa-briefcase" aria-hidden="true"></i> Please List Product Names*</label>
-				    	<textarea name="products_names" id="form-products-names" cols="30" rows="4" required></textarea>
+					<div class="large-12 columns textarea">
+				    <label for=""><i class="fa fa-briefcase" aria-hidden="true"></i> Comments/Questions</label>
+				    	<textarea name="comments_questions" id="form-products-names" cols="30" rows="4"></textarea>
 					</div>
 					<div class="large-12 columns text-right">
 						<p>*=Required</p>
@@ -82,8 +85,8 @@
 			$('#product-fields').html('');
 			for(var i = 1; i <= num; i++){
 				$('#product-fields').append(
-					'<div class="large-4 columns end"><input type="text" name="product-num-'+ i +'" id="product-num-'+ i +'" placeholder="Product No. ' + i +'*" required><i class="fa fa-briefcase" aria-hidden="true"></i></div>'
-				)
+					'<div class="large-4 columns end"><input type="text" name="product-num-'+ i +'" id="product-num-'+ i +'" placeholder="Product No. ' + i +' Name*" required><i class="fa fa-briefcase" aria-hidden="true"></i></div>'
+				).fadeIn()
 			}
 		});
 
@@ -146,10 +149,11 @@
 	  });
 
 	</script>
+	<!-- SharpSpring Embed Code -->
 	<script type="text/javascript">
 	    var __ss_noform = __ss_noform || [];
 	    __ss_noform.push(['baseURI', 'https://app-3QMGUWHS20.marketingautomation.services/webforms/receivePostback/MzawMDGwMDYyAgA/']);
-	    __ss_noform.push(['form','blue-form', 'e8b65c7e-78ea-4488-9e9c-bdb8b97c7cfc']);
+	    __ss_noform.push(['form','blue-form', 'a1117a1d-e211-48a7-adb0-28896a2204bd']);
 	</script>
 	<script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/noform.js?ver=1.24" ></script>
 
@@ -166,7 +170,8 @@
 	  	blueForm.find('#form-facility-name').val(resp.contact['Facility Name']);
 	  	blueForm.find('#form-facility-street').val(resp.contact['Street']);
 	  	blueForm.find('#form-facility-state').val(resp.contact['State']);
-	  	blueForm.find('#form-facility-country').val(resp.contact['Country']);
+	  	blueForm.find('#form-facility-state').val(resp.contact['City']);
+	  	if(resp.contact['Country']){blueForm.find('#form-facility-country').val(resp.contact['Country']);}
 	  	blueForm.find('#form-facility-zip').val(resp.contact['Zip'])
 	  	// blueForm.find('#form-num-products').val(resp.contact['Number of Products']);
 	  	blueForm.find('#form-products-names').val(resp.contact['Product Names']);

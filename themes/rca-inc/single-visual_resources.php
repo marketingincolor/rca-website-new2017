@@ -16,9 +16,13 @@ $type = 'visual resource';
 		</main>
 	</div>
 
-	<!-- RELATED CONTENT -->
+	<!-- RELATED CONTENT SMALL -->
+	<?php get_template_part('template-parts/mobile', 'related-content'); ?>
+	<!-- /RELATED CONTENT SMALL -->
+
+	<!-- RELATED CONTENT LARGE -->
 	<?php get_template_part('template-parts/content', 'related-content'); ?>
-	<!-- /RELATED CONTENT -->
+	<!-- /RELATED CONTENT LARGE -->
 	
 	<!-- LEARN MORE -->
 	<?php //get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>

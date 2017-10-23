@@ -1481,27 +1481,29 @@ add_shortcode('rca-related-case-studies-mobile', 'rca_related_case_studies_mobil
  * @return [string] [icon img URL]
  */
 function rca_get_post_type_icon($post_type) {
-  //var_dump(get_page_template_slug());
-  if($post_type == 'case_studies'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.jpg';
+    if($post_type == 'case_studies'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
   elseif($post_type == 'webinars'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-webinars-icon.jpg';
+    elseif($post_type == 'webinars'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Webinars-Icon-Gray-01.svg';
   elseif($post_type == 'white_papers'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-white-papers-icon.jpg';
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/White-Papers-Icon-Gray-01.svg';
   elseif($post_type == 'visual_resources'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-visual-resources-icon.jpg';
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
   elseif($post_type == 'published_articles'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.jpg';
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
   elseif($post_type == 'post'):
-    $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
+    $icon = get_stylesheet_directory_uri() . '/images/icons/RCA_News_Icon-01.svg';
+  elseif($post_type == 'staff'):
+    $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/RCA_User_Icon-01.svg';
   elseif($post_type == 'page'):
-    if(get_page_template_slug() == 'individual-staff-member.php' || get_page_template_slug() == 'single-staff.php'):
-        $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
+    if(get_page_template_slug() == 'individual-staff-member.php'):
+        $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icon/RCA_User_Icon-01.svg';
     else:
-    $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
+    $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icon/RCA_General_Icon-01.svg';
     endif;
   else:
-    $icon = '';  
+    $icon = '';
   endif;
 
 
@@ -1509,58 +1511,64 @@ function rca_get_post_type_icon($post_type) {
 }
 
 function rca_get_bio_slider_icons($post_type) {
+      if($post_type == 'case_studies'):
+      $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
+    elseif($post_type == 'webinars'):
+      elseif($post_type == 'webinars'):
+      $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Webinars-Icon-Gray-01.svg';
+    elseif($post_type == 'white_papers'):
+      $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/White-Papers-Icon-Gray-01.svg';
+    elseif($post_type == 'visual_resources'):
+      $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
+    elseif($post_type == 'published_articles'):
+      $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
+    elseif($post_type == 'post'):
+      $icon = get_stylesheet_directory_uri() . '/images/icons/RCA_News_Icon-01.svg';
+    elseif($post_type == 'staff'):
+      $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/RCA_User_Icon-01.svg';
+    elseif($post_type == 'page'):
+      if(get_page_template_slug() == 'individual-staff-member.php'):
+          $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icon/RCA_User_Icon-01.svg';
+      else:
+      $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icon/RCA_General_Icon-01.svg';
+      endif;
+    else:
+      $icon = '';
+    endif;
+
+
+    return $icon;
+}
+
+// Returns icons for search items.
+function rca_get_search_icons($post_type) {
     if($post_type == 'case_studies'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.png';
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
   elseif($post_type == 'webinars'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-webinars-icon.png';
+    elseif($post_type == 'webinars'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Webinars-Icon-Gray-01.svg';
   elseif($post_type == 'white_papers'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-white-papers-icon.png';
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/White-Papers-Icon-Gray-01.svg';
   elseif($post_type == 'visual_resources'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-visual-resources-icon.png';
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
   elseif($post_type == 'published_articles'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.png';
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
   elseif($post_type == 'post'):
-    $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
+    $icon = get_stylesheet_directory_uri() . '/images/icons/RCA_News_Icon-01.svg';
+  elseif($post_type == 'staff'):
+    $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/RCA_User_Icon-01.svg';
   elseif($post_type == 'page'):
     if(get_page_template_slug() == 'individual-staff-member.php'):
-        $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
+        $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icon/RCA_User_Icon-01.svg';
     else:
-    $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
+    $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icon/RCA_General_Icon-01.svg';
     endif;
   else:
-    $icon = '';  
+    $icon = '';
   endif;
 
 
   return $icon;
-}
-
-// Returns icons for search items.
-function rca_get_search_icons($post_id) {
-  $icon = '';
-
-  //var_dump(get_post_type( $post_id ));
-  $post_type = get_post_type( $post_id );
-  if($post_type == 'case_studies'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-case-studies-icon.jpg';
-  elseif($post_type == 'webinars'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-webinars-icon.jpg';
-  elseif($post_type == 'white_papers'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-white-papers-icon.jpg';
-  elseif($post_type == 'visual_resources'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-visual-resources-icon.jpg';
-  elseif($post_type == 'published_articles'):
-    $icon   = get_stylesheet_directory_uri() . '/images/icons/archive-published-articles-icon.jpg';
-  elseif($post_type == 'post'):
-    $icon = get_stylesheet_directory_uri() . '/images/icons/news-icon.jpg';
-  elseif($post_type == 'staff' || get_page_template_slug( $post_id ) == 'single-staff.php' || get_page_template_slug($post_id) == 'individual-staff-member.php' || is_singular('staff')):
-        $icon = get_stylesheet_directory_uri() . '/images/icons/user-icon.jpg';
-  else:
-        $icon = get_stylesheet_directory_uri() . '/images/icons/page-icon.jpg';
-
-  endif;
-
-return $icon;
 
 }
 

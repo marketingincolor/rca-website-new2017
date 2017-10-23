@@ -1,6 +1,19 @@
 <?php
 // Template: For Downloading and Sharing Buttons on Mobile Devices
-$pdf = get_field('case_study_file');
+$post_type = get_post_type();
+
+switch ($post_type) {
+	case 'white_papers':
+		$pdf = get_field('white_paper_pdf');
+		break;
+	case 'case_studies':
+		$pdf = get_field('case_study_file');
+		break;
+	case 'visual_resources':
+		$pdf = get_field('visual_resource_pdf');
+		break;
+}
+// $pdf = get_field('case_study_file');
 
 if($pdf):
 	$shareBlockClass = '6';
