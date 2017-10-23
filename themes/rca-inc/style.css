@@ -3281,8 +3281,8 @@ input#search-input {
  .textarea{
   margin-top: 20px;
  }
- #form-num-products{
-  margin-bottom: 20px;
+ #form-num-products,#form-facility-country{
+  margin-bottom: 1rem;
  }
  #secondary-menu input[type="search"] { 
   color: #9d938b; 
@@ -3473,7 +3473,7 @@ div.bar.animate::after { background: #c4612b; }
 
 /*#all-expertise-content { padding: 3rem 0rem; }*/
 #expertise-content { padding: 3rem 0rem; }
-#expertise-content ul { list-style:outside; display:inline-block; }
+#expertise-content ul { list-style:outside;}
 #expertise-content h2 { display:inline-block; }
 .page-wrapper { margin-bottom: 4.5rem; }
 .page-wrapper .menu>li>a{
