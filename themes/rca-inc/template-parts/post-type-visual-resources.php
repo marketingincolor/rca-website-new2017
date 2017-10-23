@@ -37,11 +37,24 @@ $pdf = get_field('visual_resource_pdf');
 	<!-- /Content -->
 
 	<!-- Button -->
-	<div class="row">
+	<div class="row show-for-medium">
 		<div class="text-center">
-			<a href="<?php echo $pdf; ?>" title="Download White Paper" target="_blank"><button style="margin: 1rem 0rem 0rem; width: auto;"><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
+			<a href="<?php echo $pdf; ?>" title="Download White Paper" target="_blank"><button style="margin: 1rem 0rem 3rem; width: auto;"><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
 		</div>
 	</div>
 	<!-- /Button -->
+
+	<!-- Share/Download Bar -->
+	<?php get_template_part('template-parts/mobile', 'download-share'); ?>
+	<!-- /share/download -->
+
+	<!-- HIDDEN SHARE MENU -->
+	<?php get_template_part('template-parts/hidden', 'share-menu'); ?>
+	<!-- /HIDDEN SHARE MENU -->
+
+	<!-- RELATED CONTENT SMALL -->
+	<?php get_template_part('template-parts/mobile', 'related-content'); ?>
+	<!-- /RELATED CONTENT SMALL -->
+
 
 </div>

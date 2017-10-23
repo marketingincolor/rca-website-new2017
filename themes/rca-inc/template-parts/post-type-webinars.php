@@ -107,21 +107,19 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 		}
 	</style>
 	<!-- FORM FOR MEDIUM UP -->
+	<?php if(get_field('pre_webinar_ss_form')): ?>
 	<div id="webinar-form-block" class="show-for-medium">
 		<div class="row">
 			<div id="form" class="small-10 small-offset-1 columns text-center">
-				<!-- SharpSpring Form for NB Test  -->
-				<script type="text/javascript">
-				    var ss_form = {'account': 'MzawMDGwMDYyAgA', 'formID': 'SzYyM0q2NEvWNUs1S9Q1MbUw0E1KMjDRTTNPtUg2TklLM060BAA'};
-				    ss_form.hidden = {'_usePlaceholders': true};
-				    ss_form.width = '100%';
-				    ss_form.domain = 'app-3QMGUWHS20.marketingautomation.services';
-				    // ss_form.hidden = {'Company': 'Anon'}; // Modify this for sending hidden variables, or overriding values
-				</script>
-				<script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/form.js?ver=1.1.1"></script>
+
+				<!-- SHARPSPRING FORM GOES HERE -->
+				<?php the_field('pre_webinar_ss_form'); ?>
+				<!-- /SHARPSRING FORM GOES HERE -->
+
 			</div>
 		</div>
 	</div>
+	<?php endif; ?>
 	<!-- /FORM FOR MEDIUM UP -->
 </aside>
 

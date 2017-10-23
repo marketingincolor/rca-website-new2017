@@ -6,7 +6,7 @@ global $post;
 $post_type = get_post_type( $post->ID ); 
 
 ?>
-<div id="related-content-mobile" class="row expanded text-center hide-for-large">
+<div id="related-content-mobile" class="row expanded text-center hide-for-medium">
 	<div class="small-12 columns">
 		<h4 class="related-content">Related Articles</h4>
 		<?php echo do_shortcode('[rca-related-content-mobile post_type="'.$post_type.'" category="" navigation="true" navigationText="&#xf104;, &#xf105;" items=1 autoPlay="false" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="false"]'); ?>
