@@ -192,7 +192,6 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 			var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
 			var close = $('#share-menu .close');
 			logo = Math.abs(logo);
-			console.log( 'logoheight ' + logo);
 			var shareButton = $('#share-block');
 			var shareMenu = $('#share-menu');
 
