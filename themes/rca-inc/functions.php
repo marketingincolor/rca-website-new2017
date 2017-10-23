@@ -789,7 +789,7 @@ function get_team_members($department) {
         $missing_avatar = '';
       endif;
 
-      echo '<div class="small-10 small-offset-1 medium-offset-0 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
+      echo '<div class="small-10 small-offset-1 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
 
       // DISPLAY THE AVATAR INSIDE DIV. 
       if( !empty($photo)) : 
