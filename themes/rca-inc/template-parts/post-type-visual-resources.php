@@ -3,7 +3,7 @@
  * Template for Visual Resource Items
  * 
  */
-$pdf              = get_field('visual_resource_pdf');
+$pdf = get_field('visual_resource_pdf');
 ?>
 <?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
 
@@ -17,13 +17,9 @@ $pdf              = get_field('visual_resource_pdf');
 	</div>
 	<!-- /Title -->
 
-	<!-- Button -->
-	<div class="row">
-		<div class="small-10 small-offset-1 columns">
-			<a href="<?php echo $pdf; ?>" title="Download White Paper" target="_blank"><button style="margin: 1rem 0rem 0rem; width: auto;" class="text-left"><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
-		</div>
-	</div>
-	<!-- /Button -->
+	<!-- Share/Download Bar -->
+	<?php get_template_part('template-parts/mobile', 'download-share'); ?>
+	<!-- /share/download -->
 
 	<!-- Content -->
 	<div id="expertise-content" class="row">

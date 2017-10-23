@@ -2964,6 +2964,9 @@ input#search-input {
     padding: 0;
     margin-bottom: 0;
   }
+  #all-expertise-content{
+    padding: 0 0 3rem;
+  }
   .case-study-quote {
     width: auto;
     padding: 20px;
@@ -2973,7 +2976,9 @@ input#search-input {
   .case-study-quote p{
     font-size: 1rem;
   }
-
+  .single-visual_resources #expertise-content img{
+    margin-bottom: 3rem;
+  }
   .site-branding img { max-width: 350px; }
 
 
