@@ -1008,8 +1008,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 #learn-more-form-container-white input[type="checkbox"]:checked + label:before{
-	/*background-color: #363636;*/
-  background-color: rgba(0,0,0,0.4);
+	background-color: #363636;
 }
 
 #webinar-content { padding: 0rem 0rem 3.5rem 0rem; }
