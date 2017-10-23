@@ -7,14 +7,14 @@
 global $post;
 
 // Get Webinar Information
-$date  = new DateTime(get_field('when', false, false));
-$time  = get_field('time_range');
-$where = get_field('where');
-$people = get_field('who_will_benefit');
+$date               = new DateTime(get_field('when', false, false));
+$time               = get_field('time_range');
+$where              = get_field('where');
+$people             = get_field('who_will_benefit');
 $webinar_form_title = get_field('webinar_form_title');
-$webinar_form_copy = get_field('webinar_form_copy');
-$webinar_title = get_field('webinar_title');
-$presenters = get_field('presenters');
+$webinar_form_copy  = get_field('webinar_form_copy');
+$webinar_title      = get_field('webinar_title');
+$presenters         = get_field('presenters');
 //$presenters = explode(',', $presenters);
 // Header BG
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
@@ -25,13 +25,13 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 <div id="featured-img-wrapper" class="row expanded">
 	<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
             rgba(196,97,43,0.7) url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
-			<div class="featured-img-title"><h1><?php the_title(); ?></h1></div>
+			<div class="featured-img-title"><h1>Free Webinar</h1></div>
 	</div>
 </div>
 <!-- / Featured Image -->
 
 <!-- REGISTER & SHARE -->
-<div class="row">
+<div id="webinar-share" class="row">
 	<div class="small-12 columns">
 		<div class="row">
 			<div id="register-block" class="small-6 columns text-center hide-for-medium">
@@ -52,16 +52,16 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 
 			<div class="small-10 small-offset-1 columns">
 
-				<!-- WHEN -->
-				<?php if($date != NULL || $time != NULL): ?>
+				
+				<!-- TOPIC -->
+				<?php if(!empty(get_the_title())): ?>
 				<div class="when-block text-center small-12 medium-4 columns text-center" data-equalizer-watch>
-					<i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
-					<h2>When</h2>
-					<p class="meta"><?php echo $date->format('l, F d, Y'); ?>
-					<p class="meta"><?php echo $time; ?></p>
+					<i class="fa fa-desktop fa-3x" aria-hidden="true"></i>
+					<h2>Topic</h2>
+					<p class="meta"><?php the_title(); ?></p>
 				</div>
 				<?php endif; ?>
-				<!-- /WHEN -->
+				<!-- /TOPIC -->
 
 
 				<!-- WHO -->
@@ -86,42 +86,54 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 				<!-- /WHO -->
 
 				<!-- Where -->
-				<?php if($where != NULL): ?>
-				<div class="where-block small-12 medium-4 columns text-center" data-equalizer-watch>
+				<?php #if($where != NULL): ?>
+<!-- 				<div class="where-block small-12 medium-4 columns text-center" data-equalizer-watch>
 					<i class="fa fa-map-marker fa-3x" aria-hidden="true"></i>
 					<h2>Where</h2>
-					<p class="meta"><?php echo $where; ?></p>
+					<p class="meta"><?php #echo $where; ?></p>
+				</div> -->
+				<?php #endif; ?>
+				<!-- /WHERE -->
+
+				<!-- WHEN -->
+				<?php if($date != NULL || $time != NULL): ?>
+				<div class="when-block text-center small-12 medium-4 columns text-center" data-equalizer-watch>
+					<i class="fa fa-calendar fa-3x" aria-hidden="true"></i>
+					<h2>When</h2>
+					<p class="meta"><?php echo $date->format('l, F d, Y'); ?>
+					<p class="meta"><?php echo $time; ?></p>
 				</div>
 				<?php endif; ?>
-				<!-- /WHERE -->
+				<!-- /WHEN -->
 
 			</div>
 		</div>
 	</div>
-	<style>
-		#webinar-form-block h2{
-			font-size: 2rem;
-			color: white;
-			font-style: italic;
-			font-family: 'lora';
-		}
-	</style>
+
+
 	<!-- FORM FOR MEDIUM UP -->
-	<div id="webinar-form-block" class="show-for-medium">
+	<?php if(get_field('pre_webinar_ss_form')): ?>
+	<div id="webinar-form-block" class="">
 		<div class="row">
-			<div id="form" class="small-10 small-offset-1 columns text-center">
-				<!-- SharpSpring Form for NB Test  -->
-				<script type="text/javascript">
-				    var ss_form = {'account': 'MzawMDGwMDYyAgA', 'formID': 'SzYyM0q2NEvWNUs1S9Q1MbUw0E1KMjDRTTNPtUg2TklLM060BAA'};
-				    ss_form.hidden = {'_usePlaceholders': true};
-				    ss_form.width = '100%';
-				    ss_form.domain = 'app-3QMGUWHS20.marketingautomation.services';
-				    // ss_form.hidden = {'Company': 'Anon'}; // Modify this for sending hidden variables, or overriding values
-				</script>
-				<script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/form.js?ver=1.1.1"></script>
+			<div id="form" class="small-12 medium-10 medium-offset-1 columns text-center">
+
+
+				<!-- SHARPSPRING FORM -->
+				<?php 
+				if(get_field('webinar_form_title')):
+					echo '<h1>'.get_field('webinar_form_title').'</h1>';
+				endif;
+				if(get_field('webinar_form_copy')):
+					echo '<p style="width: 80%; display:block; margin: 0 auto;">'.get_field('webinar_form_copy').'</p>';
+				endif;
+				?>
+				<?php the_field('pre_webinar_ss_form'); ?>
+				<!-- /SHARPSRING FORM -->
+
 			</div>
 		</div>
 	</div>
+	<?php endif; ?>
 	<!-- /FORM FOR MEDIUM UP -->
 </aside>
 
@@ -150,6 +162,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 	<!-- /Content -->
 </div>
 
+<<<<<<< HEAD
 <!-- HIDDEN SHARE MENU -->
 <div id="share-menu" style="display:none;">
 	<div class="row close">
@@ -225,6 +238,11 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 
 		})
 	</script>
+=======
+	<!-- SHARE MENU -->
+	<?php get_template_part('template-parts/hidden', 'share-menu'); ?>
+	<!-- /SHARE MENU -->
+>>>>>>> 4ff71d8879ea0aaeaeeb3066389eb1d12fd56ce9
 
 	<!-- Form Animations -->
 	<script>
@@ -248,7 +266,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 		regButton.on('click', function() {
 
 			$('html, body').animate({
-		        scrollTop: $('#webinar-form-block-mobile #form h1').offset().top
+		        scrollTop: $('#webinar-form-block').offset().top
 		    }, 2000);
 
 		});

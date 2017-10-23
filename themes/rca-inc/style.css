@@ -28,6 +28,20 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 2.0 Organize Styles
 */
 
+
+
+/*PRE WEBINER STYLES*/
+  #webinar-share p { margin-bottom: 0rem; padding: 1rem 0rem; }
+  #webinar-share #share-block { background-color: #2b2b2b; color: #fff; }
+  #webinar-form-block h2{
+    font-size: 2rem;
+    color: white;
+    font-style: italic;
+    font-family: 'lora';
+  }
+  #presenter-accordian li::before { content:none !important; }
+  #your-expert-presenters a { color: #c4612b !important; }
+
 /*Overwrite foundation pagination*/
 .pagination { margin: 1rem 0rem; }
 
@@ -3569,7 +3583,7 @@ div.bar.animate::after { background: #c4612b; }
 
 	#news-all-buttons button { margin: .5rem 0rem; }
 	#news-all-buttons button { margin: .5rem 0rem; }
-	#webinar-information-block > div > div { border: none; }
+	#webinar-information-block > div > div:not(:last-child) { border-bottom:1px solid #9d938a; padding-bottom: 2rem; }
 }
 
 /*--------------------------------------------------------------

@@ -65,15 +65,17 @@ if (!is_page()) {
 
 
 $the_query = new WP_Query($args);
+
 if ( $the_query->have_posts() ) {
 	while ( $the_query->have_posts() ) {
-		$count = '';
 		$the_query->the_post();
+		$count = '';
 		$count = $the_query->found_posts;
-			if (empty($count) || $count < 3) {
-				echo '<div class="hide">';
-			}
-		}} 
+
+		}} wp_reset_postdata();
+		if (empty($count) || $count < 3) {
+			echo '<div class="hide">';
+		}
 ?>	
 	<div id="related-content-block-outer" class="row show-for-large">
 		<div class="row">
@@ -107,10 +109,8 @@ if ( $the_query->have_posts() ) {
 			$the_query->the_post();
 			$count = $the_query->found_posts;
 
-			if (empty($count) || $count < 3) {
+			}} wp_reset_postdata();
+			if (!$count || $count < 3) {
 				echo '</div>';
 			}
-		}
-	} 
-	wp_reset_postdata();
 ?>
