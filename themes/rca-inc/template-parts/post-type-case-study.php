@@ -28,7 +28,7 @@
 	<!-- Title -->
 	<div class="row">
 		<div class="small-10 small-offset-1 columns text-left">
-			<h1><?php the_title(); ?></h1>
+			<h1 class="case-study-title"><?php the_title(); ?></h1>
 		</div>
 	</div>
 	<!-- /Title -->

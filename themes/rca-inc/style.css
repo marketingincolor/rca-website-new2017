@@ -2976,7 +2976,7 @@ input#search-input {
 
 @media screen and (max-width: 39.9375em) {
 
-
+  .case-study-title { margin-bottom: 3rem; }
   #terms-content { padding: 3rem 0rem; }
   #featured-img {
     padding: 50px 0;
@@ -3041,6 +3041,8 @@ input#search-input {
 
 /* Medium and up */	
 @media screen and (min-width: 40em) {
+  
+  .case-study-title { margin-bottom: initial; }
   #terms-content { padding: 3rem 0rem; }
   #news-all-buttons { padding-bottom: 3.5rem; }
 	#news-all-buttons button { margin: .5rem 0rem; }
