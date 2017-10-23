@@ -28,7 +28,7 @@ $article_link_text = get_field('article_link_text');
 	<!-- Content -->
 	<div class="row">
 		<div class="small-10 small-offset-1 columns" >
-			<p><?php the_content(); ?></p>
+			<?php the_content(); ?>
 			<a href="<?php echo $article_link; ?>" class="orange-btn"><button style="width:auto"><?php echo (!empty($article_link_text)) ? $article_link_text : 'Continue Reading this Article'; ?></button></a>
 		</div>
 	</div>
