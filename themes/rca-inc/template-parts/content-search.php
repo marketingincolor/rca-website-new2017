@@ -22,7 +22,7 @@ $icon_img = rca_get_search_icons($the_post->post_type);
 <div class="item-block">
 	<?php if($icon_img != "" || $icon_img != NULL ): ?>
 		<div class="row text-center">
-			<img src="<?php echo $icon_img; ?>" />
+			<a href="<?php the_permalink(); ?>"><img src="<?php echo $icon_img; ?>" /></a>
 		</div>
 	<?php endif; ?>
 	<div class="row text-center archived-title">
