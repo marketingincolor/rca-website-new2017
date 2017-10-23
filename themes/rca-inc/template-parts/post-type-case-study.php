@@ -120,20 +120,14 @@
 			<?php if($solution_text): ?>
 			<p><?php echo $solution_text; ?></p>
 			<?php endif; ?>
-		</div>
-	</div>
 
 		<?php if($featured_quote): ?>
-			
 		<!-- Featured Quote Mobile -->
-		<div class="row expanded case-study-quote-mobile hide-for-medium text-center">
 			<p><?php echo $featured_quote; ?></p>
 		</div>
 		<?php endif; ?>
 		<!-- /Featured Quote Mobile -->
 
-	<div id="" class="row case-study-content hide-for-medium">
-		<div class="small-10 small-offset-1 colums">
 			<?php if($result_title): ?>
 			<h3><?php echo $result_title; ?></h3>
 			<?php endif; ?>

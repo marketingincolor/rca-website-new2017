@@ -3522,12 +3522,14 @@ div.bar.animate::after { background: #c4612b; }
     width: auto;
     padding: 20px;
     display: block;
-    margin: 3rem 0;
+    margin: 1.5rem 0 3rem;
   }
   .case-study-quote p{
     font-size: 1rem;
   }
-
+  .case-study-content.hide-for-medium{
+    padding: 3rem 0 0;
+  }
   .site-branding img { max-width: 350px; width: 95%;}
 
   .error-404 h1 {
