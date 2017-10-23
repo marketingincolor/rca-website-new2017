@@ -7,14 +7,14 @@
 global $post;
 
 // Get Webinar Information
-$date  = new DateTime(get_field('when', false, false));
-$time  = get_field('time_range');
-$where = get_field('where');
-$people = get_field('who_will_benefit');
+$date               = new DateTime(get_field('when', false, false));
+$time               = get_field('time_range');
+$where              = get_field('where');
+$people             = get_field('who_will_benefit');
 $webinar_form_title = get_field('webinar_form_title');
-$webinar_form_copy = get_field('webinar_form_copy');
-$webinar_title = get_field('webinar_title');
-$presenters = get_field('presenters');
+$webinar_form_copy  = get_field('webinar_form_copy');
+$webinar_title      = get_field('webinar_title');
+$presenters         = get_field('presenters');
 //$presenters = explode(',', $presenters);
 // Header BG
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
@@ -112,7 +112,16 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 		<div class="row">
 			<div id="form" class="small-10 small-offset-1 columns text-center">
 
+
 				<!-- SHARPSPRING FORM GOES HERE -->
+				<?php 
+				if(get_field('webinar_form_title')):
+					echo '<h1>'.get_field('webinar_form_title').'</h1>';
+				endif;
+				if(get_field('webinar_form_copy')):
+					echo '<p style="width: 80%; display:block; margin: 0 auto;">'.get_field('webinar_form_copy').'</p>';
+				endif;
+				?>
 				<?php the_field('pre_webinar_ss_form'); ?>
 				<!-- /SHARPSRING FORM GOES HERE -->
 
