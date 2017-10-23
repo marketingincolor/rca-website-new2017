@@ -3212,7 +3212,12 @@ input#search-input {
   height: 50px;
   margin-bottom: 20px;
  }
-
+ .textarea{
+  margin-top: 20px;
+ }
+ #form-num-products{
+  margin-bottom: 20px;
+ }
  #secondary-menu input[type="search"] { 
  	color: #9d938b; 
  	background-color: #f8f7f5; 
