@@ -31,7 +31,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 <!-- / Featured Image -->
 
 <!-- REGISTER & SHARE -->
-<div class="row">
+<div id="webinar-share" class="row">
 	<div class="small-12 columns">
 		<div class="row">
 			<div id="register-block" class="small-6 columns text-center hide-for-medium">
@@ -118,7 +118,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 			<div id="form" class="small-12 medium-10 medium-offset-1 columns text-center">
 
 
-				<!-- SHARPSPRING FORM GOES HERE -->
+				<!-- SHARPSPRING FORM -->
 				<?php 
 				if(get_field('webinar_form_title')):
 					echo '<h1>'.get_field('webinar_form_title').'</h1>';
@@ -128,7 +128,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 				endif;
 				?>
 				<?php the_field('pre_webinar_ss_form'); ?>
-				<!-- /SHARPSRING FORM GOES HERE -->
+				<!-- /SHARPSRING FORM -->
 
 			</div>
 		</div>
@@ -188,7 +188,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 		regButton.on('click', function() {
 
 			$('html, body').animate({
-		        scrollTop: $('#webinar-form-block-mobile #form h1').offset().top
+		        scrollTop: $('#webinar-form-block').offset().top
 		    }, 2000);
 
 		});

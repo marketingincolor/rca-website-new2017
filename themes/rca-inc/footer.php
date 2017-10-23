@@ -161,6 +161,47 @@
 			})
 		</script>
 
+				<script>
+			$(document).ready(function() {
+				//console.log('...............starting');
+				var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
+				var close = $('#share-menu .close');
+				logo = Math.abs(logo);
+				console.log( 'logoheight ' + logo);
+				var shareButton = $('#share-block');
+				var shareMenu = $('#share-menu');
+
+				shareButton.on('click', function() {
+
+					// Show the Menu
+					shareMenu.show();
+					shareMenu.toggleClass('share-menu-js');
+					shareMenu.css('top', logo); 
+
+					// Disable scrolling
+					$('html, body').css( { 
+						overflow:'hidden', 
+						height: '100%'
+					});
+				});
+
+				close.on('click', function() {
+
+					//Enable scrolling
+					$('html, body').css({
+					    overflow: 'auto',
+					    height: 'auto'
+					});
+
+					// Hide the Menu
+					shareMenu.toggleClass('share-menu-js');
+					shareMenu.hide();
+				});
+
+
+			})
+		</script>
+
 		<!-- Include Foundation -->
 		<script>
 			jQuery(function() {

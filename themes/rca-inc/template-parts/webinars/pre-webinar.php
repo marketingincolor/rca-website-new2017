@@ -133,6 +133,8 @@ get_header(); ?>
 	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
 	<!-- /LEARN MORE -->
 
+
 <?php
 //get_sidebar();
+
 get_footer();
