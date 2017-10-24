@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Purpose: For displaying the medical devices page
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 
@@ -53,66 +59,55 @@ get_header(); ?>
 					'menu_name'   => 'Remediation Strategy and Support',
 					'slug' => 'remediation-strategy-and-support'
 				),
-				// 'quality_assurance' => array(
-				// 	'title' => 'Quality Assurance',
-				// 	'menu_name'   => 'Quality Services',
-				// 	'slug' => 'quality-assurance'
-				// ),
 			);
 
 			?>
 			<!-- /List of Services -->
+
+			<!-- MENUS -->
 			<div class="row">
 
+				<!-- Loop Through Services -->
 				<div class="small-12 medium-8 columns">
-					<!-- Loop Through Services -->
-						<?php
-							$count = 1;
-							foreach($services_array as $service){
-								if($count % 2 == 0):
-									echo '<div class="row" data-equalizer>';
-								endif;
+					<?php
+						$count = 1;
+						foreach($services_array as $service){
+							if($count % 2 == 0):
+								echo '<div class="row" data-equalizer>';
+							endif;
 
-								if ( true ): 
-									echo '<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center" data-equalizer-watch>';
-									echo '<div class="service-block">';
-									echo '<div class="row">';
-									echo '<div class="small-12 columns">';
-									echo '<a href="' . home_url( 'medical-device/' . $service['slug'] ) . '"><div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
-									echo '<div class="service-title">' . $service['title'] . '</a></div>';
-									echo '</div>';
-									echo '</div>';
-									echo '</div>';
-								endif;
-
-								// If our menu array isn't empty display the menu.
-								// if($service['menu_name'] != '' || $service['menu_name'] != 'Strategic Consulting' ):
-								// 	echo '<div class="text-left service-menu-items">';
-								// 	echo wp_nav_menu( array('menu' => $service['menu_name']));
-								// 	echo '</div>';
-								// endif;
-
-								if($service['menu_name'] == 'Regulatory Affairs' || $service['menu_name'] == 'Compliance Assurance' || $service['menu_name'] == 'Remediation Strategy and Support' || $service['menu_name'] == 'Strategic Consulting' ):
-									echo '<div class="text-left service-menu-items">';
-									echo wp_nav_menu( array('menu' => $service['menu_name']));
-									echo '</div>';
-								endif;
-
+							if ( true ): 
+								echo '<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center" data-equalizer-watch>';
+								echo '<div class="service-block">';
+								echo '<div class="row">';
+								echo '<div class="small-12 columns">';
+								echo '<a href="' . home_url( 'medical-device/' . $service['slug'] ) . '"><div class="service-icon"><img src="' . get_service_image($service['title']) . '"/></div>';
+								echo '<div class="service-title">' . $service['title'] . '</a></div>';
 								echo '</div>';
+								echo '</div>';
+								echo '</div>';
+							endif;
 
-								if($count % 2 == 0):
-									echo '</div>';
-								endif;
-								$count++;
-							}
+							if($service['menu_name'] == 'Regulatory Affairs' || $service['menu_name'] == 'Compliance Assurance' || $service['menu_name'] == 'Remediation Strategy and Support' || $service['menu_name'] == 'Strategic Consulting' ):
+								echo '<div class="text-left service-menu-items">';
+								echo wp_nav_menu( array('menu' => $service['menu_name']));
+								echo '</div>';
+							endif;
 
-						?>
+							echo '</div>';
 
-					<!-- /Loop Through Services -->
+							if($count % 2 == 0):
+								echo '</div>';
+							endif;
+							$count++;
+						}
+
+					?>
 				</div>
+				<!-- /Loop Through Services -->
 				
+				<!-- HARDCODED QUALITY ASSURANCE  -->
 				<div class="hide-for-medium">
-					<!-- Hardcoded Strategic Consulting  -->
 					<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 						<div class="service-block">
 							<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
@@ -122,11 +117,11 @@ get_header(); ?>
 							<?php //echo wp_nav_menu( array('menu'=> 'Quality Assurance' ) ); ?>
 						</div>
 					</div>
-					<!-- /Hardcoded Strategic Consulting -->
 				</div>
+				<!-- /HARDCODED QUALITY ASSURANCE -->
 	 
+				<!-- HARDCODED QUALITY ASSURANCE  -->
 				<div class="show-for-medium medium-4 columns">
-					<!-- Hardcoded Strategic Consulting  -->
 					<div class="small-10 small-offset-1 medium-12 medium-offset-0 columns text-center">
 						<div class="service-block">
 							<div class="service-icon"><img src="<?php echo get_service_image('Quality Assurance'); ?>" alt=""></div>
@@ -136,18 +131,15 @@ get_header(); ?>
 							<?php //echo wp_nav_menu( array('menu'=> 'Quality Assurance' ) ); ?>
 						</div>
 					</div>
-					<!-- /Hardcoded Strategic Consulting -->
 				</div>
+				<!-- /HARDCODED QUALITY ASSURANCE -->
 
 			</div>
+			<!-- /MENUS -->
 		
 		</div>
 
 	</div>
-
-	<!-- RELATED CONTENT -->
-	<?php //get_template_part('template-parts/content', 'related-content'); ?>
-	<!-- /RELATED CONTENT -->
 	
 	<!-- LEARN MORE FORM -->
 	<div id="contact-learn-more-wrapper">
@@ -160,5 +152,4 @@ get_header(); ?>
 	<!-- /NEWS -->
 
 <?php
-//get_sidebar();
 get_footer();
