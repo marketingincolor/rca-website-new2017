@@ -1,6 +1,6 @@
 <?php
 /**
- * Purpose: Displays the gated webinar pages.
+ * Purpose: Displays a single gated webinar page.
  * Date: 10/24/2017
  * Author: AD.,NB.,ET., MARKETING IN COLOR
  */

@@ -1,4 +1,10 @@
 <?php
+/**
+ * Purpose: Displays a single white paper page.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 get_header();
 ?>
 	<?php get_template_part('template-parts/section', 'takeover-modal'); ?>

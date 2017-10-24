@@ -1,5 +1,12 @@
 <?php
 /* Template Name: Individual Staff Page */
+
+/**
+ * Purpose: For displaying staff member pages.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 $articles = get_field('published_articles_relationship', get_the_ID());
 $options = get_option('rca_theme_options');
 
@@ -16,16 +23,11 @@ get_header(); ?>
 					while ( have_posts() ) : the_post();
 					
 					$articles = get_field('published_articles_relationship');
-					//var_dump($articles);
 					$staff_id = get_field('staff_id');
 					$staff_data = get_userdata($staff_id);
 					$staff_meta = get_user_meta($staff_id);
-					// $first_name = $staff_meta["first_name"];
-					// $last_name = $staff_meta["last_name"];
 					$email = get_field('email');
 					$position = get_field('position', $staff_data);
-
-
 
         			if( has_post_thumbnail()): ?>
         					<div id="individual-staff-wrapper" class="">
@@ -45,20 +47,10 @@ get_header(); ?>
 		    					<?php if($email): ?>
 		    						<div id="individual-email" class="text-left medium-text-center"><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto: <?php echo $email; ?>"> <?php echo $email; ?></a></div>
 		    					<?php endif; ?>
-	        						
 		        				<?php the_content(); ?>
         					</div>
-        			<?php endif; ?>
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-
-					endwhile; // End of the loop.
-					?>
-
+        			<?php endif; endwhile; ?>
 				</div>
-
-
-
 			</div>
 
 			<!-- PUBLISHED ARTICLES SECTION -->
@@ -67,7 +59,6 @@ get_header(); ?>
 				// IF WE HAVE LESS THAN 3 ARTICLES TO SHOW DON'T SHOW ANY.
 			    $articles = get_field('published_articles_relationship', get_the_ID());
 			    if( count($articles) >= 3 ) :
-
 
 			?>
 
@@ -80,10 +71,11 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
+
 			<?php endif; ?>
 			<!-- /PUBLISHED ARTICLES SECTION -->
 			
-		</main><!-- #main -->
+		</main>
 
 		<!-- LEARN MORE -->
 		<div class="row-expanded">
@@ -94,6 +86,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-//get_template_part('template-parts/section', 'learn-more' );
 get_template_part('template-parts/section', 'news');
 get_footer();

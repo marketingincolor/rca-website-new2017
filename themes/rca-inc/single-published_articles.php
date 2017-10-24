@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Purpose: Displays a single published article page.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 get_header(); ?>
 	
 	<div id="primary" class="content-area">
