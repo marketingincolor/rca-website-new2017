@@ -554,7 +554,9 @@ h2 {
 #related-content-block .random-item:not(:last-child) {
 	border-right: 2px solid #c9c3ba;
 }
-
+#related-content-block img{
+  height: 50px;
+}
 #related-content-block .random-item {
   display: flex;
   align-items: center;
@@ -570,6 +572,12 @@ h2 {
   border: 2px solid #c4612b;
   padding: 0.35rem;
   line-height: 1;
+}
+#mob-before-title-block.show-for-medium{
+  padding: 0 0 3rem;
+}
+#mob-before-title-block.show-for-medium #mobile-cat-picker select{
+  padding: 0.7rem 1rem;
 }
 #mobile-share-btn p { margin-bottom: 0rem; font-weight: bold; }
 #mobile-cat-picker select {
