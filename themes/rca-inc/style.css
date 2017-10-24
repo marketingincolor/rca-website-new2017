@@ -2248,7 +2248,9 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; p
 #all-case-studies > div:nth-child(1) > div > div {
 	margin-top: 3.75rem;
 }
-
+.single-case_studies #expertise-content, .single-visual_resources #expertise-content {
+  padding: 3rem 0rem 1rem;
+}
 .individual-case-study {
     border-left: 10px solid #c4612b;
     padding: 0rem 0rem 0 2rem;
