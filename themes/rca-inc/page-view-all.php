@@ -77,7 +77,7 @@ get_header(); ?>
 	<!-- /SOCIAL BREADCRUMBS -->
 
 	<div id="mob-before-title-block" class="row hide-for-small show-for-medium hide-for-large" data-equalizer>
-		<div id="mobile-cat-picker" class="small-offset-4 small-4 columns" data-equalizer-watch>
+		<div id="mobile-cat-picker" class="small-offset-1 small-10 columns" data-equalizer-watch>
 			<select name="mobile_category" id="" onchange="location.href=this.value">
 				<option value="<?php echo site_url(); ?>/view-all" disabled selected>View All</option>
 				<option value="<?php echo site_url(); ?>/case-studies">Case Studies</option>
