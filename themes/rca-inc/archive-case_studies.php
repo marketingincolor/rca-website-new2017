@@ -26,8 +26,6 @@ get_header(); ?>
 	</div>
 	<!-- / Featured Image -->
 
-
-
 	<div id="mob-before-title-block" class="row hide-for-medium" data-equalizer>
 		<div id="mobile-cat-picker" class="small-offset-1 small-8 columns" data-equalizer-watch>
 			<select name="mobile_category" id="" onchange="location.href=this.value">
@@ -47,6 +45,19 @@ get_header(); ?>
 	<!-- SOCIAL BREADCRUMBS -->
 	<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
 	<!-- /SOCIAL BREADCRUMBS -->
+
+	<div id="mob-before-title-block" class="row hide-for-small show-for-medium hide-for-large" data-equalizer>
+		<div id="mobile-cat-picker" class="small-offset-4 small-4 columns" data-equalizer-watch>
+			<select name="mobile_category" id="" onchange="location.href=this.value">
+				<option value="<?php echo site_url(); ?>/case-studies" disabled selected>Case Studies</option>
+				<option value="<?php echo site_url(); ?>/webinars">Webinars</option></a>
+				<option value="<?php echo site_url(); ?>/white-papers">White Papers</option>
+				<option value="<?php echo site_url(); ?>/visual-resources">Visual Resources</option>
+				<option value="<?php echo site_url(); ?>/published-articles">Published Articles</option>
+				<option value="<?php echo site_url(); ?>/view-all">View All</option>
+			</select>
+		</div>
+	</div>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
