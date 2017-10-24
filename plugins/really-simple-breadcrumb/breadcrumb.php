@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name:  RCA Breadcrumbs
+Plugin Name:  RCA Breadcrumbs - Do Not Update. Modified For RCA INC. Theme.
 Plugin URI: 
 Description: Built From Really Simple Breadcrumbs. 
 Version: 1.0.2

@@ -1,21 +1,17 @@
 <?php
+
 /**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package RCA_Inc.
+ * Purpose: Displays all case studies in grid format.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ * Contains the closing of the #content div and all content after.
  */
+ 
 global $post;
-$term = $wp_query->queried_object;
-$name = 'Case Studies';
-$term_obj = get_term_by( 'name', $name, 'expertise' );
-$term_id = $term_obj->term_taxonomy_id;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
-// Switch determines bg img
+get_header(); 
 
-
-get_header(); ?>
+?>
 
 	<!-- Featured Image -->
 	<div id="featured-img-wrapper" class="row expanded">
@@ -42,13 +38,12 @@ get_header(); ?>
 			<p>Share</p>
 		</div>
 	</div>
+
 	<!-- SOCIAL BREADCRUMBS -->
 	<div class="row show-for-medium">
 		<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center medium-text-left">
 			<div id="breadcrumbs">
-					<?php if($termName != 'Webinars'): ?>
-						<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
-					<?php endif; ?>
+				<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
 			</div>
 		</div>
 		<div class="small-12 medium-6 columns text-right show-for-medium">

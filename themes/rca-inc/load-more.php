@@ -74,7 +74,7 @@ header("HTTP/1.1 200 OK");
 		echo '</script>';
 		echo '<div class="row">';
 		echo '<div class="small-10 small-offset-1 columns">';
-		echo '<h3 class="">Sorry, we can\'t find any posts that match this search right now...</p>';
+		echo '<h3 class="">Sorry, but there are no more available posts for loading.</p>';
 		echo '</div>';
 		echo '</div>';
 	}
