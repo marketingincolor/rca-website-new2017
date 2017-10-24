@@ -1,12 +1,10 @@
 <?php
+
 /**
- * The template for displaying the footer
- *
+ * Purpose: Template file for displaying the footer
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
  * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package RCA_Inc.
  */
 
 ?>
