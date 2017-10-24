@@ -12,6 +12,15 @@ $name = 'Case Studies';
 $term_obj = get_term_by( 'name', $name, 'expertise' );
 $term_id = $term_obj->term_taxonomy_id;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
+
+$terms = get_the_terms($post->id, 'expertise');
+
+// Returns this term name
+if($terms):
+	$termName = $terms[0]->name;
+else: 
+	$termName = '';
+endif;
 // Switch determines bg img
 
 
@@ -47,8 +56,23 @@ get_header(); ?>
 			<p>Share</p>
 		</div>
 	</div>
+
 	<!-- SOCIAL BREADCRUMBS -->
-	<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
+	<div class="row show-for-medium">
+	<div class="small-12 medium-6 columns text-center medium-text-left">
+		<div id="breadcrumbs">
+				<?php if($termName != 'Webinars'): ?>
+					<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
+				<?php endif; ?>
+		</div>
+	</div>
+	<div class="small-12 medium-6 columns text-right show-for-medium">
+		<div id="share" class="">
+			<p>Share on Social Media</p>
+			<?php echo do_shortcode('[addtoany]'); ?>
+		</div>
+	</div>
+</div>
 	<!-- /SOCIAL BREADCRUMBS -->
 
 	<div id="mob-before-title-block" class="row hide-for-small show-for-medium hide-for-large" data-equalizer>
