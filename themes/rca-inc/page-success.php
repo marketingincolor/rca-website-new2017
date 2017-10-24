@@ -1,8 +1,16 @@
 <?php 
-	/* Template Name: Success */
-	$options = get_option('rca_theme_options');
-	get_header();
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+/* Template Name: Success Page */
+
+/**
+ * Purpose: Success Page Template
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
+$options = get_option('rca_theme_options');
+get_header();
+if ( have_posts() ) : while ( have_posts() ) : the_post();
 ?>
 
 <section class="success" style="background: linear-gradient(
