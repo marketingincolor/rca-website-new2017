@@ -1,30 +1,16 @@
 <?php
+
 /**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package RCA_Inc.
+ * Purpose: For displaying all expertise items on a page.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
  */
+
 global $post;
-$term = $wp_query->queried_object;
-$name = 'Case Studies';
-$term_obj = get_term_by( 'name', $name, 'expertise' );
-$term_id = $term_obj->term_taxonomy_id;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
+get_header(); 
 
-$terms = get_the_terms($post->id, 'expertise');
-
-// Returns this term name
-if($terms):
-	$termName = $terms[0]->name;
-else: 
-	$termName = '';
-endif;
-// Switch determines bg img
-
-
-get_header(); ?>
+?>
 
 	<!-- Featured Image -->
 	<div id="featured-img-wrapper" class="row expanded">
@@ -35,9 +21,7 @@ get_header(); ?>
 	</div>
 	<!-- / Featured Image -->
 
-
-
-
+	<!-- SELECT FOR SMALL -->
 	<div id="mob-before-title-block" class="row hide-for-medium" data-equalizer>
 		<div id="mobile-cat-picker" class="small-offset-1 small-8 columns" data-equalizer-watch>
 			<select name="mobile_category" id="" onchange="location.href=this.value">
@@ -56,14 +40,13 @@ get_header(); ?>
 			<p>Share</p>
 		</div>
 	</div>
+	<!-- /SELECT FOR SMALL -->
 
 	<!-- SOCIAL BREADCRUMBS -->
 	<div class="row show-for-medium">
 		<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center medium-text-left">
 			<div id="breadcrumbs">
-					<?php if($termName != 'Webinars'): ?>
-						<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
-					<?php endif; ?>
+				<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
 			</div>
 		</div>
 		<div class="small-12 medium-6 columns text-right show-for-medium">
@@ -76,6 +59,7 @@ get_header(); ?>
 	</div>
 	<!-- /SOCIAL BREADCRUMBS -->
 
+	<!-- SELECT BOX FOR MEDIUM -->
 	<div id="mob-before-title-block" class="row hide-for-small show-for-medium hide-for-large" data-equalizer>
 		<div id="mobile-cat-picker" class="small-offset-1 small-10 columns" data-equalizer-watch>
 			<select name="mobile_category" id="" onchange="location.href=this.value">
@@ -88,6 +72,7 @@ get_header(); ?>
 			</select>
 		</div>
 	</div>
+	<!-- SELECT BOX FOR MEDIUM -->
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -105,6 +90,7 @@ get_header(); ?>
 		$temp_query = $wp_query;
 		$wp_query   = NULL;
 		$wp_query   = $view_all;
+
 		if ( $view_all->have_posts() ) : ?>
 			
 			<div class="row show-for-medium">
@@ -114,10 +100,6 @@ get_header(); ?>
 					</header><!-- .page-header -->
 				</div>
 			</div>
-
-			<!-- TAXONOMIES MENU -->
-			<?php #get_template_part('template-parts/taxonomy', 'menu'); ?>
-			<!-- /TAXONOMIES MENU -->
 			
 			<div id="all-items-block" class="row" data-equalizer>
 				
@@ -137,64 +119,22 @@ get_header(); ?>
 				endwhile;
 			?>
 			</div>
+
+			<!-- PAGINATION -->
 			<div class="row text-center">
-				<div class="small-10 small-offset-1 columns pagination-col">
-					<?php #get_previous_posts_link(); ?>
-					
-					<?php #rca_tax_post_pagination($view_all); ?>
+				<div class="small-10 small-offset-1 columns pagination-col">					
 					<?php the_posts_pagination( array( 'mid_size'  => 1, 'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'next_text' => '<i class="fa fa-angle-right" aria-hidden="true"></i>', 'total' => $view_all->max_num_pages ) ); ?>
 				</div>
 			</div>
-			<?php
-				endif; 
-				wp_reset_query();
-			?>
+			<?php endif; wp_reset_query(); ?>
+			<!-- /PAGINATION -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 	<!-- HIDDEN SHARE MENU -->
-	<div id="share-menu" style="display:none;">
-		<div class="row close">
-			<div class="small-offset-10 small-2 columns">
-				<i class="fa fa-times fa-2x" aria-hidden="true"></i>
-			</div>
-		</div>
-		<div class="row title">
-			<div class="small-12 columns">
-				<h1>Share This Page</h1>
-			</div>
-		</div>
-		<div id="social-icons">
-			<div class="row a2a_kit a2a_kit_size_32 a2a_default_style text-center">
-				<div class="small-2 columns text-center">
-					<a class="a2a_button_facebook"><i class="fa fa-facebook-square fa-3x a2a_button_facebook" aria-hidden="true"></i></a>
-				</div>
-				<div class="small-2 columns text-center">
-					<a class="a2a_button_linkedin"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-				</div>
-				<div class="small-2 columns text-center">
-					<a class="a2a_button_googleplusone"><i class="fa fa-google-plus-square fa-3x" aria-hidden="true"></i></a>
-				</div>
-				<div class="small-2 columns text-center">
-					<a class="a2a_button_twitter"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
-				</div>
-				<div class="small-2 columns text-center">
-					<a class="a2a_button_email"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
+	<?php get_template_part('template-parts/hidden', 'share-menu'); ?>
 	<!-- /HIDDEN SHARE MENU -->
-
-<script>
-
-	$(document).ready(function() {
-		var active = $('.navigation ul .active a img');
-			active.attr('src', '<?php echo get_stylesheet_directory_uri() . '/images/RCA_MOBILE_HOMEPAGE_INDICATOR-SELECTED.jpg'; ?> ');
-	});
-
-</script>
 
 	<!-- SHARE BUTTON CLICKS -->
 	<script>
