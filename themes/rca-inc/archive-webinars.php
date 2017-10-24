@@ -43,7 +43,22 @@ get_header(); ?>
 	</div>
 
 	<!-- SOCIAL BREADCRUMBS -->
-	<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
+	<div class="row show-for-medium">
+		<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center medium-text-left">
+			<div id="breadcrumbs">
+					<?php if($termName != 'Webinars'): ?>
+						<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
+					<?php endif; ?>
+			</div>
+		</div>
+		<div class="small-12 medium-6 columns text-right show-for-medium">
+			<div id="share" class="">
+				<p>Share on Social Media</p>
+				<?php echo do_shortcode('[addtoany]'); ?>
+			</div>
+		</div>
+
+	</div>
 	<!-- /SOCIAL BREADCRUMBS -->
 
 	<div id="mob-before-title-block" class="row hide-for-small show-for-medium hide-for-large" data-equalizer>
@@ -107,6 +122,7 @@ get_header(); ?>
 
 				endwhile;
 			?>
+			</div>
 			<div class="row text-center">
 				<div class="small-10 small-offset-1 columns pagination-col">
 					<?php #get_previous_posts_link(); ?>
@@ -119,7 +135,6 @@ get_header(); ?>
 				endif; 
 				wp_reset_query();
 			?>
-			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

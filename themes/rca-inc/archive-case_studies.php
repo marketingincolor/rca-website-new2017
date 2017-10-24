@@ -43,7 +43,22 @@ get_header(); ?>
 		</div>
 	</div>
 	<!-- SOCIAL BREADCRUMBS -->
-	<?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
+	<div class="row show-for-medium">
+		<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center medium-text-left">
+			<div id="breadcrumbs">
+					<?php if($termName != 'Webinars'): ?>
+						<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
+					<?php endif; ?>
+			</div>
+		</div>
+		<div class="small-12 medium-6 columns text-right show-for-medium">
+			<div id="share" class="">
+				<p>Share on Social Media</p>
+				<?php echo do_shortcode('[addtoany]'); ?>
+			</div>
+		</div>
+
+	</div>
 	<!-- /SOCIAL BREADCRUMBS -->
 
 	<div id="mob-before-title-block" class="row hide-for-small show-for-medium hide-for-large" data-equalizer>
@@ -86,25 +101,30 @@ get_header(); ?>
 			<?php #get_template_part('template-parts/taxonomy', 'menu'); ?>
 			<!-- /TAXONOMIES MENU -->
 			
+			<!-- ARCHIVE BLOCK -->
 			<div id="all-items-block" class="row" data-equalizer>
 				
-			<?php
-				/* Start the Loop */
-				while ( $case_studies_query->have_posts() ) : $case_studies_query->the_post();
+				<?php
+					/* Start the Loop */
+					while ( $case_studies_query->have_posts() ) : $case_studies_query->the_post();
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
 
-					echo '<div class="small-10 small-offset-1 medium-6 medium-offset-0 large-offset-0 large-3 columns archive-row end">';
-						get_template_part( 'template-parts/content', 'archive-blocks' );
-					echo '</div>';
+						echo '<div class="small-10 small-offset-1 medium-6 medium-offset-0 large-offset-0 large-3 columns archive-row end">';
+							get_template_part( 'template-parts/content', 'archive-blocks' );
+						echo '</div>';
 
-				endwhile;
-			?>
-			
+					endwhile;
+				?>
+
+			</div>
+			<!-- /ARCHIVE BLOCK -->
+
+			<!-- PAGINATION -->
 			<div class="row text-center">
 				<div class="small-10 small-offset-1 columns pagination-col">
 					<?php #get_previous_posts_link(); ?>
@@ -113,11 +133,12 @@ get_header(); ?>
 					<?php the_posts_pagination( array( 'mid_size'  => 1, 'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i>', 'next_text' => '<i class="fa fa-angle-right" aria-hidden="true"></i>','total' => $case_studies_query->max_num_pages ) ); ?>
 				</div>
 			</div>
+			<!-- /PAGINATION -->
+
 			<?php
 				endif; 
 				wp_reset_query();
 			?>
-			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
