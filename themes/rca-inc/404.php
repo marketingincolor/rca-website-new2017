@@ -22,7 +22,15 @@ get_header(); ?>
 								<header class="page-header">
 									<h1 class="page-title"><?php esc_html_e( 'Oops! This page does not exist. Please check the URL, use our search bar to start over, or click below to go back to our Home page. 
 				', 'rca-inc' ); ?></h1>
-									<a href="<?php echo get_site_url(); ?>"><?php get_template_part('template-parts/button', 'back-to-home' ); ?></a>
+									<a href="<?php echo get_site_url(); ?>">
+										<div class="container">
+											<div class="row">
+												<div class="small-12 medium-6 columns small-centered medium-uncentered">
+													<button class="back-to-home-btn">Back to Home</button>
+												</div>
+											</div>
+										</div>
+									</a>
 								</header><!-- .page-header -->
 							</section><!-- .error-404 -->
 						</div>
