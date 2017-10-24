@@ -1,35 +1,41 @@
 <?php
+/**
+ * Purpose: Displays the gated webinar pages.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 global $post;
 
 $youtube_embed_url = get_field('youtube_embed_url');
 $video_img = get_stylesheet_directory_uri() . '/images/webinar-coming-soon.jpg';
-
-
-// Check for embed.
-// if(empty($youtube_embed_url)):
-// 	$youtube_embed_url = get_stylesheet_directory_uri() . '/images/webinar-coming-soon.jpg';
-// endif;
-
 $pop = get_field('pre_or_post');
+$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+$video_img = the_field('video_img');
 
+// Displays pre webinar layout
 if($pop == 'pre') {
 	get_template_part('template-parts/webinars/pre', 'webinar');
 }
+
+// Displays post webinar layout
 elseif($pop == 'post'){
 	get_template_part('template-parts/webinars/post', 'webinar');
 }
+
+// Displays gated webinar
 else {
 
-	/* Template Name: Webinar Success */
-	get_header();
-	get_template_part('template-parts/section', 'takeover-modal');
-	$backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
-	if ( have_posts() ) : while ( have_posts() ) : the_post();
-	$video_img = the_field('video_img');
-	if(empty($video_img)) {
-		$video_img = get_stylesheet_directory_uri() . '/images/webinar-coming-soon.jpg';
-	}
-	?>
+get_header();
+get_template_part('template-parts/section', 'takeover-modal');
+
+if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+// If we don't have a video display coming soon screen. 
+if(empty($video_img)) {
+	$video_img = get_stylesheet_directory_uri() . '/images/webinar-coming-soon.jpg';
+}
+?>
 
 	<!-- Featured Image -->
 	<div id="featured-img-wrapper" class="row expanded">
@@ -93,12 +99,4 @@ else {
 	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
 	<?php get_footer(); ?>
 
-
-	<!-- Video Modal -->
-	<div class="reveal" id="webinar-video-modal" data-reveal data-reset-on-close="true">
-		<iframe src="<?php the_field('youtube_embed_url'); ?>" allowfullscreen></iframe>
-	  <button class="close-button" data-close aria-label="Close modal" type="button">
-	    <span aria-hidden="true">&times;</span>
-	  </button>
-	</div>
 <?php } ?>

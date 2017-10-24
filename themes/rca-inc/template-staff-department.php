@@ -2,11 +2,10 @@
 /*Template Name: Staff Department*/
 
 /**
- * PURPOSE: FROM THE ABOUT/OUR-PEOPLE PAGE THE USER CAN CLICK ON THE STAFFS DEPT.
- * THE STAFF DEPARTMENT PAGE WILL LOAD AND DISPLAY THE FEATURED IMG ALONG WITH THE STAFF MEMBERS.
- * THE PAGES POST NAME IS PASSED TO A FUNCTION THAT GETS ALL OF THE DATA FOR THAT PAGE. 
- *
- * PAGE EXAMPLES:
+ * Purpose: Displays staff department pages...see page examples.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR 
+ * Page Examples:
  * .../about/our-people/operations
  * .../about/our-people/sales-operations
  * .../about/our-people/finance
