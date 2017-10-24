@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Purpose: Displays a single case study page.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 get_header();
 ?>
 	

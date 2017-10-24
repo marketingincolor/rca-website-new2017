@@ -1,7 +1,11 @@
 <?php
+
 /**
- * default search form
+ * Purpose: Default search form for RCA Inc.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
  */
+
 ?>
 <form role="search" method="get" id="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
     <div class="search-wrap">
