@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Purpose: For displaying the /about/our-people page
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 
@@ -27,13 +33,12 @@ get_header(); ?>
 
 					get_template_part( 'template-parts/content', 'page-our-people' );
 
-				endwhile; // End of the loop.
+				endwhile;
 				?>
 
-			</main><!-- #main -->
-		</div><!-- #primary -->
+			</main>
+		</div>
 
 	</div>
 <?php
-//get_sidebar();
 get_footer();

@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Purpose: Displays the blog posts
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 get_header(); ?>
@@ -15,11 +22,11 @@ get_header(); ?>
 
 	<div class="page-wrapper">
 		
-		<?php
+		<!-- BREADCRUMBS -->
+		<?php get_template_part( 'template-parts/section', 'breadcrumbs-social' ); ?>
+		<!-- /BREADCRUMBS -->
 
-		get_template_part( 'template-parts/section', 'breadcrumbs-social' ); ?>
-
-		<!-- Buttons -->
+		<!-- BUTTONS -->
 		<div id="news-all-buttons" class="row">
 			<div class="small-10 small-offset-1 large-2 large-offset-1 columns">
 				<a href="#News"><button id="filter-news" class="news-filter"  title="News" news_filter="news">News</button></a>
@@ -33,6 +40,8 @@ get_header(); ?>
 			<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
 				<a href="#View-All"><button id="all" class="news-filter" title="" news_filter="all">View All</button></a>
 			</div>
+
+			<!-- DROPDOWN -->
 			<div class="small-10 small-offset-1 large-2 large-offset-0 columns end" news_filter="Year Published">
 
 				<!-- Dynamically Set Year in Dropdown -->
@@ -49,23 +58,23 @@ get_header(); ?>
 				<!-- /Dynamically Set Year in Dropdown -->
 
 			</div>
+			<!-- DROPDOWN -->
 
-			<!-- Loading Graphics -->
+			<!-- LOADING GRAPHICS -->
 			<div class="spinner" style="display:none;">
 				<div class="double-bounce1"></div>
 				<div class="double-bounce2"></div>
 			</div>
-			<!-- /Loading Graphics -->
+			<!-- /LOADING GRAPHICS -->
 
 		</div>
+		<!-- /BUTTONS -->
 
+		<!-- POST CONTAINER. DONT DELETE. -->
+		<div id="all-posts" class="post-container"></div>
+		<!-- /POST CONTAINER. DONT DELETE. -->
 
-
-		<div id="all-posts" class="post-container">
-					
-		</div>
-
-		<!-- Buttons -->
+		<!-- LOAD MORE BUTTON -->
 		<div class="row text-center">
 			<div class="small-10 small-offset-1 columns">
 				<div class="load-more">
@@ -73,28 +82,28 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
-		<!-- /Buttons -->
+		<!-- /LOAD MORE BUTTON -->
 
 	</div>
-	<!-- Hidden Inputs -->
+
+	<!-- MAGIC -->
 	<input class="rca_query" type="hidden" value="">
 	<input class="rca_offset" type="hidden" value="0">
 	<input class="year_switch" type="hidden" value="">
 	<input class="total_posts" type="hidden" value="">
-	<!-- /Hidden Inputs -->
+	<!-- /MAGIC -->
 
+	<!-- SETS DEFAULT TO VIEW ALL -->
 	<script>
 	$(document).ready(function() {
-		//category = $('.rca_query').val();
-		
 		defaultNewsFilter('<?php echo get_stylesheet_directory_uri(); ?>', ajaxFilterYear());
 		
 	});
 	</script>
+	<!-- /SETS DEFAULT TO VIEW ALL -->
 	
 
 
 <?php
-//get_sidebar();
 get_template_part('template-parts/section', 'news');
 get_footer();
