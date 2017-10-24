@@ -16,7 +16,7 @@ endif;
 ?>
 
 <div class="row">
-	<div class="small-12 medium-6 columns text-center medium-text-left">
+	<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center medium-text-left">
 		<div id="breadcrumbs">
 				<?php if($termName != 'Webinars'): ?>
 					<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
