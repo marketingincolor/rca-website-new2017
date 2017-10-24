@@ -30,7 +30,7 @@ $article_link_text = get_field('article_link_text');
 		<div class="small-10 small-offset-1 columns" >
 			<div class="entry-content">
 				<?php the_content(); ?>
-				<a href="<?php echo $article_link; ?>" class="orange-btn"><button style="width:auto; margin: 1rem 0rem 3rem;"><?php echo (!empty($article_link_text)) ? $article_link_text : 'Continue Reading this Article'; ?></button></a>
+				<a href="<?php echo $article_link; ?>" class="orange-btn"><button style="width:auto;margin:2rem 0rem 2rem"><?php echo (!empty($article_link_text)) ? $article_link_text : 'Continue Reading this Article'; ?></button></a>
 			</div>
 		</div>
 	</div>
