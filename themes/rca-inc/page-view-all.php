@@ -135,6 +135,7 @@ get_header(); ?>
 
 				endwhile;
 			?>
+			</div>
 			<div class="row text-center">
 				<div class="small-10 small-offset-1 columns pagination-col">
 					<?php #get_previous_posts_link(); ?>
@@ -147,7 +148,6 @@ get_header(); ?>
 				endif; 
 				wp_reset_query();
 			?>
-			</div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
