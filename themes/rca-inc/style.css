@@ -554,7 +554,9 @@ h2 {
 #related-content-block .random-item:not(:last-child) {
 	border-right: 2px solid #c9c3ba;
 }
-
+#related-content-block img{
+  height: 50px;
+}
 #related-content-block .random-item {
   display: flex;
   align-items: center;

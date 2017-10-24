@@ -7,31 +7,17 @@ foreach ($terms as $term) {
 	array_push($terms_array, $term->term_id);
 }
 
-switch ($post_type) {
-	case 'webinars':
-		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-webinar-icon.jpg';
-		break;
-
-	case 'published_articles':
-		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-published-articles-icon.jpg';
-		break;
-
-	case 'case_studies':
-		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
-		break;
-
-	case 'white_papers':
-		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-white-paper-icon.jpg';
-		break;
-
-	case 'visual_resources':
-		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-visual-resources-icon.jpg';
-		break;
-	
-	default:
-		$icon   = get_stylesheet_directory_uri() . '/images/icons/orange-case-study-icon.jpg';
-		break;
-}
+if($post_type == 'case_studies'):
+  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
+elseif($post_type == 'webinars'):
+  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Webinar-Icon-Gray-01.svg';
+elseif($post_type == 'white_papers'):
+  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/White-Papers-Icon-Gray-01.svg';
+elseif($post_type == 'visual_resources'):
+  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
+elseif($post_type == 'published_articles'):
+  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
+endif;
 
 if (!is_page()) {
 	$args = array(
