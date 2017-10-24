@@ -21,7 +21,7 @@ $event_time     = get_field('event_time');
 			<!-- IF START & END DATE -->
 			<?php else: ?>
 			<div class="small-12 medium-4 columns random-item" data-equalizer-watch>
-				<i class="fa fa-calendar" aria-hidden="true"></i><p><?php echo $event_date_format->format('F d, Y'); ?> - <?php echo $end_date_format->format('F d, Y'); ?></p>
+				<i class="fa fa-calendar" aria-hidden="true"></i><p><?php echo $event_date_format->format('F d') . '-' . $end_date_format->format('d, Y'); ?></p>
 			</div>
 			<?php endif; ?>
 			<!-- /IF START & END DATE -->
