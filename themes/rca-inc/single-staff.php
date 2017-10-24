@@ -75,7 +75,7 @@ get_header(); ?>
 					<div class="row">
 						<div class="small-10 small-offset-1 columns text-center">
 							<h3><?php echo $options['bio_page_slider_title']; ?></h3>
-							<?php echo do_shortcode('[rca-staff-articles category="" post_id="'.get_the_id() .'" navigation="true" navigationText="&#xf104;, &#xf105;" items=3 autoPlay="true" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="false"]'); ?>
+							<?php echo do_shortcode('[rca-staff-articles category="" post_id="'.get_the_id() .'" navigation="true" navigationText="&#xf104;, &#xf105;" items=3 autoPlay="true" itemsDesktop="false" itemsDesktopSmall="false" itemsTablet="768,2"]'); ?>
 
 						</div>
 					</div>

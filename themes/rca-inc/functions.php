@@ -789,7 +789,7 @@ function get_team_members($department) {
         $missing_avatar = '';
       endif;
 
-      echo '<div class="small-10 small-offset-1 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 columns relative ' . $end .'" data-equalizer-watch>';
+      echo '<div class="small-10 small-offset-1 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 large-offset-0 columns relative ' . $end .'" data-equalizer-watch>';
 
       // DISPLAY THE AVATAR INSIDE DIV. 
       if( !empty($photo)) : 
@@ -1338,7 +1338,7 @@ function get_team_members_department($department) {
       echo '<div class="staff-wrapper">';
 
       if ( !empty( $member_id ) ) {
-        echo '<div class="department-staff-name text-center"><h1><a href="' . get_the_permalink($member_id) .'" id="'. preg_replace('/[\s_]/', '-', get_the_title($member_id)) .'">' . get_the_title($member_id) . '</a></h1></div>';
+        echo '<div class="department-staff-name text-center"><a href="' . get_the_permalink($member_id) .'" id="'. preg_replace('/[\s_]/', '-', get_the_title($member_id)) .'"><h1>' . get_the_title($member_id) . '</h1></a></div>';
       }
 
       if ( !empty($position) ) {
@@ -1348,7 +1348,7 @@ function get_team_members_department($department) {
       if( !empty($email)) : 
         echo '<div id="individual-email" class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> '. $email .'</div>';
       endif;
-      echo '<p>'. wpautop( $member_description, $br = true ) .'</p>';
+      echo wpautop( $member_description, $br = true );
 
       echo '</div>';
       echo '</div>';
