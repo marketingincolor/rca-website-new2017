@@ -1,22 +1,12 @@
 <?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * TODO: 
- * 
- * Refactor WordPress Menus. Leaving right now as this is the fastest way I can work with them.
- * Clean styles out of content blocks.
- * Clean stylesheet.
- * Clean unecessary CDNs and JS files.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package RCA_Inc.
- */
+
+/********************************
+ * RCA INC. 
+ * BUILT BY MARKETING IN COLOR.
+ ********************************/
 
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
@@ -34,7 +24,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-			<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
 
 		<!-- JQUERY INCLUDE -->
 		<script

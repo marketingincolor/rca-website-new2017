@@ -101,25 +101,8 @@
 
 		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/js/mobile-nav.js'; ?>"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.2/js/foundation.js"></script>
-		<!-- Slick Sliders -->
-		
-		<!-- /Slick Sliders -->
-<!-- 		<script>
 
-			$(document).ready(function() {
-				var post_count = $('.post_count');
-				console.log(post_count.attr('value') );
-				//console.log(Number(post_count).attr('value'));
-				if(post_count.attr('value') < 5) {
-					$('.next').hide();
-				}
-			});
-		</script>
- -->
-		<!-- Script for testing Orbit Main Slider -->
-<!-- 		<script>
-			$('.orbit').click();
-		</script> -->
+
 		<script>
 			$(document).ready(function() {
 				//console.log('...............starting');
@@ -248,7 +231,7 @@
 		</script>
 		<!-- /HEADER -->
 
-		<!-- PAGINATION -->
+		<!-- PAGINATION CHANGES ARROW COLORS -->
 		<script>
 			$(document).ready(function() {
 				console.log('footer');
@@ -261,16 +244,6 @@
 			});
 		</script>	
 
-		<!-- /PAGINATION -->
-
-
-		<script>
-			// $(document).ready(function($) {
-			// 	console.log('REDAY');
-			// 	$('#menu-secondary-menu > a:nth-child(1) > div > span > img').on('hover', function() {
-			// 		$('#menu-secondary-menu > a:nth-child(1) > div > span > img').attr('src', afp_vars.templateURL + '/images/reversed-icons/case-study.png');
-			// 	});
-			// });
-		</script>
+		<!-- /PAGINATION CHANGES ARROW COLORS-->
 
 </html>

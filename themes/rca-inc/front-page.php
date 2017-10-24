@@ -1,15 +1,9 @@
 <?php
+
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package RCA_Inc.
+ * Purpose: For displaying the front page
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
  */
 
 get_header(); ?>
@@ -27,20 +21,17 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<!-- CONTENT -->
-
 			<?php
 			while ( have_posts() ) : the_post();
 
 				get_template_part( 'template-parts/content', 'front-page' );
 
-			endwhile; // End of the loop.
+			endwhile;
 			?>
-
 			<!-- /CONTENT -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
 <?php
 get_footer();
-?>

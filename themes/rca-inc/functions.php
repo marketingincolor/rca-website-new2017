@@ -732,17 +732,11 @@ add_filter("wp_nav_menu", function( $nav_menu ) {
 * Page - About > Our People
 * ------------------------------------------------------------------------ */
 
-/**
+/******************************************************************
  * Author : Doe
  * Retrievs Team Members on About > Our People Page
  * @param  string $role_type used for gettings users under each category
- */
-
-/**
- * Author : Doe
- * Retrievs Team Members on About > Our People Page
- * @param  string $role_type used for gettings users under each category
- */
+ ******************************************************************/
 function get_team_members($department) {
 
   $args = array(
@@ -822,6 +816,10 @@ function get_team_members($department) {
   
   else { echo 'No Team Members Found'; }
 }
+
+/* ------------------------------------------------------------------------ *
+ * MENU - CALLED THE SECONDARY MENU OR THE MENU WITH ICONS.
+ * ------------------------------------------------------------------------ */
 class RCA_SECONDARY_WALKER extends Walker_Nav_Menu {
 
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
@@ -1268,22 +1266,17 @@ function rca_tax_post_pagination() {
  
 }
 
-// function rca_get_random_term() {
-//   $terms_array = array ('case-studies', 'white-papers', 'webinars', 'published-articles', 'visual-resources');
-//   $chosen_term = $terms_array[array_rand($terms_array)];
-//   return $chosen_term;
-// }
 
-/**
+
+/***********************************************************************
  * Author : Doe
  * Retrieves Team Members on About > Staff Department
  * @param  string $role_type used for gettings users under each category
- */
+ ***********************************************************************/
 function get_team_members_department($department) {
 
   $args = array(
     'post_type' => 'staff',
-    //'order' => 'menu_order',
     'tax_query' => array(
       array(
         'taxonomy' => 'department',
@@ -1298,64 +1291,36 @@ function get_team_members_department($department) {
   $dept_query = new WP_Query( $args );
   $team_members = $dept_query->posts;
 
-  //var_dump($team_members);
 
   if ( !empty($team_members)) {
 
     $last = count($team_members);
     $end = '';
 
-    // If we have team members count and loop through them...
     for ( $count = 0; $count < $last; $count++ ) {
-    // foreach($team_members as $team_member) {
-     //var_dump($team_members[$count]);
-      // $member_info = get_userdata($team_members[$count]);
-      // var_dump($member_info);
-      // $person_info = get_user_meta( $team_members[$count] );
-      //$author_description = get_the_author_meta( 'description', $user_id = $team_members[$count]->ID );
+
       $member_id = $team_members[$count]->ID;
       $member_description = $team_members[$count]->post_content;
-      //var_dump($member_id);
 
-      //var_dump($member_info);
-      //var_dump($person_info['description'][0]);
-      
-      // $member_url = $member_info->user_url;
       $email = get_field('email', $member_id);
       $position = get_field('position', $member_id);
-      // $first_name = $member_info->first_name;
-      // $last_name = $member_info->last_name;
-      //$avatar = get_wp_user_avatar($member_info->ID);
-      //$id_link = strtolower($first_name . '-' . $last_name);
-      // Add classes depending on count
-      // Find the longest position and adjust height accordingly.
 
       echo '<div id="staff-block" class="row">';
       echo '<div class="small-10 small-offset-1">';
-
-      //$position = get_field('position', $member_info);
-
       echo '<div class="staff-wrapper">';
-
       if ( !empty( $member_id ) ) {
         echo '<div class="department-staff-name text-center"><a href="' . get_the_permalink($member_id) .'" id="'. preg_replace('/[\s_]/', '-', get_the_title($member_id)) .'"><h1>' . get_the_title($member_id) . '</h1></a></div>';
       }
-
       if ( !empty($position) ) {
         echo '<h2 class="text-center">' . $position . '</h2>';
       }
-
       if( !empty($email)) : 
         echo '<div id="individual-email" class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> '. $email .'</div>';
       endif;
       echo wpautop( $member_description, $br = true );
-
       echo '</div>';
       echo '</div>';
       echo '</div>';
-
-
-      // $additionalClass = '';
     }
 
   }
@@ -1416,6 +1381,9 @@ function get_random_publishedarticle() {
   return $r_publishedarticle_args;
 }
 
+/******************************************************************
+ * Thing that returns an array of all our post types
+ ******************************************************************/
 function get_all_post_types() {
   $all = array( 'white_papers', 'webinars', 'published_articles', 'case_studies', 'visual_resources' );
   return $all;
@@ -1571,11 +1539,12 @@ function rca_get_search_icons($post_type) {
 
 }
 
-/**
- * Automatically return medical-device/pharma URLs
+
+/******************************************************************
+ * Automatically return medical-device || pharma featured images.
  * @param  [type] $postID [description]
  * @return [type]         [description]
- */
+ ******************************************************************/
 function rca_get_featured_img($postID) {
   $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
   $actual_link = explode("/",$actual_link);
@@ -1594,33 +1563,39 @@ function rca_get_featured_img($postID) {
 
 }
 
-/**
+/******************************************************************
  * Shortcode for Blue Callout Box - Inline styling
  * usage = [blue-callout] your callout content here [/blue-callout]
- */
+ ******************************************************************/
 function blue_callout_shortcode( $atts, $content = null ) {
   return '<div class="blue-callout case-study-quote">' . $content . '</div>';
 }
 add_shortcode( 'blue-callout', 'blue_callout_shortcode' );
-/**
- * Enable HTML in Profile Bios
- */
-//disable WordPress sanitization to allow more than just $allowedtags from /wp-includes/kses.php
+
+
+/******************************************************************
+ * ENABLE HTML IN PROFILE BIOS
+ ******************************************************************/
 remove_filter('pre_user_description', 'wp_filter_kses');
-//add sanitization for WordPress posts
 add_filter( 'pre_user_description', 'wp_filter_post_kses');
 
-/**
+
+/******************************************************************
  * Adds column to Webinars post type.
  * @param  [type] $postID [description]
  * @return [type]         [description]
- */
+ ******************************************************************/
   function webinars_columns_head ( $columns ) {
    return array_merge ( $columns, array ( 
      'webinar_type' => __( 'Webinar Type' ),
    ) );
  }
 
+/******************************************************************
+ * Adds column to Webinars post type.
+ * @param  [type] $postID [description]
+ * @return [type]         [description]
+ ******************************************************************/
 function webinars_columns_content($column) {
     global $post;
     if ($column == 'webinar_type') {
@@ -1638,17 +1613,23 @@ function webinars_columns_content($column) {
     }
 
 }
-
+/******************************************************************
+ * Adds sorting capability to webinar type in backend.
+ * @param  [type] $postID [description]
+ * @return [type]         [description]
+ ******************************************************************/
 function sort_webinar_status_column( $columns ) {
     $columns['webinar_type'] = 'webinar_type';
  
     return $columns;
 }
-
 add_filter( 'manage_edit-webinars_sortable_columns', 'sort_webinar_status_column' );
 add_filter('manage_webinars_posts_columns', 'webinars_columns_head');
 add_action('manage_webinars_posts_custom_column', 'webinars_columns_content', 10);
 
+/******************************************************************
+ * Orange button shortcode
+ ******************************************************************/
 function orange_button_shortcode( $atts, $content = null ) {
   $atts = shortcode_atts(
     array(
@@ -1659,6 +1640,7 @@ function orange_button_shortcode( $atts, $content = null ) {
   return '<a href="'.$atts['link'].'"'. 'target="' . $atts['target'] . '"><button class="orange-btn" style="width: auto;">' . $content . '</div></a>';
 }
 add_shortcode( 'orange-button', 'orange_button_shortcode' );
+
 
 function rca_staff_articles($atts, $content = null) {
     extract(shortcode_atts(array(
@@ -1674,9 +1656,6 @@ function rca_staff_articles($atts, $content = null) {
 
   $lazyLoad = array_key_exists("lazyload", $atts) && $atts["lazyload"] == true;
   $result = '<div id="owl-carousel-pa-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
-
-
-
 
         $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
         $meta_link = get_post_meta(get_the_ID());
@@ -1707,6 +1686,11 @@ function rca_staff_articles($atts, $content = null) {
 add_shortcode('rca-staff-articles', 'rca_staff_articles');
 
 
+/******************************************************************
+ * RCA MOBILE MENU
+ * @param  [type] $postID [description]
+ * @return [type]         [description]
+ ******************************************************************/
 class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
   /*
    * Add vertical menu class

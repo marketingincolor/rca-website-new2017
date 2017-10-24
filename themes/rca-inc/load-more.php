@@ -1,4 +1,11 @@
 <?php 
+
+/**
+ * Purpose: For displaying more posts on news page.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 require('../../../wp-blog-header.php');
 header("HTTP/1.1 200 OK"); 
 ?>
@@ -55,17 +62,13 @@ header("HTTP/1.1 200 OK");
 			</div>
 		</div>
 	</div>
-	<!-- <input class="rca_total_posts" type="hidden" value="$news_query->post_count"> -->
 
 <?php 
 	}
-
-	//rca_tax_post_pagination();
 	wp_reset_postdata();
 
 	}
 	else{
-		
 		echo '<script>';
 		echo '$(\'.load-more\').hide(); ';
 		echo '</script>';
