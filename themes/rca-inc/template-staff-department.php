@@ -1,24 +1,40 @@
 <?php
 /*Template Name: Staff Department*/
 
+/**
+ * PURPOSE: FROM THE ABOUT/OUR-PEOPLE PAGE THE USER CAN CLICK ON THE STAFFS DEPT.
+ * THE STAFF DEPARTMENT PAGE WILL LOAD AND DISPLAY THE FEATURED IMG ALONG WITH THE STAFF MEMBERS.
+ * THE PAGES POST NAME IS PASSED TO A FUNCTION THAT GETS ALL OF THE DATA FOR THAT PAGE. 
+ *
+ * PAGE EXAMPLES:
+ * .../about/our-people/operations
+ * .../about/our-people/sales-operations
+ * .../about/our-people/finance
+ * ...etc.
+ */
+
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 $department = strtolower($post->post_name);
 
 get_header(); ?>
 	
-	<!-- Featured Image -->
+	<!-- FEATURED IMAGE -->
 	<div id="featured-img-wrapper" class="row expanded">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
 	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
 				<div class="featured-img-title"><h1><?php the_title(); ?></h1></div>
 		</div>
 	</div>
-	<!-- / Featured Image -->
+	<!-- /FEATURED IMAGE -->
 
+	<!-- BREADCRUMBS -->
 	<?php get_template_part( 'template-parts/section', 'breadcrumbs-social'); ?>
+	<!-- BREADCRUMBS -->
+
+	<!-- GET DEPT DATA -->
 	<?php
-		//var_dump($department);
+
 		$staff_id = get_field('staff_id');
 		$staff_data = get_userdata($staff_id);
 		$staff_meta = get_user_meta($staff_id);
@@ -62,23 +78,13 @@ get_header(); ?>
 		}
 
 	?>
+	<!-- /GET DEPT DATA -->
 
-
-	<div class="row">
-
-
-		<div class="small-10 small-offset-1 columns text-center">
-				<!-- name -->
-
-				<!-- position -->
-		</div>
-
-	</div>
-	
-	
+	<!-- LEARN MORE FORM -->
 	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	</div>
+	<!-- /LEARN MORE FORM -->
 
 	<!-- NEWS -->
 	<?php get_template_part('template-parts/section', 'news'); ?>
