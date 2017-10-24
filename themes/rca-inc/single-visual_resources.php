@@ -25,7 +25,6 @@ $type = 'visual resource';
 	<!-- /RELATED CONTENT LARGE -->
 	
 	<!-- LEARN MORE -->
-	<?php //get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
 	<!-- /LEARN MORE -->
 
