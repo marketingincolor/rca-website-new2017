@@ -152,7 +152,6 @@ get_header(); ?>
 			var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
 			var close = $('#share-menu .close');
 			logo = Math.abs(logo);
-			console.log( 'logoheight ' + logo);
 			var shareButton = $('#mobile-share-btn');
 			var shareMenu = $('#share-menu');
 

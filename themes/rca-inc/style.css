@@ -240,7 +240,9 @@ blockquote { border-left: 8px solid #c4612b; padding: 0rem 1.25rem 0 1.1875rem; 
   clear: right;
   font-size: 13px;
 }
-
+.references-section p, .references-section li {
+  word-wrap: break-word;
+}
 .references-section p:first-child { letter-spacing: .025rem; margin-bottom: 1rem; }
 .references-section p:last-child { margin-bottom: 0rem; }
 /*Footer form no fields*/
@@ -1017,8 +1019,7 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 #learn-more-form-container-white input[type="checkbox"]:checked + label:before{
-	/*background-color: #363636;*/
-  background-color: rgba(0,0,0,0.4);
+	background-color: #363636;
 }
 
 #webinar-content { padding: 0rem 0rem 3.5rem 0rem; }
@@ -3048,9 +3049,6 @@ input#search-input {
     padding: 0;
     margin-bottom: 0;
   }
-  #all-expertise-content{
-    padding: 0 0 0rem;
-  }
   #all-expertise-content h1{
     margin-bottom: 2rem;
   }
@@ -3323,8 +3321,8 @@ input#search-input {
  .textarea{
   margin-top: 20px;
  }
- #form-num-products{
-  margin-bottom: 20px;
+ #form-num-products,#form-facility-country{
+  margin-bottom: 1rem;
  }
  #secondary-menu input[type="search"] { 
   color: #9d938b; 
@@ -3515,7 +3513,7 @@ div.bar.animate::after { background: #c4612b; }
 
 /*#all-expertise-content { padding: 3rem 0rem; }*/
 #expertise-content { padding: 3rem 0rem; }
-#expertise-content ul { list-style:outside; display:inline-block; }
+#expertise-content ul { list-style:outside;}
 #expertise-content h2 { display:inline-block; }
 .page-wrapper { margin-bottom: 4.5rem; }
 .page-wrapper .menu>li>a{
@@ -3566,12 +3564,14 @@ div.bar.animate::after { background: #c4612b; }
     width: auto;
     padding: 20px;
     display: block;
-    margin: 3rem 0;
+    margin: 1.5rem 0 3rem;
   }
   .case-study-quote p{
     font-size: 1rem;
   }
-
+  .case-study-content.hide-for-medium{
+    padding: 3rem 0 0;
+  }
   .site-branding img { max-width: 350px; width: 95%;}
 
   .error-404 h1 {

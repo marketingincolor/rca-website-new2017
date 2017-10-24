@@ -86,7 +86,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 		<div id="form" class="small-10 small-offset-1 columns">
 			<h1 class="text-center"><i class="fa fa-desktop" aria-hidden="true"></i> Access this Webinar</h1>
 			<p class="text-center">This webinar has ended. Please click the link below to gain access to the webinar video, download the presentation deck, and/or answers to the webinar’s Frequesntly Asked Questions.</p>
-			<a href="<?php echo $access_webinar_link; ?>"><button class="white-btn">Access the webinar here</button></a>
+			<a href="<?php echo site_url();echo $access_webinar_link; ?>"><button class="white-btn">Access the webinar here</button></a>
 		</div>
 </div>
 			
@@ -101,7 +101,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 					<h1 class="text-center">Access this Webinar</h1>
 					<p class="text-center">This webinar has ended. Please click the link below to gain access to the webinar video, download the presentation deck, and/or answers to the webinar’s Frequesntly Asked Questions.</p>
 
-					<a href="<?php echo $access_webinar_link; ?>"><button class="white-btn post-webinar-btn">Access the webinar here</button></a>
+					<a href="<?php echo site_url();echo $access_webinar_link; ?>"><button class="white-btn post-webinar-btn">Access the webinar here</button></a>
 	
 				</div>
 			</div>
@@ -180,7 +180,6 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 			var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
 			var close = $('#share-menu .close');
 			logo = Math.abs(logo);
-			console.log( 'logoheight ' + logo);
 			var shareButton = $('#share-block');
 			var shareMenu = $('#share-menu');
 

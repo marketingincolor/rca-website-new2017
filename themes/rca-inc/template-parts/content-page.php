@@ -93,7 +93,6 @@
 			var logo = $('#masthead > section.hide-for-large > div.hide-for-large').height();
 			var close = $('#share-menu .close');
 			logo = Math.abs(logo);
-			console.log( 'logoheight ' + logo);
 			var shareButton = $('#share-btn');
 			var shareMenu = $('#share-menu');
 
