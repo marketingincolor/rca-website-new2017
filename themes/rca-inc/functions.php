@@ -1834,4 +1834,3 @@ class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
   }
 
 }
-

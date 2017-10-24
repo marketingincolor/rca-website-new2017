@@ -412,9 +412,9 @@ main { margin-bottom: 0rem; }
 /*=======================================*/
 /*============ SINGLE EVENTS ============*/
 /*=======================================*/
-#all-expertise-content.event-post h1,.event-post .post-date{
+/*#all-expertise-content.event-post h1,.event-post .post-date{
 	margin-bottom: 2.75rem;
-}
+}*/
 .event-post .post-date{
 	color: #9d938b;
 }
@@ -558,7 +558,6 @@ h2 {
 #related-content-block .random-item {
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: 30px 20px;
 }
 
@@ -2871,7 +2870,7 @@ button#learn-more-btn { font-weight: bold; font-size: 1rem; }
 /*============ SINGLE EVENTS ============*/
 /*=======================================*/
 #all-expertise-content.event-post h1,.event-post .post-date{
-  margin-bottom: 2.75rem;
+  margin-bottom: .5rem;
 }
 .event-post .post-date{
   color: #9d938b;
@@ -3526,16 +3525,17 @@ div.bar.animate::after { background: #c4612b; }
 # SMALL ONLY
 --------------------------------------------------------------*/
 @media(max-width:360px){
+  #related-content-block .random-item { justify-content: left; }
 
-.webinar-success-top .share-widget { float: none; text-align: center; display: block; margin: 0 auto; }
-#share-p { margin-bottom: 10px; }
+  .webinar-success-top .share-widget { float: none; text-align: center; display: block; margin: 0 auto; }
+  #share-p { margin-bottom: 10px; }
 
-#terms-content { padding: 3rem 0rem; }
-.site-branding img { max-width: 350px; }
+  #terms-content { padding: 3rem 0rem; }
+  .site-branding img { max-width: 350px; }
 
-#sign-up-cta { 
-  background-size: 600%;
-}
+  #sign-up-cta { 
+    background-size: 600%;
+  }
 
   #mobile-share-btn{
     padding: 0;
@@ -3544,11 +3544,16 @@ div.bar.animate::after { background: #c4612b; }
   #mobile-cat-picker select{
     padding: 0 0.5rem;
   }
+
+  #related-content-block .random-item:not(:last-child) {
+    border-right: none;
+  }
+
 }
 
 @media screen and (max-width: 39.9375em) {
-
-
+  #related-content-block .random-item:not(:last-child) { border-right: none; }
+  #related-content-block { border-top:none; border-bottom:none; }
   .page h2 { margin-bottom: 1rem; }
   .webinar-success-top button:first-child { margin-bottom: 15px;width: 100%; }
   .case-study-title { margin-bottom: 3rem; }
@@ -3622,6 +3627,7 @@ div.bar.animate::after { background: #c4612b; }
 --------------------------------------------------------------*/
 @media screen and (min-width: 40em) {
 
+
   .site-branding img { width: unset; max-width: unset; }
 
   .case-study-title { margin-bottom: initial; }
@@ -3691,6 +3697,12 @@ div.bar.animate::after { background: #c4612b; }
 # LARGE UP
 --------------------------------------------------------------*/
 @media screen and (min-width: 64em) {
+
+  #related-content-block .random-item { justify-content: center; }
+
+  #related-content-block .random-item:not(:last-child) {
+    border-right: 2px solid #c9c3ba;
+  }
   
   /*Terms Page*/
   #terms-content { padding: 6rem 0rem; }

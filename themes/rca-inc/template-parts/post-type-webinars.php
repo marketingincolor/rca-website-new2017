@@ -162,7 +162,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 	<!-- /Content -->
 </div>
 
-<<<<<<< HEAD
+
 <!-- HIDDEN SHARE MENU -->
 <div id="share-menu" style="display:none;">
 	<div class="row close">
@@ -196,53 +196,9 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 	</div>
 </div>
 
-<!-- /HIDDEN SHARE MENU -->
-	<!-- For Custom Share Buttons -->
-	<script async src="https://static.addtoany.com/menu/page.js"></script>
-	<!-- SHARE BUTTON CLICKS -->
-	<script>
-		$(document).ready(function() {
-			var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
-			var close = $('#share-menu .close');
-			logo = Math.abs(logo);
-			var shareButton = $('#share-block');
-			var shareMenu = $('#share-menu');
-
-			shareButton.on('click', function() {
-
-				// Show the Menu
-				shareMenu.show();
-				shareMenu.toggleClass('share-menu-js');
-				shareMenu.css('top', logo); 
-
-				// Disable scrolling
-				$('html, body').css( { 
-					overflow:'hidden', 
-					height: '100%'
-				});
-			});
-
-			close.on('click', function() {
-
-				//Enable scrolling
-				$('html, body').css({
-				    overflow: 'auto',
-				    height: 'auto'
-				});
-
-				// Hide the Menu
-				shareMenu.toggleClass('share-menu-js');
-				shareMenu.hide();
-			});
-
-
-		})
-	</script>
-=======
 	<!-- SHARE MENU -->
 	<?php get_template_part('template-parts/hidden', 'share-menu'); ?>
 	<!-- /SHARE MENU -->
->>>>>>> 4ff71d8879ea0aaeaeeb3066389eb1d12fd56ce9
 
 	<!-- Form Animations -->
 	<script>
