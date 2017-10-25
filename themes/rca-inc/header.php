@@ -147,11 +147,11 @@
 					<!-- CONTACT ON MOBILE BUTTON -->
 					<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
 						<div class="small-6 columns text-center" data-equalizer-watch style="padding: 1rem 0rem;">
-							<a href="<?php echo home_url('/contact/');?>"><p class="mobile-divider" style=""><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</p></a>		
+							<a href="<?php echo home_url('/contact/');?>"><p class="mobile-divider" style="margin-bottom:0rem;"><i class="fa fa-paper-plane" aria-hidden="true"></i> Contact</p></a>		
 						</div>
-						<div id="menu-section" class="small-6 columns relative" data-equalizer-watch style="">
-							<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%);">
-								<div class="hamburger-menu" type="button" data-toggle><div class="bar"></div></div>
+						<div id="menu-section" class="small-6 columns relative end" data-equalizer-watch style="">
+							<div class="horizontal-center" data-responsive-toggle="the-menu" data-hide-for="large" style="top:50%; transform: translate(-50%,-425%); line-height: 1rem;">
+								<div class="hamburger-menu no-js" type="button" data-toggle><div class="bar"></div></div>
 							</div>
 						</div>
 					</div>

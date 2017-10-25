@@ -1134,7 +1134,7 @@ class RCA_REMOVE_MENU_LINKS extends Walker_Nav_Menu {
 }
 
 //remove_filter( 'the_content', 'wpautop' );
-remove_filter( 'the_excerpt', 'wpautop' );
+//remove_filter( 'the_excerpt', 'wpautop' );
 
 class RCA_TAXONOMY_WALKER extends Walker_Nav_Menu {
 

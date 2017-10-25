@@ -68,19 +68,25 @@ if(empty($video_img)) {
 					<?php } ?>
 					<!-- /VIDEO EMBED -->
 					
-					<!-- DOWNLOAD LINKS -->
-					<div class="download-links">
-						<?php if(!empty(get_field('webinar_download_text')) && !empty(get_field('webinar_slides_download_link')) ): ?>
-							<a href="<?php the_field('webinar_slides_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
-						<?php endif; ?>
 
-						<?php if(!empty(get_field('faqs_download_link')) && !empty(get_field('faq_download_text')) ): ?>
-							<a href="<?php the_field('faqs_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
-						<?php endif; ?>
+					<div class="row">
+						<div class="small-12 medium-6 columns">
+							<!-- DOWNLOAD LINKS -->
+							<div class="download-links">
+								<?php if(!empty(get_field('webinar_download_text')) && !empty(get_field('webinar_slides_download_link')) ): ?>
+									<a href="<?php the_field('webinar_slides_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
+								<?php endif; ?>
+
+								<?php if(!empty(get_field('faqs_download_link')) && !empty(get_field('faq_download_text')) ): ?>
+									<a href="<?php the_field('faqs_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
+								<?php endif; ?>
+							</div>
+							<!-- /DOWNLOAD LINKS -->
+						</div>
+						<div id="webinar-share-btns" class="small-12 medium-6 columns">
+							<span class="share-widget text-center medium-text-right"><p id="share-p" style="margin-right: 16px; display: inline-block;">Share on Social Media </p><?php echo do_shortcode('[addtoany]'); ?></span>
+						</div>
 					</div>
-					<!-- /DOWNLOAD LINKS -->
-
-					<span class="share-widget"><p id="share-p" style="margin-right: 16px; display: inline-block;">Share on Social Media </p><?php echo do_shortcode('[addtoany]'); ?></span>
 				</div>
 			</div>
 		</section>

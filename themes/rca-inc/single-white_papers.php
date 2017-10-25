@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Purpose: Displays a single white paper page.
  * Date: 10/24/2017

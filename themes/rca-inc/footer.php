@@ -62,7 +62,7 @@
 								</div>
 						<?php endif; 
 					?>
-					<p class="copyright text-center">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc. All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102, Pleasant Prairie, WI 53158 &bull; 262-288-6360<br>ISO 9001:2008 certified</p>
+					<p class="copyright text-center">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc. All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102, Pleasant Prairie, WI 53158 &bull; 262-288-6360<br><a href="http://dev.marketingincolor.com/rca-website-2017/wp-content/uploads/2017/10/ISO-Certificate-May-2016.pdf" target="_blank" style="font-weight: normal;">ISO 9001:2008 certified</a></p>
 				</div>
 			</div>
 			<!-- /DESKTOP FOOTER MENU -->
@@ -77,7 +77,7 @@
 		<!-- For Navigation -->
 		<script>
 			(function () {
-				$('.hamburger-menu').on('click', function() {
+				$('#menu-section').on('click', function() {
 					$('.bar').toggleClass('animate');
 				})
 			})();

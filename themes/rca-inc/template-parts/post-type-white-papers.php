@@ -40,7 +40,7 @@ $references_text  = get_field('references_text');
 	<!-- /share/download -->
 
 	<!-- Content -->
-	<div id="expertise-content" class="row">
+	<div id="expertise-content-wp" class="row">
 		<div class="small-10 small-offset-1 columns" >
 			<?php the_content(); ?>
 			

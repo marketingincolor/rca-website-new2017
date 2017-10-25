@@ -1,5 +1,11 @@
 <?php
-// Template: For Downloading and Sharing Buttons on Mobile Devices
+
+/**
+ * Purpose: Template for Downloading and Sharing Buttons on Mobile Devices
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 $post_type = get_post_type();
 
 switch ($post_type) {

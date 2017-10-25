@@ -1,3 +1,12 @@
+<?php
+
+/**
+ * Purpose: Template for displaying the hidden share menu on mobile devices.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
+?>
 <!-- HIDDEN SHARE MENU -->
 <div id="share-menu" style="display:none;">
 	<div class="row close">

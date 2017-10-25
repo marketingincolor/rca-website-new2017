@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
 	var menu_section = $('#menu-section');
 	//console.log(menu_section);
 	var menu = $('.bar');
-	menu.on('click', function() {
+	menu_section.on('click', function() {
 		$('#mobile-menu').toggleClass('hide');
 		$('div > #menu-section').toggleClass('open');
 		$('div > .animate:before').toggleClass('bar-open');

@@ -1,19 +1,12 @@
 <?php
+
 /**
- * Template part for displaying results in search pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package RCA_Inc.
+ * Purpose: Template part for displaying results in search pages
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
  */
 
-
 global $post;
-
-// $taxonomy = 'expertise';
-// $terms    = get_the_terms($post->ID, $taxonomy);
-// $itemSlug = $terms[0]->name;
-// $term_id  = $terms[0]->term_id;
 $the_post = get_post( $post->ID );
 $icon_img = rca_get_search_icons($the_post->post_type);
 

@@ -1,4 +1,5 @@
 <?php
+  $id = get_the_ID();
   $post_type = get_post_type();
   switch ($post_type) {
     case 'case_studies':
@@ -19,7 +20,9 @@
   <div class="row">
   	<div class="small-10 small-centered columns text-center">
   		<h1><?php the_title(); ?></h1>
-  		<p><small><?php the_excerpt(); ?></small></p>
+      <?php if(get_field('custom_excerpt')): ?>
+  		<p><small><?php the_field('custom_excerpt'); ?></small></p>
+      <?php endif; ?>
   		<p><strong>We're happy to share our insights that illustrate our work and expertise.<br class="hide-for-small-only">Please complete the form to access the <?php echo $type; ?>.</strong></p>
   	</div>
   </div>

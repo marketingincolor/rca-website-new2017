@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Purpose: Displays related content section.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 $post_type   = get_post_type();
 $terms       = wp_get_post_terms($post->ID,'services');
 $terms_array = array();

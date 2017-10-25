@@ -1,4 +1,11 @@
 <?php
+
+/**
+ * Purpose: Used on posts categorized as events.
+ * Date: 10/24/2017
+ * Author: AD.,NB.,ET., MARKETING IN COLOR
+ */
+
 $event_date     = get_field('event_date');
 $event_date_format     = new DateTime($event_date);
 $end_date       = get_field('end_date');
