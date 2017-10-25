@@ -1182,6 +1182,11 @@ class RCA_TAXONOMY_WALKER extends Walker_Nav_Menu {
     }
 }
 
+/***********************************************************************
+ * Author : Doe
+ * Status : NOT USED.
+ * Old function used for "dot" style pagination.
+ ***********************************************************************/
 function rca_tax_post_pagination() {
  
 
@@ -1328,6 +1333,10 @@ function get_team_members_department($department) {
   else { echo 'No Team Members Found'; }
 }
 
+/******************************************************************
+ * Old functions used for returning random pieces of content. 
+ * Leaving them should the need to be used again.
+ ******************************************************************/
 function get_random_case_study() {
 
   $r_case_study_args = array(
@@ -1389,6 +1398,9 @@ function get_all_post_types() {
   return $all;
 }
 
+/**************************************************
+ * Gets related content items for mobile devices
+ **************************************************/
 function rca_related_content_mobile($atts, $content = null) {
     global $post;
     extract(shortcode_atts(array(
@@ -1443,13 +1455,10 @@ function rca_related_content_mobile($atts, $content = null) {
 }
 add_shortcode('rca-related-content-mobile', 'rca_related_content_mobile');
 
-/**
- * Description:
- *
- * Returns icon type for given post type
- * 
- * @return [string] [icon img URL]
- */
+/********************************************************************************************
+ * Function for returning icons on search page. Should be rewritten with other icon functions.
+ * @param  [type] $post_type [description]
+ *********************************************************************************************/
 function rca_get_post_type_icon($post_type) {
     if($post_type == 'case_studies'):
     $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
@@ -1479,6 +1488,10 @@ function rca_get_post_type_icon($post_type) {
   return $icon;
 }
 
+/********************************************************************************************
+ * Function for returning icons on search page. Should be rewritten with other icon functions.
+ * @param  [type] $post_type [description]
+ *********************************************************************************************/
 function rca_get_bio_slider_icons($post_type) {
       if($post_type == 'case_studies'):
       $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
@@ -1508,7 +1521,10 @@ function rca_get_bio_slider_icons($post_type) {
     return $icon;
 }
 
-// Returns icons for search items.
+/********************************************************************************************
+ * Function for returning icons on search page. Should be rewritten with other icon functions.
+ * @param  [type] $post_type [description]
+ *********************************************************************************************/
 function rca_get_search_icons($post_type) {
     if($post_type == 'case_studies'):
     $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
