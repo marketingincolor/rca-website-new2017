@@ -93,13 +93,10 @@ get_header(); ?>
 				<div class="small-10 small-offset-1 columns">
 
 					<?php foreach($presenters as $presenter) {
-						//get user data
-						//var_dump('id:' . $presenter->ID);
+
 						$user_data = get_userdata($presenter->ID);
 						$user_meta = get_user_meta($presenter->ID);
 
-						// GET USER DATA BY POST NAME
-						
 						
 						//var_dump($user_meta);
 						echo '<div id="presenter-block" class="row">';
@@ -115,7 +112,7 @@ get_header(); ?>
 							echo '<br/>';
 						endif;
 
-						echo $presenter->post_content;
+						echo $presenter->webinar_biography;
 						echo '</div>';
 						echo '</div>';
 					}
