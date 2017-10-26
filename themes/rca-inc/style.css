@@ -562,11 +562,6 @@ a {
 	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 }
-
-a:visited {
-	color: #c4612b;
-}
-
 a:hover,
 a:focus,
 a:active {
