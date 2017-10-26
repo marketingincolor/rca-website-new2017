@@ -1871,3 +1871,11 @@ $theme_dir . '/admin-colors/rca/colors.css', array(
 ) );
 }
 add_action('admin_init', 'rca_admin_color_schemes');
+
+/******************************************************************
+ * RCA INC. Theme
+ ******************************************************************/
+function change_admin_footer(){
+   echo '<span id="footer-note">Theme made by <a href="http://www.marketingincolor.com/" target="_blank">Marketing In Color</a>.</span>';
+  }
+add_filter('admin_footer_text', 'change_admin_footer');
