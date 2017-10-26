@@ -61,7 +61,7 @@ get_header(); ?>
 								echo '<div class="small-12 medium-8 columns text-center end">';
 								echo '<h3>' . $presenter->post_title . '</h3>';
 								echo '<p>' . $presenter->position . '</p>';
-								echo '<p>' . $presenter->post_content . '</p>';
+								echo $presenter->webinar_biography;
 								echo '</div>';
 								echo '</div>';
 

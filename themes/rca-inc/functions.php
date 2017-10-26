@@ -1834,3 +1834,25 @@ class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
   }
 
 }
+
+
+/******************************************************************
+ * Update the theme logo in backend.
+ ******************************************************************/
+ function rca_custom_logo() {
+  echo '
+  <style type="text/css">
+  #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+  background-image: url(' . get_bloginfo('stylesheet_directory') . '/images/backend-logo.png) !important;
+  background-position: 0 0;
+  color:rgba(0, 0, 0, 0);
+  }
+  #wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
+  background-position: 0 0;
+  }
+  </style>
+  ';
+}
+ 
+//hook into the administrative header output
+add_action('wp_before_admin_bar_render', 'rca_custom_logo');
