@@ -1856,3 +1856,18 @@ class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
  
 //hook into the administrative header output
 add_action('wp_before_admin_bar_render', 'rca_custom_logo');
+
+
+/******************************************************************
+ * RCA INC. Theme
+ ******************************************************************/
+function rca_admin_color_schemes() {
+
+$theme_dir = get_stylesheet_directory_uri();
+
+wp_admin_css_color( 'rca', __( 'RCA Inc' ), 
+$theme_dir . '/admin-colors/rca/colors.css', array(
+    '#f8f7f5', '#1a365d', '#c4612b', '#ffffff'
+) );
+}
+add_action('admin_init', 'rca_admin_color_schemes');

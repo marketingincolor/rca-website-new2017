@@ -1,0 +1,27 @@
+$base_color: #f8f7f5;
+$icon_color: #c4612b;
+$highlight_color: #000000;
+$notification_color: #c4612b;
+$button_color: #1a365d;
+$text_color: #2b2b2b;
+$body_background: #ffffff;
+$link: #c4612b;
+$menu_background: #f8f7f5;
+$menu_text: #2b2b2b;
+$menu_icon: #c4612b;
+$menu_highlight_background: #1a365d;
+$menu_highlight_text: #ffffff;
+$menu_highlight_icon: #ffffff;
+$menu_current_background: #1a365d;
+$menu_current_text: #ffffff;
+$menu_current_icon: #ffffff;
+$menu_submenu_background: #9d938a;
+$menu_submenu_text: #ffffff;
+$menu_submenu_current_text: #2b2b2b;
+$menu_bubble_background: #c4612b;
+$menu_bubble_text: #ffffff;
+$adminbar_input_background: #ff003f;
+
+
+@import 'colors.css';
+@import '_admin.scss';
