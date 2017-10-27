@@ -8,6 +8,8 @@
 
 global $post;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
+$options = get_option('rca_theme_options');
+
 get_header(); 
 
 ?>
@@ -96,7 +98,10 @@ get_header();
 			<div class="row show-for-medium">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-						<p class="description">Recent case studies, white papers, webinars, visual resources, and published articles are listed below to illustrate our work with life science clients in regulatory affairs, quality assurance, compliance challenges, assessments and audits, agency response, preparation and remediation, mergers / acquisitions, strategic consulting, new product development, launch and lifecycles, and staffing support. Click on the title to read the full account.</p>
+						<?php if ( $options['rca_va_area'] != null || $options['rca_va_area'] != "") : ?>
+						<p class="description"><?php echo wp_specialchars_decode($options['rca_va_area']); ?></p>
+						<?php endif; ?>
+						<!-- <p class="description">Recent case studies, white papers, webinars, visual resources, and published articles are listed below to illustrate our work with life science clients in regulatory affairs, quality assurance, compliance challenges, assessments and audits, agency response, preparation and remediation, mergers / acquisitions, strategic consulting, new product development, launch and lifecycles, and staffing support. Click on the title to read the full account.</p> -->
 					</header><!-- .page-header -->
 				</div>
 			</div>

@@ -55,7 +55,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-
+#mobile-share-btn { padding: .35rem; }
+#share-btn { margin-bottom: 2.5rem; }
 
 html {
 	font-family: sans-serif;
@@ -1199,7 +1200,7 @@ body.down .top-menu.clone {
 --------------------------------------------------------------*/
 .archive-img { margin-bottom: 10px; }
 .archive-img img{max-height: 45px;}
-.pagination-col {font-size: 14px}
+.pagination-col {font-size: 14px;     margin-bottom: 3rem;}
 .pagination-col a { font-weight: normal; }
 .pagination-col a:hover { font-weight: normal; color: #2b2b2b; }
 .pagination-col a:focus { color: #2b2b2b; }
@@ -1581,7 +1582,7 @@ h2 {
 .pagination a { display: inline-block; }
 .page-numbers { display: inline-block; }
 .page h2{margin-bottom: 1em}
-#all-items-block { padding: 3rem 0rem 3rem; }
+#all-items-block { padding: 3rem 0rem 0rem; }
 .item-block button { width: auto; margin: 0 auto; display: block; }
 
 /*--------------------------------------------------------------
@@ -2188,7 +2189,7 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; p
 .pad-tb-2 { padding-top:2rem; padding-bottom:2rem; }
 .read-more { color: #c4612b; text-decoration: underline; }
 
-#top-nav-wrapper button { padding: 1rem 1.5rem; }
+#top-nav-wrapper button { padding: .6rem 1.5rem; }
 
 /*Head*/
 .site-branding {
@@ -3035,9 +3036,7 @@ input#search-input {
   background-size: 600%;
 }
 
-	#mobile-share-btn{
-		padding: 0;
-	}
+
   .error-404 h1 { padding: 2rem 0rem; }
 	#mobile-cat-picker select{
 		padding: 0 0.5rem;
@@ -3556,9 +3555,7 @@ div.bar.animate::after { background: #c4612b; }
     background-size: 600%;
   }
 
-  #mobile-share-btn{
-    padding: 0;
-  }
+
   .error-404 h1 { padding: 2rem 0rem; }
   #mobile-cat-picker select{
     padding: 0 0.5rem;

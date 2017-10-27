@@ -10,6 +10,7 @@
 global $post;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
 $page_title = get_field('taxonomy_title_in_orange_bar');
+$options = get_option('rca_theme_options');
 
 get_header(); ?>
 
@@ -89,8 +90,10 @@ get_header(); ?>
 			<div class="row">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-
-							<p class="description">Regulatory Compliance Associates<sup>®</sup> Inc. frequently conducts online seminars or webinars for viewers and listeners all over the world on life science industry subjects. Our webinars are recorded and available to download for future reference and viewing.</p>
+						<?php if ( $options['rca_webinars_area'] != null || $options['rca_webinars_area'] != "") : ?>
+						<p class="description"><?php echo wp_specialchars_decode($options['rca_webinars_area']); ?></p>
+						<?php endif; ?>
+							<!-- <p class="description">Regulatory Compliance Associates<sup>®</sup> Inc. frequently conducts online seminars or webinars for viewers and listeners all over the world on life science industry subjects. Our webinars are recorded and available to download for future reference and viewing.</p> -->
 
 					</header><!-- .page-header -->
 				</div>

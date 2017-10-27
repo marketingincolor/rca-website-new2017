@@ -9,6 +9,7 @@
 
 global $post;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
+$options = get_option('rca_theme_options');
 
 // Switch determines bg img
 
@@ -109,7 +110,10 @@ get_header(); ?>
 			<div class="row">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-							<p class="description">Visual Resources include handouts, posters, and correspondence that visually illustrate Regulatory Compliance Associates<sup>®</sup> Inc.’s expertise in a particular service.</p>
+						<?php if ( $options['rca_vr_area'] != null || $options['rca_vr_area'] != "") : ?>
+						<p class="description"><?php echo wp_specialchars_decode($options['rca_vr_area']); ?></p>
+						<?php endif; ?>
+							<!-- <p class="description">Visual Resources include handouts, posters, and correspondence that visually illustrate Regulatory Compliance Associates<sup>®</sup> Inc.’s expertise in a particular service.</p> -->
 					</header><!-- .page-header -->
 				</div>
 			</div>

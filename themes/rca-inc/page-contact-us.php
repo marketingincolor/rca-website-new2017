@@ -15,7 +15,9 @@ get_header(); ?>
 	<div id="featured-img-wrapper" class="row expanded">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
 	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
+			<div class="small-10 small-offset-1">
 				<div class="featured-img-title"><h1><?php the_title(); ?></h1></div>
+			</div>
 		</div>
 	</div>
 	<!-- / FEATURED IMAGE -->

@@ -295,15 +295,83 @@ function rca_register_settings()
       'class'     => 'css_class'
     );
 
+    $rca_cs_area = array(
+      'type'      => 'textarea',
+      'id'        => 'rca_cs_area',
+      'name'      => 'rca_cs_area',
+      'desc'      => 'Text Area for Case Studies.',
+      'std'       => '',
+      'label_for' => 'rca_cs_area',
+      'class'     => 'css_class'
+    );
+
+    $rca_wp_area = array(
+      'type'      => 'textarea',
+      'id'        => 'rca_wp_area',
+      'name'      => 'rca_wp_area',
+      'desc'      => 'Text Area for White Papers.',
+      'std'       => '',
+      'label_for' => 'rca_wp_area',
+      'class'     => 'css_class'
+    );
+
+    $rca_webinars_area = array(
+      'type'      => 'textarea',
+      'id'        => 'rca_webinars_area',
+      'name'      => 'rca_webinars_area',
+      'desc'      => 'Text Area for Webinars.',
+      'std'       => '',
+      'label_for' => 'rca_webinars_area',
+      'class'     => 'css_class'
+    );
+
+    $rca_vr_area = array(
+      'type'      => 'textarea',
+      'id'        => 'rca_vr_area',
+      'name'      => 'rca_vr_area',
+      'desc'      => 'Text Area for Visual Resources.',
+      'std'       => '',
+      'label_for' => 'rca_vr_area',
+      'class'     => 'css_class'
+    );
+
+    $rca_pa_area = array(
+      'type'      => 'textarea',
+      'id'        => 'rca_pa_area',
+      'name'      => 'rca_pa_area',
+      'desc'      => 'Text Area for Published Articles.',
+      'std'       => '',
+      'label_for' => 'rca_pa_area',
+      'class'     => 'css_class'
+    );
+
+    $rca_va_area = array(
+      'type'      => 'textarea',
+      'id'        => 'rca_va_area',
+      'name'      => 'rca_va_area',
+      'desc'      => 'Description for View All Page.',
+      'std'       => '',
+      'label_for' => 'rca_va_area',
+      'class'     => 'css_class'
+    );
+
+
     add_settings_field( 'rca_fb_link', 'Facebook Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $fb_args );
     add_settings_field( 'rca_twitter_link', 'Twitter Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $twitter_args );
     add_settings_field( 'rca_youtube_link', 'YouTube Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $youtube_args );
     add_settings_field( 'rca_linkedin_link', 'LinkedIn Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $linkedin_args );
     add_settings_field( 'rca_phone_number', 'Phone Number:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $phone_args );
     add_settings_field( 'bio_page_slider_title', 'Staff Bio Slider Title:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $bio_page_slider_title );
+    add_settings_field( 'rca_cs_area', 'Case Study Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_cs_area );
+    add_settings_field( 'rca_wp_area', 'White Paper Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_wp_area );
+    add_settings_field( 'rca_webinars_area', 'Webinars Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_webinars_area );
+    add_settings_field( 'rca_vr_area', 'Visual Resources Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_vr_area );
+    add_settings_field( 'rca_pa_area', 'Published Articles Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_pa_area );
+    add_settings_field( 'rca_va_area', 'View All Page Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_va_area );
 
 }
 add_action( 'admin_init', 'rca_register_settings' );
+
 
 /* ------------------------------------------------------------------------ *
  * Theme Options - Image Sizes
@@ -340,6 +408,13 @@ function rca_display_setting($args)
               $options[$id] = stripslashes($options[$id]);  
               $options[$id] = esc_attr( $options[$id]);  
               echo "<input class='regular-text$class' type='text' id='$id' name='" . $option_name . "[$id]' value='$options[$id]' />";
+              echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";  
+          break;  
+
+          case 'textarea':
+          $options[$id] = stripslashes($options[$id]);  
+              $options[$id] = esc_attr( $options[$id]);  
+              echo "<textarea style=\"width: 25%; height: 50px;\" class='' id='$id' name='" . $option_name . "[$id]' value='$options[$id]' />$options[$id]</textarea>";
               echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";  
           break;  
     }

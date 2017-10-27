@@ -9,7 +9,7 @@
 
 global $post;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
-
+$options = get_option('rca_theme_options');
 // Switch determines bg img
 
 switch($post_type) {
@@ -109,7 +109,10 @@ get_header(); ?>
 			<div class="row">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-							<p class="description">Published articles are written by Regulatory Compliance Associates<sup>®</sup> Inc. experts on industry-related subjects, and published in relevant life science digital and/or print media.</p>
+						<?php if ( $options['rca_pa_area'] != null || $options['rca_pa_area'] != "") : ?>
+						<p class="description"><?php echo wp_specialchars_decode($options['rca_pa_area']); ?></p>
+						<?php endif; ?>
+							<!-- <p class="description">Published articles are written by Regulatory Compliance Associates<sup>®</sup> Inc. experts on industry-related subjects, and published in relevant life science digital and/or print media.</p> -->
 					</header><!-- .page-header -->
 				</div>
 			</div>

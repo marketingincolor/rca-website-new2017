@@ -9,6 +9,7 @@
  
 global $post;
 $backgroundImg = get_stylesheet_directory_uri() . '/images/feed-header.jpg';
+$options = get_option('rca_theme_options');
 get_header(); 
 
 ?>
@@ -87,7 +88,10 @@ get_header();
 			<div class="row show-for-medium">
 				<div class="small-10 small-offset-1 columns text-center">
 					<header class="page-header">
-						<p class="description">Regulatory Compliance Associates<sup>®</sup> Inc. utilizes Case Studies to exemplify real-life dilemmas, conflicts, or concerns from our life science clients, and the corresponding actions we developed to solve them.</p>
+						<?php if ( $options['rca_cs_area'] != null || $options['rca_cs_area'] != "") : ?>
+						<p class="description"><?php echo wp_specialchars_decode($options['rca_cs_area']); ?></p>
+						<?php endif; ?>
+						<!-- <p class="description">Regulatory Compliance Associates<sup>®</sup> Inc. utilizes Case Studies to exemplify real-life dilemmas, conflicts, or concerns from our life science clients, and the corresponding actions we developed to solve them.</p> -->
 					</header><!-- .page-header -->
 				</div>
 			</div>
