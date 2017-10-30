@@ -1187,6 +1187,7 @@ body.down .top-menu.clone {
 
 /*Search Bar*/
 #search-icon input[type="image"] { 
+	border-radius: 0px !important;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
