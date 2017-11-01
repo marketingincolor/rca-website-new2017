@@ -494,6 +494,9 @@ function rca_top_slider($atts, $content = null) {
         $loop->the_post();
 
         $call_to_action_links = get_field('call_to_action_links');
+        // Add image overlay with hook
+        $slide_title = get_the_title();
+        $slide_content = get_the_content();
 
         if($call_to_action_links == FALSE) {
           $call_to_action_links = '#!';
@@ -508,7 +511,19 @@ function rca_top_slider($atts, $content = null) {
         $meta_link = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_owlurl', true);
 
         if ($img_src[0]) {
-          $result .= '<div class="item" style="background-image: url('.$img_src[0].')">';
+
+          if($slide_content):
+            $result .= '<div class="item" style="background-image: url('.$img_src[0].'); min-height: 350px;">';
+          else:
+            $result .= '<div class="item" style="background-image: url('.$img_src[0].'); min-height: 350px; padding: 0rem;">';
+          endif;
+
+
+
+          if(!$slide_content): 
+            $result .= '<img src="'.$img_src[0].'"style="visibility:hidden;max-height: 350px; padding: 0rem;">';
+          endif;
+           
           $result .= '<div class="row">';
             if (!empty($meta_link)) {
                 $result .= '<a href="' . $meta_link . '">';
@@ -517,11 +532,14 @@ function rca_top_slider($atts, $content = null) {
                 $result .= '</a>';
             }
 
-            // Add image overlay with hook
-            $slide_title = get_the_title();
-            $slide_content = get_the_content();
+
             $img_overlay = '<div class="small-10 small-offset-1 medium-5 medium-offset-0 large-4 columns">';
-            $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="' .  $call_to_action_links  . '">'. $call_to_action_title . '</a></p></div>';
+
+            // Slide Meta Checks
+            if($slide_content && $call_to_action_links && $call_to_action_title):
+              $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="' .  $call_to_action_links  . '">'. $call_to_action_title . '</a></p></div>';
+            endif;
+
             $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
             $result .= '</div></div>';
         } else {
