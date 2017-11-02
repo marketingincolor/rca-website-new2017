@@ -498,14 +498,11 @@ function rca_top_slider($atts, $content = null) {
         $slide_title = get_the_title();
         $slide_content = get_the_content();
 
-        if($call_to_action_links == FALSE) {
-          $call_to_action_links = '#!';
-        }
         //var_dump($call_to_action_links);
         $call_to_action_title = get_field('call_to_action_title');
-        if($call_to_action_title == FALSE) {
-          $call_to_action_title = 'Read More';
-        }
+
+        $call_to_action_title = 'Read More';
+        
 
         $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
         $meta_link = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_owlurl', true);
@@ -540,6 +537,11 @@ function rca_top_slider($atts, $content = null) {
               $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="' .  $call_to_action_links  . '">'. $call_to_action_title . '</a></p></div>';
             endif;
 
+            // If we don't have a link but we have content
+            if($slide_content && !$call_to_action_links):
+              $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p></div>';
+            endif;
+    
             $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
             $result .= '</div></div>';
         } else {

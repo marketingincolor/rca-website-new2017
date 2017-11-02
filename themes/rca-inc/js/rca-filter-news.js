@@ -204,18 +204,44 @@ $('#newsFilterSelect').on('change', function() {
  */
 function defaultNewsFilter(templateURL, dropdown_query) {
 
-    $('.rca_query').attr('value', 'all');
+    var urlParams = new URLSearchParams(window.location.search);
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
+    var cat = getUrlParameter("cat");
+
+    if(cat == "news") {
+        $('#filter-news').addClass('newsClick');
+    }
+
+    if(cat == "events") {
+        $('#events').addClass('newsClick');
+    }
+
+    if(cat == "press-releases") {
+        $('#press').addClass('newsClick');
+    }
+
+    if(cat == "") {
+        $('#all').addClass('newsClick');
+    }
+
+    console.log("Catagory " + cat);
     var offsetContainer = $('.rca_offset');
     var offsetValue = $('.rca_offset').val();
     offsetContainer.attr("value", Number(offsetValue) );
     var content = $('.post-container');
-    $('#all').addClass('newsClick');
+    // $('#all').addClass('newsClick');
 
     $.ajax({
         url: templateURL + '/load-more.php',
         type: 'POST',
         beforeSend: function() {$('.spinner').fadeIn(500); },
-        data: {category : 'all', dropdown_query : dropdown_query },
+        data: {category : cat, dropdown_query : dropdown_query },
         success: function(response) {
                     content.html(response).fadeIn(1000);
         },

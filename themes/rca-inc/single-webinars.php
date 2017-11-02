@@ -57,7 +57,7 @@ if(empty($video_img)) {
 					<!-- IF WE HAVE AN EMBED CODE -->
 					<?php if(!empty(get_field('youtube_embed_url'))) { ?>
 					<div class="videoWrapper">
-						<a href="#!" data-open="webinar-video-modal"><iframe width="1000" height="562.5" src="<?php the_field('youtube_embed_url'); ?>" frameborder="0" allowfullscreen></iframe></a>
+						<a href="#!" data-open="webinar-video-modal"><iframe width="500" height="349" src="<?php the_field('youtube_embed_url'); ?>" frameborder="0" allowfullscreen></iframe></a>
 						
 					</div>
 					
