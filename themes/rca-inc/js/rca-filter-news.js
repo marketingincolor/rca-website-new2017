@@ -216,18 +216,24 @@ function defaultNewsFilter(templateURL, dropdown_query) {
 
     if(cat == "news") {
         $('#filter-news').addClass('newsClick');
+        $('.rca_query').attr('value', 'news');
     }
 
     if(cat == "events") {
         $('#events').addClass('newsClick');
+        $('.rca_query').attr('value', 'events');
     }
 
     if(cat == "press-releases") {
         $('#press').addClass('newsClick');
+        $('.rca_query').attr('value', 'press-releases');
+
     }
 
     if(cat == "") {
         $('#all').addClass('newsClick');
+        $('.rca_query').attr('value', 'all');
+
     }
 
     console.log("Catagory " + cat);
