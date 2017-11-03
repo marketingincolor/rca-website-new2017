@@ -55,7 +55,7 @@ if(empty($video_img)) {
 					<!-- VIDEO EMBED -->
 
 					<!-- IF WE HAVE AN EMBED CODE -->
-					<?php if(!empty(get_field('youtube_embed_url'))) { ?>
+					<?php if(get_field('youtube_embed_url')) { ?>
 					<div class="videoWrapper">
 						<a href="#!" data-open="webinar-video-modal"><iframe width="500" height="349" src="<?php the_field('youtube_embed_url'); ?>" frameborder="0" allowfullscreen></iframe></a>
 						
@@ -73,11 +73,11 @@ if(empty($video_img)) {
 						<div class="small-12 medium-6 columns">
 							<!-- DOWNLOAD LINKS -->
 							<div class="download-links">
-								<?php if(!empty(get_field('webinar_download_text')) && !empty(get_field('webinar_slides_download_link')) ): ?>
+								<?php if((get_field('webinar_download_text')) && (get_field('webinar_slides_download_link')) ): ?>
 									<a href="<?php the_field('webinar_slides_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
 								<?php endif; ?>
 
-								<?php if(!empty(get_field('faqs_download_link')) && !empty(get_field('faq_download_text')) ): ?>
+								<?php if((get_field('faqs_download_link')) && (get_field('faq_download_text')) ): ?>
 									<a href="<?php the_field('faqs_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
 								<?php endif; ?>
 							</div>

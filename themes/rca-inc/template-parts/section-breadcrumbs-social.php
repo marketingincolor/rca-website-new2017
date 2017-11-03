@@ -25,7 +25,7 @@ endif;
 	</div>
 	<div class="small-12 medium-6 columns text-right show-for-medium">
 		<div id="share" class="">
-			<p>Share on Social Media</p>
+			<p>Share Our Information</p>
 			<?php echo do_shortcode('[addtoany]'); ?>
 		</div>
 	</div>

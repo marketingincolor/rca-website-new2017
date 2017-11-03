@@ -41,7 +41,7 @@ get_header(); ?>
 					<a class="a2a_button_twitter" title="RCA Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
 					<a class="a2a_button_linkedin" title="RCA LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 					<a class="a2a_button_email" title="RCA eMail"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-					<a class="a2a_button_copy_link" title="Share"><i class="fa fa-share" aria-hidden="true"></i></a>
+					<a class="a2a_dd" title="Share"><i class="fa fa-share" aria-hidden="true"></i></a>
 				</div>
 			</div>
 			<!-- /SHARE BAR -->
