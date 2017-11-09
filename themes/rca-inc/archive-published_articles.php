@@ -1,4 +1,4 @@
-<?php
+e<?php
 
 /**
  * Purpose: Displays all published articles in grid format.
@@ -170,5 +170,13 @@ get_header(); ?>
 
 </script>
 
+	<!-- LEARN MORE -->
+	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
+	<!-- /LEARN MORE -->
+
+	<!-- NEWS -->
+	<?php get_template_part('template-parts/section', 'news'); ?>
+	<!-- /NEWS -->
+	
 <?php
 get_footer();

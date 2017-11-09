@@ -360,7 +360,7 @@ function rca_register_settings()
     add_settings_field( 'rca_twitter_link', 'Twitter Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $twitter_args );
     add_settings_field( 'rca_youtube_link', 'YouTube Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $youtube_args );
     add_settings_field( 'rca_linkedin_link', 'LinkedIn Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $linkedin_args );
-    add_settings_field( 'rca_phone_number', 'Phone Number:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $phone_args );
+    //add_settings_field( 'rca_phone_number', 'Phone Number:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $phone_args );
     add_settings_field( 'bio_page_slider_title', 'Staff Bio Slider Title:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $bio_page_slider_title );
     add_settings_field( 'rca_cs_area', 'Case Study Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_cs_area );
     add_settings_field( 'rca_wp_area', 'White Paper Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_wp_area );

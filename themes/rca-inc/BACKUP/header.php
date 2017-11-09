@@ -10,15 +10,6 @@
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
-
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PK6DK6');</script>
-		<!-- End Google Tag Manager -->
-
 		<meta charset="utf-8" />
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -47,23 +38,9 @@
 		<script type="text/javascript">
 
 		  // SS TRACKING CODE FOR PRODUCTION ONLY
-			var _ss = _ss || [];
-			_ss.push(['_setDomain', 'https://koi-3QMGUWHS20.marketingautomation.services/net']);
-			_ss.push(['_setAccount', 'KOI-3QYOJMP1ZC']);
-			_ss.push(['_trackPageView']);
-			(function() {
-			    var ss = document.createElement('script');
-			    ss.type = 'text/javascript'; ss.async = true;
-
-			    ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QMGUWHS20.marketingautomation.services/client/ss.js?ver=1.1.1';
-			    var scr = document.getElementsByTagName('script')[0];
-			    scr.parentNode.insertBefore(ss, scr);
-			})();
-
-			// SS TRACKING CODE FOR DEV ONLY
 			// var _ss = _ss || [];
 			// _ss.push(['_setDomain', 'https://koi-3QMGUWHS20.marketingautomation.services/net']);
-			// _ss.push(['_setAccount', 'KOI-3V2M10JN7S']);
+			// _ss.push(['_setAccount', 'KOI-3QYOJMP1ZC']);
 			// _ss.push(['_trackPageView']);
 			// (function() {
 			//     var ss = document.createElement('script');
@@ -73,6 +50,20 @@
 			//     var scr = document.getElementsByTagName('script')[0];
 			//     scr.parentNode.insertBefore(ss, scr);
 			// })();
+
+			// SS TRACKING CODE FOR DEV ONLY
+			var _ss = _ss || [];
+			_ss.push(['_setDomain', 'https://koi-3QMGUWHS20.marketingautomation.services/net']);
+			_ss.push(['_setAccount', 'KOI-3V2M10JN7S']);
+			_ss.push(['_trackPageView']);
+			(function() {
+			    var ss = document.createElement('script');
+			    ss.type = 'text/javascript'; ss.async = true;
+
+			    ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QMGUWHS20.marketingautomation.services/client/ss.js?ver=1.1.1';
+			    var scr = document.getElementsByTagName('script')[0];
+			    scr.parentNode.insertBefore(ss, scr);
+			})();
 		</script>
 		
 		<!-- WP HEADER -->
@@ -83,12 +74,6 @@
 
 	<!-- BODY -->
 	<body <?php body_class(); ?>>
-
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PK6DK6"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
-		
 		<div id="page" class="site">
 			<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'rca-inc' ); ?></a>
 

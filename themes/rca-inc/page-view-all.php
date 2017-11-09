@@ -45,20 +45,20 @@ get_header();
 	<!-- /SELECT FOR SMALL -->
 
 	<!-- SOCIAL BREADCRUMBS -->
-	<div class="row show-for-medium">
+<!-- 	<div class="row show-for-medium">
 		<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center medium-text-left">
 			<div id="breadcrumbs">
-				<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
+				<?php #if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
 			</div>
 		</div>
 		<div class="small-12 medium-6 columns text-right show-for-medium">
 			<div id="share" class="">
 				<p>Share on Social Media</p>
-				<?php echo do_shortcode('[addtoany]'); ?>
+				<?php #echo do_shortcode('[addtoany]'); ?>
 			</div>
 		</div>
 
-	</div>
+	</div> -->
 	<!-- /SOCIAL BREADCRUMBS -->
 
 	<!-- SELECT BOX FOR MEDIUM -->
@@ -181,5 +181,13 @@ get_header();
 		})
 	</script>
 
+	<!-- LEARN MORE -->
+	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
+	<!-- /LEARN MORE -->
+
+	<!-- NEWS -->
+	<?php get_template_part('template-parts/section', 'news'); ?>
+	<!-- /NEWS -->
+	
 <?php
 get_footer();

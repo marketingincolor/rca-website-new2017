@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Purpose: Displays related content section.
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
- */
-
 $post_type   = get_post_type();
 $terms       = wp_get_post_terms($post->ID,'services');
 $terms_array = array();
@@ -86,22 +80,6 @@ if ( $the_query->have_posts() ) {
 				?>
 				
 				<div class="small-12 medium-4 columns random-item" data-equalizer-watch>
-					<?php 
-					$post_type = get_post_type(get_the_ID());
-
-					if($post_type == 'case_studies'):
-					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Case-Studies-Icon-Gray-01.svg';
-					elseif($post_type == 'webinars'):
-					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Webinar-Icon-Gray-01.svg';
-					elseif($post_type == 'white_papers'):
-					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/White-Papers-Icon-Gray-01.svg';
-					elseif($post_type == 'visual_resources'):
-					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
-					elseif($post_type == 'published_articles'):
-					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
-					endif;
-
-					?>
 					<img src="<?php echo $icon; ?>" alt="">
 					<p><?php echo wp_trim_words(get_the_title(),10,'') ?>...<a href="<?php the_permalink(); ?>">Read More</a></p>
 				</div>

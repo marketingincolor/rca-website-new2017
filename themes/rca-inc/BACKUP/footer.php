@@ -147,6 +147,7 @@
 				var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
 				var close = $('#share-menu .close');
 				logo = Math.abs(logo);
+				console.log( 'logoheight ' + logo);
 				var shareButton = $('#share-block');
 				var shareMenu = $('#share-menu');
 
@@ -231,7 +232,7 @@
 		<!-- PAGINATION CHANGES ARROW COLORS -->
 		<script>
 			$(document).ready(function() {
-				//console.log('footer');
+				console.log('footer');
 				$('.next').hover(function() {
 					$('.next i').toggleClass('white-font');
 				});
@@ -241,61 +242,5 @@
 			});
 		</script>	
 		<!-- /PAGINATION CHANGES ARROW COLORS-->
-
-		<!-- Preserve Aspect Ratios -->
-		<script>
-			// Find all YouTube videos
-			var $allVideos = $("iframe[src^='//www.youtube.com']"),
-
-			    // The element that is fluid width
-			    $fluidEl = $("body");
-
-			// Figure out and save aspect ratio for each video
-			$allVideos.each(function() {
-
-			  $(this)
-			    .data('aspectRatio', this.height / this.width)
-
-			    // and remove the hard coded width/height
-			    .removeAttr('height')
-			    .removeAttr('width');
-
-			});
-
-			// When the window is resized
-			$(window).resize(function() {
-
-			  var newWidth = $fluidEl.width();
-
-			  // Resize all videos according to their own aspect ratio
-			  $allVideos.each(function() {
-
-			    var $el = $(this);
-			    $el
-			      .width(newWidth)
-			      .height(newWidth * $el.data('aspectRatio'));
-
-			  });
-
-			// Kick off one resize to fix all videos on page load
-			}).resize();
-		</script>
-		
-		<script>
-			$(document).ready(function() {
-				
-				var urlParams = new URLSearchParams(window.location.search);
-				function getUrlParameter(name) {
-				    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-				    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-				    var results = regex.exec(location.search);
-				    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-				};
-
-				var cat = getUrlParameter("cat");
-
-			});
-
-		</script>
 
 </html>

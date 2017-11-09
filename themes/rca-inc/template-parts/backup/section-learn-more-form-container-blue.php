@@ -179,11 +179,6 @@ $form_title = get_field('learn_more_form_container_blue_title');
 			  	e.preventDefault();
 			  	return false;
 		  } else {
-		        dataLayer.push({
-		          'event': 'InterestedFormSubmitted',
-		          'eventCategory': 'Form',
-		          'eventAction': 'Submitted',
-		        });
 		      document.forms["blue-form"].submit();
 		  }
 	  });

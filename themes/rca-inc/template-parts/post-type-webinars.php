@@ -54,7 +54,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 
 				
 				<!-- TOPIC -->
-				<?php if(!empty(get_the_title())): ?>
+				<?php if(get_the_title() != ""): ?>
 				<div class="when-block text-center small-12 medium-4 columns text-center" data-equalizer-watch>
 					<i class="fa fa-desktop fa-3x" aria-hidden="true"></i>
 					<h2>Topic</h2>

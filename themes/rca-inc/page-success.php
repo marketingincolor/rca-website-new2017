@@ -22,7 +22,16 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 			<i class="fa fa-check-circle-o" aria-hidden="true"></i>
 			<h1><?php the_title(); ?></h1>
 			<p><?php the_content(); ?></p>
-			<a href="<?php echo $options['rca_linkedin_textbox'] ?>" class="white-btn">Follow us on LinkedIn</a>
+
+			<div class="success__large-buttons show-for-medium">
+				<a href="<?php echo $options['rca_linkedin_textbox'] ?>" class="white-btn">Follow us on LinkedIn</a>
+				<a href="<?php echo $options['rca_twitter_textbox'] ?>" class="white-btn" style="margin-left: 1rem;">Follow us on Twitter</a>
+			</div>
+
+			<div class="success__large-buttons hide-for-medium">
+				<a href="<?php echo $options['rca_linkedin_textbox'] ?>" class="white-btn" style="display:block;">Follow us on LinkedIn</a>
+				<a href="<?php echo $options['rca_twitter_textbox'] ?>" class="white-btn" style="margin-top: 1rem; display: block; ">Follow us on Twitter</a>
+			</div>
 		</div>
 	</div>
 </section>

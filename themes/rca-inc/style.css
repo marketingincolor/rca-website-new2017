@@ -52,6 +52,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Galleries
 --------------------------------------------------------------*/
 
+.description { margin-top: 2.5rem; }
+
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -1958,15 +1960,15 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 #learn-more-form-container-blue input[type="checkbox"] + label:before,#learn-more-form-container-white input[type="checkbox"] + label:before {
-  border: 2px solid rgba(255,255,255,0.4);
-  content: "";
-  display: inline-block;
-  font: 12px/1em sans-serif;
-  height: 12px;
-  margin: 0 0.5em 0 0;
-  padding: 0;
-  vertical-align: top;
-  width: 12px;
+    border: 2px solid rgba(255,255,255,0.4);
+    content: "";
+    display: inline-block;
+    font: 12px/1em sans-serif;
+    height: 12px;
+    margin: 0 0.5em 0 0;
+    padding: 0;
+    vertical-align: top;
+    width: 12px;
 }
 #learn-more-form-container-white input[type="checkbox"] + label:before{
   border: 2px solid rgba(0,0,0,0.1);
@@ -3766,3 +3768,41 @@ div.bar.animate::after { background: #c4612b; }
 	.top-bar, .top-bar ul { background-color: #f8f7f5; position: absolute; }
 }
 
+/* Check-boxes */
+.check-label::before {
+  width: 27px;
+  height: 27px;
+  background-color: #fff;
+  left: 0px;
+  top: 4px;
+  box-sizing: border-box;
+  border: 3px solid transparent;
+}
+.check-label:hover::before {
+  border: 3px solid #F0FF76;
+}
+.check-label::after {
+  content: '\f00c';
+  font-family: 'FontAwesome';
+    left: -.5px;
+    top: 4px;
+  color: transparent;
+}
+input[type="checkbox"]:checked + label::after {
+  color: #000000;
+  position: absolute;
+}
+
+span.checkbox::before,
+span.checkbox::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  margin: auto !important;
+}
+
+.check-label { position:relative; }
+
+#learn-more-form-container-white input[type="checkbox"]:checked + label::after { color: #fff !important; }
+input[type=number] {-moz-appearance: textfield;}

@@ -370,7 +370,7 @@ get_header(); ?>
 				    	// console.log('Link Column: ' + linkColumnFromTop);
 
 				    var difference = currentY - 500;
-				    console.log(difference);
+				    //console.log(difference);
 
 				    if(currentY >= 500 && currentY < 2000 ) {
 				    	$('#link-column').animate( { top: difference}, 1 );

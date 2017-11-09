@@ -174,11 +174,6 @@
 			  	e.preventDefault();
 			  	return false;
 		  } else {
-		  		dataLayer.push({
-		          'event': 'ContactFormSubmitted',
-		          'eventCategory': 'Form',
-		          'eventAction': 'Submitted',
-		        });
 		      document.forms["blue-form"].submit();
 		  }
 	  });

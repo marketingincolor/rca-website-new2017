@@ -20,7 +20,7 @@ $presenters = get_field('your_presenters');
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); 
 
 get_header(); ?>
-	<?php #get_template_part('template-parts/section', 'takeover-modal'); ?>
+	<?php get_template_part('template-parts/section', 'takeover-modal'); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

@@ -191,11 +191,6 @@
 		  			success: function(data){
 		  				__ss_noform.push(['submit', null, '89bfbeaa-be55-44e6-b904-448e0da31acc']);
 		      		jQuery('#takeover-modal').foundation('close');
-			      	dataLayer.push({
-			          'event': 'TakeoverFormSubmitted',
-			          'eventCategory': 'Form',
-			          'eventAction': 'Submitted',
-			        });
 		  			}
 		  		})
 		  }
