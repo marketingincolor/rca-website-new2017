@@ -73,12 +73,12 @@ if(empty($video_img)) {
 						<div class="small-12 medium-6 columns">
 							<!-- DOWNLOAD LINKS -->
 							<div class="download-links">
-								<?php if((get_field('webinar_download_text')) && (get_field('sharpspring_redirect_slides')) ): ?>
-									<a href="<?php the_field('sharpspring_redirect_slides'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
+								<?php if((get_field('webinar_download_text')) && (get_field('webinar_slides_download_link')) ): ?>
+									<a href="<?php the_field('webinar_slides_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('webinar_download_text'); ?></button></a>
 								<?php endif; ?>
 
-								<?php if((get_field('sharpspring_redirect_faq')) && (get_field('faq_download_text')) ): ?>
-									<a href="<?php the_field('sharpspring_redirect_faq'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
+								<?php if((get_field('faqs_download_link')) && (get_field('faq_download_text')) ): ?>
+									<a href="<?php the_field('faqs_download_link'); ?>" target="_blank"><button class="orange-btn width-auto"><?php the_field('faq_download_text'); ?></button></a>
 								<?php endif; ?>
 							</div>
 							<!-- /DOWNLOAD LINKS -->

@@ -6,6 +6,8 @@
 $pdf              = get_field('white_paper_pdf');
 $references_title = get_field('references_title');
 $references_text  = get_field('references_text');
+$ssLink = get_field('sharpspring_redirect_url');
+
 ?>
 <?php get_template_part('template-parts/section', 'breadcrumbs-social'); ?>
 <div id="all-expertise-content">
@@ -42,7 +44,7 @@ $references_text  = get_field('references_text');
 	<!-- Button -->
 	<div class="row">
 		<div class="small-10 small-offset-1 columns show-for-medium">
-			<a href="<?php echo $pdf; ?>" title="Download White Paper" target="_blank"><button style="margin: 0rem 0rem 1.5rem; width: auto;" class="text-left"><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
+			<a href="<?php echo $ssLink; ?>" title="Download White Paper" target="_blank"><button style="margin: 0rem 0rem 1.5rem; width: auto;" class="text-left"><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
 		</div>
 	</div>
 	<!-- /Button -->
@@ -68,7 +70,7 @@ $references_text  = get_field('references_text');
 	<!-- Button -->
 	<div class="row">
 		<div class="text-center show-for-medium">
-			<a href="<?php echo $pdf; ?>" title="Download White Paper" target="_blank"><button style="margin: 2.5rem 0rem; width: auto;"><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
+			<a href="<?php echo $ssLink; ?>" title="Download White Paper" target="_blank"><button style="margin: 2.5rem 0rem; width: auto;"><i class="fa fa-download" aria-hidden="true"></i> Download</button></a>
 		</div>
 	</div>
 	<!-- /Button -->

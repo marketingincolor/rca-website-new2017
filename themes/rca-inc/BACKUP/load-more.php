@@ -57,7 +57,7 @@ header("HTTP/1.1 200 OK");
 		<div class="small-10 small-offset-1 columns">
 			<div class="story-container">
 				<h2><a href="<?php echo get_post_permalink(); ?>"><?php the_title(); ?></a></h2>
-				<p class="story-date">Article published on <?php echo get_the_date(); ?></p>
+				<p class="story-date"><?php echo get_the_date(); ?></p>
 				<?php echo wp_trim_words(get_the_excerpt(), 25, '...<a href="'. get_permalink() . '">Read More</a>'); ?>
 			</div>
 		</div>
