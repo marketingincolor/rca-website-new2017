@@ -1,0 +1,122 @@
+Design QA - Desktop
+
+UNIVERSAL
+
+CSS stuff
+H1: Lora Bold Italic -- 36px -- #c4612b (orange) or white on reverse
+H2: Roboto Bold -- 22px -- #2b2b2b or white on reverse
+(I don't think this has been set) H3: Roboto Bold -- 18px -- #2b2b2b or white on reverse
+Breadcrumbs & "Share on Social Media": Roboto Regular -- 12px -- #9d938b (gray)
+Links: Roboto Bold -- #c4612b (orange) or white on reversed 
+BLOCKQUOTES: please make blockquotes Lora Bold Italic -- 20px -- #236192
+
+
+REFERENCES TO STUFF
+I have not seen this styling implemented
+https://basecamp.com/1769933/projects/12077833/messages/71762319#comment_56…
+
+HOME PAGE:
+Case Studies
+
+Related Content
+ ☐ The spacing between the download button and the "Related Content" needs to be reduced. Right now it's at 190px (about) between --- can you shorten it to 90px between?
+ ☐ The space between the headline for "Related Content" and the lines should be doubled. 
+ ☐ The related content content are missing icons and should be centered. https://gyazo.com/3c4d02f944939671c8bd272053fec0c6
+
+Header
+ ☐ Should the “About” in the menu be a dropdown since it will lead to an about page and the staff bio page
+
+
+Other than the general issues, these pages are good:
+ ☐ BIO PAGES NEED TO BE LINKED
+
+
+
+These pages need help:
+Most download buttons aren't linked to PDFs. 
+ ☐ Design History File Support Services Handout: is there a way to indent the bullets? When the images are in-line, the bullets look off. https://gyazo.com/7957d08d54ce608a4ed5a3b9f2c9903f
+ ☐ Lessons Learned from Combination Products Poster Presentation: bullets - https://gyazo.com/4fdee78ec44e43f118309038c15e96b6
+ ☐ Medical Device Regulatory Services Handout: bullets https://gyazo.com/b7979625823eb43253d5c66a9196b214
+ ☐ Complete List of Pharmaceutical Services Handout: bullets
+
+
+CASE STUDIES
+General edits needed to all case study pages:
+
+
+Cast studies with references need the references portion formatted: 
+https://basecamp.com/1769933/projects/12077833/messages/71762319#comment_56…
+Manufacturing Automation
+Process Validation Remediation
+Product Cleaning Endotoxin Control
+Shelf Stability
+Regulatory 510(k) Analysis Development Product Cleaning/Disinfection
+Time, Distance and Technology for a Private Equity Due Diligence
+Gap Assessment Electronic Records
+
+Other than what generally needs to be fixed, here are page-specific edits:
+Outsourced Quality & Regulatory Leadership: the content's code is showing - you can see the tags.
+Clearing a Hurdle for CE Mark: The Clinical Evaluation: attribution at the bottom needs to be italicized. "Bruce Marchioni
+Senior Vice President of Quality &amp; Regulatory Affairs
+Devicor Medical"
+Technical File Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+FDA Warning Letter Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+Pre-Acquisition Technical Due Diligence: shows the <ul><li> coding under "approach" and needs reference formatted
+Risk Management in Product Development and Manufacturing: shows the <ul><li> coding under "approach" and needs reference formatted
+FDA Warning Letter Response and Remediation: shows the <ul><li> coding under "approach" and needs reference formatted
+Compliance Assurance Engagement Leads to Passed FDA Inspection and Improved Workflow: THAT QUOTE!?!?!! The blue box cannot be moved, correct? If we can even jut move it up so it's a second column next to all the copy would be amazing. If it cannot be moved.... @me so we can discuss. 
+Remediation & Resulting Sustainable Compliance within New FDA Regulatory Framework: Same question - can this blue box be moved up?
+Compliance Assurance Engagement Leads to Passed FDA Inspection and Improved Workflow: HTML code is showing for RESULTS + the blue box looks so lonely all by itself, would be nice to move it up but let me know if not possible
+Creating Operational Discipline to Support Quality Initiatives: very last word in the "results" paragraph is a widow -- talking to accounts to prob just get this re-written.
+
+
+
+Articles that are a-ok in my book (except for the general change that needs to happen):
+
+
+NEWS FEED
+ ☐ Drop down styling - https://gyazo.com/269ed443d0dee10ebc251cb2a3b91211 (do you need styling for this?)
+
+NEWS POSTS
+General issues
+ ☐ Missing breadcrumb - https://gyazo.com/0247782d02df0f2139ca26fd1fa69bea?token=af203de78b59f06944…
+
+Links that need to be underlined -- can this be done in CSS? 
+RCA Honored with Ovation Award
+Regulatory Compliance Associates® Inc. Receives ISO 9001 Certification
+RCA Assists 503B Outsourcing Facility Achieve License for Sterile Distribution by Florida State Board of Pharmacy
+
+WHITE PAPERS
+General changes need to be made:
+ ☐ Blockquotes need to be formatted without the extra space overtop if possible and with an orange line about 8px - https://gyazo.com/d5621cb72cbb1c15924b2d693864dd17
+ ☐ Style would be - Lora Bold Italic -- 20px -- #236192
+ ☐ Contact button at the bottom needs to be formatted
+ ✔ References section needs to be formatted @done (17-10-04 14:19)
+ ☐ H3s need to be formatted to be roboto bold 
+ ☐ Bullets need to be formatted (level 1, level 2, level 3, etc.) https://gyazo.com/656de0ede5086eb2097c76ca861ff252
+
+Page-specific changes:
+
+
+----------------------------------------------- IN QA PROGRESS ---------------------------------------------
+
+WHITE PAPERS
+General changes need to be made:
+ ☐ Blockquotes need to be formatted without the extra space overtop if possible and with an orange line about 8px - https://gyazo.com/d5621cb72cbb1c15924b2d693864dd17
+ ☐ Style would be - Lora Bold Italic -- 20px -- #236192
+ ☐ Contact button at the bottom needs to be formatted
+ ☐ References section needs to be formatted
+ ☐ H3s need to be formatted to be roboto bold 
+ ☐ Bullets need to be formatted (level 1, level 2, level 3, etc.) https://gyazo.com/656de0ede5086eb2097c76ca861ff252
+
+Page-specific changes:
+
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ Where do the excerpts go? https://gyazo.com/dcc4a58ccaf9fb9a6506f28d4be20aa1 @done (17-10-04 14:19) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ "Read More" links need to be underlined @done (17-10-04 14:19) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ Year published button needs a space between "Year Published" and the icon - https://gyazo.com/1bd12c31aaca77e5ac65fc57e00ed96b @done (17-10-04 13:59) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ I freaking love the load animation @done (17-10-04 13:59) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ Load button needs more padding (60px) between it and the footer. https://gyazo.com/ad7224fbc586c01a47e92cee5d2a9c1e @done (17-10-04 13:54) @project(Articles that are a-ok in my book (except for the general change that needs to happen))
+ ✔ When the excerpt text is written and posted for “Remediation & Resulting…” it will look fab @done (17-10-04 13:05) @project(HOME PAGE)

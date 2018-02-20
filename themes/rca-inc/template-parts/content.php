@@ -1,9 +1,10 @@
 <?php
-
 /**
- * Purpose: Template part for displaying posts
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
+ * Template part for displaying posts
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package RCA_Inc.
  */
 
 ?>

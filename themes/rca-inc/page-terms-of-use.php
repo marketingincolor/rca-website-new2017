@@ -1,16 +1,11 @@
 <?php
 
-/**
- * Purpose: For Terms of Use Page
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
- */
-
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 get_header(); 
 
 ?>
+	
 	
 	<!-- Featured Image -->
 	<div id="featured-img-wrapper" class="row expanded">
@@ -20,6 +15,8 @@ get_header();
 		</div>
 	</div>
 	<!-- / Featured Image -->
+
+
 	
 	<!-- The Content -->
 	<div id="terms-content" class="row">
@@ -31,4 +28,5 @@ get_header();
 
 
 <?php
+//get_sidebar();
 get_footer();

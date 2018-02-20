@@ -1,9 +1,10 @@
 <?php
-
 /**
- * Purpose: Template part for displaying page content in page.php
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
+ * Template part for displaying page content in page.php
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package RCA_Inc.
  */
 
 ?>
@@ -24,7 +25,7 @@
 					the_content();
 					if (get_field('bottom_button_link') && get_field('bottom_button_text')) {
 				?>
-
+				<p>testtest</p>
 					<p style="margin-top:30px"><a href="<?php if(!get_field('external_link')){echo site_url();} ?><?php the_field('bottom_button_link'); ?>" <?php if(get_field('external_link')){echo 'target="_blank"';} ?>><button class="orange-btn width-auto"><?php the_field('bottom_button_text'); ?></button></a></p>
 					
 				<?php

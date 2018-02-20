@@ -1,11 +1,4 @@
 <?php
-
-/**
- * Purpose: Typical single-post.php. Gets template based on category.
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
- */
-
 get_header(); ?>
 	
 	<?php get_template_part( 'template-parts/section', 'breadcrumbs-social' ); ?>
@@ -24,6 +17,11 @@ get_header(); ?>
 						get_template_part( 'template-parts/content', 'post' );
 					}
 
+					// If comments are open or we have at least one comment, load up the comment template.
+					// if ( comments_open() || get_comments_number() ) :
+					// 	comments_template();
+					// endif;
+
 				endwhile; // End of the loop.
 				?>
 
@@ -40,4 +38,5 @@ get_header(); ?>
 	<!-- /NEWS -->
 	
 <?php
+//get_sidebar();
 get_footer();

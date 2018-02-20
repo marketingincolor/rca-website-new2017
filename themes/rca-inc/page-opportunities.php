@@ -5,11 +5,10 @@
  * Date: 10/24/2017
  * Author: AD.,NB.,ET., MARKETING IN COLOR
  */
-get_header();
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 
+get_header();
 ?>
-
 <!-- Featured Image -->
 <div id="featured-img-wrapper" class="row expanded">
 	<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
@@ -18,7 +17,6 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 	</div>
 </div>
 <!-- / Featured Image -->
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<!-- SHARE -->
@@ -37,7 +35,7 @@ $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 
 				<?php
 
 					the_content();
-					echo do_shortcode( '[taleo]' ); 
+
 					wp_link_pages( array(
 						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rca-inc' ),
 						'after'  => '</div>',

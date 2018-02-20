@@ -1,7 +1,7 @@
 === RCA Inc. ===
 
-Contributors: Marketing In Color
-Tags: 
+Contributors: automattic
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.8

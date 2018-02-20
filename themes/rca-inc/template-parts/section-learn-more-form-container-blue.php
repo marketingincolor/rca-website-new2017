@@ -12,7 +12,7 @@ $form_title = get_field('learn_more_form_container_blue_title');
 		</div>
 		<div class="row">
 			<div class="small-10 small-offset-1">
-				<form id="blue-form" name="blue-form" action="<?php echo site_url(); ?>/success" method="post">
+				<form id="blue-form" name="blue-form" method="post">
 					    <div class="large-4 columns">
 					    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
 					    </div>
@@ -47,23 +47,23 @@ $form_title = get_field('learn_more_form_container_blue_title');
 							<label for="" class="industry-label"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
 							<div class="checkbox-group required">
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a1" type='checkbox' name='industry[]' class="chkrad X fade" value='Biotechnology' />
+									<input id="a1" type='checkbox' name='industry' class="chkrad X fade" value='Biotechnology' />
 									<label class="check-label" for="a1"> Biotechnology</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a2" type='checkbox' name='industry[]' class="chkrad X fade" value='Medical Device' />
+									<input id="a2" type='checkbox' name='industry' class="chkrad X fade" value='Medical Device' />
 									<label class="check-label" for="a2"> Medical Device</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a3" type='checkbox' name='industry[]' class="chkrad X fade" value='Pharmaceutical' />
+									<input id="a3" type='checkbox' name='industry' class="chkrad X fade" value='Pharmaceutical' />
 									<label class="check-label" for="a3"> Pharmaceutical</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns">
-									<input id="a4" type='checkbox' name='industry[]' class="chkrad X fade" value='Law Firm' />
+									<input id="a4" type='checkbox' name='industry' class="chkrad X fade" value='Law Firm' />
 									<label class="check-label" for="a4"> Law Firm</label>
 								</div>
 								<div class="medium-4 large-2 small-6 columns end">
-									<input id="a5" type='checkbox' name='industry[]' class="chkrad X fade" value='Other' />
+									<input id="a5" type='checkbox' name='industry' class="chkrad X fade" value='Other' />
 									<label class="check-label" for="a5"> Other</label>
 								</div>
 							</div>
@@ -85,6 +85,7 @@ $form_title = get_field('learn_more_form_container_blue_title');
 							<?php global $wp;
 							$current_url = home_url(add_query_arg(array(),$wp->request)); ?>
 						  <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
+						  <input id="industry-hidden" type="hidden" name="industries">
 							<input type="submit" value="Submit" id="form-submit">
 						</div>
 				</form>
@@ -94,7 +95,7 @@ $form_title = get_field('learn_more_form_container_blue_title');
 
 	<script>
 	  // change colors on inputs to white when field is filled
-	  // out properly 
+	  // out properly
 		var $blueForm = $('#learn-more-form-container-blue');
 		$blueForm.find('input,textarea').on('keyup change',function(){
 
@@ -127,48 +128,48 @@ $form_title = get_field('learn_more_form_container_blue_title');
 
 		//Don't send form if it has errors, otherwise send
 		$blueForm.find('#form-submit').on('click',function(e){
-		  if($blueForm.find('#form-first-name').val() == ''){ 
+		  if($blueForm.find('#form-first-name').val() == ''){
 		  	showError('Please enter your first name');
 		  	$blueForm.find('#form-first-name').addClass("formInvalid");
 		  	$blueForm.find('#form-first-name').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-last-name').val() == ''){ 
+		  } else if($blueForm.find('#form-last-name').val() == ''){
 		  	showError('Please enter your last name');
 		  	$blueForm.find('#form-last-name').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-phone').val() == ''){ 
+		  } else if($blueForm.find('#form-phone').val() == ''){
 		  	showError('Please enter your phone number');
 		  	$blueForm.find('#form-phone').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-email').val() == ''){ 
+		  } else if($blueForm.find('#form-email').val() == ''){
 		  	showError('Please enter your email');
 		  	$blueForm.find('#form-email').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-address').val() == ''){ 
+		  } else if($blueForm.find('#form-address').val() == ''){
 		  	showError('Please enter your street address');
 		  	$blueForm.find('#form-address').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-city').val() == ''){ 
+		  } else if($blueForm.find('#form-city').val() == ''){
 		  	showError('Please enter your city');
 		  	$blueForm.find('#form-city').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-state').val() == ''){ 
+		  } else if($blueForm.find('#form-state').val() == ''){
 		  	showError('Please enter your state');
 		  	$blueForm.find('#form-state').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-country').val() == ''){ 
+		  } else if($blueForm.find('#form-country').val() == ''){
 		  	showError('Please enter your country');
 		  	$blueForm.find('#form-country').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-zip').val() == ''){ 
+		  } else if($blueForm.find('#form-zip').val() == ''){
 		  	showError('Please enter your zip code');
 		  	$blueForm.find('#form-zip').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-company').val() == ''){ 
+		  } else if($blueForm.find('#form-company').val() == ''){
 		  	showError('Please enter your company name');
 		  	$blueForm.find('#form-company').focus();
 		  	return false;
-		  } else if($blueForm.find('#form-comments').val() == ''){ 
+		  } else if($blueForm.find('#form-comments').val() == ''){
 		  	showError('Please enter a comment or question');
 		  	$blueForm.find('#form-comments').focus();
 		  	$blueForm.find('#form-comments').addClass("formInvalid");
@@ -179,12 +180,29 @@ $form_title = get_field('learn_more_form_container_blue_title');
 			  	e.preventDefault();
 			  	return false;
 		  } else {
-		        dataLayer.push({
-		          'event': 'InterestedFormSubmitted',
-		          'eventCategory': 'Form',
-		          'eventAction': 'Submitted',
-		        });
-		      document.forms["blue-form"].submit();
+            sendToGTM();
+
+            function sendToGTM() {
+    	        dataLayer.push({
+    	          'event': 'InterestedFormSubmitted',
+    	          'eventCategory': 'Form',
+    	          'eventAction': 'Submitted',
+    	        });
+            }
+
+          var arr=[];
+
+          $('input:checked[name=industry').each(function(){
+              arr.push($(this).val());
+          });
+
+          $('#industry-hidden').val(arr.join(','));
+
+		    //document.forms["blue-form"].submit();
+            //__ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
+            __ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
+            return false;
+
 		  }
 	  });
 
@@ -193,12 +211,14 @@ $form_title = get_field('learn_more_form_container_blue_title');
     var __ss_noform = __ss_noform || [];
     __ss_noform.push(['baseURI', 'https://app-3QMGUWHS20.marketingautomation.services/webforms/receivePostback/MzawMDGwMDYyAgA/']);
     __ss_noform.push(['form','blue-form', '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
+    __ss_noform.push(['submitType', 'manual']);
 </script>
 <script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/noform.js?ver=1.24" ></script>
 <!-- Start Dynamic Script Example -->
 <script type="text/javascript">
 var callThisOnReturn = function(resp) {
   if (resp && resp.contact) {
+    console.log(resp.contact);
   	var blueForm = jQuery('#learn-more-form-container-blue');
   	industryArray = resp.contact['Industry_SF'].split(',');
   	console.log(industryArray);
@@ -246,6 +266,6 @@ var callThisOnReturn = function(resp) {
     	});
   }
 };
-_ss.push(['_setResponseCallback', callThisOnReturn]); 
+_ss.push(['_setResponseCallback', callThisOnReturn]);
 </script>
 <!-- End Dynamic Script Example -->

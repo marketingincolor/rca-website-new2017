@@ -1,0 +1,1 @@
+[20-Oct-2017 19:49:00 UTC] PHP Warning:  urlencode() expects parameter 1 to be string, array given in /home/mic/public_html/dev/rca-website-2017/wp-includes/formatting.php on line 4769

@@ -104,7 +104,7 @@
 
 	<script>
 	  // change colors on inputs to white when field is filled
-	  // out properly 
+	  // out properly
 		var $modalForm = $('#learn-more-form-container-white');
 		$modalForm.find('input,textarea').on('keyup change',function(){
 
@@ -143,40 +143,40 @@
 		  	$modalForm.find('#form-first-name').addClass("formInvalid");
 		  	$modalForm.find('#form-first-name').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-last-name').val() == ''){ 
+		  } else if($modalForm.find('#form-last-name').val() == ''){
 		  	showError('Please enter your last name');
 		  	$('#form-last-name').next('i').css({'color':'red'})
 		  	$modalForm.find('#form-last-name').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-phone').val() == ''){ 
+		  } else if($modalForm.find('#form-phone').val() == ''){
 		  	showError('Please enter your phone number');
 		  	$modalForm.find('#form-phone').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-email').val() == ''){ 
+		  } else if($modalForm.find('#form-email').val() == ''){
 		  	showError('Please enter your email');
 		  	$modalForm.find('#form-email').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-address').val() == ''){ 
+		  } else if($modalForm.find('#form-address').val() == ''){
 		  	showError('Please enter your street address');
 		  	$modalForm.find('#form-address').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-city').val() == ''){ 
+		  } else if($modalForm.find('#form-city').val() == ''){
 		  	showError('Please enter your city');
 		  	$modalForm.find('#form-city').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-state').val() == ''){ 
+		  } else if($modalForm.find('#form-state').val() == ''){
 		  	showError('Please enter your state');
 		  	$modalForm.find('#form-state').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-country').val() == ''){ 
+		  } else if($modalForm.find('#form-country').val() == ''){
 		  	showError('Please enter your country');
 		  	$modalForm.find('#form-country').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-zip').val() == ''){ 
+		  } else if($modalForm.find('#form-zip').val() == ''){
 		  	showError('Please enter your zip code');
 		  	$modalForm.find('#form-zip').focus();
 		  	return false;
-		  } else if($modalForm.find('#form-company').val() == ''){ 
+		  } else if($modalForm.find('#form-company').val() == ''){
 		  	showError('Please enter your company name');
 		  	$modalForm.find('#form-company').focus();
 		  	return false;
@@ -196,10 +196,11 @@
 			          'eventCategory': 'Form',
 			          'eventAction': 'Submitted',
 			        });
+                    gtag_report_conversion(window.location.href);
 		  			}
 		  		})
 		  }
 	  });
 
 	</script>
-	
+

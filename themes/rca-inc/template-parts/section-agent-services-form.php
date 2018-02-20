@@ -145,11 +145,11 @@
 		  	return false;
 		  } else {
 		    $('#blue-form').find('[type="submit"]').trigger('click');
-	  		// dataLayer.push({
-	    //       'event': 'USAgentFormSubmitted',
-	    //       'eventCategory': 'Form',
-	    //       'eventAction': 'Submitted',
-	    //     });
+	  		dataLayer.push({
+	          'event': 'USAgentFormSubmitted',
+	          'eventCategory': 'Form',
+	          'eventAction': 'Submitted',
+	        });
 		  }
 	  });
 

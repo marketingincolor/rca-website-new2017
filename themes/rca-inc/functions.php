@@ -295,83 +295,15 @@ function rca_register_settings()
       'class'     => 'css_class'
     );
 
-    $rca_cs_area = array(
-      'type'      => 'textarea',
-      'id'        => 'rca_cs_area',
-      'name'      => 'rca_cs_area',
-      'desc'      => 'Text Area for Case Studies.',
-      'std'       => '',
-      'label_for' => 'rca_cs_area',
-      'class'     => 'css_class'
-    );
-
-    $rca_wp_area = array(
-      'type'      => 'textarea',
-      'id'        => 'rca_wp_area',
-      'name'      => 'rca_wp_area',
-      'desc'      => 'Text Area for White Papers.',
-      'std'       => '',
-      'label_for' => 'rca_wp_area',
-      'class'     => 'css_class'
-    );
-
-    $rca_webinars_area = array(
-      'type'      => 'textarea',
-      'id'        => 'rca_webinars_area',
-      'name'      => 'rca_webinars_area',
-      'desc'      => 'Text Area for Webinars.',
-      'std'       => '',
-      'label_for' => 'rca_webinars_area',
-      'class'     => 'css_class'
-    );
-
-    $rca_vr_area = array(
-      'type'      => 'textarea',
-      'id'        => 'rca_vr_area',
-      'name'      => 'rca_vr_area',
-      'desc'      => 'Text Area for Visual Resources.',
-      'std'       => '',
-      'label_for' => 'rca_vr_area',
-      'class'     => 'css_class'
-    );
-
-    $rca_pa_area = array(
-      'type'      => 'textarea',
-      'id'        => 'rca_pa_area',
-      'name'      => 'rca_pa_area',
-      'desc'      => 'Text Area for Published Articles.',
-      'std'       => '',
-      'label_for' => 'rca_pa_area',
-      'class'     => 'css_class'
-    );
-
-    $rca_va_area = array(
-      'type'      => 'textarea',
-      'id'        => 'rca_va_area',
-      'name'      => 'rca_va_area',
-      'desc'      => 'Description for View All Page.',
-      'std'       => '',
-      'label_for' => 'rca_va_area',
-      'class'     => 'css_class'
-    );
-
-
     add_settings_field( 'rca_fb_link', 'Facebook Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $fb_args );
     add_settings_field( 'rca_twitter_link', 'Twitter Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $twitter_args );
     add_settings_field( 'rca_youtube_link', 'YouTube Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $youtube_args );
     add_settings_field( 'rca_linkedin_link', 'LinkedIn Link:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $linkedin_args );
-    //add_settings_field( 'rca_phone_number', 'Phone Number:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $phone_args );
+    add_settings_field( 'rca_phone_number', 'Phone Number:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $phone_args );
     add_settings_field( 'bio_page_slider_title', 'Staff Bio Slider Title:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $bio_page_slider_title );
-    add_settings_field( 'rca_cs_area', 'Case Study Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_cs_area );
-    add_settings_field( 'rca_wp_area', 'White Paper Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_wp_area );
-    add_settings_field( 'rca_webinars_area', 'Webinars Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_webinars_area );
-    add_settings_field( 'rca_vr_area', 'Visual Resources Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_vr_area );
-    add_settings_field( 'rca_pa_area', 'Published Articles Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_pa_area );
-    add_settings_field( 'rca_va_area', 'View All Page Description:', 'rca_display_setting', 'rca_theme_options.php', 'rca_text_section', $rca_va_area );
 
 }
 add_action( 'admin_init', 'rca_register_settings' );
-
 
 /* ------------------------------------------------------------------------ *
  * Theme Options - Image Sizes
@@ -410,13 +342,6 @@ function rca_display_setting($args)
               echo "<input class='regular-text$class' type='text' id='$id' name='" . $option_name . "[$id]' value='$options[$id]' />";
               echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";  
           break;  
-
-          case 'textarea':
-          $options[$id] = stripslashes($options[$id]);  
-              $options[$id] = esc_attr( $options[$id]);  
-              echo "<textarea style=\"width: 25%; height: 50px;\" class='' id='$id' name='" . $option_name . "[$id]' value='$options[$id]' />$options[$id]</textarea>";
-              echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";  
-          break;  
     }
 }
 
@@ -448,6 +373,53 @@ register_nav_menus( array(
   'new_desktop_menu' => 'New Desktop Menu'
 ) );
 
+/* ------------------------------------------------------------------------ *
+* Taleo Job API Shortcode
+* ------------------------------------------------------------------------ */
+
+function taleo_jobs(){
+  require_once 'taleo/Api.php';
+
+  $Taleo = new RyanSechrest\Taleo\Api(
+    'RCA',
+    'adoe',
+    'RCARCA!',
+    'https://tbe.taleo.net/MANAGER/dispatcher/api/v1/serviceUrl'
+  );
+
+
+  // LOGIN
+  $Taleo->login();
+
+  // SET AUTH TOKEN
+  $auth_token = $Taleo->get_auth_token();
+  $Taleo->set_auth_token($auth_token);
+
+  // GET HOST URL
+  $host_url = $Taleo->get_host_url();
+
+  // SET HOST URL
+  $Taleo->set_host_url($host_url);
+  $query = array(
+    'status' => 'Open',
+    'cws'    => 1
+  );
+
+  //GET RESULTS BASED ON QUERY OF STATUS OPEN
+  $results = $Taleo->get_records('requisition', $query);
+  
+  // LOOP THROUGH RESULTS TO GET TITLE AND URL OF JOB
+  $return = '<ul>';
+  foreach ($results->searchResults as $job) { 
+    $return .= '<li class="job-title" style="margin-bottom:0px"><a href="https://chj.tbe.taleo.net/chj05/ats/careers/requisition.jsp?org=RCA&cws=1&rid=' . $job->requisition->reqId . '" target="_blank" style="font-weight: normal; line-height: 1.6; margin-bottom: 0px; ">' . $job->requisition->ResourceTitle . '</a></li>';
+
+  }
+  $return .= '</ul>';
+  return $return;
+  $Taleo->logout();
+
+}
+add_shortcode( 'taleo', 'taleo_jobs' );
 
 /* ------------------------------------------------------------------------ *
 * Carousel - Top
@@ -494,33 +466,21 @@ function rca_top_slider($atts, $content = null) {
         $loop->the_post();
 
         $call_to_action_links = get_field('call_to_action_links');
-        // Add image overlay with hook
-        $slide_title = get_the_title();
-        $slide_content = get_the_content();
 
+        if($call_to_action_links == FALSE) {
+          $call_to_action_links = '#!';
+        }
         //var_dump($call_to_action_links);
         $call_to_action_title = get_field('call_to_action_title');
-
-        $call_to_action_title = 'Read More';
-        
+        if($call_to_action_title == FALSE) {
+          $call_to_action_title = 'Read More';
+        }
 
         $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
         $meta_link = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_owlurl', true);
 
         if ($img_src[0]) {
-
-          if($slide_content):
-            $result .= '<div class="item" style="background-image: url('.$img_src[0].'); min-height: 350px;">';
-          else:
-            $result .= '<div class="item" style="background-image: url('.$img_src[0].'); min-height: 350px; padding: 0rem;">';
-          endif;
-
-
-
-          if(!$slide_content): 
-            $result .= '<img src="'.$img_src[0].'"style="visibility:hidden;max-height: 350px; padding: 0rem;">';
-          endif;
-           
+          $result .= '<div class="item" style="background-image: url('.$img_src[0].')">';
           $result .= '<div class="row">';
             if (!empty($meta_link)) {
                 $result .= '<a href="' . $meta_link . '">';
@@ -529,19 +489,11 @@ function rca_top_slider($atts, $content = null) {
                 $result .= '</a>';
             }
 
-
+            // Add image overlay with hook
+            $slide_title = get_the_title();
+            $slide_content = get_the_content();
             $img_overlay = '<div class="small-10 small-offset-1 medium-5 medium-offset-0 large-4 columns">';
-
-            // Slide Meta Checks
-            if($slide_content && $call_to_action_links && $call_to_action_title):
-              $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="' .  $call_to_action_links  . '">'. $call_to_action_title . '</a></p></div>';
-            endif;
-
-            // If we don't have a link but we have content
-            if($slide_content && !$call_to_action_links):
-              $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p></div>';
-            endif;
-    
+            $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="' .  $call_to_action_links  . '">'. $call_to_action_title . '</a></p></div>';
             $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
             $result .= '</div></div>';
         } else {
@@ -1929,48 +1881,3 @@ class RCA_Mega_Mobile_Menu_Walker extends Walker_Nav_Menu {
   }
 
 }
-
-
-/******************************************************************
- * Update the theme logo in backend.
- ******************************************************************/
- function rca_custom_logo() {
-  echo '
-  <style type="text/css">
-  #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
-  background-image: url(' . get_bloginfo('stylesheet_directory') . '/images/backend-logo.png) !important;
-  background-position: 0 0;
-  color:rgba(0, 0, 0, 0);
-  }
-  #wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
-  background-position: 0 0;
-  }
-  </style>
-  ';
-}
- 
-//hook into the administrative header output
-add_action('wp_before_admin_bar_render', 'rca_custom_logo');
-
-
-/******************************************************************
- * RCA INC. Theme
- ******************************************************************/
-function rca_admin_color_schemes() {
-
-$theme_dir = get_stylesheet_directory_uri();
-
-wp_admin_css_color( 'rca', __( 'RCA Inc' ), 
-$theme_dir . '/admin-colors/rca/colors.css', array(
-    '#f8f7f5', '#1a365d', '#c4612b', '#ffffff'
-) );
-}
-add_action('admin_init', 'rca_admin_color_schemes');
-
-/******************************************************************
- * RCA INC. Theme
- ******************************************************************/
-function change_admin_footer(){
-   echo '<span id="footer-note">Theme made by <a href="http://www.marketingincolor.com/" target="_blank">Marketing In Color</a>.</span>';
-  }
-add_filter('admin_footer_text', 'change_admin_footer');

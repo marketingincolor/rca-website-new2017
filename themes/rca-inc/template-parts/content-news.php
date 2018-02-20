@@ -1,9 +1,10 @@
 <?php
-
 /**
- * Purpose: Template part for displaying news pages
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
+ * Template part for displaying news pages
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package RCA_Inc.
  */
 
 ?>

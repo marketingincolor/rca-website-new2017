@@ -1,1 +1,103 @@
- ☐ CLEAN up page-pharmaceutical.php echo statements.
+How to use:
+
+Package -> PlainTasks
+To create a title type the title name followed by a colon.
+To create a bullet -> ctrl (cmd) + enter
+To mark as done ctrl + d
+To archive ctrl + shift + a (Puts in archive at bottom)
+
+**ctrl + shift + u opens the repo when cursor is on it**
+URL: www.github.com/marketingincolor/rca-website-new2017
+
+Misc:
+ ☐ Opportunities Feed for Taleo
+
+About:
+
+Home:
+
+Case Study:
+
+Medical Device:
+ ☐ Create US Agent Services Page
+ ☐ Add page content
+
+Pharma:
+ ☐ Update Menus
+ ☐ Add Pages
+ ☐ Create US Agent Services Page
+ ☐ Add page content
+
+SEARCH PAGE:
+
+CASE STUDY PAGE MOBILE (DONE):
+
+WEBINAR TEMPLATE:
+
+ Webinar Slide Deck Template:
+ ☐ Needs to be built
+ 
+NEWS:
+
+
+EVENTS (NEWS PAGE):
+
+PRESS RELEASES (NEWS PAGE):
+ ☐ Add Content Type
+
+ABOUT:
+
+Takeover Form:
+  ☐ Map SS Fields
+  ☐ Add TRUE/FALSE ACF field. if ($gated == TRUE) add takeover form on page load
+
+Individual Staff Pages (DONE):
+
+All Staff Page:
+ ☐ Reduce padding around staff members
+
+ Staff Department Pages (DONE):
+
+Archive:
+ ✔ Check Padding @done (17-10-02 09:49) @project(ABOUT)
+ ✔ Format @done (17-10-01 14:37) @project(About)
+ ✔ Organize Staff Members (add order in backend) @done (17-09-30 20:50) @project(All Staff Page)
+ ✔ Update page with updated query @done (17-09-30 20:21) @project(SEARCH PAGE)
+ ✔ Add ACF fields for single-events @done (17-09-30 20:01) @project(EVENTS (NEWS PAGE))
+  $event_date     = get_field('event_date');
+  $event_location = get_field('event_location');
+  $event_time     = get_field('event_time');
+ ✔ Update height of query blocks @done (17-09-30 19:57) @project(Misc)
+ ✔ Create CPT (events) @done (17-09-30 19:57) @project(EVENTS (NEWS PAGE))
+ ✔ Case study block height @done (17-09-30 19:57) @project(Home)
+ ✔ Change order of approach/challenge @done (17-09-30 18:00) @project(Case Study)
+ ✔ Add Referances Meta and Add Content @done (17-09-30 17:58) @project(Case Study)
+ ✔ Update secondary and taxonomy menu order @done (17-09-30 12:51) @project(Misc)
+ ✔ Update menus @done (17-09-29 21:21) @project(Medical Device)
+ ✔ Fix Register/Share button (mobile) @done (17-09-29 21:20) @project(WEBINAR TEMPLATE)
+ ✔ Add Pages @done (17-09-29 21:20) @project(Medical Device)
+ ✔ Dots on archive pages @done (17-09-29 21:19) @project(Misc)
+ ✔ Add share button menu @done (17-09-29 16:40) @project(CASE STUDY PAGE MOBILE)
+ ✔ Add related articles slider @done (17-09-29 16:21) @project(CASE STUDY PAGE MOBILE (DONE) )
+ ✔ Add checks for name,title, avatar for users similar to desktop template @done (17-09-29 16:21) @project(WEBINAR TEMPLATE)
+ ✔ Add check for case studies if no download @done (17-09-29 14:22) @project(CASE STUDY PAGE MOBILE)
+ ✔ Add PDFs to server @done (17-09-29 14:22) @project(Misc)
+ ✔ Update template so content floats properly @done (17-09-29 12:38) @project(CASE STUDY PAGE MOBILE)
+ ✔ Add Download/Share buttons @done (17-09-29 12:38) @project(CASE STUDY PAGE MOBILE)
+ ✔ If user doesn't have avatar change the layout @done (17-09-28 16:59) @project(Individual Staff Pages)
+ ✔ Add Department Page Links @done (17-09-28 16:59) @project(Individual Staff Pages)
+ ✔ Director of Finance @done (17-09-28 15:57) @project(All Staff Page)
+ ✔ Director of Directors @done (17-09-28 15:57) @project(All Staff Page)
+ ✔ Director of Sales Operations @done (17-09-28 15:56) @project(All Staff Page)
+ ✔ Director of Operations @done (17-09-28 15:56) @project(All Staff Page)
+ ✔ Finance @done (17-09-28 15:53) @project(All Staff Page)
+ ✔ Executive Leadership @done (17-09-28 15:29) @project(All Staff Page)
+ ✔ Board of Directors @done (17-09-28 15:29) @project(All Staff Page)
+ ✔ Update "Medical Devices" & "Pharma" CTAs with links @done (17-09-28 15:11) @project(Home)
+ ✔ Department Page Layout @done (17-09-28 14:29) @project(Staff Pages)
+ ✔ 404 @done (17-09-28 14:09) @project(Done)
+ ✔ Social Media Sharing setup @done (17-09-28 14:00) @project(Done)
+ ✔ Breadcrumbs (Needs to be checked across templates) @done (17-09-28 14:00) @project(Done)
+ ✔ Terms of Use @done (17-09-28 13:59) @project(Done)
+ ✔ Privacy Policy (Needs content) @done (17-09-28 13:59) @project(Done)
+ ✔ Contact Us @done (17-09-28 13:59) @project(Done)

@@ -57,13 +57,13 @@
 										$block .= '<a href="https://maps.google.com/?q=' . $location_address . '" target="_blank"><div class="location-address"><i class="fa fa-map-marker" aria-hidden="true"></i><p>' . $location_address . '</p></div></a>';
 									endif;
 									if($location_phone):
-										$block .= '<div class="location-phone"><i class="fa fa-phone" aria-hidden="true"></i><p> ' . $location_phone . '</p></div>';
+										$block .= '<a href="tel:'.$location_phone.'"><div class="location-phone"><i class="fa fa-phone" aria-hidden="true"></i><p> ' . $location_phone . '</p></div></a>';
 									endif;
 									if($location_fax):
 										$block .= '<div class="location-fax"><i class="fa fa-fax" aria-hidden="true"></i><p>' . $location_fax . '</p></div>';
 									endif;								
 									if($location_email):
-										$block .= '<div class="location-email"><i class="fa fa-envelope" aria-hidden="true"></i><p>' . $location_email . '</p></div>';
+										$block .= '<a href="mailto:'.$location_email.'?subject=Inquiry%20from%20Contact%20Us%20Page"><div class="location-email"><i class="fa fa-envelope" aria-hidden="true"></i><p>' . $location_email . '</p></div>';
 									endif;
 									$block .= '</div>';
 									$block .= '</div>';
@@ -177,6 +177,7 @@
 		var logo = $('#masthead > section.hide-for-large > div:nth-child(1)').height();
 		var close = $('#share-menu .close');
 		logo = Math.abs(logo);
+		console.log( 'logoheight ' + logo);
 		var shareButton = $('#share-section .orange-btn');
 		var shareMenu = $('#share-menu');
 

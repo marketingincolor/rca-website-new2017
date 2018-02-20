@@ -1,9 +1,10 @@
 <?php
-
 /**
- * Purpose: Template part for displaying page content in page.php
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
+ * Template part for displaying page content in page.php
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package RCA_Inc.
  */
 
 ?>
@@ -28,8 +29,8 @@
 					// $options = array(
 					//   'http'=>array(
 					//     'method'=>"GET",
-					//     'header'=>"Username=adoe@RCA\r\n" .
-					//               "Password=C0ff33!\r\n" .
+					//     'header'=>"Username=username@<<COMPANY_CODE>>\r\n" .
+					//               "Password=xxxxxxx\r\n" .
 					//               "Content-type: application/json\r\n" 
 					//   )
 					// );
@@ -92,6 +93,7 @@
 			var logo = $('#masthead > section.hide-for-large > div.hide-for-large').height();
 			var close = $('#share-menu .close');
 			logo = Math.abs(logo);
+			console.log( 'logoheight ' + logo);
 			var shareButton = $('#share-btn');
 			var shareMenu = $('#share-menu');
 

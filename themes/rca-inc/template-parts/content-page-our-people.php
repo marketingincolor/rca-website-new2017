@@ -1,9 +1,10 @@
 <?php
-
 /**
- * Purpose: Template part for displaying people on our-people page
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
+ * Template part for displaying page content in page.php
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package RCA_Inc.
  */
 
 ?>

@@ -29,7 +29,7 @@ get_header(); ?>
 		<!-- BUTTONS -->
 		<div id="news-all-buttons" class="row">
 			<div class="small-10 small-offset-1 large-2 large-offset-1 columns">
-				<a href="#News"><button id="filter-news" class="news-filter"  title="News" news_filter="news">News</button></a>
+				<a href="#News"><button id="filter-news" class="news-filter"  title="News" news_filter="news">News & Insights</button></a>
 			</div>
 			<div class="small-10 small-offset-1 large-2 large-offset-0 columns">
 				<a href="#Press-Releases"><button id="press" class="news-filter" title="Press Releases" news_filter="press-releases">Press Releases</button></a>

@@ -1,39 +1,24 @@
 <?php
 /*Template Name: Staff Department*/
 
-/**
- * Purpose: Displays staff department pages...see page examples.
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR 
- * Page Examples:
- * .../about/our-people/operations
- * .../about/our-people/sales-operations
- * .../about/our-people/finance
- * ...etc.
- */
-
 global $post;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 $department = strtolower($post->post_name);
 
 get_header(); ?>
 	
-	<!-- FEATURED IMAGE -->
+	<!-- Featured Image -->
 	<div id="featured-img-wrapper" class="row expanded">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)),
 	            rgba(196,97,43,0.7) url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
 				<div class="featured-img-title"><h1><?php the_title(); ?></h1></div>
 		</div>
 	</div>
-	<!-- /FEATURED IMAGE -->
+	<!-- / Featured Image -->
 
-	<!-- BREADCRUMBS -->
 	<?php get_template_part( 'template-parts/section', 'breadcrumbs-social'); ?>
-	<!-- BREADCRUMBS -->
-
-	<!-- GET DEPT DATA -->
 	<?php
-
+		//var_dump($department);
 		$staff_id = get_field('staff_id');
 		$staff_data = get_userdata($staff_id);
 		$staff_meta = get_user_meta($staff_id);
@@ -77,13 +62,23 @@ get_header(); ?>
 		}
 
 	?>
-	<!-- /GET DEPT DATA -->
 
-	<!-- LEARN MORE FORM -->
+
+	<div class="row">
+
+
+		<div class="small-10 small-offset-1 columns text-center">
+				<!-- name -->
+
+				<!-- position -->
+		</div>
+
+	</div>
+	
+	
 	<div id="contact-learn-more-wrapper">
 		<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	</div>
-	<!-- /LEARN MORE FORM -->
 
 	<!-- NEWS -->
 	<?php get_template_part('template-parts/section', 'news'); ?>

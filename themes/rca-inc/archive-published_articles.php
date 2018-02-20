@@ -1,4 +1,4 @@
-e<?php
+<?php
 
 /**
  * Purpose: Displays all published articles in grid format.
@@ -62,20 +62,20 @@ get_header(); ?>
 	</div>
 
 	<!-- SOCIAL BREADCRUMBS -->
-	<div class="row show-for-medium">
+<!-- 	<div class="row show-for-medium">
 		<div class="small-10 small-offset-1 medium-6 medium-offset-0 columns text-center medium-text-left">
 			<div id="breadcrumbs">
-				<?php if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
+				<?php #if( function_exists('simple_breadcrumb') ) { simple_breadcrumb(); }?>
 			</div>
 		</div>
 		<div class="small-12 medium-6 columns text-right show-for-medium">
 			<div id="share" class="">
 				<p>Share on Social Media</p>
-				<?php echo do_shortcode('[addtoany]'); ?>
+				<?php #echo do_shortcode('[addtoany]'); ?>
 			</div>
 		</div>
 
-	</div>
+	</div> -->
 	<!-- /SOCIAL BREADCRUMBS -->
 
 	<div id="mob-before-title-block" class="row hide-for-small show-for-medium hide-for-large" data-equalizer>

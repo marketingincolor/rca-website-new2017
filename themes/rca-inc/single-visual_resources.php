@@ -1,11 +1,4 @@
 <?php
-
-/**
- * Purpose: Displays a single visual resource page.
- * Date: 10/24/2017
- * Author: AD.,NB.,ET., MARKETING IN COLOR
- */
-
 get_header();
 $type = 'visual resource'; 
 ?>
@@ -32,6 +25,7 @@ $type = 'visual resource';
 	<!-- /RELATED CONTENT LARGE -->
 	
 	<!-- LEARN MORE -->
+	<?php //get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
 	<!-- /LEARN MORE -->
 
