@@ -38,7 +38,7 @@
 					?>
 					<?php wp_nav_menu( array( 'theme_location' => 'rca_mobile_footer_menu_right' ) ); ?>
 					</div><br />
-				<p class="copyright text-center" style="padding-top:10px;">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc.<br /> All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102<br>Pleasant Prairie, WI 53158 <br /> <?php echo $options['rca_phone_number']; ?><br><a href="http://dev.marketingincolor.com/rca-website-2017/wp-content/uploads/2017/10/ISO-Certificate-May-2016.pdf" target="_blank" style="font-weight: normal;">ISO 9001 Certified</a></p>
+				<p class="copyright text-center" style="padding-top:10px; display:inline-block; width:100%;">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc.<br /> All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102<br>Pleasant Prairie, WI 53158 <br /> <?php echo $options['rca_phone_number']; ?><br><a href="http://dev.marketingincolor.com/rca-website-2017/wp-content/uploads/2017/10/ISO-Certificate-May-2016.pdf" target="_blank" style="font-weight: normal;">ISO 9001 Certified</a></p>
 				</div>
 			</div>
 			<!-- END MOBILE/TABLET FOOTER MENUS -->
