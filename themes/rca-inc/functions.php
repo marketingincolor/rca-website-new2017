@@ -431,7 +431,7 @@ add_shortcode( 'taleo', 'taleo_jobs' );
  * @return [type]          [description]
  */
 
-function rca_top_slider($atts, $content = null) {
+/*function rca_top_slider($atts, $content = null) {
     extract(shortcode_atts(array(
         'category' => 'Uncategorized',
                     ), $atts));
@@ -494,6 +494,96 @@ function rca_top_slider($atts, $content = null) {
             $slide_content = get_the_content();
             $img_overlay = '<div class="small-10 small-offset-1 medium-5 medium-offset-0 large-4 columns">';
             $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="' .  $call_to_action_links  . '">'. $call_to_action_title . '</a></p></div>';
+            $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
+            $result .= '</div></div>';
+        } else {
+            $result .= '<div class="owl-carousel-item-text">' . get_the_content() . '</div>';
+        }
+        $result .= '</div>';
+    }
+    $result .= '</div>';
+    
+    // Restore original Post Data
+    wp_reset_postdata();
+
+    return $result;
+}*/
+function rca_top_slider($atts, $content = null) {
+    extract(shortcode_atts(array(
+        'category' => 'Uncategorized',
+                    ), $atts));
+
+    $data_attr = "";
+    foreach ($atts as $key => $value) {
+        if ($key != "category") {
+            $data_attr .= ' data-' . $key . '="' . $value . '" ';
+        }
+    }
+
+    $lazyLoad = array_key_exists("lazyload", $atts) && $atts["lazyload"] == true;
+
+    $args = array(
+        'post_type' => 'owl-carousel',
+        'orderby' => get_option('owl_carousel_orderby', 'post_date'),
+        'order' => 'asc',
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'Carousel',
+                'field' => 'slug',
+                'terms' => $atts['category']
+            )
+        ),
+        'nopaging' => true
+    );
+
+  $result = '<div id="owl-carousel-top-slider" class="owl-carousel owl-carousel-' . sanitize_title($atts['category']) . '" ' . $data_attr . '>';
+
+    $loop = new WP_Query($args);
+    while ($loop->have_posts()) {
+        $loop->the_post();
+
+        $call_to_action_links = get_field('call_to_action_links');
+        // Add image overlay with hook
+        $slide_title = get_the_title();
+        $slide_content = get_the_content();
+        //var_dump($call_to_action_links);
+        $call_to_action_title = get_field('call_to_action_title');
+        $call_to_action_title = 'Read More';
+        $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
+        $meta_link = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_owlurl', true);
+
+        if ($img_src[0]) {
+
+          if($slide_content):
+            $result .= '<div class="item" style="background-image: url('.$img_src[0].'); min-height: 350px;">';
+          else:
+            $result .= '<div class="item" style="background-image: url('.$img_src[0].'); min-height: 350px; padding: 0rem;">';
+          endif;
+
+          if(!$slide_content): 
+            $result .= '<img src="'.$img_src[0].'"style="visibility:hidden;max-height: 350px; padding: 0rem;">';
+          endif;
+           
+          $result .= '<div class="row">';
+            if (!empty($meta_link)) {
+                $result .= '<a href="' . $meta_link . '">';
+            }
+            if (!empty($meta_link)) {
+                $result .= '</a>';
+            }
+
+            $img_overlay = '<div class="small-10 small-offset-1 medium-5 medium-offset-0 large-4 columns">';
+
+            // Slide Meta Checks
+            if($slide_content && $call_to_action_links && $call_to_action_title):
+              $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p><p class="text-center linkp"><a href="' .  $call_to_action_links  . '">'. $call_to_action_title . '</a></p></div>';
+            endif;
+
+            // If we don't have a link but we have content
+            if($slide_content && !$call_to_action_links):
+              $img_overlay .= '<div class="slide-meta"><p>'.$slide_content.'</p></div>';
+            endif;
+    
             $result .= apply_filters('owlcarousel_img_overlay', $img_overlay, $slide_title, $slide_content, $meta_link);
             $result .= '</div></div>';
         } else {

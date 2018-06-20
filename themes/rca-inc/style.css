@@ -3642,7 +3642,7 @@ div.bar.animate::after { background: #c4612b; }
 	#news-all-buttons button { margin: .5rem 0rem; }
 	#webinar-information-block > div > div:not(:last-child) { border-bottom:1px solid #9d938a; padding-bottom: 2rem; }
     .site-branding img { max-width: 350px; width: 95%;}
-    .slide-meta .slide-body { text-align:center; height:175px; line-height:1.1em; }
+    .slide-meta .slide-body { text-align:center; height:175px; line-height:1.1em; font-size:20px !important; }
 }
 
 /*--------------------------------------------------------------
