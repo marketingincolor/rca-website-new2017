@@ -45,11 +45,11 @@ get_header(); ?>
 				get_team_members_department($department);
 				break;
 			
-			case("operations"):
+			case("client-support"):
 				get_team_members_department($department);
 				break;
 
-			case("sales-operations"):
+			case("client-relations"):
 				get_team_members_department($department);
 				break;
 

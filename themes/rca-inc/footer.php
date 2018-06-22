@@ -16,7 +16,7 @@
 
 				<!-- MOBILE/TABLET FOOTER MENUS -->
 				<div class="small-12 columns hide-for-large">
-					<div class="small-5 small-offset-1 columns text-center">
+					<div class="small-10 small-offset-1 columns text-center">
 					<?php 
 						$options = get_option('rca_theme_options');
 						if ( $options['rca_twitter_textbox'] != null || $options['rca_twitter_textbox'] != "") : ?>
@@ -25,9 +25,6 @@
 								</div>
 						<?php endif; 
 					?>
-					<?php wp_nav_menu( array( 'theme_location' => 'rca_mobile_footer_menu_left' ) ); ?>
-					</div>
-					<div class="small-5 end columns text-center">
 					<?php 
 						$options = get_option('rca_theme_options');
 						if ( $options['rca_linkedin_textbox'] != null || $options['rca_linkedin_textbox'] != "") : ?>
@@ -36,10 +33,24 @@
 								</div>
 						<?php endif; 
 					?>
+					<?php 
+						$options = get_option('rca_theme_options');
+						if ( $options['rca_fb_textbox'] != null || $options['rca_fb_textbox'] != "") : ?>
+								<div class="footer-social-link">
+									<a href="<?php echo $options['rca_facebook_textbox']; ?>" title="RCA Inc. Facebook" target="_blank"><i class="fa fa-facebook footer-social-icon" aria-hidden="true" style="min-width:34px;"></i></a>
+								</div>
+						<?php endif; 
+					?>
+					</div>
+					<div class="small-5 small-offset-1 columns text-center">
+					<?php wp_nav_menu( array( 'theme_location' => 'rca_mobile_footer_menu_left' ) ); ?>
+					</div>
+					<div class="small-5 end columns text-center">
 					<?php wp_nav_menu( array( 'theme_location' => 'rca_mobile_footer_menu_right' ) ); ?>
-					</div><br />
-				<p class="copyright text-center" style="padding-top:10px; display:inline-block; width:100%;">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc.<br /> All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102<br>Pleasant Prairie, WI 53158 <br /> <?php echo $options['rca_phone_number']; ?><br><a href="http://dev.marketingincolor.com/rca-website-2017/wp-content/uploads/2017/10/ISO-Certificate-May-2016.pdf" target="_blank" style="font-weight: normal;">ISO 9001 Certified</a></p>
+					</div><br /><br />
+					<p class="copyright text-center" style="padding-top:10px; display:inline-block; width:100%;">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc.<br /> All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102<br>Pleasant Prairie, WI 53158 <br /> <?php echo $options['rca_phone_number']; ?><br><a href="https://www.rcainc.com/wp-content/uploads/2018/05/RCA-ISO-Certificate.pdf" target="_blank" style="font-weight: normal;">ISO 9001 Certified</a></p>
 				</div>
+
 			</div>
 			<!-- END MOBILE/TABLET FOOTER MENUS -->
 
@@ -63,7 +74,15 @@
 								</div>
 						<?php endif; 
 					?>
-					<p class="copyright text-center">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc. All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102, Pleasant Prairie, WI 53158 &bull; <?php echo $options['rca_phone_number']; ?><br><a href="http://dev.marketingincolor.com/rca-website-2017/wp-content/uploads/2017/10/ISO-Certificate-May-2016.pdf" target="_blank" style="font-weight: normal;">ISO 9001 Certified</a></p>
+					<?php 
+						$options = get_option('rca_theme_options');
+						if ( $options['rca_fb_textbox'] != null || $options['rca_fb_textbox'] != "") : ?>
+								<div class="footer-social-link">
+									<a href="<?php echo $options['rca_fb_textbox']; ?>" title="RCA Inc. Facebook" target="_blank"><i class="fa fa-facebook footer-social-icon" aria-hidden="true" style="min-width:34px;"></i></a>
+								</div>
+						<?php endif; 
+					?>
+					<p class="copyright text-center">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc. All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102, Pleasant Prairie, WI 53158 &bull; <?php echo $options['rca_phone_number']; ?><br><a href="https://www.rcainc.com/wp-content/uploads/2018/05/RCA-ISO-Certificate.pdf" target="_blank" style="font-weight: normal;">ISO 9001 Certified</a></p>
 				</div>
 			</div>
 			<!-- /DESKTOP FOOTER MENU -->

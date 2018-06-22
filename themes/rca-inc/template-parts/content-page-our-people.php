@@ -51,15 +51,15 @@
 				<!-- directors-->
 				<div class="row staff-block-area text-center"data-equalizer >
 					<h2 id="directors">Directors</h2>
-					<a href="<?php echo get_permalink( get_page_by_title( 'Operations' ) ) ?>"><h3>Operations</h3></a>
-					<?php get_team_members('operations'); ?>
+					<a href="<?php echo get_permalink( get_page_by_title( 'Client Support' ) ) ?>"><h3>Client Support</h3></a>
+					<?php get_team_members('client-support'); ?>
 				</div>
 				<!-- end directors -->
 
 				<!-- directors > sales operations-->
 				<div class="row staff-block-area no-avatar text-center" data-equalizer>
-					<a href="<?php echo get_permalink( get_page_by_title( 'Sales Operations' ) ) ?>"><h3>Sales Operations</h3></a>
-					<?php get_team_members('sales-operations'); ?>
+					<a href="<?php echo get_permalink( get_page_by_title( 'Client Relations' ) ) ?>"><h3>Client Relations</h3></a>
+					<?php get_team_members('client-relations'); ?>
 				</div>
 				<!-- end directors > sales operations -->
 

@@ -121,7 +121,7 @@ function rca_inc_scripts() {
 
   wp_register_script('afp_script', get_template_directory_uri() . '/js/rca-filter-news.js', false, null, true);
   wp_enqueue_script('afp_script');
- 
+
   wp_localize_script( 'afp_script', 'afp_vars', array(
         'afp_nonce' => wp_create_nonce( 'afp_nonce' ), // Create nonce which we later will use to verify AJAX request
         'afp_ajax_url' => admin_url( 'admin-ajax.php' ),
@@ -180,7 +180,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 function rca_theme_menu()
 {
   //add_theme_page( $page_title, $menu_title, $capability, $menu_slug, $function );
-  add_theme_page( 'Theme Option', 'Theme Options', 'manage_options', 'rca-theme-options', 'rca_theme_page');  
+  add_theme_page( 'Theme Option', 'Theme Options', 'manage_options', 'rca-theme-options', 'rca_theme_page');
 }
 add_action('admin_menu', 'rca_theme_menu');
 
@@ -202,7 +202,7 @@ echo '<div class="wrap">
                 <div class="section-panel">
                   <h1></h1>
                   <form method="post" enctype="multipart/form-data" action="options.php">';
-                  settings_fields('rca_theme_options'); 
+                  settings_fields('rca_theme_options');
                   do_settings_sections('rca_theme_options.php');
                   echo '<p class="submit">
                   <input type="submit" class="button-primary" value="Save Changes" />
@@ -220,7 +220,7 @@ echo '<div class="wrap">
 </div> ';
 
 }
-       
+
 /* ------------------------------------------------------------------------ *
  * Theme Options - Register Settings
  * ------------------------------------------------------------------------ */
@@ -320,7 +320,7 @@ add_action( 'after_setup_theme', 'rca_theme_img_sizes' );
 /* ------------------------------------------------------------------------ *
  * Theme Options - Displays Theme Sections
  * ------------------------------------------------------------------------ */
-function rca_display_section($section){ 
+function rca_display_section($section){
 
 }
 
@@ -335,13 +335,13 @@ function rca_display_setting($args)
 
     $options = get_option( $option_name );
 
-    switch ( $type ) {  
-          case 'text':  
-              $options[$id] = stripslashes($options[$id]);  
-              $options[$id] = esc_attr( $options[$id]);  
+    switch ( $type ) {
+          case 'text':
+              $options[$id] = stripslashes($options[$id]);
+              $options[$id] = esc_attr( $options[$id]);
               echo "<input class='regular-text$class' type='text' id='$id' name='" . $option_name . "[$id]' value='$options[$id]' />";
-              echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";  
-          break;  
+              echo ($desc != '') ? "<br /><span class='description'>$desc</span>" : "";
+          break;
     }
 }
 
@@ -353,7 +353,7 @@ function rca_validate_settings($input)
   foreach($input as $k => $v)
   {
     $newinput[$k] = trim($v);
-    
+
     // Check the input is a letter or a number
     // if(!preg_match('/^[A-Z0-9 _]*$/i', $v)) {
     //   $newinput[$k] = '';
@@ -407,10 +407,11 @@ function taleo_jobs(){
 
   //GET RESULTS BASED ON QUERY OF STATUS OPEN
   $results = $Taleo->get_records('requisition', $query);
-  
+  $errors = $Taleo->get_errors();
+
   // LOOP THROUGH RESULTS TO GET TITLE AND URL OF JOB
   $return = '<ul>';
-  foreach ($results->searchResults as $job) { 
+  foreach ($results->searchResults as $job) {
     $return .= '<li class="job-title" style="margin-bottom:0px"><a href="https://chj.tbe.taleo.net/chj05/ats/careers/requisition.jsp?org=RCA&cws=1&rid=' . $job->requisition->reqId . '" target="_blank" style="font-weight: normal; line-height: 1.6; margin-bottom: 0px; ">' . $job->requisition->ResourceTitle . '</a></li>';
 
   }
@@ -468,9 +469,9 @@ add_shortcode( 'taleo', 'taleo_jobs' );
         $call_to_action_links = get_field('call_to_action_links');
 
         if($call_to_action_links == FALSE) {
-          $call_to_action_links = '#!';
+          //$call_to_action_links = '#!';
         }
-        //var_dump($call_to_action_links);
+        var_dump($call_to_action_links);
         $call_to_action_title = get_field('call_to_action_title');
         if($call_to_action_title == FALSE) {
           $call_to_action_title = 'Read More';
@@ -502,8 +503,8 @@ add_shortcode( 'taleo', 'taleo_jobs' );
         $result .= '</div>';
     }
     $result .= '</div>';
-    
-    // Restore original Post Data
+
+    // Restore original Post Data 
     wp_reset_postdata();
 
     return $result;
@@ -644,7 +645,7 @@ function rca_top_slider_2($atts, $content = null) {
         $result .= '</div>';
     }
     $result .= '</div>';
-    
+
     /* Restore original Post Data */
     wp_reset_postdata();
 
@@ -724,7 +725,7 @@ function rca_news_slider($atts, $content = null) {
         $result .= '</div>';
     }
     $result .= '</div>';
-    
+
     /* Restore original Post Data */
     wp_reset_postdata();
 
@@ -922,8 +923,8 @@ function get_team_members($department) {
 
       echo '<div class="small-10 small-offset-1 staff-column ' . $additionalClass . ' ' . $missing_avatar .' large-2 large-offset-0 columns relative ' . $end .'" data-equalizer-watch>';
 
-      // DISPLAY THE AVATAR INSIDE DIV. 
-      if( !empty($photo)) : 
+      // DISPLAY THE AVATAR INSIDE DIV.
+      if( !empty($photo)) :
         echo $photo;
       endif;
 
@@ -938,7 +939,7 @@ function get_team_members($department) {
         echo '<div class="staff-position">' . $position .  '</div>';
       }
 
-      if($department == 'operations' || $department == 'sales-operations' || $department == 'finance' || $department == 'directors') {
+      if($department == 'client-support' || $department == 'client-relations' || $department == 'finance' || $department == 'directors') {
         $bio_link = $department . '#' . preg_replace('/[\s_]/', '-', get_the_title($team_members[$count]->ID));
       }
       else{
@@ -950,7 +951,7 @@ function get_team_members($department) {
     }
   wp_reset_postdata();
   }
-  
+
   else { echo 'No Team Members Found'; }
 }
 
@@ -1009,7 +1010,7 @@ function get_cat_image($title) {
   // $term_obj = get_term_by( 'name', $title, 'expertise' );
   // $term_id = $term_obj->term_taxonomy_id;
   // $icon_img = get_field('taxonomy_image',  'expertise_' . $term_id);
-  // 
+  //
   $template = get_stylesheet_directory_uri();
   switch($title) {
     case('Case Studies'):
@@ -1160,7 +1161,7 @@ function get_cat_image($title) {
   return $svg;
 }
 
-function get_service_image($title) { 
+function get_service_image($title) {
 
   $template_path = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/';
   switch($title) {
@@ -1325,34 +1326,34 @@ class RCA_TAXONOMY_WALKER extends Walker_Nav_Menu {
  * Old function used for "dot" style pagination.
  ***********************************************************************/
 function rca_tax_post_pagination() {
- 
+
 
     global $wp_query;
 
-    // if( is_page('view-all') ):    
+    // if( is_page('view-all') ):
     //   $temp_query = $wp_query;
     //   $wp_query = NULL;
     //   $wp_query = $temp_query;
     //   $wp_query = $view_all;
     // endif;
-    
+
     /** Stop execution if there's only 1 page */
     if( $wp_query->max_num_pages <= 1 )
         return;
- 
+
     $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
     $max   = intval( $wp_query->max_num_pages );
- 
+
     /** Add current page to the array */
     if ( $paged >= 1 )
         $links[] = $paged;
- 
+
     /** Add the pages around the current page to the array */
     if ( $paged >= 3 ) {
         $links[] = $paged - 1;
         $links[] = $paged - 2;
     }
- 
+
     if ( ( $paged + 2 ) <= $max ) {
         $links[] = $paged + 2;
         $links[] = $paged + 1;
@@ -1362,7 +1363,7 @@ function rca_tax_post_pagination() {
     if ($paged != $max - 1) {
       array_pop($links);
     }
-    
+
     echo '<div class="navigation text-center"><ul id="pagination">' . "\n";
 
     /** Previous Post Link */
@@ -1370,42 +1371,42 @@ function rca_tax_post_pagination() {
         printf( get_previous_posts_link('<i class="fa fa-angle-left" aria-hidden="true"></i>') );
     else:
         printf( get_previous_posts_link('<i class="fa fa-angle-left" aria-hidden="true"></i>') );
-    endif;   
- 
+    endif;
+
     /** Link to first page, plus ellipses if necessary */
     if ( ! in_array( 1, $links ) ) {
         $class = 1 == $paged ? ' class="active"' : '';
 
         printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
- 
+
         if ( ! in_array( 2, $links ) )
             echo '<li>…</li>';
     }
- 
+
     /** Link to current page, plus 2 pages in either direction if necessary */
     foreach ( (array) $links as $link ) {
         $class = $paged == $link ? ' class="active"' : '';
         printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
     }
- 
+
     /** Link to last page, plus ellipses if necessary */
     // if ( ! in_array( $max, $links ) ) {
     //     if ( ! in_array( $max - 1, $links ) )
     //         echo '<li>…</li>' . "\n";
- 
+
     //     $class = $paged == $max ? ' class="active"' : '';
     //     printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), '<img src="'.get_stylesheet_directory_uri().'/images/RCA_MOBILE_HOMEPAGE_INDICATOR.jpg' .'" />' );
     // }
- 
+
     $difference = $max - $paged;
 
     while ($difference > 1) {
       printf( get_next_posts_link( '<i class="fa fa-angle-right" aria-hidden="true"></i>' ) );
       break;
     }
- 
+
     echo '</ul></div>' . "\n";
- 
+
 }
 
 
@@ -1456,7 +1457,7 @@ function get_team_members_department($department) {
       if ( !empty($position) ) {
         echo '<h2 class="text-center">' . $position . '</h2>';
       }
-      if( !empty($email)) : 
+      if( !empty($email)) :
         echo '<div id="individual-email" class="text-center"><i class="fa fa-envelope" aria-hidden="true"></i> '. $email .'</div>';
       endif;
       echo wpautop( $member_description, $br = true );
@@ -1466,12 +1467,12 @@ function get_team_members_department($department) {
     }
 
   }
-  
+
   else { echo 'No Team Members Found'; }
 }
 
 /******************************************************************
- * Old functions used for returning random pieces of content. 
+ * Old functions used for returning random pieces of content.
  * Leaving them should the need to be used again.
  ******************************************************************/
 function get_random_case_study() {
@@ -1503,7 +1504,7 @@ function get_random_whitepaper() {
     'posts_per_page' => 1,
     'orderby' => 'rand',
   );
-  
+
   return $r_whitepaper_args;
 }
 
@@ -1513,7 +1514,7 @@ function get_random_visualresource() {
     'posts_per_page' => 1,
     'orderby' => 'rand',
   );
-  
+
   return $r_visualresource_args;
 }
 
@@ -1523,7 +1524,7 @@ function get_random_publishedarticle() {
     'posts_per_page' => 1,
     'orderby' => 'rand',
   );
-  
+
   return $r_publishedarticle_args;
 }
 
@@ -1584,7 +1585,7 @@ function rca_related_content_mobile($atts, $content = null) {
     }
 
     $result .= '</div>';
-    
+
     /* Restore original Post Data */
     wp_reset_postdata();
 
@@ -1739,7 +1740,7 @@ add_filter( 'pre_user_description', 'wp_filter_post_kses');
  * @return [type]         [description]
  ******************************************************************/
   function webinars_columns_head ( $columns ) {
-   return array_merge ( $columns, array ( 
+   return array_merge ( $columns, array (
      'webinar_type' => __( 'Webinar Type' ),
    ) );
  }
@@ -1773,7 +1774,7 @@ function webinars_columns_content($column) {
  ******************************************************************/
 function sort_webinar_status_column( $columns ) {
     $columns['webinar_type'] = 'webinar_type';
- 
+
     return $columns;
 }
 add_filter( 'manage_edit-webinars_sortable_columns', 'sort_webinar_status_column' );
@@ -1827,10 +1828,10 @@ function rca_staff_articles($atts, $content = null) {
             $result .= '</div></div>';
             $result .= '</div></div>';
           }
-    
+
 
     $result .= '</div>';
-    
+
     /* Restore original Post Data */
     wp_reset_postdata();
 
