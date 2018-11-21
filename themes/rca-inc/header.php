@@ -72,43 +72,6 @@
 			// })();
 		</script>
 
-		<!-- Global site tag (gtag.js) - Google AdWords: 819623678 -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-819623678"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'AW-819623678');
-		</script>
-		<!-- /Global site tag (gtag.js) - Google AdWords: 819623678 -->
-
-		<!-- AdWords: Event snippet for Contact Us Form Filled conversion page -->
-		<?php if( is_page('contact-us-success') || is_page('success') ) : ?>
-		<script>
-		  gtag('event', 'conversion', {'send_to': 'AW-819623678/pBgDCMeZ3HsQ_u3phgM'});
-		</script>
-		<?php endif; ?>
-		<!-- /Adwords: Event snippet for Contact Us Form Filled conversion page -->
-
-		<!-- AdWords: Event snippet for Expertise Form Filled conversion page -->
-		<script>
-		function gtag_report_conversion(url) {
-		  var callback = function () {
-		    if (typeof(url) != 'undefined') {
-		      window.location = url;
-		    }
-		  };
-		  gtag('event', 'conversion', {
-		      'send_to': 'AW-819623678/uKvhCL_813sQ_u3phgM',
-		      'event_callback': callback
-		  });
-		  return false;
-		}
-		</script>
-		<!-- /AdWords: Event snippet for Expertise Form Filled conversion page  -->
-
-
 		<!-- WP HEADER -->
 		<?php wp_head(); ?>
 
