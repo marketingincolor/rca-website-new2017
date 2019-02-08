@@ -3,101 +3,105 @@
 			<div class="small-10 small-offset-1 columns text-center">
 				<div id="orange-error-message"></div>
 			</div>
-			<div class="small-10 small-offset-1 columns end">
-				<form id="gated-content-form" name="modal-form" action="" method="post">
-			    <div class="row">
-			    	<div class="large-6 columns">
-			    		<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-			    	</div>
-			    	<div class="large-6 columns">
-			    		<input type="text" name="last_name" id="form-last-name" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-			    	</div>
-			    </div>
-			    <div class="row">
-			    	<div class="large-6 columns">
-			    		<input type="email" name="email_address" id="form-email" placeholder="Email Address*" required><i class="fa fa-envelope" aria-hidden="true"></i>
-			    	</div>
-			    	<div class="large-6 columns">
-			    		<input type="number" name="phone_number" id="form-phone" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
-			    	</div>
-			    </div>
-					<div class="row">
-						<div class="large-6 columns">
-							<input type="text" name="address" id="form-address" placeholder="Address*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-						<div class="large-6 columns">
-							<input type="text" name="city" id="form-city" placeholder="City*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-6 columns">
-							<input type="text" name="state" id="form-state" placeholder="State*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-						<div class="large-6 columns">
-							<input type="text" name="country" id="form-country" placeholder="Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-6 columns">
-				    	<input type="number" name="zip_code" id="form-zip" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-						<div class="large-6 columns">
-				    	<input type="text" name="company" id="form-company" placeholder="Company*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-12 columns">
-							<label for="" class="industry-label text-left"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
-							<div class="checkbox-group required">
-								<div class="medium-4 large-2 small-6 columns">
-									<input id="a1" type='checkbox' name='industry[]' class="chkrad X fade" value='Biotechnology' />
-									<label class="check-label" for="a1"> Biotechnology</label>
+			<div class="small-10 small-offset-1 columns end form-box">
+				<div class="row" >
+					<div class="small-10 small-offset-1 columns">
+						<form id="gated-content-form" name="modal-form" action="" method="post">
+					    <div class="row">
+					    	<div class="large-6 columns">
+					    		<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
+					    	</div>
+					    	<div class="large-6 columns">
+					    		<input type="text" name="last_name" id="form-last-name" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
+					    	</div>
+					    </div>
+					    <div class="row">
+					    	<div class="large-6 columns">
+					    		<input type="email" name="email_address" id="form-email" placeholder="Email Address*" required><i class="fa fa-envelope" aria-hidden="true"></i>
+					    	</div>
+					    	<div class="large-6 columns">
+					    		<input type="number" name="phone_number" id="form-phone" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
+					    	</div>
+					    </div>
+							<div class="row">
+								<div class="large-6 columns">
+									<input type="text" name="address" id="form-address" placeholder="Address*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 								</div>
-								<div class="medium-4 large-2 small-6 columns">
-									<input id="a2" type='checkbox' name='industry[]' class="chkrad X fade" value='Medical Device' />
-									<label class="check-label" for="a2"> Medical Device</label>
-								</div>
-								<div class="medium-4 large-2 small-6 columns">
-									<input id="a3" type='checkbox' name='industry[]' class="chkrad X fade" value='Pharmaceutical' />
-									<label class="check-label" for="a3"> Pharmaceutical</label>
-								</div>
-								<div class="medium-4 large-2 small-6 columns">
-									<input id="a4" type='checkbox' name='industry[]' class="chkrad X fade" value='Law Firm' />
-									<label class="check-label" for="a4"> Law Firm</label>
-								</div>
-								<div class="medium-4 large-2 small-6 columns end">
-									<input id="a5" type='checkbox' name='industry[]' class="chkrad X fade" value='Other' />
-									<label class="check-label" for="a5"> Other</label>
+								<div class="large-6 columns">
+									<input type="text" name="city" id="form-city" placeholder="City*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
 								</div>
 							</div>
-						</div>
+							<div class="row">
+								<div class="large-6 columns">
+									<input type="text" name="state" id="form-state" placeholder="State*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+								</div>
+								<div class="large-6 columns">
+									<input type="text" name="country" id="form-country" placeholder="Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="row">
+								<div class="large-6 columns">
+						    	<input type="number" name="zip_code" id="form-zip" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+								</div>
+								<div class="large-6 columns">
+						    	<input type="text" name="company" id="form-company" placeholder="Company*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="row">
+								<div class="large-12 columns">
+									<label for="" class="industry-label text-left"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
+									<div class="checkbox-group required">
+										<div class="medium-4 large-2 small-6 columns">
+											<input id="a1" type='checkbox' name='industry[]' class="chkrad X fade" value='Biotechnology' />
+											<label class="check-label" for="a1"> Biotechnology</label>
+										</div>
+										<div class="medium-4 large-2 small-6 columns">
+											<input id="a2" type='checkbox' name='industry[]' class="chkrad X fade" value='Medical Device' />
+											<label class="check-label" for="a2"> Medical Device</label>
+										</div>
+										<div class="medium-4 large-2 small-6 columns">
+											<input id="a3" type='checkbox' name='industry[]' class="chkrad X fade" value='Pharmaceutical' />
+											<label class="check-label" for="a3"> Pharmaceutical</label>
+										</div>
+										<div class="medium-4 large-2 small-6 columns">
+											<input id="a4" type='checkbox' name='industry[]' class="chkrad X fade" value='Law Firm' />
+											<label class="check-label" for="a4"> Law Firm</label>
+										</div>
+										<div class="medium-4 large-2 small-6 columns end">
+											<input id="a5" type='checkbox' name='industry[]' class="chkrad X fade" value='Other' />
+											<label class="check-label" for="a5"> Other</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="large-12 columns">
+									<label for="" class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions</label>
+									<textarea name="comments" id="form-comments" cols="30" rows="4"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="large-6 columns">
+								  <div class="checkbox-group">
+								    <input id="agree" type="checkbox" name="agree" value="true" checked="checked">
+								    <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
+								  </div>
+								</div>
+								<div class="large-6 columns text-right">
+									<p>*=Required</p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="large-12 columns">
+									<?php global $wp;
+									$current_url = home_url(add_query_arg(array(),$wp->request)); ?>
+								  <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
+									<input type="submit" value="Submit" id="form-submit-modal">
+								</div>
+							</div>
+						</form>
 					</div>
-					<div class="row">
-						<div class="large-12 columns">
-							<label for="" class="text-left"><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions</label>
-							<textarea name="comments" id="form-comments" cols="30" rows="4"></textarea>
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-6 columns">
-						  <div class="checkbox-group">
-						    <input id="agree" type="checkbox" name="agree" value="true" checked="checked">
-						    <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
-						  </div>
-						</div>
-						<div class="large-6 columns text-right">
-							<p>*=Required</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="large-12 columns">
-							<?php global $wp;
-							$current_url = home_url(add_query_arg(array(),$wp->request)); ?>
-						  <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
-							<input type="submit" value="Submit" id="form-submit-modal">
-						</div>
-					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>

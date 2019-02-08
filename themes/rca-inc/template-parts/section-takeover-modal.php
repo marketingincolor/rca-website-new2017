@@ -77,16 +77,33 @@
 
 
 <div class="reveal" id="takeover-modal" data-reveal data-options="closeOnBackgroundClick:false;closeOnEsc:false;">
+  <div class="takeover-header">
+    <div class="row takeover-header-box">
+      <div class="small-10 small-centered columns text-center takeover-logo">
+        <img class="takeover-logo-img" src="<?php echo get_template_directory_uri(); ?>/images/rca-takeover-logo-svg.svg">
+      </div>
+    </div>
+  </div>
   <div class="row">
-  	<div class="small-10 small-centered columns text-center">
+  	<div class="small-10 small-centered columns">
+      <h4 class="takeover-tag"><?php echo $type; ?></h4>
   		<h1><?php the_title(); ?></h1>
       <?php if(get_field('custom_excerpt')): ?>
   		<p><small><?php the_field('custom_excerpt'); ?></small></p>
       <?php endif; ?>
-  		<p><strong>We're happy to share our insights that illustrate our work and expertise.<br class="hide-for-small-only">Please complete the form to access the <?php echo $type; ?>.</strong></p>
+  		<p><strong>About RCA</strong><br><small>We're happy to share our insights that illustrate our work and expertise.<br class="hide-for-small-only">Please complete the form to access the <?php echo $type; ?>.</small></p>
   	</div>
   </div>
   <?php get_template_part('template-parts/section', 'learn-more-form-container-modal'); ?>
+  <div class="takeover-footer">
+    <div class="row takeover-footer-content">
+      <div class="small-10 small-centered columns text-center takeover-footer-meta">
+        Copyright &copy; <?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc.<br class="hide-for-medium"> All Rights Reserved.<br />
+        10411 Corporate Drive, Suite 102, Pleasant Prairie, WI 53158 <span class="hide-for-small-only">&bull;</span><br class="hide-for-medium"> 262-288-6300<br />
+        ISO 9011 Certified
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -95,11 +112,46 @@
 		max-width: 100%;
 		height: 100%;
 		top:0 !important;
-		background-color: rgba(255,255,255,0.9);
+    background-color: /*rgba(255,255,255,0.9);*/ #f8f7f5;
+    padding:0 !important;
 	}
 	#learn-more-form-container-white h1 {
 		display: none;
 	}
+  #learn-more-form-container-white input[type="submit"] {
+    max-width:180px;
+  }
+  .form-box{
+    padding:4em 0em;
+    background-color:#fff;
+    box-shadow: 0px 3px 7.2px 0.8px rgba(0, 0, 0, 0.1);
+  }
+  .takeover-tag{
+    background-color: gray;
+    display: inline-block;
+    padding: 5px 15px 3px 15px;
+    color: white;
+    margin-bottom:4%;
+    font-size: 16px;
+    font-weight:bold;
+    text-transform: uppercase;
+  }
+  .takeover-header{
+    background: url(<?php echo get_template_directory_uri(); ?>/images/rca-takeover-header-bg.jpg) no-repeat center center / cover;
+    margin-bottom:5%;
+  }
+  .takeover-header-box{
+    padding:4em 0em;
+    min-height:;
+  }
+  .takeover-footer{
+    background-color:#2b2b2b;
+    margin-top:4em;
+    color:#fff;
+    padding:3.25em;
+    font-size:.75em;
+    line-height:1.4;
+  }
 </style>
 
 <!-- Sharpspring native form code -->
