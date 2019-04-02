@@ -89,9 +89,10 @@
       <h4 class="takeover-tag"><?php echo $type; ?></h4>
   		<h1><?php the_title(); ?></h1>
       <?php if(get_field('custom_excerpt')): ?>
-  		<p><small><?php the_field('custom_excerpt'); ?></small></p>
+  		<p><?php the_field('custom_excerpt'); ?></p>
       <?php endif; ?>
-  		<p><strong>About RCA</strong><br><small>We're happy to share our insights that illustrate our work and expertise.<br class="hide-for-small-only">Please complete the form to access the <?php echo $type; ?>.</small></p>
+  		<p><strong>About RCA</strong><br>Regulatory Compliance Associates<sup>®</sup> Inc. (RCA) provides worldwide services to the pharmaceutical, biologic, sterile compounding, biotechnology, and medical device industries for resolution of compliance and regulatory challenges.</p>
+      <p style="font-size:22px; font-weight:bold; margin-bottom:0;">Please complete the form to access the <?php echo $type; ?>.</p>
   	</div>
   </div>
   <?php get_template_part('template-parts/section', 'learn-more-form-container-modal'); ?>
