@@ -165,7 +165,7 @@
 <script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/noform.js?ver=1.24" ></script>
 
 <!-- Start Dynamic Script Example -->
-<script type="text/javascript">
+<script type="text/javascript">  
 var callThisOnReturn = function(resp) {
   if (resp && resp.contact) {
   	var takeover = jQuery('#learn-more-form-container-white');
@@ -230,6 +230,7 @@ var callThisOnReturn = function(resp) {
       
   	});
   }else{
+    jQuery('#takeover-modal').foundation();
   	jQuery('#takeover-modal').foundation('open');
     console.log('else');
 
