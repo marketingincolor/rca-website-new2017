@@ -6,7 +6,7 @@
  * Author: AD.,NB.,ET., MARKETING IN COLOR
  * Contains the closing of the #content div and all content after.
  */
-
+global $lander;
 ?>
 
 	</div>
@@ -16,6 +16,8 @@
 
 				<!-- MOBILE/TABLET FOOTER MENUS -->
 				<div class="small-12 columns hide-for-large">
+
+					<?php if (!$lander) : ?>
 					<div class="small-10 small-offset-1 columns text-center">
 					<?php 
 						$options = get_option('rca_theme_options');
@@ -48,6 +50,8 @@
 					<div class="small-5 end columns text-center">
 					<?php wp_nav_menu( array( 'theme_location' => 'rca_mobile_footer_menu_right' ) ); ?>
 					</div><br /><br />
+					<?php endif; ?>
+
 					<p class="copyright text-center" style="padding-top:10px; display:inline-block; width:100%;">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc.<br /> All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102<br>Pleasant Prairie, WI 53158 <br /> <?php echo $options['rca_phone_number']; ?><br><a href="https://www.rcainc.com/wp-content/uploads/2018/05/RCA-ISO-Certificate.pdf" target="_blank" style="font-weight: normal;">ISO 9001 Certified</a></p>
 				</div>
 
@@ -57,6 +61,8 @@
 			<!-- DESKTOP FOOTER MENU -->
 			<div class="row">
 				<div class="small-10 small-offset-1 columns show-for-large text-center">
+
+					<?php if (!$lander) : ?>
 					<?php wp_nav_menu( array( 'theme_location' => 'rca_desktop_footer_menu' ) ); ?>
 					<?php 
 						$options = get_option('rca_theme_options');
@@ -82,6 +88,8 @@
 								</div>
 						<?php endif; 
 					?>
+					<?php endif; ?>
+
 					<p class="copyright text-center">Copyright &copy;<?php echo date('Y'); ?> by Regulatory Compliance Associates&reg; Inc. All Rights Reserved. <br /> 10411 Corporate Drive, Suite 102, Pleasant Prairie, WI 53158 &bull; <?php echo $options['rca_phone_number']; ?><br><a href="https://www.rcainc.com/wp-content/uploads/2018/05/RCA-ISO-Certificate.pdf" target="_blank" style="font-weight: normal;">ISO 9001 Certified</a></p>
 				</div>
 			</div>

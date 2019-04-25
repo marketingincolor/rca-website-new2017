@@ -1,12 +1,9 @@
 <?php
-
 /********************************
  * RCA INC.
  * BUILT BY MARKETING IN COLOR.
  ********************************/
-
-?>
-
+global $lander; ?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
@@ -102,7 +99,7 @@
 					</div>
 					<!-- /LOGO -->
 
-
+					<?php if (!$lander) : ?>
 					<!-- PRIMARY MENU -->
 					<div class="top-menu">
 						<div class="row">
@@ -142,6 +139,7 @@
 						</div>
 					</div>
 					<!-- /SECONDARY NAV ON DESKTOP -->
+					<?php endif; ?>
 
 				</section>
 				<!-- ENTIRE HEADER ON DESKTOP -->
@@ -154,7 +152,7 @@
 							<?php the_custom_logo(); ?>
 						</div>
 					</div>
-
+				<?php if (!$lander) : ?>
 					<!-- CONTACT ON MOBILE BUTTON -->
 					<div id="mobile-top-bar" class="row expanded title-bar hide-for-large" data-equalizer>
 						<div class="small-6 columns text-center" data-equalizer-watch style="padding: 1rem 0rem;">
@@ -198,7 +196,8 @@
 						wp_nav_menu( $args );
 					?>
 					<!-- /MOBILE MENU -->
-
+				<?php endif; ?>
+				</section>
 			</header>
 
 			<div id="content" class="site-content relative">
