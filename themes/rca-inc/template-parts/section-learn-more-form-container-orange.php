@@ -10,7 +10,7 @@ wp_reset_postdata();
 			</div>
 		</div>
 		<div class="row">
-			<div class="small-8 small-offset-2 formbox">
+			<div class="small-12 medium-8 medium-offset-2 formbox">
 				<form id="orange-form" name="orange-form" method="post">
 					    <div class="large-4 columns">
 					    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
@@ -88,13 +88,13 @@ wp_reset_postdata();
 
 			//change color of checkbox labels if one box is checked
 			if($thisForm.find('div.checkbox-group.required :checkbox:checked').length > 0){
-				$thisForm.find('.industry-label').css({'color':'rgba(255,255,255,1)'});
+				//$thisForm.find('.industry-label').css({'color':'rgba(255,255,255,1)'});
 			}else{
-				$thisForm.find('.industry-label').css({'color':'rgba(255,255,255,0.4)'});
+				//$thisForm.find('.industry-label').css({'color':'rgba(255,255,255,0.4)'});
 			}
 			//change color of checkboxes and their labels if checked
-			$thisForm.find('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'rgba(255,255,255,1'});
-			$thisForm.find('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(255,255,255,0.4'});
+			//$thisForm.find('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'rgba(255,255,255,1'});
+			//$thisForm.find('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(255,255,255,0.4'});
 
 			// change color of labels when their input field is valid
 			if($(this).is(":valid")){
@@ -187,22 +187,13 @@ wp_reset_postdata();
 
 		    //document.forms["blue-form"].submit();
             //__ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
-            __ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
+            __ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '0e1793fe-4c38-469c-b049-ff76c0dbfbd9']);
             return false;
 
 		  }
 	  });
 
 	</script>
-<script type="text/javascript">
-    var __ss_noform = __ss_noform || [];
-    __ss_noform.push(['baseURI', 'https://app-3QMGUWHS20.marketingautomation.services/webforms/receivePostback/MzawMDGwMDYyAgA/']);
-    __ss_noform.push(['form','orange-form', '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
-    __ss_noform.push(['submitType', 'manual']);
-</script>
-<script type="text/javascript" src="https://koi-3QMGUWHS20.marketingautomation.services/client/noform.js?ver=1.24" ></script>
-
-
 <!-- USE THIS NEW CODE BLOCK BELOW FOR FORM!!! -->
 <script type="text/javascript">
     var __ss_noform = __ss_noform || [];
@@ -242,13 +233,13 @@ var callThisOnReturn = function(resp) {
 
     	//change color of checkbox labels if one box is checked
     	if(thisForm.find('div.checkbox-group.required :checkbox:checked').length > 0){
-    		thisForm.find('.industry-label').css({'color':'rgba(255,255,255,1)'});
+    		//thisForm.find('.industry-label').css({'color':'rgba(255,255,255,1)'});
     	}else{
-    		thisForm.find('.industry-label').css({'color':'rgba(255,255,255,0.4)'});
+    		//thisForm.find('.industry-label').css({'color':'rgba(255,255,255,0.4)'});
     	}
     	//change color of checkboxes and their labels if checked
-    	thisForm.find('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'rgba(255,255,255,1'});
-    	thisForm.find('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(255,255,255,0.4'});
+    	//thisForm.find('.checkbox-group').find(':checkbox:checked').next('label').css({'color':'rgba(255,255,255,1'});
+    	//thisForm.find('.checkbox-group').find(':checkbox:not(:checked)').next('label').css({'color':'rgba(255,255,255,0.4'});
 
     	// change color of labels when their input field is valid
     	thisFormLabel = thisForm.find('input,textarea');

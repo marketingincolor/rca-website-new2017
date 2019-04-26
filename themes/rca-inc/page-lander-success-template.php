@@ -1,7 +1,7 @@
 <?php
-/* Template Name: Landing Page Template */
+/* Template Name: Landing Success Page Template */
 /**
- * Purpose: Landing Page Template - reusable
+ * Purpose: Landing Success Page Template - reusable
  * Date: 4/23/2019
  * Author: ET, MARKETING IN COLOR
  */
@@ -18,7 +18,6 @@ $sub_container_two = get_field('sub_container_two');
 $sub_container_two_style = get_field('sub_container_two_style');
 $sub_container_three = get_field('sub_container_three');
 $sub_container_three_style = get_field('sub_container_three_style');
-$has_template_form = get_field('template_form');
 
 get_header(); ?>
 
@@ -80,11 +79,7 @@ get_header(); ?>
 
 	<div style="clear:both;"></div>
 
-<?php if ( $has_template_form != '' ) : ?>
-	<div id="contact-learn-more-wrapper">
-		<?php get_template_part('template-parts/section', $has_template_form); ?>
-	</div>
-<?php endif; ?>
+
 
 <?php
 get_footer();
