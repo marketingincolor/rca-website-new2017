@@ -8,7 +8,6 @@
 global $post, $lander;
 $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 $lander = TRUE;
-
 $cta_logo = get_field('cta_logo');
 $cta_title = get_field('cta_title');
 $cta_content = get_field('cta_content');

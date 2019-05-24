@@ -10,7 +10,7 @@ global $lander;
 ?>
 
 	</div>
-	<footer id="colophon" class="site-footer">
+	<footer id="<?php echo ( is_page_template( 'page-lander-success-template.php' ) ? 'nocolophon' : 'colophon' ) ; ?>" class="site-footer">
 		<div class="site-info container">
 			<div class="row">
 

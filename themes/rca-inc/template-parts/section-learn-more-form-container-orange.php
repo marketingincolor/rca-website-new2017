@@ -187,7 +187,7 @@ wp_reset_postdata();
 
 		    //document.forms["blue-form"].submit();
             //__ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
-            __ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '0e1793fe-4c38-469c-b049-ff76c0dbfbd9']);
+            __ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/cphi/success';}, '0e1793fe-4c38-469c-b049-ff76c0dbfbd9']);
             return false;
 
 		  }

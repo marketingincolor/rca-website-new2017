@@ -25,7 +25,7 @@ get_header(); ?>
 	<div id="featured-img-wrapper" class="default">
 		<div id="featured-img" style="background: linear-gradient(rgba(196,97,43, 0.7), rgba(196,97,43, 0.7)), rgba(196,97,43,0.7) url('<?php echo $backgroundImg[0]; ?>'); background-size: cover;">
 			<div class="column row collapse">
-		        <div class="small-10 small-offset-1 columns">
+		        <div class="small-10 small-offset-1 columns text-center">
 		        <?php if ( $cta_logo ) : ?>
 		        	<div class="cta-image"><img src="<?php echo $cta_logo; ?>" alt="<?php echo $cta_title; ?>"></div>
 		        <?php endif; ?>

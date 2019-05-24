@@ -2039,7 +2039,18 @@ input[type=number]::-webkit-outer-spin-button {
 #learn-more-form-container-orange input[type="checkbox"]:checked + label:before{
   background-color: #363636;
 }
-
+.success-cta button{
+	color: #FFF;
+	border: 3px solid #FFF;
+	background:transparent;
+	padding: 5px 15px;
+	font-size: 16px;
+	transition: all 0.25s ease-in-out;
+}
+.success-cta button:hover{
+	color: #c4612b;
+	background-color: #FFF
+}
 #webinar-content { padding: 0rem 0rem 3.5rem 0rem; }
 #your-expert-presenters #presenter-block:not(:last-child) { margin-bottom: 3rem; }
 #your-expert-presenters img, #your-expert-presenters h3 { display: inline-block;  }
