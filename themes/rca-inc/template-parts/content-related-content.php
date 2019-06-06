@@ -21,6 +21,8 @@ elseif($post_type == 'white_papers'):
   $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/White-Papers-Icon-Gray-01.svg';
 elseif($post_type == 'visual_resources'):
   $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
+elseif($post_type == 'poddcasts'):
+  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Podcasts-Icon-Gray-01.svg';
 elseif($post_type == 'published_articles'):
   $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
 endif;
@@ -41,7 +43,7 @@ if (!is_page()) {
 	);
 }else{
 	$args = array(
-		'post_type'      => array('webinars', 'published_articles', 'case_studies','visual_resources','white_papers'),
+		'post_type'      => array('webinars', 'published_articles', 'case_studies', 'visual_resources', 'podcasts', 'white_papers'),
 		'posts_per_page' => 3,
 		'post__not_in'   => array($post->ID),
 	  'orderby'        => 'rand',
@@ -97,6 +99,8 @@ if ( $the_query->have_posts() ) {
 					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/White-Papers-Icon-Gray-01.svg';
 					elseif($post_type == 'visual_resources'):
 					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
+					elseif($post_type == 'podcasts'):
+					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Podcasts-Icon-Gray-01.svg';
 					elseif($post_type == 'published_articles'):
 					  $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
 					endif;

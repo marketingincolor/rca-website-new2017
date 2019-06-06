@@ -1269,6 +1269,8 @@ main { margin-bottom: 0rem; }
 .about-us-testimonial p { color: #fff; font-family: 'Lora',margin-bottom: 0; sans-serif; font-weight: bold; font-size: 1.25rem; font-style: italic; margin-bottom:0rem; }
 
 .item-block { margin: 1rem 0rem; }
+.podcast-block { margin:2rem 0rem 4rem 0rem; border-left:10px solid #c4612b;  }
+.podcast-block a { text-decoration:underline; }
 .archived-title { height: 80px; }
 .archive-row { margin-bottom:2rem; }
 
@@ -3436,10 +3438,10 @@ input#search-input {
 #menu-secondary-menu a:hover .cat-image {
   background-color: #FFF;
 }
-#White_Papers_Icon,#Posters_Icon,#Published_Articles_Icon,#webinar_icon,#view_all_icon,#Case_Studies_Icon{
+#White_Papers_Icon,#Posters_Icon,#Published_Articles_Icon,#webinar_icon,#view_all_icon,#Case_Studies_Icon,#Podcasts_Icon{
   transition: all 0.25s ease-in-out;
 }
-#menu-secondary-menu a:hover #White_Papers_Icon,#menu-secondary-menu a:hover #Posters_Icon,#menu-secondary-menu a:hover #Published_Articles_Icon,#menu-secondary-menu a:hover #webinar_icon,#menu-secondary-menu a:hover #Case_Studies_Icon,#menu-secondary-menu a:hover #view_all_icon{
+#menu-secondary-menu a:hover #White_Papers_Icon,#menu-secondary-menu a:hover #Posters_Icon,#menu-secondary-menu a:hover #Published_Articles_Icon,#menu-secondary-menu a:hover #webinar_icon,#menu-secondary-menu a:hover #Podcasts_Icon,#menu-secondary-menu a:hover #Case_Studies_Icon,#menu-secondary-menu a:hover #view_all_icon{
   fill: #9d938a;
 }
 
@@ -3458,7 +3460,7 @@ input#search-input {
   color: #ffffff;
   font-size: .75rem;
   font-weight: bold;
-  letter-spacing: .75px;
+  letter-spacing: .5px;
  }
 
 /*hide standard search button*/

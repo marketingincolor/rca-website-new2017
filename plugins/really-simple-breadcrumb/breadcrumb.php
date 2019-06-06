@@ -51,6 +51,9 @@ function simple_breadcrumb() {
 					elseif( $post->post_type == 'visual_resources'):
 						echo '<a href="'.get_permalink(get_page_by_title('Visual Resources')).'">Visual Resources</a>';
 						echo $separator;
+					elseif( $post->post_type == 'podcasts'):
+						echo '<a href="'.get_permalink(get_page_by_title('Podcasts')).'">Podcasts</a>';
+						echo $separator;
 					elseif( $post->post_type == 'post'):
 						echo '<a href="'.get_permalink(get_page_by_title('News')).'">News</a>';
 						echo $separator;
@@ -95,6 +98,9 @@ function simple_breadcrumb() {
 			elseif( $post->post_type == 'visual_resources' ):
                 $current_url = home_url(add_query_arg(array(),$wp->request));
 				echo '<a href="'.$current_url.'">Visual Resources<a/>';
+			elseif( $post->post_type == 'podcasts' ):
+                $current_url = home_url(add_query_arg(array(),$wp->request));
+				echo '<a href="'.$current_url.'">Podcasts<a/>';
 			endif;
 		}
 

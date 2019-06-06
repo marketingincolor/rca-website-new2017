@@ -121,7 +121,7 @@ global $lander; ?>
 						<div  class="row show-for-large">
 							<div class="large-12 columns" style="background-color: #9d938a; padding: 1.375rem 1rem;">
 								<div class="row">
-									<div class="small-8 columns">
+									<div class="small-9 columns">
 										<?php
 										    wp_nav_menu($args = array(
 													'menu' => 'Secondary Menu',
@@ -130,7 +130,7 @@ global $lander; ?>
 											);
 										?>
 									</div>
-									<div class="small-4 columns">
+									<div class="small-3 columns">
 										<?php get_search_form(); ?>
 									</div>
 								</div>
