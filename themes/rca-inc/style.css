@@ -1155,7 +1155,7 @@ body.down .top-menu.clone {
 #mega-menu-wrap-menu-1 #mega-menu-menu-1[data-effect="fade_up"] li.mega-menu-item.mega-menu-megamenu > ul.mega-sub-menu, #mega-menu-wrap-menu-1 #mega-menu-menu-1[data-effect="fade_up"] li.mega-menu-item.mega-menu-flyout ul.mega-sub-menu {
     width: 100%;
 }
-#mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item { width: 16.6%; }
+#mega-menu-wrap-menu-1 #mega-menu-menu-1 > li.mega-menu-item { /*width: 16.6%;*/width: 13.8%; }
 
 
 
@@ -1502,6 +1502,7 @@ h2 {
 #related-content-block p a { display:inline-block; color: #c4612b; text-decoration: underline; }
 
 #related-content-block-outer { padding: 0rem 0rem 5rem; }
+#related-content-block-full {  border: 2px solid #c9c3ba; }
 #related-content-block { 
   border-top: 2px solid #c9c3ba;
   border-bottom: 2px solid #c9c3ba;
@@ -2422,6 +2423,16 @@ button.staff-btn { border: 2px solid #c4612b; padding: .5rem 2rem; width: 65%; p
 
 .individual-case-study h3 { font-size: 1.375rem; font-weight: bold; color: black; }
 #case-studies:first-of-type { padding-bottom: 1.5rem; } 
+
+/*--------------------------------------------------------------
+# PODCAST Customizations
+--------------------------------------------------------------*/
+.directory-links .swapper img:last-child{display:none}
+.directory-links .swapper:hover img:first-child{display:none}
+.directory-links .swapper:hover img:last-child{display:inline-block}
+
+
+
 
 /*--------------------------------------------------------------
 # FOOTER

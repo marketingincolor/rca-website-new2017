@@ -32,8 +32,6 @@ $('.news-filter').on('click',function() {
     $('.rca_query').attr('value', category);
 });
 
-
-
 /**
  * Description:
  *
@@ -47,6 +45,20 @@ function getCategory() {
     var category = $('.rca_query').val();
     console.warn("The Category: " + category);
     return category;
+}
+
+/**
+ * Description:
+ *
+ * Used for returning the TYPE of post (with addition of BLOG).
+ *
+ * @author ET
+ * @return {string} Returns category stored in hidden input rca_type. This is saved using filterPosts().
+ */
+function getType() {
+    var type = $('.rca_type').val();
+    console.warn("The Type: " + type);
+    return type;
 }
 
 /**
@@ -158,6 +170,7 @@ $('#newsFilterSelect').on('change', function() {
 
     var templateURL = afp_vars.templateURL;
     var category = getCategory();
+    var newstype = getType();
     var dropdown_query = ajaxFilterYear();
     var total_posts = $('.rca_total_posts').attr('value', '0');
     console.warn('total posts: ' + Number(total_posts.val()));
@@ -167,6 +180,9 @@ $('#newsFilterSelect').on('change', function() {
     offsetContainer.attr("value", Number(offsetValue));
     offsetValue = offsetContainer.val();
 
+    if(newstype == "blog") {
+        category = "blog";
+    }
     // If we don't have a category log an error to the console.
     if(category == "") {
         console.warn('RCA Information: No Category Selected. Showing All Posts...');
@@ -255,6 +271,78 @@ function defaultNewsFilter(templateURL, dropdown_query) {
     });
 
 }
+
+
+
+/**
+ * Description:
+ * 
+ * Magically "View All" posts when the page is loaded.
+ *
+ * @author  Doe
+ * @param  {[string]} templateURL    [Path to page where function is ran]
+ * @param  {[string]} category       [defaults to "all" to view all blog posts]
+ * @param  {[array]} dropdown_query ["defaults to get all years"]
+ * @return {[void]}                [AJAX request]
+ */
+function defaultBlogFilter(templateURL, dropdown_query) {
+
+    var urlParams = new URLSearchParams(window.location.search);
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
+    var cat = getUrlParameter("cat");
+
+    if(cat == "pharmaceutical") {
+        $('#pharmaceutical').addClass('newsClick');
+        $('.rca_query').attr('value', 'pharmaceutical');
+    }
+
+    if(cat == "medical-device") {
+        $('#medical-device').addClass('newsClick');
+        $('.rca_query').attr('value', 'medical-device');
+    }
+
+    if(cat == "biologics") {
+        $('#biologics').addClass('newsClick');
+        $('.rca_query').attr('value', 'biologics');
+
+    }
+
+    if(cat == "") {
+        $('#all').addClass('newsClick');
+        //$('.rca_query').attr('value', 'all');
+        $('.rca_query').attr('value', 'blog');
+        cat = "blog";
+    }
+
+    console.log("Category " + cat);
+    var offsetContainer = $('.rca_offset');
+    var offsetValue = $('.rca_offset').val();
+    offsetContainer.attr("value", Number(offsetValue) );
+    var content = $('.post-container');
+    // $('#all').addClass('newsClick');
+
+    $.ajax({
+        url: templateURL + '/load-more.php',
+        type: 'POST',
+        beforeSend: function() {$('.spinner').fadeIn(500); },
+        data: {category : cat, dropdown_query : dropdown_query },
+        success: function(response) {
+                    content.html(response).fadeIn(1000);
+        },
+        complete: function() { $('.spinner').fadeOut(500); }
+    });
+
+}
+
+
+
+
 
 
 

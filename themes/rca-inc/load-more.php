@@ -19,6 +19,10 @@ header("HTTP/1.1 200 OK");
 		$category = '';
 	}
 
+	if($category == 'blog') {
+		$category = 'blog';
+	}
+
 	$dropdown_query = $_POST['dropdown_query'];
 
 	// If we have an offset use that.
@@ -47,6 +51,8 @@ header("HTTP/1.1 200 OK");
     	'posts_per_page' => 5,
     	'offset' => $offset,
 	));
+
+	echo '<!-- cat: ' . $category . '-->';
 
 	if($news_query->have_posts()) { while($news_query->have_posts()) { $news_query->the_post(); 
 ?>

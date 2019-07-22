@@ -17,11 +17,11 @@ $type = 'podcasts';
 	</div>
 
 	<!-- RELATED CONTENT SMALL -->
-	<?php get_template_part('template-parts/mobile', 'related-content'); ?>
+	<?php get_template_part('template-parts/content', 'directory-links'); ?>
 	<!-- /RELATED CONTENT SMALL -->
 
 	<!-- RELATED CONTENT LARGE -->
-	<?php get_template_part('template-parts/content', 'related-content'); ?>
+	<?php get_template_part('template-parts/content', 'related-podcast'); ?>
 	<!-- /RELATED CONTENT LARGE -->
 	
 	<!-- LEARN MORE -->

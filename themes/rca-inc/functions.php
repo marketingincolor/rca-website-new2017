@@ -1654,6 +1654,8 @@ function rca_get_bio_slider_icons($post_type) {
       $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
     elseif($post_type == 'published_articles'):
       $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
+    elseif($post_type == 'podcasts'):
+      $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Podcasts-Icon-Gray-01.svg';
     elseif($post_type == 'post'):
       $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/RCA_News_Icon-01.svg';
     elseif($post_type == 'staff'):
@@ -1687,6 +1689,8 @@ function rca_get_search_icons($post_type) {
     $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Visual-Resources-Icon-Gray-01.svg';
   elseif($post_type == 'published_articles'):
     $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Published-Articles-Icon-Gray-01.svg';
+  elseif($post_type == 'podcasts'):
+    $icon   = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/Podcasts-Icon-Gray-01.svg';
   elseif($post_type == 'post'):
     $icon = get_stylesheet_directory_uri() . '/images/icons/bigger-icons/RCA_News_Icon-01.svg';
   elseif($post_type == 'staff'):
