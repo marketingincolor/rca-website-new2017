@@ -225,13 +225,13 @@ var callThisOnReturn = function(resp) {
     takeover.find('input:not(:checkbox):not(:submit):not(:hidden)').each(function(){
       var value = jQuery(this).val();
       if (value == "") {
-        jQuery('#takeover-modal').foundation('open');
+//        jQuery('#takeover-modal').foundation('open');
       }
       
   	});
   }else{
-    jQuery('#takeover-modal').foundation();
-  	jQuery('#takeover-modal').foundation('open');
+//    jQuery('#takeover-modal').foundation();
+//  	jQuery('#takeover-modal').foundation('open');
     console.log('else');
 
     //IF WE DONT HAVE THE CONTACT

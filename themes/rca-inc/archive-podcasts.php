@@ -161,14 +161,39 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<script>
+<div id="related-content-block-outer" class="directory-links row">
+		<div class="row">
+			<div class="small-12 columns text-center">
+				<h4 style="margin:auto; position:relative; width:fit-content; background-color:#FFF; z-index:10;">&nbsp;Subscribe at your Favorite Podcast Directory!&nbsp;</h4>
+			</div>
+		</div>
+		<div class="row" data-equalizer="jtaqay-equalizer" data-resize="2vg46n-eq" data-mutate="vgzgpo-eq">
 
-	$(document).ready(function() {
-		var active = $('.navigation ul .active a img');
-			active.attr('src', '<?php echo get_stylesheet_directory_uri() . '/images/RCA_MOBILE_HOMEPAGE_INDICATOR-SELECTED.jpg'; ?> ');
-	});
+			<div id="related-content-block-full" class="small-10 small-offset-1 columns" style="position:relative; top:-15px;">
+				<div class="row small-up-2 medium-up-6" style="padding:1.5em;">
+					<div class="column column-block" data-equalizer-watch="" style="height: 106px;">
+						<a href="https://podcasts.apple.com/us/podcast/rca-radio/id1466890099" class="swapper" target="_blank" style="padding:1em 0em; display:inline-block;"><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-apple-down.png" alt=""><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-apple-hover.png" alt=""></a>
+					</div>
+					<div class="column column-block" data-equalizer-watch="" style="height: 106px;">
+						<a href="https://tunein.com/podcasts/Business--Economics-Podcasts/RCA-Radio-p1227513/?topicId=131549736" class="swapper" target="_blank" style="padding:1em 0em; display:inline-block;"><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-tunein-down.png" alt=""><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-tunein-hover.png" alt=""></a>
+					</div>
+					<div class="column column-block" data-equalizer-watch="" style="height: 106px;">
+						<a href="https://playmusic.app.goo.gl/?ibi=com.google.PlayMusic&amp;isi=691797987&amp;ius=googleplaymusic&amp;apn=com.google.android.music&amp;link=https://play.google.com/music/m/Ir72i37z4szzw7sy3t7ed2rqotu?t%3DRCA_Radio%26pcampaignid%3DMKT-na-all-co-pr-mu-pod-16" class="swapper" target="_blank" style="padding:1em 0em; display:inline-block;"><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-google-down.png" alt=""><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-google-hover.png" alt=""></a>
+					</div>
+					<div class="column column-block" data-equalizer-watch="" style="height: 106px;">
+						<a href="https://www.stitcher.com/s?fid=419666&amp;refid=stpr" class="swapper" target="_blank" style="padding:1em 0em; display:inline-block;"><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-stitcher-down.png" alt=""><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-stitcher-hover.png" alt=""></a>
+					</div>
+					<div class="column column-block" data-equalizer-watch="" style="height: 106px;">
+						<a href="https://soundcloud.com/rcaradio" class="swapper" target="_blank" style="padding:1em 0em; display:inline-block;"><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-soundcloud-down.png" alt=""><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-soundcloud-hover.png" alt=""></a>
+					</div>
+					<div class="column column-block" data-equalizer-watch="" style="height: 106px;">
+						<a href="https://open.spotify.com/show/7ihX8MFaMXE3pCjp3hE2G9" class="swapper" target="_blank"><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-spotify-down.png" alt=""><img src="<?php echo get_stylesheet_directory_uri();?>/images/rca-podcast-directory-icon-spotify-hover.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-</script>
 
 	<!-- LEARN MORE -->
 	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
@@ -177,6 +202,14 @@ get_header(); ?>
 	<!-- NEWS -->
 	<?php get_template_part('template-parts/section', 'news'); ?>
 	<!-- /NEWS -->
+<script>
+
+	$(document).ready(function() {
+		var active = $('.navigation ul .active a img');
+			active.attr('src', '<?php echo get_stylesheet_directory_uri() . '/images/RCA_MOBILE_HOMEPAGE_INDICATOR-SELECTED.jpg'; ?> ');
+	});
+
+</script>
 	
 <?php
 get_footer();

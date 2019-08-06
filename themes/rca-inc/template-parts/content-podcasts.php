@@ -10,7 +10,7 @@ $audio_desc = get_field('podcast_description');
 	<div class="row">
 		<div class="small-10 small-offset-1 columns">
 			<p class="post-date"><?php echo get_the_date(); ?></p>
-			<h2><?php the_title(); ?></h2>
+			<h2><a href="<?php the_permalink(); ?>" style="color:inherit;"><?php the_title(); ?></a></h2>
 		</div>
 	</div>
 
