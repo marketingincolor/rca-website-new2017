@@ -194,9 +194,12 @@ get_header(); ?>
 		</div>
 	</div>
 
+	<!-- SUGGEST A TOPIC -->
+	<?php get_template_part('template-parts/content', 'suggest-topic'); ?>
+	<!-- /SUGGEST A TOPIC -->
 
 	<!-- LEARN MORE -->
-	<?php get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
+	<?php //get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	<!-- /LEARN MORE -->
 
 	<!-- NEWS -->

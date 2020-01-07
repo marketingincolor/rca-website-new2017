@@ -51,8 +51,10 @@
 				<!-- directors-->
 				<div class="row staff-block-area text-center"data-equalizer >
 					<h2 id="directors">Directors</h2>
-					<a href="<?php echo get_permalink( get_page_by_title( 'Client Support' ) ) ?>"><h3>Client Support</h3></a>
-					<?php get_team_members('client-support'); ?>
+					<!--<a href="<?php //echo get_permalink( get_page_by_title( 'Client Support' ) ) ?>"><h3>Client Support</h3></a>
+					<?php //get_team_members('client-support'); ?>-->
+					<a href="<?php echo get_permalink( get_page_by_title( 'Client Experience' ) ) ?>"><h3>Client Experience</h3></a>
+					<?php get_team_members('client-experience'); ?>
 				</div>
 				<!-- end directors -->
 
@@ -63,6 +65,12 @@
 				</div>
 				<!-- end directors > sales operations -->
 
+				<!-- directors > talent management & client support -->
+				<div class="row staff-block-area text-center" data-equalizer>
+					<a href="<?php echo get_permalink( get_page_by_title( 'Talent Management & Client Support' ) ) ?>"><h3>Talent Management & Client Support</h3></a>
+					<?php get_team_members('talent-management-client-support'); ?>
+				</div>
+				<!-- directors > talent management & client support -->
 
 				<!-- directors > sales operations-->
 				<div class="row staff-block-area text-center" data-equalizer>

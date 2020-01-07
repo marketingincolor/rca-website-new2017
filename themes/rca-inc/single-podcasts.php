@@ -24,6 +24,10 @@ $type = 'podcasts';
 	<?php get_template_part('template-parts/content', 'related-podcast'); ?>
 	<!-- /RELATED CONTENT LARGE -->
 	
+	<!-- SUGGEST A TOPIC -->
+	<?php //get_template_part('template-parts/content', 'suggest-topic'); ?>
+	<!-- /SUGGEST A TOPIC -->
+
 	<!-- LEARN MORE -->
 	<?php //get_template_part('template-parts/section', 'learn-more-form-container-blue'); ?>
 	<?php get_template_part('template-parts/section', 'learn-more-cta'); ?>
