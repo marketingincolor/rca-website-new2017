@@ -1,4 +1,4 @@
-<div id="learn-more-form-container-white">
+	<div id="OLD-learn-more-form-container-white" style="display:none;">
 		<div class="row" >
 			<div class="small-10 small-offset-1 columns text-center">
 				<h1>I'm Interested in Learning More About RCA</h1>
@@ -6,7 +6,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="small-10 small-offset-1">
+			<?php global $post; $post_slug=$post->post_name; ?>
+			<div id="fx-<?php echo $post_slug; ?>" class="small-10 small-offset-1">
 				<form id="blue-form" name="blue-form" method="post">
 			    <div class="large-4 columns">
 			    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
@@ -79,7 +80,7 @@
 					<div class="large-12 columns">
 						<?php global $wp;
 						$current_url = home_url(add_query_arg(array(),$wp->request)); ?>
-					  <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
+						<input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
 						<input id="industry-hidden" type="hidden" name="industries">
 						<input type="submit" value="Submit" id="form-submit">
 					</div>
@@ -87,6 +88,35 @@
 			</div>
 		</div>
 	</div>
+
+<style>
+.learn-more-white-ninja-form label { color: rgba(0,0,0,0.4); }
+.learn-more-white-ninja-form .nf-form-content input:not([type=button]), 
+.learn-more-white-ninja-form [type=text] { background-color: transparent; border: none; box-shadow: none; border-bottom: 2px solid #e9e7e3; color:#2b2b2b; }
+.learn-more-white-ninja-form input::placeholder { text-transform:uppercase; color: rgba(0,0,0,0.4); }
+.ninja-forms-req-symbol { color: rgba(0,0,0,0.4) !important; }
+.learn-more-white-ninja-form .nf-multi-cell .nf-cell { padding: 0 10px; }
+.nf-field-element ul li::before { content:none !important; width:auto !important; display:none !important; }
+.learn-more-white-ninja-form .list-checkbox-wrap .nf-field-element li label, 
+.learn-more-white-ninja-form .list-image-wrap .nf-field-element li label, 
+.learn-more-white-ninja-form .list-radio-wrap .nf-field-element li label { display: block; float: left; width: auto; padding: 0 10px 0 0 !important; }
+.learn-more-white-ninja-form .nf-response-msg { text-align: center; }
+.learn-more-white-ninja-form .nf-form-content button, 
+.learn-more-white-ninja-form .nf-form-content input[type=button],
+.learn-more-white-ninja-form .nf-form-content input[type=submit] { background: #c4612b; padding: 0em 3em; }
+</style>
+    <div id="REMOVE-learn-more-form-container-white" class="learn-more-white-ninja-form" style="padding: 3.5rem 0rem;">
+        <div class="row" >
+            <div class="small-10 small-offset-1 columns text-center">
+                <h1>I'm Interested in Learning More About <?php echo (!empty($form_title))? $form_title : 'RCA'; ?></h1>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="small-10 small-offset-1 columns">
+            <?php echo do_shortcode('[ninja_form id=2]'); ?>
+            </div>
+        </div>
+    </div>
 
 	<script>
 	  // change colors on inputs to white when field is filled
@@ -192,7 +222,11 @@
 
           $('#industry-hidden').val(arr.join(','));
 
-          __ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
+          var $form2 = $( '#blue-form' ).get( 0 );
+          __ss_noform.push(['submit', function () {
+		  		MCFX.Form.submit( $form2 );
+		  		window.location = 'https://rcainc.com/success';
+		  	}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
 		  	return false;
 		  }
 	  });

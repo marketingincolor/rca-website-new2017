@@ -3,95 +3,130 @@ wp_reset_postdata();
 $form_title = get_field('learn_more_form_container_blue_title');
 
 ?>
-<div id="learn-more-form-container-blue">
-		<div class="row" >
-			<div class="small-10 small-offset-1 columns text-center">
-				<h1>I'm Interested in Learning More About <?php echo (!empty($form_title))? $form_title : 'RCA'; ?></h1>
-				<div id="white-error-message"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="small-10 small-offset-1">
-				<form id="blue-form" name="blue-form" method="post">
-					    <div class="large-4 columns">
-					    	<input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-					    </div>
-					    <div class="large-4 columns">
-					    	<input type="text" name="last_name" id="form-last-name" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
-					    </div>
-					    <div class="large-4 columns">
-					    	<input type="number" name="phone_number" id="form-phone" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
-					    </div>
-					    <div class="large-4 columns">
-					 			<input type="email" name="email_address" id="form-email" placeholder="Email Address*" required><i class="fa fa-envelope" aria-hidden="true"></i>
-					    </div>
-						<div class="large-4 columns">
-					    	<input type="text" name="address" id="form-address" placeholder="Address*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-						<div class="large-4 columns">
-					    	<input type="text" name="city" id="form-city" placeholder="City*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-						<div class="large-4 columns">
-							<input type="text" name="state" id="form-state" placeholder="State*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-						<div class="large-4 columns">
-					    	<input type="text" name="country" id="form-country" placeholder="Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-						<div class="large-4 columns">
-					    	<input type="number" name="zip_code" id="form-zip" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
-						</div>
-						<div class="large-12 columns">
-					    	<input type="text" name="company" id="form-company" placeholder="Company*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
-						</div>
-						<div class="large-12 columns">
-							<label for="" class="industry-label"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
-							<div class="checkbox-group required">
-								<div class="medium-4 large-2 small-6 columns">
-									<input id="a1" type='checkbox' name='industry' class="chkrad X fade" value='Biotechnology' />
-									<label class="check-label" for="a1"> Biotechnology</label>
-								</div>
-								<div class="medium-4 large-2 small-6 columns">
-									<input id="a2" type='checkbox' name='industry' class="chkrad X fade" value='Medical Device' />
-									<label class="check-label" for="a2"> Medical Device</label>
-								</div>
-								<div class="medium-4 large-2 small-6 columns">
-									<input id="a3" type='checkbox' name='industry' class="chkrad X fade" value='Pharmaceutical' />
-									<label class="check-label" for="a3"> Pharmaceutical</label>
-								</div>
-								<div class="medium-4 large-2 small-6 columns">
-									<input id="a4" type='checkbox' name='industry' class="chkrad X fade" value='Law Firm' />
-									<label class="check-label" for="a4"> Law Firm</label>
-								</div>
-								<div class="medium-4 large-2 small-6 columns end">
-									<input id="a5" type='checkbox' name='industry' class="chkrad X fade" value='Other' />
-									<label class="check-label" for="a5"> Other</label>
-								</div>
-							</div>
-						</div>
-						<div class="large-12 columns">
-							<label for=""><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions*</label>
-							<textarea name="comments" id="form-comments" cols="30" rows="4" required></textarea>
-						</div>
-						<div class="large-6 columns">
-							<div class="checkbox-group">
-							  <input id="agree" type="checkbox" name="agree" value="true" checked="checked">
-							  <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
-							</div>
-						</div>
-						<div class="large-6 columns text-right">
-							<p>*=Required</p>
-						</div>
-						<div class="large-12 columns">
-							<?php global $wp;
-							$current_url = home_url(add_query_arg(array(),$wp->request)); ?>
-						  <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
-						  <input id="industry-hidden" type="hidden" name="industries">
-							<input type="submit" value="Submit" id="form-submit">
-						</div>
-				</form>
-			</div>
-		</div>
-	</div>
+<div id="blue_form">
+    <div id="OLD-learn-more-form-container-blue" style="display:none;">
+        <div class="row" >
+            <div class="small-10 small-offset-1 columns text-center">
+                <h1>I'm Interested in Learning More About <?php echo (!empty($form_title))? $form_title : 'RCA'; ?></h1>
+                <div id="white-error-message"></div>
+            </div>
+        </div>
+        <div class="row">
+            <?php global $post; $post_slug=$post->post_name; ?>
+            <div id="fx-<?php echo $post_slug; ?>" class="small-10 small-offset-1">
+                <form id="blue-form" name="blue-form" method="post">
+                        <div class="large-4 columns">
+                            <input type="text" name="first_name" id="form-first-name" placeholder="First Name*" required><i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-4 columns">
+                            <input type="text" name="last_name" id="form-last-name" placeholder="Last Name*" required><i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-4 columns">
+                            <input type="number" name="phone_number" id="form-phone" placeholder="Phone Number*" required><i class="fa fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-4 columns">
+                                <input type="email" name="email_address" id="form-email" placeholder="Email Address*" required><i class="fa fa-envelope" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-4 columns">
+                            <input type="text" name="address" id="form-address" placeholder="Address*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-4 columns">
+                            <input type="text" name="city" id="form-city" placeholder="City*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-4 columns">
+                            <input type="text" name="state" id="form-state" placeholder="State*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-4 columns">
+                            <input type="text" name="country" id="form-country" placeholder="Country*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-4 columns">
+                            <input type="number" name="zip_code" id="form-zip" placeholder="Zip Code*" required><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-12 columns">
+                            <input type="text" name="company" id="form-company" placeholder="Company*" required><i class="fa fa-briefcase" aria-hidden="true"></i>
+                        </div>
+                        <div class="large-12 columns">
+                            <label for="" class="industry-label"><i class="fa fa-building-o industry-label" aria-hidden="true"></i> Industry*</label>
+                            <div class="checkbox-group required">
+                                <div class="medium-4 large-2 small-6 columns">
+                                    <input id="a1" type='checkbox' name='industry' class="chkrad X fade" value='Biotechnology' />
+                                    <label class="check-label" for="a1"> Biotechnology</label>
+                                </div>
+                                <div class="medium-4 large-2 small-6 columns">
+                                    <input id="a2" type='checkbox' name='industry' class="chkrad X fade" value='Medical Device' />
+                                    <label class="check-label" for="a2"> Medical Device</label>
+                                </div>
+                                <div class="medium-4 large-2 small-6 columns">
+                                    <input id="a3" type='checkbox' name='industry' class="chkrad X fade" value='Pharmaceutical' />
+                                    <label class="check-label" for="a3"> Pharmaceutical</label>
+                                </div>
+                                <div class="medium-4 large-2 small-6 columns">
+                                    <input id="a4" type='checkbox' name='industry' class="chkrad X fade" value='Law Firm' />
+                                    <label class="check-label" for="a4"> Law Firm</label>
+                                </div>
+                                <div class="medium-4 large-2 small-6 columns end">
+                                    <input id="a5" type='checkbox' name='industry' class="chkrad X fade" value='Other' />
+                                    <label class="check-label" for="a5"> Other</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-12 columns">
+                            <label for=""><i class="fa fa-comments-o" aria-hidden="true"></i> Comments/Questions*</label>
+                            <textarea name="comments" id="form-comments" cols="30" rows="4" required></textarea>
+                        </div>
+                        <div class="large-6 columns">
+                            <div class="checkbox-group">
+                              <input id="agree" type="checkbox" name="agree" value="true" checked="checked">
+                              <label class="check-label" for="agree"> I agree to receive emails from RCA</label>
+                            </div>
+                        </div>
+                        <div class="large-6 columns text-right">
+                            <p>*=Required</p>
+                        </div>
+                        <div class="large-12 columns">
+                            <?php global $wp;
+                            $current_url = home_url(add_query_arg(array(),$wp->request)); ?>
+                            <input type="hidden" name="referral_url" value="<?php echo $current_url; ?>">
+                            <input id="industry-hidden" type="hidden" name="industries">
+                            <input type="submit" value="Submit" id="form-submit">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<style>
+.learn-more-blue-ninja-form h1,
+.learn-more-blue-ninja-form .nf-form-fields-required { color:white; }
+.learn-more-blue-ninja-form .nf-form-content input:not([type=button]), 
+.learn-more-blue-ninja-form [type=text] { background-color: transparent; border: none; box-shadow: none; border-bottom: 2px solid #76869f; }
+.learn-more-blue-ninja-form input::placeholder { text-transform:uppercase; color: #76869f; }
+.ninja-forms-req-symbol { color: #76869f !important; }
+.learn-more-blue-ninja-form .nf-multi-cell .nf-cell { padding: 0 10px; }
+.nf-field-element ul li::before { content:none !important; width:auto !important; display:none !important; }
+.learn-more-blue-ninja-form .list-checkbox-wrap .nf-field-element li label, 
+.learn-more-blue-ninja-form .list-image-wrap .nf-field-element li label, 
+.learn-more-blue-ninja-form .list-radio-wrap .nf-field-element li label { display: block; float: left; width: auto; padding: 0 10px 0 0 !important; }
+.learn-more-blue-ninja-form .nf-response-msg { color: white; text-align: center; }
+.learn-more-blue-ninja-form .nf-form-content button, 
+.learn-more-blue-ninja-form .nf-form-content input[type=button],
+.learn-more-blue-ninja-form .nf-form-content input[type=submit] { background: #c4612b; padding: 0em 3em; }
+</style>
+
+    <div id="REMOVElearn-more-form-container-blue" class="learn-more-blue-ninja-form" style="background-color: #1a365d; padding: 3.5rem 0rem;">
+        <div class="row" >
+            <div class="small-10 small-offset-1 columns text-center">
+                <h1>I'm Interested in Learning More About <?php echo (!empty($form_title))? $form_title : 'RCA'; ?></h1>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="small-10 small-offset-1 columns">
+            <?php echo do_shortcode('[ninja_form id=1]'); ?>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 	<script>
 	  // change colors on inputs to white when field is filled
@@ -200,7 +235,11 @@ $form_title = get_field('learn_more_form_container_blue_title');
 
 		    //document.forms["blue-form"].submit();
             //__ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
-            __ss_noform.push(['submit', function () {window.location = 'https://rcainc.com/success';}, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
+            var $form = $( '#blue-form' ).get( 0 );
+            __ss_noform.push(['submit', function () {
+		  		MCFX.Form.submit( $form );
+            	window.location = 'https://rcainc.com/success';
+            }, '2c8b9505-3172-42ce-9d67-efa05d3bc26e']);
             return false;
 
 		  }
