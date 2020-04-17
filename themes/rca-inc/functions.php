@@ -548,8 +548,14 @@ function rca_top_slider($atts, $content = null) {
         $slide_title = get_the_title();
         $slide_content = get_the_content();
         //var_dump($call_to_action_links);
-        $call_to_action_title = get_field('call_to_action_title');
-        $call_to_action_title = 'Read More';
+        //$call_to_action_title = get_field('call_to_action_title');
+        //$call_to_action_title = 'Read More';
+        $cta_title = get_field('call_to_action_title');
+        if( $cta_title ) {
+          $call_to_action_title = $cta_title;
+        } else {
+          $call_to_action_title = 'Read More';
+        }
         $img_src = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), get_post_type());
         $meta_link = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_owlurl', true);
 
